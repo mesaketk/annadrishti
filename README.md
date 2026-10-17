@@ -6,7 +6,7 @@
 
 Entry for the **Google Cloud AI Builder Cup 2026 · Sustainability & Social Impact** — **Team Sangam**: Arulsrinivaasan, Nymisha Herrera Nimmagadda, Saket Kumar.
 
-**Live demo:** https://annadrishti-801618653701.asia-south1.run.app (Cloud Run, asia-south1)
+**Live demo:** https://annadrishti-801618653701.asia-south1.run.app (Cloud Run, asia-south1) · **Code:** https://github.com/mesaketk/annadrishti
 
 ## What it does
 * **Three entry points**: *Farmer* (phone‑first, 9 Indian languages, voice), *District officer* (department‑specific briefing and actions), *State planner* (map + pre‑positioning table). Built on Google **Material Design 3** with Roboto Flex and Material Symbols.
