@@ -31,3 +31,5 @@ artifacts/_bq_jobstats.json
 artifacts/_v4_before.json
 artifacts/_risk_v*_baseline.json
 .claude/launch.json
+
+*.whl
