@@ -4,7 +4,7 @@
 >
 > **This season's situation:** a record El Niño is forming (NOAA CPC, 8 Oct 2026: Niño‑3.4 +2.1 °C). Rabi 2026‑27 is sowing now under an El Niño winter; Kharif 2027 carries a 61 % El Niño probability.
 
-Entry for the **Google Cloud AI Builder Cup 2026 · Sustainability & Social Impact**.
+Entry for the **Google Cloud AI Builder Cup 2026 · Sustainability & Social Impact** — **Team Sangam**: Arulsrinivaasan, Nymisha Herrera Nimmagadda, Saket Kumar.
 
 **Live demo:** https://annadrishti-801618653701.asia-south1.run.app (Cloud Run, asia-south1)
 
