@@ -1,0 +1,68 @@
+# Submit from the project root:
+#   gcloud builds submit --config deploy/cloudbuild.yaml --ignore-file deploy/gcloudignore \
+#     --substitutions _TAG=$(date +%Y%m%d-%H%M%S)
+# (deploy/deploy.sh does this for you.)
+#
+# $SHORT_SHA is only populated for trigger-based builds from a git repo, so manual submits use _TAG.
+# If you wire a GitHub trigger, pass `_TAG: $SHORT_SHA` in the trigger's substitutions.
+substitutions:
+  _REGION: asia-south1
+  _REPO: annadrishti
+  _SERVICE: annadrishti
+  _TAG: latest
+  _GEMINI_MODEL: gemini-2.5-flash
+  _USE_VERTEX: "0"            # "1" = use Vertex AI (runtime service account) instead of a Gemini API key
+  _ARTIFACTS_GCS_URI: ""      # optional gs://bucket/prefix with updated *.json artifacts
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: E2_HIGHCPU_8
+
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "-f", "deploy/Dockerfile",
+           "-t", "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/app:${_TAG}",
+           "-t", "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/app:latest", "."]
+
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args: ["push", "--all-tags", "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/app"]
+
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: bash
+    args:
+      - -ceu
+      - |
+        ENVVARS="GEMINI_MODEL=${_GEMINI_MODEL},VERTEX_LOCATION=${_REGION},XFF_POSITION=last"
+        SECRET_LIST=""
+        if [ "${_USE_VERTEX}" = "1" ]; then
+          ENVVARS="$$ENVVARS,USE_VERTEX=1,GOOGLE_CLOUD_PROJECT=$PROJECT_ID"
+        else
+          SECRET_LIST="GEMINI_API_KEY=GEMINI_API_KEY:latest"
+        fi
+        # Optional: pre-warm / admin bypass of the per-IP rate limits (api/ratelimit.py). Only wired if the secret exists.
+        if gcloud secrets describe RATE_LIMIT_BYPASS_TOKEN --project $PROJECT_ID >/dev/null 2>&1; then
+          SECRET_LIST="$${SECRET_LIST:+$$SECRET_LIST,}RATE_LIMIT_BYPASS_TOKEN=RATE_LIMIT_BYPASS_TOKEN:latest"
+        fi
+        SECRETS=()
+        if [ -n "$$SECRET_LIST" ]; then SECRETS=(--set-secrets "$$SECRET_LIST"); fi
+        if [ -n "${_ARTIFACTS_GCS_URI}" ]; then
+          ENVVARS="$$ENVVARS,ARTIFACTS_GCS_URI=${_ARTIFACTS_GCS_URI}"
+        fi
+        gcloud run deploy ${_SERVICE} \
+          --image ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/app:${_TAG} \
+          --region ${_REGION} \
+          --platform managed \
+          --allow-unauthenticated \
+          --min-instances 0 --max-instances 5 \
+          --memory 1Gi --cpu 1 \
+          --concurrency 40 --timeout 120 \
+          --port 8080 \
+          --set-env-vars "$$ENVVARS" \
+          "$${SECRETS[@]}"
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/app:${_TAG}
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/app:latest

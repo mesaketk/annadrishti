@@ -1,0 +1,737 @@
+priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,mgnrega_persondays,pmfby_gap_farmers,fodder_flag,protective_irrigation_ha,groundwater_budget_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
+1,1,Jharkhand,Gumla,331,75.4,high,-2.0,605.0,259.0,54791.0,196919.0,6107.0,20152417.0,381582.0,False,2424.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+2,1,Madhya Pradesh,Dindori,404,73.5,high,-10.7,0.0,7871.0,24115.0,147462.0,25518.0,14355459.0,181706.0,False,7222.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+3,2,Jharkhand,Simdega,342,72.6,high,-3.0,0.0,812.0,22259.0,136649.0,7429.0,12112414.0,181995.0,False,2010.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+4,2,Madhya Pradesh,Sidhi,433,70.5,high,-8.8,0.0,1347.0,49801.0,201525.0,26373.0,4545372.0,123346.0,False,104595.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+5,3,Madhya Pradesh,Mandla,415,69.8,high,-9.2,0.0,3280.0,36863.0,205222.0,20538.0,16748329.0,177692.0,False,23712.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+6,1,Assam,Hailakandi,289,68.7,high,-5.4,146.0,134.0,16860.0,123837.0,580.0,6999049.0,75853.0,False,8.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+7,4,Madhya Pradesh,Panna,420,68.7,high,-11.1,0.0,13337.0,37462.0,192533.0,44855.0,5584592.0,157418.0,False,159797.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+8,5,Madhya Pradesh,Satna,426,68.4,high,-18.9,0.0,10095.0,80680.0,410005.0,69928.0,6383881.0,255561.0,False,288000.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+9,1,Jammu & Kashmir,Kishtwar,620,68.2,high,-14.3,363.0,3.0,3812.0,57618.0,729.0,2989541.0,42055.0,False,532.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+10,2,Assam,Cachar,282,67.9,high,-5.4,177.0,165.0,36430.0,304943.0,899.0,12128023.0,132297.0,False,204.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+11,6,Madhya Pradesh,Rewa,424,67.8,high,-9.2,0.0,4739.0,81868.0,468460.0,73645.0,15499764.0,300430.0,False,233933.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+12,2,Jammu & Kashmir,Kulgam,622,67.1,high,-13.8,6.0,6.0,5770.0,91417.0,13.0,1714711.0,,False,45.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+13,3,Jammu & Kashmir,Badgam,2,66.5,high,-14.0,286.0,45.0,10338.0,146186.0,270.0,1821755.0,,False,966.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+14,4,Jammu & Kashmir,Reasi,627,66.3,high,-13.8,0.0,,8761.0,57989.0,2964.0,4630255.0,102635.0,False,845.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+15,1,Karnataka,Yadgir,635,66.0,high,-16.0,0.0,58.0,48584.0,197470.0,3264.0,9908664.0,,True,7839.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+16,5,Jammu & Kashmir,Punch,10,65.4,high,-14.0,3262.0,0.0,11412.0,75909.0,3066.0,5040272.0,,False,1859.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+17,6,Jammu & Kashmir,Pulwama,11,65.4,high,-14.0,93.0,7.0,8343.0,119687.0,76.0,1618101.0,,False,270.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+18,7,Madhya Pradesh,Anuppur,390,65.3,high,-17.7,0.0,3484.0,14429.0,124881.0,9129.0,12296670.0,133516.0,False,2620.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+19,8,Madhya Pradesh,Shahdol,429,65.0,high,-5.2,0.0,496.0,32417.0,193018.0,14885.0,12621630.0,100490.0,False,24836.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+20,3,Assam,Dibrugarh,286,64.9,high,-1.1,11.0,10.0,35097.0,287269.0,373.0,10634825.0,156726.0,False,51.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+21,1,Chhattisgarh,Balrampur,649,64.6,high,-2.0,0.0,4.0,28314.0,147123.0,860.0,15386076.0,153125.0,False,144.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+22,3,Jharkhand,Latehar,335,64.4,high,-2.1,503.0,229.0,48135.0,149257.0,6807.0,9314934.0,117108.0,False,11701.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+23,9,Madhya Pradesh,Umaria,436,63.5,high,-6.1,0.0,1878.0,22024.0,106543.0,20591.0,3675699.0,70247.0,False,70309.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+24,4,Jharkhand,Palamu,338,63.3,high,-3.2,1513.0,462.0,87941.0,381996.0,8126.0,22667659.0,130447.0,False,14132.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+25,4,Assam,Karimganj,293,63.2,high,-5.4,108.0,92.0,25759.0,195259.0,448.0,11245362.0,108169.0,False,82.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+26,10,Madhya Pradesh,Katni,413,63.2,high,-5.1,0.0,2154.0,37207.0,243473.0,41571.0,1248390.0,129194.0,False,194720.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+28,1,Odisha,Rayagada,370,63.0,high,-2.3,867.0,16.0,48141.0,185093.0,5032.0,10504197.0,97353.0,False,7916.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+27,7,Jammu & Kashmir,Shupiyan,625,63.0,high,-13.8,1.0,1.0,3069.0,47253.0,1.0,1370838.0,,False,3.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+29,1,Uttar Pradesh,Mahoba,165,62.9,high,-8.8,0.0,11580.0,29065.0,136746.0,41217.0,7118685.0,84905.0,False,107619.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+30,2,Karnataka,Kalaburagi,538,62.9,high,-1.3,0.0,276.0,95489.0,421772.0,17322.0,28185424.0,,False,14533.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+31,1,Rajasthan,Udaipur,117,62.5,high,-1.6,4955.0,498.0,130656.0,589088.0,29294.0,27384630.0,619913.0,False,59643.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+32,1,Tamil Nadu,Perambalur,581,62.4,high,-13.9,0.0,52.0,7074.0,104409.0,697.0,6718512.0,105851.0,False,1034.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+33,8,Jammu & Kashmir,Ramban,621,62.0,high,-4.2,176.0,,6415.0,48366.0,966.0,3446603.0,43649.0,False,248.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+34,5,Jharkhand,Ramgarh,607,61.7,high,-5.8,1455.0,944.0,25378.0,190947.0,4225.0,6672047.0,102826.0,False,7562.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+35,2,Odisha,Malkangiri,364,61.3,high,-2.7,,,23865.0,118420.0,,10135194.0,152833.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+36,5,Assam,Jorhat,290,61.1,high,-0.7,6.0,4.0,14144.0,203164.0,235.0,7060777.0,106169.0,False,32.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+37,2,Tamil Nadu,Ramanathapuram,583,61.0,high,-13.8,2188.0,94.0,17969.0,202629.0,2708.0,10072704.0,126487.0,False,4905.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+38,9,Jammu & Kashmir,Rajouri,12,60.3,high,-3.3,0.0,0.0,17100.0,114015.0,10068.0,7240639.0,149512.0,False,4637.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+40,2,Rajasthan,Jalor,104,60.0,high,-4.7,2553.0,164.0,111419.0,347520.0,8504.0,16414342.0,486835.0,True,20991.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+39,3,Tamil Nadu,Pudukkottai,582,60.0,high,-13.8,849.0,223.0,22799.0,282593.0,823.0,2595568.0,185893.0,False,3662.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+41,6,Assam,Baksa,616,59.8,high,-6.8,405.0,376.0,23109.0,214064.0,1403.0,11010314.0,171377.0,False,1258.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+42,3,Rajasthan,Nagaur,110,59.4,high,-1.0,1837.0,348.0,71197.0,475371.0,19443.0,38340583.0,785014.0,False,31245.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+43,10,Jammu & Kashmir,Samba,624,59.4,high,-7.5,0.0,0.0,4800.0,57489.0,5645.0,1141562.0,10569.0,False,9754.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+44,3,Odisha,Kandhamal,359,59.3,high,2.8,,,25526.0,99210.0,,9684231.0,81848.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+46,6,Jharkhand,Chatra,323,58.9,high,-1.8,792.0,388.0,52302.0,188530.0,7102.0,15169408.0,133025.0,False,8636.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+45,11,Madhya Pradesh,Jhabua,412,58.9,high,-6.2,0.0,1182.0,78072.0,193490.0,21051.0,12776187.0,382084.0,False,43734.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+47,12,Madhya Pradesh,Chhatarpur,398,58.5,high,-4.9,0.0,7749.0,66427.0,359260.0,76612.0,16767319.0,339646.0,False,177816.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+49,7,Jharkhand,Lohardaga,336,58.0,high,4.2,0.0,0.0,20813.0,91978.0,4758.0,6864029.0,116830.0,False,6340.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+48,7,Assam,Biswanath,705,58.0,high,-0.9,44.0,37.0,13806.0,144625.0,1041.0,7911888.0,131078.0,False,862.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+50,2,Chhattisgarh,Bilaspur,375,57.7,high,6.5,0.0,0.0,42535.0,297535.0,1439.0,12276391.0,129668.0,False,3524.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+51,4,Tamil Nadu,Karur,576,57.6,high,-11.3,2064.0,534.0,18878.0,193362.0,5592.0,5180535.0,88789.0,True,15965.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+52,11,Jammu & Kashmir,Kathua,7,57.5,high,-5.1,0.0,1.0,14428.0,96714.0,10025.0,4083752.0,60114.0,False,17645.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+53,1,Maharashtra,Dhule,474,57.5,high,-2.2,3760.0,789.0,57488.0,375509.0,22775.0,19761207.0,253713.0,True,47110.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+54,13,Madhya Pradesh,Jabalpur,411,57.4,high,-9.3,0.0,5988.0,54701.0,386586.0,48476.0,2096997.0,120541.0,False,220858.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+55,14,Madhya Pradesh,Niwari,722,57.2,high,-4.7,0.0,192.0,13875.0,63807.0,15195.0,2450.0,111528.0,False,75953.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+57,8,Assam,Sivasagar,300,57.1,high,-0.7,4.0,2.0,14336.0,147662.0,163.0,6637797.0,106549.0,False,20.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+56,15,Madhya Pradesh,Sagar,425,57.1,high,-13.4,0.0,25500.0,82991.0,380244.0,106568.0,16099849.0,163740.0,False,280433.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+58,8,Jharkhand,Kodarma,334,57.0,high,-5.0,2550.0,931.0,24390.0,149999.0,6347.0,6956103.0,,False,10057.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+59,1,Tripura,South Tripura,271,56.8,high,-11.2,0.0,164.0,6580.0,94855.0,489.0,3795311.0,21527.0,False,667.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+60,4,Odisha,Koraput,363,56.8,high,-2.5,0.0,10.0,53989.0,222212.0,12011.0,10580763.0,217938.0,False,29919.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+61,1,Gujarat,Panch Mahals,454,56.6,high,-2.2,1633.0,58.0,80981.0,365329.0,7741.0,15538529.0,364324.0,False,18943.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+62,4,Rajasthan,Churu,96,56.5,high,-7.2,0.0,10308.0,52050.0,342289.0,74921.0,27235138.0,534211.0,False,94475.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+63,16,Madhya Pradesh,Damoh,400,56.5,high,-10.3,0.0,21704.0,39346.0,195211.0,57314.0,10519891.0,101956.0,False,134458.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+64,5,Tamil Nadu,Sivaganga,585,56.3,high,-13.3,191.0,80.0,19586.0,192724.0,322.0,4748693.0,119321.0,False,1125.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+65,3,Karnataka,Bangalore,525,56.1,high,-13.6,58.0,2.0,120291.0,1002423.0,70.0,6788237.0,107834.0,True,109.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+69,10,Assam,Dhemaji,284,56.0,high,-2.6,0.0,35.0,9838.0,130408.0,428.0,12543911.0,265841.0,False,18.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+68,9,Assam,Lakhimpur,295,56.0,high,-3.2,197.0,155.0,22548.0,207704.0,1358.0,13631078.0,256666.0,False,1043.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+66,9,Jharkhand,Purbi Singhbhum,327,56.0,high,4.6,0.0,0.0,75057.0,476892.0,3538.0,21365788.0,,False,432.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+67,5,Odisha,Sundargarh,373,56.0,high,1.0,,,43050.0,404382.0,,20470268.0,153597.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+70,2,Uttar Pradesh,Kasganj,633,55.9,high,-2.7,0.0,44.0,77240.0,293299.0,21072.0,4996795.0,274493.0,False,84163.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+74,5,Rajasthan,Jaipur,102,55.8,high,-3.0,21392.0,4455.0,124796.0,1137269.0,61672.0,39407161.0,761835.0,True,96887.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+72,11,Assam,Tinsukia,302,55.8,high,-1.1,35.0,27.0,29980.0,295424.0,820.0,10761541.0,171064.0,False,104.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+73,7,Tamil Nadu,Cuddalore,570,55.8,high,-12.6,0.0,3551.0,35028.0,426749.0,11092.0,12769894.0,135220.0,False,34469.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+71,6,Tamil Nadu,Madurai,578,55.8,high,-13.3,11541.0,149.0,35857.0,407549.0,4449.0,9431771.0,94304.0,False,12899.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+75,8,Tamil Nadu,Kallakurichchi,729,55.7,high,-14.1,0.0,3192.0,35476.0,222365.0,10058.0,7069943.0,158660.0,False,34670.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+76,9,Tamil Nadu,Tiruppattur,732,55.5,high,-13.0,1925.0,564.0,18208.0,164532.0,2356.0,5279324.0,67503.0,False,4822.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+77,10,Tamil Nadu,Mayiladuthurai,735,55.5,high,-13.9,0.0,1289.0,13755.0,161856.0,9813.0,3742323.0,8252.0,False,34026.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+78,12,Assam,Kokrajhar,294,55.3,high,-3.9,166.0,79.0,16856.0,163596.0,664.0,11426565.0,178997.0,False,409.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+80,12,Jammu & Kashmir,Doda,4,55.2,high,-0.5,25.0,0.0,6854.0,78361.0,1326.0,4482790.0,71513.0,False,564.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+79,10,Jharkhand,Pashchimi Singhbhum,343,55.2,high,6.7,0.0,0.0,99997.0,351915.0,4397.0,27300585.0,,False,121.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+81,6,Rajasthan,Jhunjhunun,106,55.1,high,-7.1,19443.0,5603.0,35119.0,375601.0,30334.0,17922400.0,530636.0,True,72710.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+82,6,Odisha,Balangir,345,55.0,high,2.8,0.0,0.0,43468.0,271218.0,14493.0,22357597.0,124841.0,False,5058.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+86,1,Mizoram,Mamit,266,54.9,medium,-5.4,12.0,8.0,2108.0,8599.0,44.0,0.0,,False,23.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+87,2,Gujarat,Sabar Kantha,458,54.9,medium,-5.8,14605.0,393.0,64902.0,301369.0,18098.0,0.0,,False,71948.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+83,11,Tamil Nadu,Nagapattinam,579,54.9,medium,-12.3,503.0,286.0,18312.0,282782.0,5825.0,0.0,37771.0,False,17732.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+85,13,Tamil Nadu,Chengalpattu,730,54.9,medium,-12.0,115.0,90.0,26268.0,284821.0,285.0,0.0,53231.0,False,1425.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+84,12,Tamil Nadu,Ranipet,731,54.9,medium,-13.7,467.0,161.0,16392.0,190475.0,656.0,0.0,52222.0,False,2794.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+88,14,Tamil Nadu,Viluppuram,596,54.8,medium,-12.1,3824.0,2808.0,28614.0,353756.0,7740.0,0.0,169883.0,False,28054.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+89,13,Assam,Sonitpur,301,54.7,medium,-0.1,14.0,5.0,23874.0,231532.0,2118.0,0.0,155578.0,False,802.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+90,15,Tamil Nadu,Virudhunagar,597,54.7,medium,-12.9,27586.0,339.0,30308.0,308845.0,11241.0,0.0,43376.0,False,25055.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+91,11,Jharkhand,Saraikela-kharsawan,341,54.6,medium,3.7,0.0,0.0,36551.0,241157.0,4105.0,0.0,,False,257.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+92,3,Uttar Pradesh,Prayagraj,120,54.5,medium,-0.9,5471.0,356.0,211268.0,873095.0,57467.0,0.0,535528.0,False,235931.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+93,1,Kerala,Kollam,559,54.4,medium,-13.1,6.0,3.0,26458.0,267354.0,18.0,0.0,61427.0,False,4.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+94,16,Tamil Nadu,Ariyalur,610,54.4,medium,-13.7,0.0,666.0,18306.0,131639.0,2402.0,0.0,98498.0,False,5312.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+95,14,Assam,Bajali,739,54.4,medium,-2.5,180.0,,6855.0,40809.0,702.0,0.0,27328.0,False,1376.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+99,17,Madhya Pradesh,Seoni,428,54.3,medium,-0.3,0.0,213.0,37057.0,265197.0,60470.0,0.0,173466.0,False,170162.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+96,3,Gujarat,Bhavnagar,443,54.3,medium,-4.0,3932.0,1423.0,54468.0,378155.0,9341.0,0.0,231122.0,False,24388.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+97,1,Andhra Pradesh,Kurnool,511,54.3,medium,-0.5,0.0,328.0,149868.0,667345.0,15056.0,0.0,279788.0,False,15794.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+98,2,Kerala,Thrissur,566,54.3,medium,-13.1,5221.0,0.0,32990.0,390522.0,3125.0,0.0,45262.0,False,7360.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+100,3,Kerala,Pathanamthitta,564,54.1,medium,-13.6,0.0,0.0,11229.0,122825.0,1.0,0.0,44835.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+101,12,Jharkhand,Pakur,337,53.9,medium,3.6,0.0,0.0,54152.0,231665.0,5373.0,0.0,113303.0,False,2514.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+103,7,Rajasthan,Sikar,114,53.5,medium,-5.5,0.0,3134.0,48408.0,373602.0,33613.0,0.0,515206.0,False,61932.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+102,18,Madhya Pradesh,Singrauli,638,53.5,medium,5.4,0.0,0.0,47505.0,204320.0,21705.0,0.0,178893.0,False,66515.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+104,4,Kerala,Ernakulam,555,53.4,medium,-13.1,2.0,2.0,28105.0,293218.0,8.0,0.0,54630.0,False,8.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+105,4,Uttar Pradesh,Amethi,640,53.2,medium,-11.4,0.0,1692.0,66759.0,271393.0,28614.0,0.0,174286.0,False,124213.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+106,19,Madhya Pradesh,Tikamgarh,434,53.1,medium,-1.5,0.0,169.0,40270.0,163984.0,41929.0,0.0,244261.0,False,117967.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+107,15,Assam,West Karbi Anglong,710,53.1,medium,-1.4,0.0,18.0,8228.0,52344.0,716.0,0.0,103703.0,False,592.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+108,17,Tamil Nadu,Vellore,595,53.0,medium,-14.0,1134.0,336.0,19894.0,221048.0,1021.0,0.0,58101.0,False,2530.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+110,8,Rajasthan,Sawai Madhopur,113,52.9,medium,-1.1,0.0,371.0,52349.0,243630.0,17897.0,0.0,331658.0,False,55455.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+111,13,Jharkhand,Dumka,326,52.9,medium,1.5,0.0,0.0,42624.0,313112.0,5725.0,0.0,231225.0,False,3066.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+112,20,Madhya Pradesh,Ujjain,435,52.9,medium,-17.8,0.0,4691.0,48546.0,347617.0,87502.0,0.0,210262.0,False,217573.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+109,2,Andhra Pradesh,Sri Sathya sai,754,52.9,medium,-0.3,73.0,4.0,58561.0,268023.0,2157.0,0.0,153032.0,False,5356.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+113,13,Jammu & Kashmir,Jammu,5,52.8,medium,-5.9,0.0,10.0,19882.0,298080.0,16519.0,0.0,52160.0,False,54455.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+114,7,Odisha,Baudh,349,52.8,medium,2.8,0.0,0.0,11106.0,66050.0,3903.0,0.0,64222.0,False,7410.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+115,1,Delhi,North East,81,52.7,medium,4.1,,,36713.0,220920.0,,,,,,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+116,5,Kerala,Thiruvananthapuram,565,52.7,medium,-12.3,15.0,10.0,22189.0,307013.0,26.0,0.0,42009.0,False,9.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+117,16,Assam,Udalguri,617,52.6,medium,2.4,0.0,0.0,14052.0,214467.0,684.0,0.0,148176.0,False,450.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+118,17,Assam,Dima Hasao,299,52.5,medium,-0.8,7.0,6.0,2056.0,39626.0,299.0,0.0,52092.0,False,27.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+119,18,Tamil Nadu,Thoothukkudi,594,52.5,medium,-12.7,27735.0,4806.0,21476.0,267781.0,27774.0,0.0,21237.0,False,25205.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+120,21,Madhya Pradesh,Mandsaur,416,52.3,medium,-9.9,0.0,4200.0,27735.0,243982.0,49450.0,0.0,243123.0,False,122412.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+121,3,Chhattisgarh,Sukma,642,52.3,medium,-1.2,0.0,4.0,9415.0,67293.0,169.0,0.0,111011.0,False,4.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+122,9,Rajasthan,Bhilwara,92,52.2,medium,-0.5,0.0,596.0,61834.0,385110.0,53633.0,0.0,549429.0,False,105737.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+126,10,Rajasthan,Rajsamand,112,52.2,medium,1.8,0.0,0.0,33159.0,214451.0,10886.0,0.0,227740.0,False,24636.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+123,18,Assam,Dhubri,285,52.2,medium,-3.9,818.0,384.0,51628.0,287594.0,3367.0,0.0,163008.0,False,3964.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+125,19,Tamil Nadu,Tirunelveli,592,52.2,medium,-12.3,805.0,525.0,22240.0,234662.0,1797.0,0.0,51067.0,False,7483.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+124,4,Chhattisgarh,Gaurela-Pendra-Marwahi,734,52.2,medium,6.5,0.0,0.0,7004.0,68825.0,375.0,0.0,53640.0,False,174.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+128,11,Rajasthan,Barmer,90,52.1,medium,4.8,0.0,0.0,112167.0,408065.0,2220.0,0.0,771946.0,False,3672.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+127,19,Assam,Majuli,706,52.1,medium,-0.7,0.0,28.0,3218.0,34701.0,1530.0,0.0,60295.0,False,67.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+129,1,Bihar,Munger,207,52.0,medium,7.5,0.0,0.0,51659.0,322613.0,3208.0,0.0,,False,13249.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+131,14,Jharkhand,Giridih,329,52.0,medium,3.8,0.0,0.0,114426.0,504027.0,5620.0,0.0,425793.0,False,7909.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+130,22,Madhya Pradesh,Ratlam,423,52.0,medium,0.0,0.0,18.0,43542.0,277931.0,49154.0,0.0,177437.0,False,119912.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+132,5,Chhattisgarh,Korba,383,51.9,medium,3.9,0.0,0.0,23611.0,254164.0,66.0,0.0,126721.0,False,14.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+133,23,Madhya Pradesh,Morena,417,51.9,medium,-0.3,0.0,17.0,85784.0,426008.0,17351.0,0.0,368879.0,False,45754.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+134,20,Tamil Nadu,Kanniyakumari,575,51.8,medium,-12.3,27.0,16.0,26968.0,237865.0,76.0,0.0,15996.0,False,143.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+135,20,Assam,South Salmara Mancachar,707,51.8,medium,-0.8,24.0,8.0,18153.0,78533.0,453.0,0.0,46362.0,False,588.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+136,8,Odisha,Kendujhar,361,51.7,medium,6.7,0.0,0.0,58054.0,345043.0,9886.0,0.0,204439.0,False,5131.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+137,15,Jharkhand,Khunti,606,51.7,medium,7.1,0.0,0.0,19859.0,120191.0,4088.0,0.0,189968.0,False,2056.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+138,4,Gujarat,Devbhumi Dwarka,674,51.7,medium,2.9,0.0,0.0,23032.0,116369.0,13604.0,0.0,,False,30399.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+139,16,Jharkhand,Jamtara,333,51.6,medium,4.3,0.0,0.0,28881.0,197161.0,4469.0,0.0,119341.0,False,2549.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+140,9,Odisha,Mayurbhanj,365,51.6,medium,6.7,,,57569.0,503465.0,,0.0,247568.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+141,2,Bihar,Kaimur (bhabua),200,51.5,medium,8.6,0.0,0.0,79384.0,377703.0,23046.0,0.0,,False,112083.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+142,6,Chhattisgarh,Raigarh,386,51.5,medium,4.9,0.0,0.0,35375.0,295197.0,930.0,0.0,239667.0,False,626.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+143,21,Tamil Nadu,KAnchipuram,574,51.5,medium,-12.0,41.0,35.0,20325.0,184248.0,153.0,0.0,32508.0,False,765.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+145,10,Odisha,Sonepur,372,51.4,medium,2.8,,,13327.0,99292.0,,0.0,72681.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+146,24,Madhya Pradesh,Bhind,395,51.4,medium,-0.5,0.0,46.0,58640.0,382147.0,18831.0,0.0,278458.0,False,68507.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+144,22,Tamil Nadu,Thanjavur,586,51.4,medium,-12.4,0.0,2193.0,29390.0,396588.0,6723.0,0.0,69863.0,False,32050.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+149,5,Uttar Pradesh,Chitrakoot,136,51.3,medium,2.4,0.0,0.0,46703.0,146045.0,25544.0,0.0,177167.0,False,72226.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+147,1,West Bengal,Puruliya,321,51.3,medium,8.1,0.0,0.0,78221.0,643514.0,2916.0,0.0,,False,8032.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+148,17,Jharkhand,Bokaro,322,51.3,medium,4.3,0.0,0.0,58842.0,453187.0,3620.0,0.0,142058.0,False,2178.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+151,14,Jammu & Kashmir,Srinagar,13,51.1,medium,-8.8,10.0,10.0,7465.0,186928.0,42.0,0.0,,,162.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+150,18,Jharkhand,Ranchi,339,51.1,medium,6.6,0.0,0.0,88867.0,554113.0,8567.0,0.0,335664.0,False,5864.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+152,19,Jharkhand,Deoghar,324,50.8,medium,6.3,0.0,0.0,81340.0,336055.0,5205.0,0.0,126701.0,False,5093.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+153,6,Uttar Pradesh,Hamirpur,149,50.7,medium,-0.6,0.0,685.0,38032.0,160875.0,50900.0,0.0,115065.0,False,154609.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+155,20,Jharkhand,Hazaribagh,332,50.7,medium,4.4,0.0,0.0,60763.0,314117.0,7453.0,0.0,280974.0,False,10158.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+154,25,Madhya Pradesh,East Nimar,405,50.7,medium,-6.4,0.0,6247.0,44780.0,272447.0,49559.0,0.0,151813.0,False,139633.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+158,7,Uttar Pradesh,Balrampur,127,50.6,medium,-0.9,0.0,251.0,112480.0,364627.0,28340.0,0.0,323047.0,False,121038.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+157,11,Odisha,Nabarangapur,366,50.6,medium,3.5,,,38369.0,234100.0,,0.0,177289.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+159,26,Madhya Pradesh,Gwalior,407,50.6,medium,-0.8,0.0,93.0,59075.0,403768.0,29271.0,0.0,149450.0,False,107365.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+156,4,Karnataka,Gadag,537,50.6,medium,-0.9,0.0,532.0,30264.0,157777.0,36987.0,0.0,48455.0,False,44644.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+161,12,Odisha,Nuapada,368,50.5,medium,2.8,0.0,0.0,13400.0,108108.0,8107.0,0.0,92100.0,False,7507.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+160,1,Telangana,Nagarkurnool,694,50.5,medium,-0.5,0.0,38.0,24969.0,119935.0,11955.0,0.0,147471.0,False,54406.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+164,7,Chhattisgarh,Surguja,389,50.4,medium,4.9,0.0,0.0,26495.0,156419.0,1678.0,0.0,195482.0,False,848.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+162,2,Maharashtra,Bhandara,471,50.4,medium,1.9,0.0,0.0,27093.0,234315.0,11318.0,0.0,112337.0,False,49340.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+163,6,Kerala,Idukki,556,50.4,medium,-10.4,26.0,26.0,18556.0,100003.0,15.0,0.0,109368.0,False,18.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+166,21,Jharkhand,Garhwa,328,50.3,medium,6.9,0.0,0.0,66059.0,267740.0,8846.0,0.0,116503.0,False,28961.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+165,5,Gujarat,Junagadh,448,50.3,medium,-3.9,0.0,5270.0,28292.0,285910.0,35841.0,0.0,,False,107702.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+169,8,Chhattisgarh,Koriya,384,50.2,medium,2.9,0.0,0.0,16819.0,134678.0,441.0,0.0,134918.0,False,127.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+167,1,"Dadra,Nagar Haveli,Daman & Diu",Dadra & Nagar Haveli,465,50.2,medium,0.3,0.0,,28015.0,145870.0,1282.0,0.0,,False,321.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+168,23,Tamil Nadu,Dharmapuri,571,50.2,medium,-18.6,4380.0,1708.0,15500.0,178966.0,3306.0,0.0,207995.0,False,6993.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+170,2,Mizoram,Kolasib,263,50.1,medium,-5.4,62.0,43.0,1991.0,8930.0,178.0,0.0,,False,44.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+171,3,Bihar,Gaya,196,50.0,medium,9.6,0.0,0.0,289916.0,932798.0,15468.0,0.0,,False,69468.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+172,24,Tamil Nadu,Tiruchirappalli,591,49.9,medium,-14.4,6161.0,554.0,39301.0,473886.0,4533.0,0.0,163588.0,False,12242.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+173,9,Chhattisgarh,Rajnandgaon,388,49.8,medium,4.8,0.0,0.0,42527.0,284679.0,11666.0,0.0,281303.0,False,15108.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+174,25,Tamil Nadu,Tiruvannamalai,593,49.8,medium,-12.1,0.0,2786.0,40058.0,389875.0,8778.0,0.0,288207.0,False,37034.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+176,21,Assam,Bongaigaon,281,49.7,medium,-1.8,78.0,63.0,21560.0,157176.0,1308.0,0.0,81658.0,False,1618.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+175,10,Chhattisgarh,Bastar,374,49.7,medium,3.5,0.0,0.0,37486.0,199403.0,165.0,0.0,128518.0,False,53.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+177,22,Assam,Golaghat,288,49.6,medium,0.2,0.0,0.0,21459.0,251964.0,750.0,0.0,222451.0,False,10.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+178,6,Gujarat,Jamnagar,447,49.5,medium,-1.9,5056.0,2782.0,24723.0,222269.0,23390.0,0.0,,False,94438.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+181,8,Uttar Pradesh,Mirzapur,170,49.4,medium,6.7,0.0,0.0,106689.0,332201.0,28426.0,0.0,183493.0,False,109041.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+179,22,Jharkhand,Dhanbad,325,49.4,medium,4.1,0.0,0.0,66381.0,552776.0,1887.0,0.0,105960.0,False,2544.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+180,23,Jharkhand,Sahibganj,340,49.4,medium,7.0,0.0,0.0,77102.0,265567.0,6860.0,0.0,,False,3348.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+182,26,Tamil Nadu,The Nilgiris,587,49.4,medium,-12.6,2.0,0.0,10471.0,90836.0,1.0,0.0,16767.0,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+183,11,Chhattisgarh,Jashpur,380,49.3,medium,2.4,0.0,0.0,24960.0,166388.0,627.0,0.0,269703.0,False,139.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+184,23,Assam,Charaideo,708,49.3,medium,5.1,0.0,0.0,11338.0,96658.0,79.0,0.0,51893.0,False,5.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+187,12,Rajasthan,Tonk,116,49.2,medium,2.7,0.0,0.0,42882.0,238084.0,17830.0,0.0,301240.0,False,52118.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+186,24,Jharkhand,Godda,330,49.2,medium,5.7,0.0,0.0,76718.0,279089.0,6714.0,0.0,161553.0,False,7369.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+188,13,Odisha,Baleshwar,346,49.2,medium,8.5,,,44953.0,396874.0,,0.0,293088.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+185,3,Andhra Pradesh,Anakapalli,744,49.2,medium,-2.6,262.0,161.0,38029.0,318773.0,2558.0,0.0,98697.0,False,5767.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+189,1,Uttarakhand,Champawat,48,49.1,medium,-8.8,883.0,57.0,4852.0,26089.0,1161.0,0.0,68246.0,False,821.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+190,14,Odisha,Anugul,344,49.0,medium,2.8,0.0,0.0,24893.0,267211.0,8957.0,0.0,93249.0,False,4416.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+191,3,Maharashtra,Ratnagiri,492,48.8,medium,-0.6,26.0,26.0,16224.0,209707.0,1196.0,0.0,340841.0,False,833.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+193,27,Madhya Pradesh,Alirajpur,639,48.8,medium,-1.2,0.0,161.0,49730.0,141586.0,11429.0,0.0,302992.0,False,17538.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+192,24,Assam,Hojai,709,48.8,medium,0.2,0.0,0.0,33190.0,159813.0,287.0,0.0,130465.0,False,44.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+196,9,Uttar Pradesh,Fatehpur,142,48.7,medium,4.5,0.0,0.0,123421.0,524147.0,46601.0,0.0,357194.0,False,181976.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+195,1,Haryana,Nuh,604,48.7,medium,3.2,0.0,0.0,93412.0,211892.0,13641.0,0.0,121005.0,False,46965.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+194,27,Tamil Nadu,Tenkasi,733,48.7,medium,-13.6,10619.0,1418.0,22732.0,226919.0,10023.0,0.0,61715.0,False,31016.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+197,28,Tamil Nadu,Thiruvarur,590,48.6,medium,-11.3,0.0,1263.0,20280.0,205627.0,12863.0,0.0,2213.0,False,53246.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+198,7,Gujarat,Chota Udaipur,668,48.6,medium,1.4,0.0,0.0,56160.0,269518.0,4522.0,0.0,,False,10553.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+200,4,Bihar,Saran,218,48.5,medium,9.6,0.0,0.0,137739.0,819848.0,17565.0,0.0,,False,49700.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+199,2,Telangana,Narayanpet,721,48.5,medium,0.8,0.0,0.0,18823.0,82432.0,9538.0,0.0,81798.0,False,25639.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+202,25,Assam,Nagaon,297,48.4,medium,2.3,0.0,0.0,53662.0,352796.0,2392.0,0.0,253242.0,False,3289.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+201,4,Maharashtra,Gondiya,476,48.4,medium,2.9,0.0,0.0,27233.0,238232.0,3943.0,0.0,210106.0,False,9473.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+205,5,Bihar,Madhubani,206,48.3,medium,10.0,0.0,0.0,244635.0,910192.0,19016.0,0.0,,False,57239.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+204,15,Odisha,Gajapati,353,48.3,medium,4.6,,,16066.0,105699.0,,0.0,64189.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+206,29,Madhya Pradesh,Sehore,427,48.3,medium,-2.4,0.0,1690.0,31990.0,190699.0,77277.0,0.0,122398.0,False,234343.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+203,28,Madhya Pradesh,Shivpuri,432,48.3,medium,-1.7,0.0,1242.0,74339.0,280228.0,63643.0,0.0,447130.0,False,232456.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+207,1,Puducherry,Puducherry,600,48.3,medium,-1.2,196.0,5.0,10671.0,209141.0,1279.0,0.0,9687.0,False,5396.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+208,15,Jammu & Kashmir,Udhampur,14,48.2,medium,0.1,0.0,0.0,12397.0,91827.0,6860.0,0.0,118370.0,False,3327.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+209,13,Rajasthan,Pali,111,48.2,medium,3.1,0.0,0.0,83463.0,380096.0,30760.0,0.0,210566.0,False,40481.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+210,5,Karnataka,Uttara Kannada,550,48.2,medium,-3.9,327.0,49.0,23376.0,188114.0,1150.0,0.0,,False,2935.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+211,10,Uttar Pradesh,Rampur,176,48.1,medium,3.3,0.0,0.0,75519.0,408936.0,30925.0,0.0,251927.0,False,143784.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+212,29,Tamil Nadu,Namakkal,580,48.1,medium,-11.9,5338.0,331.0,15186.0,248393.0,9022.0,0.0,163490.0,False,22168.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+215,30,Madhya Pradesh,Rajgarh,422,48.0,medium,-5.7,0.0,3462.0,40642.0,259535.0,75753.0,0.0,217071.0,False,190481.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+214,6,Karnataka,Koppal,543,48.0,medium,8.6,0.0,0.0,45879.0,223552.0,25400.0,0.0,123665.0,False,51346.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+213,12,Chhattisgarh,Baloda Bazar,644,48.0,medium,1.5,0.0,0.0,32482.0,253359.0,1375.0,0.0,187654.0,False,3813.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+216,14,Rajasthan,Bikaner,93,47.9,medium,-5.0,16345.0,4127.0,63610.0,441782.0,47900.0,0.0,495780.0,False,120109.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+217,6,Bihar,Bhagalpur,192,47.9,medium,9.1,0.0,0.0,177037.0,729644.0,12391.0,0.0,,False,39279.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+218,5,Maharashtra,Nanded,485,47.8,medium,3.8,0.0,0.0,88109.0,576227.0,67368.0,0.0,208182.0,False,117253.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+219,15,Rajasthan,Ajmer,86,47.7,medium,2.1,0.0,0.0,60591.0,431864.0,52394.0,0.0,275829.0,False,74242.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+220,11,Uttar Pradesh,Muzaffarnagar,172,47.7,medium,3.3,0.0,0.0,79247.0,411367.0,15760.0,0.0,270793.0,False,76490.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+221,4,Andhra Pradesh,Palnadu,751,47.7,medium,-2.4,2639.0,499.0,32511.0,356930.0,7473.0,0.0,111748.0,False,14857.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+223,16,Rajasthan,Bharatpur,91,47.6,medium,3.8,0.0,0.0,120971.0,491569.0,20003.0,0.0,552589.0,False,59209.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+222,12,Uttar Pradesh,Sonbhadra,184,47.6,medium,6.2,0.0,0.0,95352.0,261924.0,22772.0,0.0,144454.0,False,73678.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+225,17,Rajasthan,Alwar,87,47.5,medium,2.7,0.0,0.0,115075.0,620119.0,30970.0,0.0,1024205.0,False,90417.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+227,13,Uttar Pradesh,Banda,128,47.5,medium,1.6,0.0,0.0,89049.0,296829.0,65388.0,0.0,268387.0,False,213850.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+224,7,Bihar,Sheohar,220,47.5,medium,10.0,0.0,0.0,34980.0,133542.0,3261.0,0.0,,False,9342.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+226,31,Madhya Pradesh,Raisen,421,47.5,medium,-3.8,0.0,6962.0,44896.0,243233.0,83122.0,0.0,99224.0,False,345163.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+229,26,Assam,Darrang,283,47.4,medium,2.4,0.0,0.0,20728.0,190248.0,2478.0,0.0,134179.0,False,2705.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+228,16,Odisha,Deogarh,351,47.4,medium,2.8,,,7489.0,62265.0,,0.0,40785.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+230,14,Uttar Pradesh,Bareilly,130,47.3,medium,4.9,0.0,0.0,147149.0,854691.0,44063.0,0.0,435790.0,False,195330.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+231,7,Karnataka,Raichur,546,47.3,medium,2.6,0.0,0.0,90718.0,341887.0,22537.0,0.0,243662.0,False,56140.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+232,17,Odisha,Sambalpur,371,47.2,medium,2.8,,,16406.0,191940.0,,0.0,71704.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+233,6,Maharashtra,Chandrapur,473,47.2,medium,7.7,0.0,0.0,52698.0,366014.0,23354.0,0.0,234004.0,False,67258.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+236,7,Maharashtra,Mumbai,482,47.1,medium,5.2,,,43492.0,423700.0,,,,,,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+235,13,Chhattisgarh,Mungeli,647,47.1,medium,6.5,0.0,0.0,20144.0,121486.0,15512.0,0.0,110925.0,False,31335.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+234,5,Andhra Pradesh,Nandyal,755,47.1,medium,-0.3,0.0,205.0,67729.0,301588.0,28820.0,0.0,76078.0,False,77901.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+245,18,Rajasthan,Jaisalmer,103,47.0,medium,5.8,0.0,0.0,27449.0,94364.0,32927.0,0.0,104853.0,False,73428.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+237,8,Bihar,Jehanabad,199,47.0,medium,9.5,0.0,0.0,64829.0,253158.0,7550.0,0.0,,False,32607.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+239,9,Bihar,Nawada,210,47.0,medium,10.0,0.0,0.0,137483.0,516096.0,11400.0,0.0,,False,50719.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+241,14,Chhattisgarh,Mahasamund,385,47.0,medium,1.5,0.0,0.0,31779.0,206687.0,329.0,0.0,121601.0,False,567.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+238,32,Madhya Pradesh,Betul,394,47.0,medium,-1.8,0.0,1037.0,44870.0,284219.0,65190.0,0.0,213989.0,False,152186.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+242,33,Madhya Pradesh,Guna,406,47.0,medium,-0.6,0.0,309.0,44194.0,198481.0,44578.0,0.0,230946.0,False,110821.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+240,8,Gujarat,Dohad,445,47.0,medium,1.2,0.0,0.0,139492.0,509108.0,27301.0,0.0,,False,64511.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+243,1,Lakshadweep,Lakshadweep,553,47.0,medium,3.7,,,1182.0,4730.0,,0.0,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+244,30,Tamil Nadu,Krishnagiri,577,47.0,medium,-13.6,3968.0,2048.0,37715.0,229197.0,4644.0,0.0,252996.0,False,9687.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+246,9,Gujarat,Morbi,673,47.0,medium,3.8,0.0,0.0,27874.0,156823.0,14315.0,0.0,,False,55786.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+248,34,Madhya Pradesh,Dewas,402,46.9,medium,-3.2,0.0,3967.0,51130.0,257486.0,75184.0,0.0,197171.0,False,183448.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+247,1,Arunachal Pradesh,Kamle,718,46.9,medium,-3.2,0.0,4.0,749.0,2575.0,27.0,0.0,,False,25.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+249,2,Tripura,Dhalai,269,46.8,medium,5.0,0.0,0.0,7580.0,78091.0,513.0,0.0,38411.0,False,529.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+251,2,West Bengal,Purba Medinipur,317,46.8,medium,8.6,0.0,0.0,52119.0,1025125.0,3264.0,0.0,,False,8634.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+250,8,Maharashtra,Washim,499,46.8,medium,7.6,0.0,0.0,32235.0,202006.0,24323.0,0.0,121881.0,False,35962.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+252,19,Rajasthan,Dhaulpur,98,46.7,medium,0.7,0.0,0.0,74198.0,262196.0,9382.0,0.0,271846.0,False,28905.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+254,3,West Bengal,South Twenty Four Pargana,304,46.7,medium,8.4,0.0,0.0,164309.0,1431057.0,5750.0,0.0,,False,15161.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+253,9,Maharashtra,Nandurbar,486,46.7,medium,6.8,0.0,0.0,72890.0,316594.0,12224.0,0.0,239866.0,False,25480.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+257,15,Uttar Pradesh,Moradabad,171,46.6,medium,4.8,0.0,0.0,102359.0,443619.0,24476.0,0.0,241235.0,False,112747.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+255,10,Maharashtra,Gadchiroli,475,46.6,medium,0.2,0.0,0.0,27735.0,212504.0,5505.0,0.0,251248.0,False,8679.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+256,10,Bihar,Arwal,611,46.6,medium,9.2,0.0,0.0,36245.0,154888.0,2531.0,0.0,,False,11306.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+258,15,Chhattisgarh,Surajpur,648,46.6,medium,2.9,0.0,0.0,20037.0,150757.0,1520.0,0.0,177193.0,False,764.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+264,27,Assam,Goalpara,287,46.5,medium,2.7,0.0,0.0,33971.0,200164.0,1333.0,0.0,132968.0,False,1583.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+261,4,West Bengal,Medinipur West,318,46.5,medium,8.5,0.0,0.0,90075.0,1129066.0,1103.0,0.0,,False,2962.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+259,18,Odisha,Jharsuguda,357,46.5,medium,2.8,0.0,0.0,9030.0,108734.0,2525.0,0.0,27623.0,False,1530.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+260,35,Madhya Pradesh,Narsimhapur,418,46.5,medium,-3.0,0.0,4314.0,23026.0,164390.0,51556.0,0.0,105923.0,False,189106.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+262,3,Telangana,Warangal Rural,522,46.5,medium,-4.3,0.0,4.0,27309.0,283112.0,16311.0,0.0,,False,80827.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+263,2,Haryana,Palwal,619,46.5,medium,3.3,0.0,0.0,36767.0,191455.0,19376.0,0.0,103637.0,False,60724.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+265,6,Andhra Pradesh,Alluri Sitharama Raju,745,46.5,medium,-2.7,514.0,265.0,18056.0,151348.0,2941.0,0.0,42678.0,False,2957.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+266,11,Maharashtra,Amravati,468,46.4,medium,5.8,0.0,0.0,65238.0,460996.0,31265.0,0.0,163177.0,False,44318.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+267,4,Telangana,Nalgonda,514,46.4,medium,-2.2,0.0,29.0,37058.0,298041.0,35448.0,0.0,164609.0,False,118575.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+268,2,Arunachal Pradesh,Namsai,678,46.4,medium,-1.1,0.0,9.0,2660.0,15835.0,259.0,0.0,,False,127.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+269,5,West Bengal,Paschim Bardhaman,704,46.4,medium,7.9,0.0,0.0,16661.0,212971.0,769.0,0.0,22289.0,False,1775.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+272,11,Bihar,Patna,212,46.2,medium,9.8,0.0,0.0,291416.0,1294175.0,23553.0,0.0,,False,87687.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+271,32,Tamil Nadu,Theni,588,46.2,medium,-10.4,4544.0,342.0,18279.0,143448.0,3726.0,0.0,41119.0,False,11809.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+270,31,Tamil Nadu,Thiruvallur,589,46.2,medium,-12.3,1100.0,934.0,20858.0,372831.0,2529.0,0.0,58769.0,False,12491.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+273,8,Karnataka,Bidar,529,46.1,medium,2.4,0.0,0.0,45320.0,279435.0,25559.0,0.0,52660.0,False,13930.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+275,12,Bihar,Bhojpur,193,46.0,medium,6.4,0.0,0.0,97592.0,663374.0,24779.0,0.0,,False,118160.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+274,36,Madhya Pradesh,Burhanpur,397,46.0,medium,6.1,0.0,0.0,28322.0,139403.0,7425.0,0.0,80063.0,False,28335.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+276,20,Rajasthan,Sirohi,115,45.9,medium,2.3,0.0,0.0,50019.0,210606.0,7894.0,0.0,125555.0,False,28180.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+278,13,Bihar,Araria,188,45.9,medium,9.4,0.0,0.0,185852.0,630653.0,23626.0,0.0,,False,102785.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+277,33,Tamil Nadu,Coimbatore,569,45.9,medium,-13.1,2788.0,336.0,55180.0,472752.0,3663.0,0.0,86611.0,False,13433.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+279,16,Uttar Pradesh,Lalitpur,161,45.8,medium,-3.6,0.0,4870.0,40264.0,147081.0,58221.0,0.0,201948.0,False,160661.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+280,10,Gujarat,Rajkot,457,45.8,medium,-1.6,6904.0,2080.0,63760.0,586514.0,32930.0,0.0,,False,144217.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+281,17,Uttar Pradesh,Sambhal,659,45.8,medium,3.2,0.0,0.0,126669.0,356618.0,28121.0,0.0,337292.0,False,107646.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+284,18,Uttar Pradesh,Gautam Buddha Nagar,144,45.7,medium,6.0,0.0,0.0,66672.0,309371.0,9233.0,0.0,86740.0,False,40142.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+282,6,West Bengal,Bankura,305,45.7,medium,8.1,0.0,0.0,67971.0,792994.0,2098.0,0.0,215527.0,False,5080.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+283,5,Telangana,Wanaparthy,693,45.7,medium,0.3,0.0,0.0,14939.0,81780.0,8969.0,0.0,51995.0,False,38791.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+285,7,Andhra Pradesh,Sri Potti Sriramulu Nell*,515,45.6,medium,-2.7,13981.0,486.0,48184.0,495838.0,29125.0,0.0,170256.0,False,116618.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+287,21,Rajasthan,Karauli,108,45.5,medium,1.5,0.0,0.0,77028.0,284518.0,14382.0,0.0,391577.0,False,37235.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+293,19,Uttar Pradesh,Bhadohi,179,45.5,medium,3.9,0.0,0.0,50944.0,218447.0,10404.0,0.0,109748.0,False,42349.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+292,12,Gujarat,Amreli,439,45.5,medium,-0.2,481.0,276.0,37209.0,241087.0,22918.0,0.0,,False,95099.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+289,11,Gujarat,The Dangs,444,45.5,medium,4.5,0.0,0.0,12895.0,56168.0,3300.0,0.0,,False,2709.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+291,12,Maharashtra,Hingoli,477,45.5,medium,6.2,0.0,0.0,40289.0,180698.0,35145.0,0.0,182573.0,False,58394.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+286,8,Andhra Pradesh,Krishna,510,45.5,medium,-10.0,26783.0,17758.0,55830.0,767266.0,29715.0,0.0,91086.0,False,87896.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+290,34,Tamil Nadu,Salem,584,45.5,medium,-13.9,19148.0,1186.0,38433.0,450538.0,10930.0,0.0,272521.0,False,31172.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+288,2,Puducherry,Yanam,601,45.5,medium,-1.4,,,1463.0,10928.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+295,1,Himachal Pradesh,Bilaspur,15,45.4,medium,3.5,0.0,0.0,6126.0,58108.0,5094.0,0.0,127024.0,False,3138.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+299,2,Himachal Pradesh,Kullu,20,45.4,medium,3.5,0.0,0.0,4872.0,66355.0,2316.0,0.0,217563.0,False,485.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+296,20,Uttar Pradesh,Etah,138,45.4,medium,3.2,0.0,0.0,82799.0,310661.0,29508.0,0.0,292471.0,False,116157.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+298,21,Uttar Pradesh,Saharanpur,177,45.4,medium,3.4,0.0,0.0,104200.0,453506.0,23773.0,0.0,268708.0,False,112992.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+297,37,Madhya Pradesh,Shajapur,430,45.4,medium,-15.6,0.0,7083.0,16912.0,138413.0,48601.0,0.0,121982.0,False,121065.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+294,3,Tripura,Sipahijala,653,45.4,medium,0.7,0.0,0.0,10999.0,92386.0,317.0,0.0,35112.0,False,295.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+301,19,Odisha,Jajapur,356,45.3,medium,2.8,,,26182.0,320550.0,,0.0,97398.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+300,4,Tripura,Unokoti,655,45.3,medium,5.0,0.0,0.0,5378.0,49047.0,239.0,0.0,11734.0,False,237.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+305,1,Punjab,Moga,38,45.2,medium,-0.1,0.0,0.0,15453.0,158997.0,35640.0,0.0,,False,170110.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+306,22,Uttar Pradesh,Jhansi,153,45.2,medium,-0.2,0.0,529.0,45741.0,260845.0,76390.0,0.0,160024.0,False,225655.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+303,14,Bihar,Jamui,198,45.2,medium,9.3,0.0,0.0,98604.0,437323.0,5473.0,0.0,,False,13353.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+304,15,Bihar,Lakhisarai,204,45.2,medium,4.8,0.0,0.0,41673.0,240051.0,9426.0,0.0,,False,33599.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+302,13,Gujarat,Patan,455,45.2,medium,2.6,0.0,0.0,45700.0,256144.0,17282.0,0.0,167471.0,False,55899.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+310,15,Gujarat,Narmada,452,45.1,medium,2.6,0.0,0.0,26290.0,142790.0,1070.0,0.0,,False,1771.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+308,14,Gujarat,Porbandar,456,45.1,medium,6.3,0.0,0.0,11367.0,88701.0,14904.0,0.0,80221.0,False,42745.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+312,16,Gujarat,Surendranagar,460,45.1,medium,5.5,0.0,0.0,56023.0,275355.0,17233.0,0.0,193622.0,False,66071.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+311,16,Chhattisgarh,Gariaband,645,45.1,medium,3.2,0.0,0.0,17878.0,122638.0,637.0,0.0,85214.0,False,1267.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+309,23,Uttar Pradesh,Shamli,660,45.1,medium,2.9,0.0,0.0,44604.0,173109.0,10438.0,0.0,137118.0,False,49546.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+307,6,Telangana,Jogulamba Gadwal,695,45.1,medium,0.7,0.0,0.0,20820.0,101372.0,7475.0,0.0,,False,32296.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+317,2,Uttarakhand,Uttarkashi,57,45.0,medium,5.5,0.0,0.0,9913.0,62148.0,2128.0,0.0,136559.0,False,2303.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+316,25,Uttar Pradesh,Pratapgarh,174,45.0,medium,3.0,0.0,0.0,87196.0,495911.0,33914.0,0.0,340590.0,False,145357.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+313,24,Uttar Pradesh,Shahjahanpur,180,45.0,medium,2.2,0.0,0.0,132247.0,572915.0,53086.0,0.0,415903.0,False,234745.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+318,26,Uttar Pradesh,Shrawasti,181,45.0,medium,-1.0,0.0,150.0,73647.0,156777.0,24747.0,0.0,176758.0,False,104965.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+314,16,Bihar,Supaul,223,45.0,medium,7.7,0.0,0.0,125240.0,446977.0,13097.0,0.0,,False,49645.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+319,17,Gujarat,Navsari,453,45.0,medium,-1.1,28.0,19.0,27847.0,291713.0,500.0,0.0,,False,1842.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+315,9,Karnataka,Ballari,528,45.0,medium,1.0,0.0,0.0,97551.0,469691.0,6625.0,0.0,333010.0,False,24712.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+320,22,Rajasthan,Banswara,88,44.9,low,2.1,0.0,0.0,104091.0,300784.0,0.0,0.0,607623.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+321,27,Uttar Pradesh,Faizabad,140,44.8,low,-2.6,7917.0,218.0,67065.0,408394.0,0.0,0.0,297833.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+323,23,Rajasthan,Dausa,97,44.7,low,2.2,0.0,0.0,47911.0,312666.0,0.0,0.0,441768.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+322,28,Uttar Pradesh,Ghaziabad,145,44.7,low,5.4,0.0,0.0,75583.0,583210.0,0.0,0.0,80184.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+324,28,Assam,Chirang,612,44.7,low,4.1,0.0,0.0,10266.0,98017.0,0.0,0.0,90886.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+328,3,Himachal Pradesh,Mandi,22,44.6,low,4.7,0.0,0.0,15612.0,140332.0,0.0,0.0,427026.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+325,3,Uttarakhand,Tehri Garhwal,55,44.6,low,5.2,0.0,0.0,17894.0,80797.0,0.0,0.0,211959.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+327,29,Uttar Pradesh,Amroha,154,44.6,low,4.3,0.0,0.0,59898.0,276811.0,0.0,0.0,262352.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+326,17,Bihar,Begusarai,191,44.6,low,10.0,0.0,0.0,146721.0,617245.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+330,30,Uttar Pradesh,Baghpat,124,44.5,low,3.0,0.0,0.0,34460.0,219479.0,0.0,0.0,151349.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+329,18,Bihar,Katihar,201,44.5,low,8.3,0.0,0.0,201224.0,693924.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+332,18,Gujarat,Banas Kantha,441,44.5,low,2.4,0.0,0.0,147058.0,596707.0,0.0,0.0,582960.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+331,13,Maharashtra,Yavatmal,500,44.5,low,7.5,0.0,0.0,83371.0,484388.0,0.0,0.0,273274.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+333,31,Uttar Pradesh,Agra,118,44.4,low,3.2,0.0,0.0,161564.0,829462.0,0.0,0.0,341725.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+335,32,Uttar Pradesh,Bijnor,132,44.4,low,3.3,0.0,0.0,107883.0,535343.0,0.0,0.0,281134.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+334,19,Gujarat,Tapi,641,44.4,low,5.0,0.0,0.0,22468.0,199073.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+336,19,Bihar,Buxar,194,44.3,low,8.8,0.0,0.0,71823.0,373163.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+337,33,Uttar Pradesh,Kannauj,155,44.2,low,-0.5,0.0,12.0,71991.0,341331.0,0.0,0.0,265946.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+340,34,Uttar Pradesh,Pilibhit,173,44.2,low,2.7,0.0,0.0,64735.0,333750.0,0.0,0.0,253437.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+339,3,Arunachal Pradesh,Kurung Kumey,233,44.2,low,2.8,0.0,0.0,1060.0,4758.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+341,20,Odisha,Nayagarh,367,44.2,low,2.8,,,10717.0,166528.0,,0.0,79042.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+338,38,Madhya Pradesh,Vidisha,437,44.2,low,-6.4,0.0,15161.0,39290.0,180308.0,0.0,0.0,87849.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+342,14,Maharashtra,Jalna,479,44.2,low,5.5,0.0,0.0,54180.0,340328.0,0.0,0.0,322802.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+343,3,Haryana,Mahendragarh,69,44.1,low,3.2,0.0,0.0,21277.0,181148.0,0.0,0.0,149167.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+345,20,Bihar,Nalanda,209,44.1,low,9.4,0.0,0.0,158937.0,674945.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+344,7,Telangana,Kumuram Bheem Asifabad,699,44.1,low,0.3,0.0,0.0,14730.0,82822.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+346,1,Meghalaya,West Jaintia Hills,275,44.0,low,-1.4,4.0,2.0,13282.0,45866.0,0.0,0.0,42410.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+347,29,Assam,Barpeta,280,44.0,low,4.3,0.0,0.0,56480.0,336208.0,0.0,0.0,218706.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+348,7,West Bengal,Birbhum,307,44.0,low,5.3,0.0,0.0,87399.0,778496.0,0.0,0.0,162955.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+351,5,Arunachal Pradesh,Changlang,229,43.9,low,-1.1,14.0,6.0,1239.0,25548.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+350,20,Gujarat,Surat,459,43.9,low,5.5,0.0,0.0,154096.0,1337310.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+349,4,Arunachal Pradesh,Kra Daadi,677,43.9,low,2.8,0.0,0.0,600.0,3178.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+353,36,Uttar Pradesh,Chandauli,135,43.8,low,2.3,0.0,0.0,62246.0,300527.0,0.0,0.0,147816.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+352,35,Uttar Pradesh,Meerut,169,43.8,low,2.9,0.0,0.0,76881.0,495155.0,0.0,0.0,237933.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+354,21,Odisha,Dhenkanal,352,43.8,low,2.8,0.0,0.0,18274.0,217974.0,0.0,0.0,69459.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+355,9,Andhra Pradesh,Visakhapatnam,520,43.8,low,-2.2,133.0,7.0,81057.0,679456.0,0.0,0.0,343198.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+357,24,Rajasthan,Dungarpur,99,43.7,low,3.7,0.0,0.0,63082.0,319817.0,0.0,0.0,249658.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+356,15,Maharashtra,Akola,467,43.7,low,2.8,0.0,0.0,52134.0,285902.0,0.0,0.0,68935.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+359,6,Arunachal Pradesh,Tirap,239,43.6,low,-1.1,3.0,2.0,349.0,5714.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+358,39,Madhya Pradesh,Agar Malwa,667,43.6,low,-2.8,0.0,346.0,13655.0,108569.0,0.0,0.0,108775.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+361,21,Bihar,Purba Champaran,213,43.5,low,10.0,0.0,0.0,270749.0,965257.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+362,7,Arunachal Pradesh,West Kameng,242,43.5,low,-0.1,2.0,1.0,1050.0,9455.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+360,30,Assam,Morigaon,296,43.5,low,5.6,0.0,0.0,38033.0,188036.0,0.0,0.0,180216.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+363,16,Maharashtra,Wardha,498,43.4,low,7.9,0.0,0.0,22326.0,233500.0,0.0,0.0,144002.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+366,37,Uttar Pradesh,Budaun,133,43.3,low,4.1,0.0,0.0,157007.0,546569.0,0.0,0.0,539685.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+367,22,Bihar,Aurangabad,189,43.3,low,9.0,0.0,0.0,108952.0,507660.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+365,40,Madhya Pradesh,Balaghat,392,43.3,low,0.8,0.0,0.0,47892.0,329956.0,0.0,0.0,291887.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+364,21,Gujarat,Bharuch,442,43.3,low,5.5,0.0,0.0,46815.0,354917.0,0.0,0.0,95753.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+368,22,Gujarat,Kheda,450,43.3,low,3.1,0.0,0.0,74633.0,501523.0,0.0,0.0,252870.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+370,23,Bihar,Kishanganj,203,43.2,low,9.1,0.0,0.0,108323.0,363532.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+371,24,Bihar,Saharsa,216,43.2,low,9.3,0.0,0.0,135861.0,410005.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+372,31,Assam,Nalbari,298,43.2,low,2.8,0.0,0.0,16288.0,156742.0,0.0,0.0,66483.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+369,41,Madhya Pradesh,Barwani,393,43.2,low,6.2,0.0,0.0,85756.0,259697.0,0.0,0.0,342539.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+375,38,Uttar Pradesh,Kaushambi,158,43.1,low,1.3,0.0,0.0,95171.0,274989.0,0.0,0.0,157260.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+374,25,Bihar,Madhepura,205,43.1,low,6.3,0.0,0.0,117718.0,434460.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+373,17,Maharashtra,Parbhani,489,43.1,low,8.1,0.0,0.0,46397.0,323001.0,0.0,0.0,167407.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+376,26,Bihar,Sitamarhi,221,43.0,low,9.2,0.0,0.0,206707.0,697809.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+377,27,Bihar,Vaishali,224,43.0,low,10.0,0.0,0.0,174242.0,733206.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+383,25,Rajasthan,Chittaurgarh,95,42.8,low,-1.6,0.0,1962.0,42224.0,220964.0,0.0,0.0,438427.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+381,28,Bihar,Banka,190,42.8,low,9.6,0.0,0.0,116660.0,442967.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+378,3,Mizoram,Lawngtlai,264,42.8,low,2.8,0.0,0.0,2457.0,16692.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+380,17,Chhattisgarh,Raipur,387,42.8,low,1.5,0.0,0.0,41583.0,405688.0,0.0,0.0,108509.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+382,39,Uttar Pradesh,Hapur,661,42.8,low,3.1,0.0,0.0,44417.0,214000.0,0.0,0.0,111424.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+379,10,Andhra Pradesh,Parvathipuram Manyam,743,42.8,low,-2.3,0.0,113.0,15363.0,166086.0,0.0,0.0,46668.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+384,29,Bihar,Khagaria,202,42.7,low,6.4,0.0,0.0,89947.0,327638.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+385,30,Bihar,Purnia,214,42.7,low,9.1,0.0,0.0,218438.0,711784.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+388,40,Uttar Pradesh,Farrukhabad,141,42.6,low,0.9,0.0,0.0,81334.0,338982.0,0.0,0.0,285155.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+391,42,Uttar Pradesh,Hathras,163,42.6,low,1.8,0.0,0.0,75876.0,287781.0,0.0,0.0,148845.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+389,41,Uttar Pradesh,Varanasi,187,42.6,low,1.5,0.0,0.0,100628.0,436887.0,0.0,0.0,230664.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+387,8,West Bengal,Howrah,313,42.6,low,8.4,0.0,0.0,39579.0,906850.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+390,22,Odisha,Kendrapara,360,42.6,low,2.8,,,22331.0,233960.0,,0.0,114878.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+386,2,Delhi,Shahdara,671,42.6,low,4.1,,,22967.0,167708.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+392,18,Chhattisgarh,Kabeerdham,382,42.4,low,5.2,0.0,0.0,23162.0,113923.0,0.0,0.0,146549.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+393,9,West Bengal,Purba Bardhaman,306,42.3,low,6.8,0.0,0.0,62347.0,1462903.0,0.0,0.0,131034.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+394,2,Punjab,Barnala,605,42.3,low,-1.2,0.0,2.0,7720.0,96484.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+395,31,Bihar,Darbhanga,195,42.2,low,10.0,0.0,0.0,214057.0,788767.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+396,11,Andhra Pradesh,Vizianagaram,521,42.2,low,-2.1,0.0,356.0,39094.0,422635.0,0.0,0.0,144409.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+398,1,Ladakh,Kargil,6,42.1,low,4.8,0.0,0.0,3223.0,37433.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+397,12,Andhra Pradesh,Anantpur,502,42.1,low,7.9,0.0,0.0,126838.0,580516.0,0.0,0.0,371189.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+400,35,Tamil Nadu,Erode,573,42.0,low,-12.9,3708.0,135.0,31546.0,346276.0,0.0,0.0,189791.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+399,13,Andhra Pradesh,Tirupati,752,42.0,low,-1.1,2886.0,4.0,43602.0,324885.0,0.0,0.0,237481.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+402,8,Arunachal Pradesh,Lohit,234,41.9,low,-1.1,0.0,6.0,753.0,7079.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+403,10,West Bengal,Hooghly,312,41.9,low,6.8,0.0,0.0,45794.0,1186530.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+401,14,Andhra Pradesh,East Godavari,505,41.9,low,-4.2,14711.0,76.0,61982.0,937980.0,0.0,0.0,152962.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+405,43,Uttar Pradesh,Bulandshahr,134,41.8,low,4.5,0.0,0.0,109286.0,575009.0,0.0,0.0,388961.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+406,32,Bihar,Rohtas,215,41.8,low,7.5,0.0,0.0,103918.0,634594.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+404,5,Tripura,Gomati,654,41.8,low,0.7,0.0,0.0,5688.0,72694.0,0.0,0.0,28834.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+407,44,Uttar Pradesh,Siddharthnagar,182,41.7,low,3.0,0.0,0.0,129939.0,414092.0,0.0,0.0,327303.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+410,1,Manipur,Ukhrul,260,41.6,low,3.4,0.0,0.0,2357.0,8127.0,0.0,0.0,40160.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+408,23,Odisha,Kalahandi,358,41.6,low,2.8,0.0,0.0,36119.0,280161.0,0.0,0.0,119641.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+409,10,Karnataka,Chikkaballapura,630,41.6,low,9.4,0.0,0.0,22934.0,167598.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+411,11,West Bengal,Jhargram,703,41.6,low,8.3,0.0,0.0,19986.0,250829.0,0.0,0.0,87125.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+412,2,Meghalaya,East Khasi Hills,274,41.5,low,-1.4,29.0,28.0,20397.0,120005.0,0.0,0.0,88996.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+415,4,Mizoram,Aizawl,261,41.4,low,2.8,0.0,0.0,6495.0,35654.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+416,33,Assam,Kamrup,291,41.4,low,2.8,0.0,0.0,34114.0,338053.0,0.0,0.0,210616.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+417,19,Chhattisgarh,Durg,378,41.4,low,7.4,0.0,0.0,33830.0,282804.0,0.0,0.0,46553.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+413,23,Gujarat,Gandhinagar,446,41.4,low,4.6,0.0,0.0,33689.0,305373.0,0.0,0.0,127753.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+414,32,Assam,Kamrup Metropolitan,618,41.4,low,2.8,0.0,0.0,14143.0,279568.0,0.0,0.0,27449.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+419,11,Karnataka,Kolar,542,41.3,low,9.2,0.0,0.0,21747.0,196593.0,0.0,0.0,204053.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+418,36,Tamil Nadu,Chennai,568,41.3,low,-12.6,26.0,,63527.0,989062.0,0.0,0.0,,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+420,18,Maharashtra,Palghar,665,41.3,low,5.5,0.0,0.0,76590.0,509018.0,0.0,0.0,237348.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+421,33,Bihar,Muzaffarpur,208,41.2,low,10.0,0.0,0.0,243375.0,934167.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+423,45,Uttar Pradesh,Sant Kabir Nagar,178,41.1,low,4.5,0.0,0.0,55837.0,235779.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+424,34,Bihar,Samastipur,217,41.1,low,9.9,0.0,0.0,197525.0,851719.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+425,10,Arunachal Pradesh,East Kameng,231,41.1,low,2.8,0.0,0.0,1922.0,5257.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+422,9,Arunachal Pradesh,Pakke Kessang,723,41.1,low,-0.4,0.0,1.0,298.0,1363.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+428,35,Bihar,Sheikhpura,219,41.0,low,6.1,0.0,0.0,38309.0,146099.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+427,20,Chhattisgarh,Janjgir - Champa,379,41.0,low,6.5,0.0,0.0,17134.0,341134.0,0.0,0.0,328645.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+430,24,Gujarat,Valsad,462,41.0,low,0.3,0.0,0.0,50346.0,411508.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+426,15,Andhra Pradesh,Bapatla,750,41.0,low,-1.2,0.0,1061.0,23105.0,253661.0,0.0,0.0,51569.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+429,16,Andhra Pradesh,Annamayya,753,41.0,low,0.0,5.0,1.0,24287.0,267444.0,0.0,0.0,139335.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+431,26,Rajasthan,Jodhpur,107,40.9,low,4.8,0.0,0.0,84101.0,507674.0,0.0,0.0,609797.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+432,19,Maharashtra,Jalgaon,478,40.9,low,4.1,0.0,0.0,102983.0,825111.0,0.0,0.0,370624.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+433,2,Manipur,Jiribam,713,40.9,low,3.0,0.0,,1330.0,4744.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+434,6,Tripura,North Tripura,270,40.8,low,5.0,0.0,0.0,10160.0,93131.0,0.0,0.0,20756.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+439,5,Himachal Pradesh,Hamirpur,17,40.7,low,3.0,0.0,,6325.0,64616.0,0.0,0.0,139313.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+438,4,Himachal Pradesh,Kangra,18,40.7,low,0.4,0.0,0.0,15392.0,274587.0,0.0,0.0,302078.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+436,46,Uttar Pradesh,Unnao,186,40.7,low,3.8,0.0,0.0,106570.0,480338.0,0.0,0.0,518284.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+437,11,Arunachal Pradesh,Papum Pare,237,40.7,low,-2.6,28.0,11.0,3716.0,20431.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+440,42,Madhya Pradesh,Dhar,403,40.7,low,5.9,0.0,0.0,92715.0,352249.0,0.0,0.0,398086.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+435,25,Gujarat,Gir Somnath,675,40.7,low,3.6,0.0,0.0,35369.0,192548.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+443,6,Himachal Pradesh,Kinnaur,19,40.6,low,4.7,0.0,0.0,700.0,12484.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+445,3,Delhi,North,80,40.6,low,4.5,,,44275.0,232915.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+444,47,Uttar Pradesh,Firozabad,143,40.6,low,5.1,0.0,0.0,95427.0,450777.0,0.0,0.0,219289.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+441,36,Bihar,Pashchim Champaran,211,40.6,low,10.0,0.0,0.0,186010.0,657766.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+442,37,Bihar,Siwan,222,40.6,low,9.8,0.0,0.0,92316.0,584213.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+446,7,Tripura,West Tripura,272,40.6,low,0.6,0.0,0.0,10131.0,194798.0,0.0,0.0,25090.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+447,21,Chhattisgarh,Uttar Bastar Kanker,381,40.6,low,4.8,0.0,0.0,19090.0,154990.0,0.0,0.0,204336.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+448,48,Uttar Pradesh,Ambedkar Nagar,121,40.5,low,-0.3,0.0,27.0,51840.0,399342.0,0.0,0.0,245206.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+449,49,Uttar Pradesh,Ghazipur,146,40.5,low,3.8,0.0,0.0,88898.0,522833.0,0.0,0.0,433552.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+450,24,Odisha,Khordha,362,40.5,low,2.8,,,18670.0,424678.0,,0.0,77312.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+451,37,Tamil Nadu,Tiruppur,634,40.4,low,-13.8,20722.0,824.0,24494.0,381945.0,0.0,0.0,144602.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+452,8,Tripura,Khowai,652,40.4,low,0.6,0.0,0.0,3414.0,50128.0,0.0,0.0,14540.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+453,1,Nagaland,Wokha,250,40.3,low,6.5,0.0,0.0,2708.0,15236.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+455,12,West Bengal,Darjiling,309,40.3,low,6.2,0.0,0.0,16808.0,278776.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+454,20,Maharashtra,Nashik,487,40.3,low,2.2,0.0,0.0,218977.0,1026858.0,0.0,0.0,1063527.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+456,7,Himachal Pradesh,Shimla,23,40.2,low,4.9,0.0,0.0,8715.0,108632.0,0.0,0.0,275745.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+457,8,Telangana,Mahabubnagar,512,40.2,low,2.5,0.0,0.0,33375.0,197970.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+458,2,Nagaland,Kiphire,614,40.2,low,6.2,0.0,0.0,2924.0,6935.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+459,25,Odisha,Cuttack,350,40.1,low,2.8,,,26532.0,468158.0,,0.0,137776.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+460,5,Mizoram,Champhai,262,40.0,low,2.8,0.0,0.0,1700.0,5603.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+461,17,Andhra Pradesh,NTR,749,40.0,low,-2.7,2499.0,160.0,25504.0,350504.0,0.0,0.0,26971.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+465,51,Uttar Pradesh,Jaunpur,152,39.9,low,4.9,0.0,0.0,109052.0,482878.0,0.0,0.0,642715.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+463,50,Uttar Pradesh,Kheri,159,39.9,low,1.3,0.0,0.0,182507.0,673672.0,0.0,0.0,635714.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+462,21,Maharashtra,Osmanabad,488,39.9,low,9.2,0.0,0.0,32082.0,243494.0,0.0,0.0,165651.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+464,3,Manipur,Kangpokpi,712,39.9,low,3.0,0.0,,3702.0,15400.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+467,8,Himachal Pradesh,Solan,25,39.8,low,2.5,0.0,0.0,11656.0,78989.0,0.0,0.0,154949.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+466,26,Gujarat,Mahisagar,669,39.8,low,1.7,0.0,0.0,37652.0,229817.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+470,52,Uttar Pradesh,Jalaun,151,39.7,low,-1.9,0.0,4366.0,52984.0,236052.0,0.0,0.0,187782.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+468,3,Punjab,Tarn Taran,609,39.7,low,3.0,0.0,0.0,14674.0,202807.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+469,27,Rajasthan,Pratapgarh,629,39.7,low,3.2,0.0,0.0,46738.0,146198.0,0.0,0.0,329722.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+471,22,Chhattisgarh,Balod,646,39.6,low,5.2,0.0,0.0,18571.0,147886.0,0.0,0.0,154191.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+473,53,Uttar Pradesh,Rae Bareli,175,39.5,low,5.8,0.0,0.0,112370.0,440758.0,0.0,0.0,258973.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+474,4,Punjab,Sahibzada Ajit Singh Nag*,608,39.5,low,-1.7,0.0,2.0,15765.0,167507.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+472,27,Gujarat,Aravalli,672,39.5,low,2.4,0.0,0.0,40353.0,252150.0,0.0,0.0,223026.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+478,9,Himachal Pradesh,Chamba,16,39.4,low,2.7,0.0,0.0,10902.0,65111.0,0.0,0.0,211726.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+477,4,Uttarakhand,Bageshwar,46,39.4,low,3.7,0.0,0.0,3093.0,22337.0,0.0,0.0,97455.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+475,13,West Bengal,Maldah,316,39.4,low,1.4,0.0,0.0,135199.0,834573.0,0.0,0.0,161589.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+476,12,Karnataka,Ramanagara,631,39.4,low,8.7,0.0,0.0,8931.0,144568.0,0.0,0.0,234368.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+482,4,Delhi,South,83,39.2,low,4.4,,,24877.0,196180.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+484,54,Uttar Pradesh,Mainpuri,166,39.2,low,2.6,0.0,0.0,64074.0,341298.0,0.0,0.0,324747.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+479,28,Gujarat,Botad,676,39.2,low,1.6,0.0,0.0,13232.0,122523.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+480,9,Telangana,Vikarabad,698,39.2,low,0.7,0.0,0.0,18427.0,140425.0,0.0,0.0,170159.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+483,6,Mizoram,Khawzawl,728,39.2,low,2.8,0.0,0.0,859.0,2910.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+481,18,Andhra Pradesh,Kakinada,746,39.2,low,-2.8,0.0,160.0,23222.0,351427.0,0.0,0.0,12761.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+485,4,Haryana,Karnal,67,39.1,low,5.2,0.0,0.0,38128.0,299058.0,0.0,0.0,130109.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+490,56,Uttar Pradesh,Mahrajganj,164,39.1,low,6.0,0.0,0.0,91474.0,399598.0,0.0,0.0,239638.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+486,55,Uttar Pradesh,Sultanpur,185,39.1,low,1.7,0.0,0.0,81961.0,386485.0,0.0,0.0,251858.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+488,4,Manipur,Imphal East,255,39.1,low,2.6,0.0,0.0,5047.0,43142.0,0.0,0.0,33649.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+491,5,Manipur,Senapati,257,39.1,low,3.4,0.0,0.0,7841.0,33527.0,0.0,0.0,142605.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+489,26,Odisha,Bargarh,347,39.1,low,2.8,,,36004.0,256614.0,,0.0,159368.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+487,1,Goa,South Goa,552,39.1,low,3.5,0.0,0.0,12744.0,86395.0,0.0,0.0,20482.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+492,10,Telangana,Khammam,509,39.0,low,-3.1,0.0,102.0,27320.0,311718.0,0.0,0.0,100999.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+494,38,Bihar,Gopalganj,197,38.9,low,10.0,0.0,0.0,96865.0,455339.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+497,29,Gujarat,Anand,440,38.9,low,0.8,0.0,0.0,66578.0,439881.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+498,22,Maharashtra,Buldana,472,38.9,low,7.4,0.0,0.0,62662.0,447232.0,0.0,0.0,330317.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+493,3,Puducherry,Karaikal,598,38.9,low,7.5,0.0,,5831.0,48196.0,0.0,0.0,948.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+496,23,Chhattisgarh,Bametara,650,38.9,low,6.3,0.0,0.0,17784.0,118810.0,0.0,0.0,79287.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+495,6,Manipur,Tengnoupal,716,38.9,low,3.1,0.0,,1269.0,4883.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+501,57,Uttar Pradesh,Aligarh,119,38.8,low,4.2,0.0,0.0,165317.0,655965.0,0.0,0.0,332238.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+500,7,Mizoram,Lunglei,265,38.8,low,2.8,0.0,0.0,1617.0,12743.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+502,14,West Bengal,North Twenty Four Pargan*,303,38.8,low,6.7,0.0,0.0,107393.0,1871215.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+499,23,Maharashtra,Raigarh,491,38.8,low,4.2,0.0,0.0,37829.0,427151.0,0.0,0.0,236094.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+503,15,West Bengal,Jalpaiguri,314,38.7,low,3.2,0.0,0.0,33199.0,500241.0,0.0,0.0,103310.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+507,13,Arunachal Pradesh,East Siang,232,38.6,low,-1.1,0.0,5.0,973.0,7526.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+505,12,Arunachal Pradesh,Upper Subansiri,241,38.6,low,2.8,0.0,0.0,1692.0,8457.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+504,13,Karnataka,Davanagere,535,38.6,low,7.6,0.0,0.0,31722.0,249365.0,0.0,0.0,200707.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+506,11,Telangana,Kamareddy,685,38.6,low,0.9,0.0,0.0,19771.0,143507.0,0.0,0.0,127320.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+508,34,Assam,Karbi Anglong,292,38.5,low,0.2,0.0,0.0,5932.0,119267.0,0.0,0.0,157460.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+509,30,Gujarat,Mahesana,451,38.5,low,0.7,0.0,0.0,58351.0,450691.0,0.0,0.0,233438.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+510,58,Uttar Pradesh,Mathura,167,38.4,low,6.4,0.0,0.0,91392.0,507115.0,0.0,0.0,217919.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+511,59,Uttar Pradesh,Bahraich,125,38.3,low,1.0,0.0,0.0,228035.0,537859.0,0.0,0.0,448331.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+512,14,Karnataka,Chitradurga,533,38.3,low,7.1,0.0,0.0,35554.0,217209.0,0.0,0.0,271130.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+514,5,Punjab,Amritsar,27,38.2,low,4.9,0.0,0.0,42646.0,380860.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+517,43,Madhya Pradesh,Neemuch,419,38.2,low,0.9,0.0,0.0,18694.0,133389.0,0.0,0.0,164204.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+515,15,Karnataka,Vijayapura,530,38.2,low,7.3,0.0,0.0,81096.0,335962.0,0.0,0.0,247765.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+516,7,Kerala,Malappuram,562,38.2,low,2.8,0.0,0.0,99631.0,402181.0,0.0,0.0,62350.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+513,1,Andaman & Nicobar,North  & Middle Andaman,632,38.2,low,2.8,0.0,0.0,1226.0,18168.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+522,2,Ladakh,Leh,9,38.1,low,5.6,0.0,0.0,1989.0,36122.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+518,10,Himachal Pradesh,Lahul & Spiti,21,38.1,low,2.7,0.0,,471.0,7438.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+519,16,Karnataka,Haveri,540,38.1,low,8.5,0.0,0.0,28923.0,238192.0,0.0,0.0,159232.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+520,5,Delhi,South East,670,38.1,low,4.8,,,27397.0,201658.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+521,7,Manipur,Kamjong,717,38.1,low,3.4,0.0,,910.0,3053.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+524,17,Karnataka,Dharwad,536,38.0,low,3.2,0.0,0.0,33712.0,282415.0,0.0,0.0,120809.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+523,16,West Bengal,Kalimpong,702,38.0,low,4.3,0.0,0.0,1681.0,38799.0,0.0,0.0,27469.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+525,27,Odisha,Jagatsinghapur,355,37.9,low,2.8,,,9962.0,188160.0,,0.0,109419.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+527,5,Uttarakhand,Hardwar,50,37.8,low,1.3,0.0,0.0,50183.0,255985.0,0.0,0.0,107425.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+528,12,Telangana,Medak,513,37.8,low,0.3,0.0,0.0,32173.0,224252.0,0.0,0.0,137759.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+526,18,Karnataka,Chamarajanagara,531,37.8,low,8.7,0.0,0.0,16131.0,138706.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+529,6,Punjab,Ludhiana,36,37.7,low,3.7,0.0,0.0,56957.0,660293.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+530,19,Andhra Pradesh,West Godavari,523,37.7,low,-2.7,12466.0,27.0,70777.0,708812.0,0.0,0.0,124923.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+531,6,Delhi,New Delhi,79,37.6,low,4.5,,,18295.0,156689.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+532,24,Maharashtra,Bid,470,37.6,low,9.0,0.0,0.0,47920.0,392638.0,0.0,0.0,417196.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+534,38,Tamil Nadu,Dindigul,572,37.5,low,4.3,0.0,0.0,30941.0,257132.0,0.0,0.0,176236.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+533,8,Mizoram,Hnahthial,726,37.5,low,2.8,0.0,0.0,676.0,2989.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+538,61,Uttar Pradesh,Hardoi,150,37.4,low,4.7,0.0,0.0,192069.0,772157.0,0.0,0.0,691423.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+536,60,Uttar Pradesh,Kanpur Nagar,157,37.4,low,1.1,0.0,0.0,122952.0,825214.0,0.0,0.0,210974.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+537,3,Nagaland,Mon,247,37.4,low,5.1,0.0,0.0,8160.0,22778.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+535,8,Kerala,Wayanad,567,37.4,low,8.4,0.0,0.0,18116.0,61964.0,0.0,0.0,57052.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+540,31,Gujarat,Kachchh,449,37.3,low,1.4,0.0,0.0,61555.0,383435.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+541,32,Gujarat,Vadodara,461,37.3,low,3.0,0.0,0.0,95585.0,712877.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+539,17,West Bengal,Alipurduar,664,37.3,low,8.5,0.0,0.0,22560.0,301342.0,0.0,0.0,80017.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+542,5,Haryana,Gurugram,62,37.2,low,5.4,0.0,0.0,30290.0,328142.0,0.0,0.0,63048.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+544,11,Himachal Pradesh,Una,26,37.1,low,2.4,0.0,0.0,7095.0,90363.0,0.0,0.0,77208.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+543,14,Arunachal Pradesh,Upper Siang,240,37.1,low,2.8,0.0,0.0,513.0,2660.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+545,6,Haryana,Faridabad,60,37.0,low,6.4,0.0,0.0,44884.0,314864.0,0.0,0.0,33540.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+546,4,Nagaland,Longleng,615,37.0,low,5.1,0.0,0.0,1198.0,5264.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+547,9,Mizoram,Saitual,727,37.0,low,2.8,0.0,0.0,967.0,3723.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+552,7,Uttarakhand,Dehradun,49,36.9,low,4.6,0.0,0.0,20459.0,251280.0,0.0,0.0,83105.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+550,6,Uttarakhand,Garhwal,52,36.9,low,5.6,0.0,0.0,8828.0,85675.0,0.0,0.0,174332.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+548,7,Delhi,West,85,36.9,low,4.5,,,58059.0,443550.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+549,13,Telangana,Sangareddy,691,36.9,low,0.3,0.0,0.0,16184.0,138286.0,0.0,0.0,113338.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+551,14,Telangana,Medchal Malkajgiri,700,36.9,low,0.2,0.0,0.0,5071.0,34203.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+553,8,Manipur,Churachandpur,254,36.8,low,3.2,0.0,0.0,4216.0,22291.0,0.0,0.0,54454.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+554,18,West Bengal,Dakshin Dinajpur,310,36.8,low,7.9,0.0,0.0,31557.0,393584.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+556,19,West Bengal,Uttar Dinajpur,311,36.7,low,2.9,0.0,0.0,92785.0,623403.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+555,2,Andaman & Nicobar,Nicobars,603,36.7,low,-5.5,0.0,,682.0,3909.0,0.0,0.0,,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+559,7,Punjab,Jalandhar,34,36.6,low,2.5,0.0,0.0,28511.0,366971.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+558,44,Madhya Pradesh,Chhindwara,399,36.6,low,2.9,0.0,0.0,48143.0,279905.0,0.0,0.0,295347.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+557,9,Manipur,Pherzawl,715,36.6,low,3.2,0.0,,974.0,3896.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+562,63,Uttar Pradesh,Ballia,126,36.5,low,3.0,0.0,0.0,88729.0,534430.0,0.0,0.0,230563.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+561,62,Uttar Pradesh,Basti,131,36.5,low,2.7,0.0,0.0,64108.0,310743.0,0.0,0.0,319181.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+560,15,Telangana,Karimnagar,508,36.5,low,-1.0,0.0,1.0,34836.0,288957.0,0.0,0.0,77027.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+565,7,Haryana,Panipat,71,36.4,low,3.7,0.0,0.0,38471.0,258923.0,0.0,0.0,86541.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+563,8,Delhi,East,78,36.4,low,4.3,,,23099.0,198174.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+564,3,Meghalaya,East Jaintia Hills,657,36.4,low,2.8,0.0,0.0,6788.0,16269.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+566,20,Andhra Pradesh,Eluru,748,36.4,low,-2.5,0.0,478.0,34000.0,340502.0,0.0,0.0,33110.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+568,8,Haryana,Rewari,72,36.3,low,3.4,0.0,0.0,19556.0,178608.0,0.0,0.0,97964.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+567,9,Delhi,Central,77,36.3,low,4.3,,,13516.0,155305.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+569,15,Arunachal Pradesh,Tawang,238,36.3,low,2.8,0.0,0.0,766.0,8881.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+570,9,Haryana,Jind,65,36.2,low,3.9,0.0,0.0,16877.0,254256.0,0.0,0.0,251856.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+572,12,Himachal Pradesh,Sirmaur,24,36.1,low,3.8,0.0,0.0,11325.0,76197.0,0.0,0.0,200747.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+571,25,Maharashtra,Latur,481,36.1,low,7.6,0.0,0.0,54758.0,372263.0,0.0,0.0,151359.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+574,8,Uttarakhand,Chamoli,47,36.0,low,5.4,0.0,0.0,6401.0,50607.0,0.0,0.0,141779.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+573,9,Kerala,Kannur,557,36.0,low,2.8,0.0,0.0,30217.0,282260.0,0.0,0.0,39573.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+575,10,Haryana,Panchkula,70,35.9,low,6.4,0.0,0.0,12536.0,102881.0,0.0,0.0,31112.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+577,8,Punjab,Mansa,37,35.8,low,1.4,0.0,0.0,9638.0,136459.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+578,11,Haryana,Kurukshetra,68,35.8,low,4.2,0.0,0.0,15328.0,176814.0,0.0,0.0,75514.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+576,10,Mizoram,Serchhip,268,35.8,low,2.8,0.0,0.0,1343.0,6531.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+580,5,Nagaland,Tuensang,249,35.7,low,5.9,0.0,0.0,5737.0,17047.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+581,16,Telangana,Adilabad,501,35.7,low,6.7,0.0,0.0,30359.0,228134.0,0.0,0.0,137768.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+579,2,Goa,North Goa,551,35.7,low,0.6,0.0,0.0,5672.0,73811.0,0.0,0.0,13574.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+588,65,Uttar Pradesh,Bara Banki,129,35.6,low,3.0,0.0,0.0,132944.0,568654.0,0.0,0.0,474635.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+584,64,Uttar Pradesh,Kushinagar,160,35.6,low,6.6,0.0,0.0,95315.0,476486.0,0.0,0.0,286716.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+586,6,Nagaland,Zunheboto,251,35.6,low,6.2,0.0,0.0,3539.0,13193.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+583,10,Manipur,Imphal West,256,35.6,low,2.9,0.0,0.0,5171.0,41628.0,0.0,0.0,42798.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+587,11,Manipur,Tamenglong,258,35.6,low,3.0,0.0,0.0,1549.0,6770.0,0.0,0.0,30226.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+589,22,Andhra Pradesh,Y.S.R.,504,35.6,low,0.5,0.0,0.0,41024.0,451740.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+585,17,Telangana,Nizamabad,516,35.6,low,1.9,0.0,0.0,47764.0,277205.0,0.0,0.0,133508.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+582,21,Andhra Pradesh,Konaseema,747,35.6,low,-2.4,0.0,4.0,19547.0,295802.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+591,12,Haryana,Kaithal,66,35.5,low,5.2,0.0,0.0,25296.0,213108.0,0.0,0.0,145727.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+595,17,Arunachal Pradesh,Lower Dibang Valley,235,35.5,low,-1.1,0.0,7.0,891.0,5638.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+593,27,Maharashtra,Nagpur,484,35.5,low,7.8,0.0,0.0,67064.0,746249.0,0.0,0.0,227748.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+596,28,Maharashtra,Sindhudurg,495,35.5,low,5.2,0.0,0.0,8956.0,104730.0,0.0,0.0,141908.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+590,26,Maharashtra,Thane,497,35.5,low,7.4,0.0,0.0,153500.0,1419664.0,0.0,0.0,148912.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+592,16,Arunachal Pradesh,Anjaw,628,35.5,low,2.8,0.0,0.0,340.0,2277.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+594,4,Meghalaya,South West Khasi Hills,658,35.5,low,6.6,0.0,0.0,6648.0,17571.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+597,28,Odisha,Ganjam,354,35.4,low,6.1,,,52355.0,553752.0,,0.0,249658.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+598,7,Nagaland,Peren,613,35.4,low,6.7,0.0,0.0,3008.0,8466.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+599,9,Punjab,Kapurthala,35,35.3,low,3.1,0.0,0.0,11836.0,130394.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+600,66,Uttar Pradesh,Gorakhpur,148,35.3,low,3.2,0.0,0.0,91820.0,742225.0,0.0,0.0,269267.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+601,10,Kerala,Kottayam,560,35.2,low,2.8,0.0,0.0,21065.0,215338.0,0.0,0.0,54037.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+602,13,Haryana,Bhiwani,59,35.1,low,4.7,0.0,0.0,35336.0,241317.0,0.0,0.0,149947.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+603,45,Madhya Pradesh,Datia,401,35.1,low,1.4,0.0,0.0,26002.0,151351.0,0.0,0.0,175379.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+604,67,Uttar Pradesh,Auraiya,122,35.0,low,5.5,0.0,0.0,50987.0,170459.0,0.0,0.0,190615.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+605,8,Nagaland,Phek,248,35.0,low,6.2,0.0,0.0,3483.0,14728.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+606,12,Manipur,Thoubal,259,34.9,low,3.2,0.0,0.0,6376.0,18969.0,0.0,0.0,46154.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+608,33,Gujarat,Ahmadabad,438,34.9,low,3.9,0.0,0.0,175531.0,1433082.0,0.0,0.0,158799.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+607,19,Karnataka,Shivamogga,547,34.9,low,7.6,0.0,0.0,29558.0,215532.0,0.0,0.0,220562.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+611,18,Arunachal Pradesh,West Siang,243,34.8,low,2.8,0.0,0.0,1053.0,4827.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+610,46,Madhya Pradesh,West Nimar,414,34.8,low,5.1,0.0,0.0,68415.0,301053.0,0.0,0.0,346978.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+612,21,Karnataka,Bagalkote,524,34.8,low,3.2,0.0,0.0,56365.0,266210.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+609,20,Karnataka,Vijayanagar,738,34.8,low,7.2,0.0,0.0,38589.0,185799.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+614,10,Punjab,Faridkot,29,34.7,low,1.5,0.0,0.0,9465.0,114544.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+613,20,West Bengal,Murshidabad,319,34.7,low,8.6,0.0,0.0,162234.0,1578450.0,0.0,0.0,309671.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+615,22,Karnataka,Bengaluru Rural,526,34.6,low,9.3,0.0,0.0,12715.0,128540.0,0.0,0.0,143671.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+618,9,Uttarakhand,"Almora
+",45,34.4,low,6.0,0.0,0.0,7121.0,64279.0,0.0,0.0,240292.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+616,5,Meghalaya,South Garo Hills,277,34.4,low,6.6,0.0,0.0,3969.0,24113.0,0.0,0.0,32604.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+617,23,Andhra Pradesh,Prakasam,517,34.4,low,1.5,0.0,0.0,44354.0,572851.0,0.0,0.0,252240.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+619,11,Punjab,Pathankot,662,34.4,low,2.4,0.0,0.0,8673.0,109221.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+620,9,Nagaland,Mokokchung,246,34.3,low,5.5,0.0,0.0,3268.0,14664.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+621,28,Rajasthan,Jhalawar,105,34.2,low,2.2,0.0,0.0,51955.0,230556.0,0.0,0.0,278659.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+622,14,Haryana,Jhajjar,64,34.1,low,2.8,0.0,0.0,20385.0,184898.0,0.0,0.0,126938.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+623,68,Uttar Pradesh,Kanpur Dehat,156,34.1,low,0.9,0.0,0.0,67407.0,311623.0,0.0,0.0,236739.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+624,10,Uttarakhand,Rudraprayag,54,34.0,low,1.1,0.0,0.0,3944.0,33196.0,0.0,0.0,97977.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+627,12,Punjab,Gurdaspur,32,33.9,low,4.3,0.0,0.0,20299.0,262742.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+628,20,Arunachal Pradesh,Upper Dibang Valley,230,33.9,low,2.8,0.0,0.0,157.0,1517.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+631,47,Madhya Pradesh,Sheopur,431,33.9,low,2.8,0.0,0.0,37837.0,143312.0,0.0,0.0,123038.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+629,19,Telangana,Ranga Reddy,518,33.9,low,7.4,0.0,0.0,91413.0,703319.0,0.0,0.0,187463.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+625,19,Arunachal Pradesh,Longding,666,33.9,low,5.1,0.0,0.0,555.0,5417.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+626,18,Telangana,Nirmal,680,33.9,low,0.5,0.0,0.0,15459.0,92353.0,0.0,0.0,99162.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+630,15,Haryana,Charki Dadri,701,33.9,low,4.0,0.0,0.0,8692.0,117054.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+633,69,Uttar Pradesh,Sitapur,183,33.8,low,5.7,0.0,0.0,262854.0,783603.0,0.0,0.0,662997.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+632,24,Chhattisgarh,Dhamtari,377,33.8,low,3.5,0.0,0.0,14778.0,151423.0,0.0,0.0,129846.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+634,29,Maharashtra,Ahmadnagar,466,33.7,low,4.0,0.0,0.0,95919.0,683689.0,0.0,0.0,1106818.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+635,11,Kerala,Kozhikode,561,33.7,low,2.8,0.0,0.0,40716.0,259176.0,0.0,0.0,28694.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+637,13,Punjab,Sri Muktsar Sahib,39,33.5,low,2.5,0.0,,16017.0,161473.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+636,30,Maharashtra,Solapur,496,33.5,low,7.6,0.0,0.0,118924.0,704024.0,0.0,0.0,673751.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+638,14,Punjab,Bathinda,28,33.4,low,1.1,0.0,0.0,20565.0,243300.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+639,16,Haryana,Rohtak,73,33.4,low,3.9,0.0,0.0,20744.0,222444.0,0.0,0.0,109330.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+640,20,Telangana,Mulugu,720,33.4,low,0.5,0.0,0.0,7273.0,53554.0,0.0,0.0,35377.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+642,70,Uttar Pradesh,Lucknow,162,33.3,low,3.7,0.0,0.0,117598.0,809352.0,0.0,0.0,200276.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+641,21,Telangana,Jangoan,689,33.3,low,0.8,0.0,0.0,8219.0,76505.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+643,31,Maharashtra,Aurangabad,469,33.2,low,3.6,0.0,0.0,95561.0,581215.0,0.0,0.0,497563.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+644,32,Maharashtra,Mumbai Suburban,483,33.2,low,5.2,,,185354.0,1399709.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+645,22,Telangana,Yadadri Bhuvanagiri,697,33.2,low,0.9,0.0,0.0,11135.0,99996.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+646,23,Karnataka,Hassan,539,33.1,low,8.6,0.0,0.0,17589.0,220007.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+649,15,Punjab,Firozpur,31,33.0,low,3.0,0.0,0.0,15524.0,171094.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+651,10,Delhi,North West,82,33.0,low,4.2,,,51212.0,393151.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+648,71,Uttar Pradesh,Deoria,137,33.0,low,7.2,0.0,0.0,85255.0,331220.0,0.0,0.0,262642.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+647,24,Karnataka,Belagavi,527,33.0,low,2.5,0.0,0.0,98882.0,742045.0,0.0,0.0,786461.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+650,12,Kerala,Kasaragod,558,33.0,low,2.8,0.0,0.0,26513.0,130420.0,0.0,0.0,25707.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+652,25,Karnataka,Tumakuru,548,32.9,low,8.6,0.0,0.0,29610.0,387609.0,0.0,0.0,527973.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+654,29,Rajasthan,Bundi,94,32.8,low,2.8,0.0,0.0,31191.0,197012.0,0.0,0.0,233630.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+655,1,Sikkim,East District,225,32.8,low,2.8,0.0,,2688.0,36264.0,0.0,0.0,34189.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+656,48,Madhya Pradesh,Ashoknagar,391,32.8,low,1.0,0.0,0.0,35422.0,125064.0,0.0,0.0,116849.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+653,26,Karnataka,Udupi,549,32.8,low,5.2,0.0,0.0,12403.0,163436.0,0.0,0.0,70074.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+657,72,Uttar Pradesh,Etawah,139,32.7,low,3.4,0.0,0.0,59408.0,286927.0,0.0,0.0,194456.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+659,16,Punjab,Patiala,41,32.6,low,2.7,0.0,0.0,23507.0,370468.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+658,49,Madhya Pradesh,Hoshangabad,409,32.6,low,5.9,0.0,0.0,30204.0,205542.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+660,17,Punjab,Fazilka,651,32.6,low,3.0,0.0,0.0,19218.0,212245.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+663,10,Nagaland,Dimapur,244,32.5,low,6.7,0.0,0.0,6475.0,38675.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+661,21,West Bengal,Nadia,320,32.5,low,6.8,0.0,0.0,86323.0,1086379.0,0.0,0.0,271472.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+662,6,Meghalaya,South West Garo Hills,663,32.5,low,3.6,0.0,0.0,4777.0,32692.0,0.0,0.0,35922.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+664,17,Haryana,Yamunanagar,76,32.4,low,5.7,0.0,0.0,23203.0,220606.0,0.0,0.0,71205.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+666,30,Rajasthan,Hanumangarh,101,32.3,low,1.9,0.0,0.0,32586.0,339503.0,0.0,0.0,323217.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+671,7,Meghalaya,East Garo Hills,273,32.3,low,6.6,0.0,0.0,3695.0,22319.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+670,50,Madhya Pradesh,Indore,410,32.3,low,5.3,0.0,0.0,60881.0,505962.0,0.0,0.0,130690.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+669,13,Kerala,Alappuzha,554,32.3,low,2.8,0.0,0.0,20244.0,191276.0,0.0,0.0,23307.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+668,25,Telangana,Jagitial,681,32.3,low,0.8,0.0,0.0,15575.0,123451.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+667,24,Telangana,Warangal Urban,686,32.3,low,0.3,0.0,0.0,4866.0,56060.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+665,23,Telangana,Mahabubabad,688,32.3,low,0.3,0.0,0.0,14303.0,125826.0,0.0,0.0,126539.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+673,18,Punjab,Fatehgarh Sahib,30,32.2,low,5.3,0.0,,5959.0,114574.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+674,11,Uttarakhand,Pithoragarh,53,32.2,low,2.9,0.0,0.0,5362.0,38042.0,0.0,0.0,158929.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+672,73,Uttar Pradesh,Mau,168,32.2,low,2.9,0.0,0.0,54053.0,308822.0,0.0,0.0,171270.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+676,26,Telangana,Mancherial,684,32.1,low,0.7,0.0,0.0,7836.0,73741.0,0.0,0.0,31770.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+675,13,Manipur,Kakching,711,32.1,low,3.2,0.0,,3045.0,9278.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+678,74,Uttar Pradesh,Gonda,147,32.0,low,2.9,0.0,0.0,121392.0,534987.0,0.0,0.0,520051.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+677,14,Manipur,Noney,714,32.0,low,3.1,0.0,,924.0,3477.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+680,11,Nagaland,Kohima,245,31.9,low,6.7,0.0,0.0,3472.0,12034.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+679,27,Telangana,Bhadradri Kothagudem,690,31.9,low,0.1,0.0,0.0,7753.0,143957.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+682,24,Andhra Pradesh,Guntur,506,31.7,low,2.0,0.0,0.0,74486.0,817759.0,0.0,0.0,298130.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+681,28,Telangana,Suryapet,696,31.7,low,0.2,0.0,0.0,12868.0,153217.0,0.0,0.0,92507.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+686,19,Punjab,Sangrur,43,31.6,low,2.3,0.0,0.0,19230.0,255530.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+685,15,Manipur,Chandel,253,31.6,low,3.1,0.0,0.0,1879.0,6981.0,0.0,0.0,30472.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+683,25,Andhra Pradesh,Chittoor,503,31.6,low,7.2,0.0,0.0,81734.0,609016.0,0.0,0.0,448097.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+684,21,Arunachal Pradesh,Siang,679,31.6,low,2.8,0.0,0.0,475.0,2299.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+687,18,Haryana,Ambala,58,31.5,low,4.0,0.0,0.0,22577.0,166976.0,0.0,0.0,59861.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+688,29,Telangana,Siddipet,692,31.5,low,0.9,0.0,0.0,11052.0,142053.0,0.0,0.0,144839.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+689,20,Punjab,Shahid Bhagat Singh Nagar,40,31.4,low,4.4,0.0,0.0,5261.0,89498.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+691,19,Haryana,Hisar,63,31.3,low,4.8,0.0,0.0,40409.0,357157.0,0.0,0.0,237666.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+690,75,Uttar Pradesh,Azamgarh,123,31.3,low,1.1,0.0,0.0,99041.0,791727.0,0.0,0.0,505715.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+693,33,Maharashtra,Satara,494,31.2,low,4.0,0.0,0.0,36092.0,445735.0,0.0,0.0,672768.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+692,21,Punjab,Malerkotla,737,31.2,low,2.7,0.0,,5062.0,67260.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+694,30,Telangana,Rajanna Sircilla,683,31.1,low,0.9,0.0,0.0,8789.0,69931.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+696,22,Punjab,Rupnagar,42,31.0,low,3.9,0.0,0.0,7667.0,129607.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+695,27,Karnataka,Chikkamagaluru,532,31.0,low,7.6,0.0,0.0,14016.0,136259.0,0.0,0.0,173495.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+697,8,Meghalaya,West Garo Hills,278,30.8,low,6.6,0.0,0.0,15010.0,78014.0,0.0,0.0,103650.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+700,20,Haryana,Fatehabad,61,30.7,low,4.3,0.0,0.0,18757.0,188388.0,0.0,0.0,127727.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+699,31,Rajasthan,Ganganagar,100,30.7,low,3.8,0.0,0.0,41514.0,368530.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+698,31,Telangana,Peddapalli,682,30.7,low,0.7,0.0,0.0,6228.0,91084.0,0.0,0.0,37138.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+701,28,Karnataka,Mandya,544,30.6,low,8.7,0.0,0.0,18589.0,249079.0,0.0,0.0,436752.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+702,22,Arunachal Pradesh,Shi Yomi,725,30.6,low,2.8,0.0,0.0,413.0,1171.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+703,16,Manipur,Bishnupur,252,30.5,low,3.2,0.0,0.0,2458.0,24161.0,0.0,0.0,35218.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+704,11,Delhi,South West,84,30.4,low,4.2,,,24281.0,244676.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+706,51,Madhya Pradesh,Harda,408,30.3,low,6.3,0.0,0.0,16921.0,114641.0,0.0,0.0,40720.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+705,9,Meghalaya,Eastern West Khasi Hills,740,30.3,low,2.8,0.0,,9422.0,21238.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+710,21,Haryana,Sonipat,75,30.0,low,4.9,0.0,0.0,26252.0,248087.0,0.0,0.0,157149.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+708,32,Rajasthan,Baran,89,30.0,low,0.3,0.0,0.0,45505.0,233435.0,0.0,0.0,207237.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+709,22,West Bengal,Cooch Behar,308,30.0,low,6.8,0.0,0.0,36790.0,603793.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+707,32,Telangana,Jayashankar,687,30.0,low,0.4,0.0,0.0,5253.0,70801.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+711,22,Haryana,Sirsa,74,29.9,low,5.7,0.0,0.0,23730.0,257355.0,0.0,0.0,116128.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+712,23,Arunachal Pradesh,Lepa Rada,724,29.8,low,2.8,0.0,0.0,411.0,1973.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+713,24,Arunachal Pradesh,Lower Subansiri,236,29.4,low,2.8,0.0,0.0,709.0,8237.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+714,34,Maharashtra,Kolhapur,480,29.3,low,7.1,0.0,0.0,71553.0,580971.0,0.0,0.0,758775.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+715,23,West Bengal,Kolkata,315,29.1,low,6.8,,,32932.0,749366.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+716,29,Karnataka,Dakshina Kannada,534,28.9,low,7.6,0.0,0.0,33966.0,237948.0,0.0,0.0,37873.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+717,23,Punjab,Hoshiarpur,33,28.8,low,4.1,0.0,0.0,14024.0,251933.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+718,10,Meghalaya,North Garo Hills,656,28.7,low,6.6,0.0,0.0,5024.0,30301.0,0.0,0.0,46103.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+719,11,Meghalaya,West Khasi Hills,279,28.6,low,2.8,0.0,0.0,19709.0,44424.0,0.0,0.0,77658.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+720,26,Andhra Pradesh,Srikakulam,519,28.6,low,6.1,0.0,0.0,31082.0,476627.0,0.0,0.0,59001.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+722,35,Maharashtra,Pune,490,28.4,low,6.0,0.0,0.0,106355.0,1464147.0,0.0,0.0,1016945.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+721,12,Nagaland,Noklak,736,28.4,low,5.8,0.0,0.0,1729.0,5139.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+723,12,Uttarakhand,Nainital,51,28.3,low,3.7,0.0,0.0,9964.0,101818.0,0.0,0.0,161405.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+725,52,Madhya Pradesh,Bhopal,396,28.2,low,0.8,0.0,0.0,56420.0,407224.0,0.0,0.0,54824.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+724,4,Puducherry,Mahe,599,28.2,low,3.7,,,649.0,5848.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+726,33,Rajasthan,Kota,109,28.0,low,3.2,0.0,0.0,39432.0,320079.0,0.0,0.0,94818.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+727,25,Arunachal Pradesh,Lower Siang,719,28.0,low,2.8,0.0,0.0,314.0,2400.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+728,30,Karnataka,Mysuru,545,27.8,low,8.3,0.0,0.0,27575.0,422769.0,0.0,0.0,392743.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+729,2,Sikkim,North  District,226,27.4,low,2.8,0.0,,704.0,5441.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+730,12,Meghalaya,Ribhoi,276,27.3,low,2.8,0.0,0.0,13601.0,48689.0,0.0,0.0,64712.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+731,13,Uttarakhand,Udham Singh Nagar,56,26.5,low,5.4,0.0,0.0,34932.0,256475.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+732,36,Maharashtra,Sangli,493,25.7,low,2.6,0.0,0.0,30292.0,401056.0,0.0,0.0,545605.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,lanina
+733,1,Chandigarh,Chandigarh,44,25.6,low,3.4,0.0,,16288.0,193266.0,0.0,0.0,,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+734,3,Andaman & Nicobar,South Andaman,602,22.7,low,2.5,0.0,0.0,2091.0,38070.0,0.0,0.0,,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina
+735,33,Telangana,Hyderabad,507,21.8,low,0.6,,,61562.0,596377.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,lanina

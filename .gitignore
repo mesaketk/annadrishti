@@ -1,0 +1,33 @@
+data/raw/
+set 1/
+set 2/
+INDIA_DISTRICTS.geojson
+*.pyc
+__pycache__/
+node_modules/
+web/dist/
+.env
+*.json.gz
+.DS_Store
+artifacts/timeseries/
+
+# GCP service-account keys — never ship
+aibuildercup-*.json
+gcp-sa*.json
+*.iam.json
+ee-chvi-*.json
+
+# pipeline caches / generated audio / LLM cache (not needed to run the app)
+artifacts/_climate_cache/
+artifacts/_gee_cache/
+artifacts/_audio_cache/
+artifacts/_advisory_cache.json
+artifacts/_ml_loyo_preds*.parquet
+artifacts/_district_month_rain.parquet
+artifacts/_ml_panel*.parquet
+artifacts/_imd_grid_lgd.parquet
+artifacts/_adjacency.json
+artifacts/_bq_jobstats.json
+artifacts/_v4_before.json
+artifacts/_risk_v*_baseline.json
+.claude/launch.json

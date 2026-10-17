@@ -1,0 +1,737 @@
+priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,mgnrega_persondays,pmfby_gap_farmers,fodder_flag,protective_irrigation_ha,groundwater_budget_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
+1,1,"Dadra,Nagar Haveli,Daman & Diu",Dadra & Nagar Haveli,465,82.0,high,-10.7,1240.0,,28015.0,145870.0,1282.0,4672131.0,,False,321.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+2,1,Jharkhand,Gumla,331,81.4,high,-9.3,2766.0,1187.0,54791.0,196919.0,6107.0,20152417.0,381582.0,False,2424.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+3,2,Jharkhand,Simdega,342,79.6,high,-10.1,0.0,2727.0,22259.0,136649.0,7429.0,12112414.0,181995.0,False,2010.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+4,3,Jharkhand,Giridih,329,78.8,high,-10.6,4997.0,1665.0,114426.0,504027.0,5620.0,30420872.0,425793.0,False,7909.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+5,1,Odisha,Kendujhar,361,77.5,high,-8.5,8256.0,41.0,58054.0,345043.0,9886.0,22786326.0,204439.0,False,5131.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+6,4,Jharkhand,Pashchimi Singhbhum,343,77.3,high,-8.5,1778.0,1412.0,99997.0,351915.0,4397.0,27300585.0,,False,121.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+7,5,Jharkhand,Purbi Singhbhum,327,77.1,high,-7.1,1271.0,718.0,75057.0,476892.0,3538.0,21365788.0,,False,432.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+8,1,Karnataka,Kalaburagi,538,76.7,high,-15.0,0.0,3142.0,95489.0,421772.0,17322.0,28185424.0,,False,14533.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+9,6,Jharkhand,Saraikela-kharsawan,341,75.8,high,-7.2,2387.0,1451.0,36551.0,241157.0,4105.0,15747638.0,,False,257.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+10,1,Madhya Pradesh,Dindori,404,75.6,high,-12.1,0.0,8892.0,24115.0,147462.0,25518.0,14355459.0,181706.0,False,7222.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+11,7,Jharkhand,Khunti,606,75.6,high,-17.6,5856.0,1928.0,19859.0,120191.0,4088.0,9857423.0,189968.0,False,2056.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+12,2,Odisha,Malkangiri,364,75.1,high,-7.6,,,23865.0,118420.0,,10135194.0,152833.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+13,8,Jharkhand,Ranchi,339,75.0,high,-19.7,12785.0,4593.0,88867.0,554113.0,8567.0,31963009.0,335664.0,False,5864.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+14,1,Assam,Hailakandi,289,74.7,high,-5.0,135.0,124.0,16860.0,123837.0,580.0,6999049.0,75853.0,False,8.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+15,9,Jharkhand,Jamtara,333,74.5,high,-9.8,2783.0,376.0,28881.0,197161.0,4469.0,12782642.0,119341.0,False,2549.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+17,3,Odisha,Sundargarh,373,74.2,high,-9.4,,,43050.0,404382.0,,20470268.0,153597.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+16,1,Gujarat,Dohad,445,74.2,high,-12.9,4648.0,6619.0,139492.0,509108.0,27301.0,22769980.0,,False,64511.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+19,11,Jharkhand,Deoghar,324,74.0,high,-4.7,2065.0,605.0,81340.0,336055.0,5205.0,18182798.0,126701.0,False,5093.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+18,10,Jharkhand,Hazaribagh,332,74.0,high,-11.1,5506.0,2137.0,60763.0,314117.0,7453.0,19853864.0,280974.0,False,10158.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+20,2,Assam,Cachar,282,73.9,high,-5.0,163.0,153.0,36430.0,304943.0,899.0,12128023.0,132297.0,False,204.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+21,2,Madhya Pradesh,Sidhi,433,73.8,high,-13.4,0.0,2056.0,49801.0,201525.0,26373.0,4545372.0,123346.0,False,104595.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+22,12,Jharkhand,Pakur,337,73.5,high,-4.9,1388.0,580.0,54152.0,231665.0,5373.0,12791646.0,113303.0,False,2514.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+23,13,Jharkhand,Dumka,326,73.3,high,-5.9,2563.0,849.0,42624.0,313112.0,5725.0,23283280.0,231225.0,False,3066.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+24,1,Maharashtra,Dhule,474,73.2,high,-9.8,16395.0,3440.0,57488.0,375509.0,22775.0,19761207.0,253713.0,True,47110.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+25,4,Odisha,Rayagada,370,73.1,high,-7.0,2670.0,49.0,48141.0,185093.0,5032.0,10504197.0,97353.0,False,7916.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+26,2,Gujarat,Panch Mahals,454,72.9,high,-12.2,9246.0,327.0,80981.0,365329.0,7741.0,15538529.0,364324.0,False,18943.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+27,5,Odisha,Nabarangapur,366,72.7,high,-8.5,,,38369.0,234100.0,,20054803.0,177289.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+29,7,Odisha,Kandhamal,359,72.6,high,-2.8,,,25526.0,99210.0,,9684231.0,81848.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+28,6,Odisha,Mayurbhanj,365,72.6,high,-7.1,,,57569.0,503465.0,,28020832.0,247568.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+30,14,Jharkhand,Lohardaga,336,72.5,high,-5.8,2429.0,473.0,20813.0,91978.0,4758.0,6864029.0,116830.0,False,6340.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+32,15,Jharkhand,Godda,330,71.9,high,-9.6,5112.0,1950.0,76718.0,279089.0,6714.0,20694605.0,161553.0,False,7369.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+31,3,Madhya Pradesh,Jhabua,412,71.9,high,-13.1,0.0,2509.0,78072.0,193490.0,21051.0,12776187.0,382084.0,False,43734.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+34,16,Jharkhand,Bokaro,322,71.8,high,-5.9,1466.0,733.0,58842.0,453187.0,3620.0,17138463.0,142058.0,False,2178.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+33,1,Chhattisgarh,Bastar,374,71.8,high,-8.5,0.0,22.0,37486.0,199403.0,165.0,14261785.0,128518.0,False,53.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+35,2,Maharashtra,Nanded,485,71.8,high,-23.5,76601.0,59123.0,88109.0,576227.0,67368.0,36462904.0,208182.0,False,117253.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+36,17,Jharkhand,Palamu,338,71.7,high,-5.4,2585.0,789.0,87941.0,381996.0,8126.0,22667659.0,130447.0,False,14132.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+37,2,Karnataka,Koppal,543,71.6,high,-13.1,0.0,4366.0,45879.0,223552.0,25400.0,12460301.0,123665.0,False,51346.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+38,3,Gujarat,The Dangs,444,71.5,high,-8.8,0.0,1173.0,12895.0,56168.0,3300.0,4155178.0,,False,2709.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+39,4,Gujarat,Chota Udaipur,668,71.5,high,-4.3,2249.0,89.0,56160.0,269518.0,4522.0,12533454.0,,True,10553.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+40,3,Karnataka,Yadgir,635,71.3,high,-9.1,0.0,33.0,48584.0,197470.0,3264.0,9908664.0,,True,7839.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+41,8,Odisha,Baleshwar,346,71.2,high,-8.4,,,44953.0,396874.0,,22949934.0,293088.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+42,1,Telangana,Narayanpet,721,71.2,high,-9.5,0.0,37.0,18823.0,82432.0,9538.0,4194132.0,81798.0,True,25639.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+43,4,Madhya Pradesh,Rewa,424,71.0,high,-16.7,0.0,8616.0,81868.0,468460.0,73645.0,15499764.0,300430.0,False,233933.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+44,5,Madhya Pradesh,Singrauli,638,71.0,high,-12.2,0.0,3145.0,47505.0,204320.0,21705.0,8468953.0,178893.0,False,66515.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+45,2,Telangana,Kumuram Bheem Asifabad,699,70.8,high,-10.5,0.0,425.0,14730.0,82822.0,3148.0,6314788.0,,True,2956.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+46,9,Odisha,Koraput,363,70.7,high,-7.3,0.0,29.0,53989.0,222212.0,12011.0,10580763.0,217938.0,False,29919.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+47,6,Madhya Pradesh,Mandla,415,70.7,high,-7.6,0.0,2720.0,36863.0,205222.0,20538.0,16748329.0,177692.0,False,23712.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+48,3,Maharashtra,Jalna,479,70.6,high,-8.9,25844.0,6590.0,54180.0,340328.0,45850.0,23088389.0,322802.0,True,77051.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+49,5,Gujarat,Narmada,452,70.5,high,-7.8,802.0,106.0,26290.0,142790.0,1070.0,8238301.0,,True,1771.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+50,10,Odisha,Gajapati,353,70.4,high,-8.4,,,16066.0,105699.0,,4773329.0,64189.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+51,7,Madhya Pradesh,Barwani,393,70.1,high,-11.0,0.0,2987.0,85756.0,259697.0,24930.0,10411439.0,342539.0,True,79939.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+53,1,Andhra Pradesh,Kurnool,511,69.7,high,-19.2,0.0,12635.0,149868.0,667345.0,15056.0,46077310.0,279788.0,True,15794.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+52,4,Karnataka,Bidar,529,69.7,high,-14.7,12990.0,6951.0,45320.0,279435.0,25559.0,20548361.0,52660.0,False,13930.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+54,18,Jharkhand,Dhanbad,325,69.6,high,-5.6,770.0,233.0,66381.0,552776.0,1887.0,11564347.0,105960.0,False,2544.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+55,1,Lakshadweep,Lakshadweep,553,69.6,high,-2.3,,,1182.0,4730.0,,0.0,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+56,19,Jharkhand,Chatra,323,69.5,high,-7.1,3143.0,1539.0,52302.0,188530.0,7102.0,15169408.0,133025.0,False,8636.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+57,1,Bihar,Munger,207,69.4,high,-2.3,981.0,33.0,51659.0,322613.0,3208.0,3437913.0,,False,13249.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+58,2,Chhattisgarh,Raigarh,386,69.3,high,-8.8,0.0,64.0,35375.0,295197.0,930.0,24354791.0,239667.0,False,626.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+59,3,Assam,Karimganj,293,69.2,high,-5.0,99.0,85.0,25759.0,195259.0,448.0,11245362.0,108169.0,False,82.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+60,4,Maharashtra,Hingoli,477,69.1,high,-14.5,7712.0,21557.0,40289.0,180698.0,35145.0,14878477.0,182573.0,False,58394.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+61,5,Maharashtra,Gadchiroli,475,69.0,high,-9.0,0.0,493.0,27735.0,212504.0,5505.0,13692891.0,251248.0,False,8679.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+63,5,Karnataka,Gadag,537,69.0,high,-17.6,0.0,10531.0,30264.0,157777.0,36987.0,12053884.0,48455.0,False,44644.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+62,1,Jammu & Kashmir,Kishtwar,620,69.0,high,-19.1,485.0,4.0,3812.0,57618.0,729.0,2989541.0,42055.0,False,532.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+64,3,Chhattisgarh,Sukma,642,69.0,high,-9.6,0.0,32.0,9415.0,67293.0,169.0,5871583.0,111011.0,False,4.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+65,1,Uttar Pradesh,Chitrakoot,136,68.8,high,-8.1,0.0,4615.0,46703.0,146045.0,25544.0,8258444.0,177167.0,False,72226.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+67,9,Madhya Pradesh,Katni,413,68.7,high,-11.0,0.0,4629.0,37207.0,243473.0,41571.0,1248390.0,129194.0,False,194720.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+66,8,Madhya Pradesh,Panna,420,68.7,high,-9.8,0.0,11848.0,37462.0,192533.0,44855.0,5584592.0,157418.0,False,159797.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+68,10,Madhya Pradesh,Satna,426,68.6,high,-16.1,0.0,8592.0,80680.0,410005.0,69928.0,6383881.0,255561.0,False,288000.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+69,6,Karnataka,Raichur,546,68.6,high,-7.5,0.0,2022.0,90718.0,341887.0,22537.0,15207722.0,243662.0,True,56140.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+70,1,West Bengal,Puruliya,321,68.3,high,-1.9,263.0,234.0,78221.0,643514.0,2916.0,17650788.0,,False,8032.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+71,20,Jharkhand,Sahibganj,340,68.3,high,-3.9,1800.0,477.0,77102.0,265567.0,6860.0,16666302.0,,False,3348.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+73,11,Odisha,Balangir,345,68.3,high,-2.8,2714.0,93.0,43468.0,271218.0,14493.0,22357597.0,124841.0,False,5058.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+72,6,Gujarat,Porbandar,456,68.3,high,-20.5,31388.0,18234.0,11367.0,88701.0,14904.0,3026934.0,80221.0,False,42745.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+74,12,Odisha,Nuapada,368,68.2,high,-2.8,0.0,20.0,13400.0,108108.0,8107.0,8475952.0,92100.0,False,7507.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+75,4,Chhattisgarh,Surguja,389,68.2,high,-8.8,0.0,135.0,26495.0,156419.0,1678.0,15198105.0,195482.0,False,848.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+76,3,Telangana,Wanaparthy,693,68.1,high,-9.0,0.0,1589.0,14939.0,81780.0,8969.0,1098085.0,51995.0,False,38791.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+77,4,Telangana,Jogulamba Gadwal,695,68.1,high,-10.1,0.0,1122.0,20820.0,101372.0,7475.0,1423372.0,,True,32296.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+78,11,Madhya Pradesh,Shahdol,429,68.0,high,-6.9,0.0,654.0,32417.0,193018.0,14885.0,12621630.0,100490.0,False,24836.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+79,4,Assam,Udalguri,617,68.0,high,-0.7,22.0,12.0,14052.0,214467.0,684.0,10163125.0,148176.0,False,450.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+83,2,Bihar,Saran,218,67.8,high,-4.5,12158.0,7.0,137739.0,819848.0,17565.0,30406210.0,,False,49700.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+81,12,Madhya Pradesh,Umaria,436,67.8,high,-10.1,0.0,3135.0,22024.0,106543.0,20591.0,3675699.0,70247.0,False,70309.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+80,7,Gujarat,Valsad,462,67.8,high,-10.7,568.0,568.0,50346.0,411508.0,1652.0,1532600.0,,False,7578.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+82,6,Maharashtra,Nandurbar,486,67.8,high,-2.4,2466.0,522.0,72890.0,316594.0,12224.0,18147572.0,239866.0,True,25480.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+85,13,Madhya Pradesh,Anuppur,390,67.2,high,-18.6,0.0,3673.0,14429.0,124881.0,9129.0,12296670.0,133516.0,False,2620.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+86,14,Madhya Pradesh,Balaghat,392,67.2,high,-17.8,0.0,9287.0,47892.0,329956.0,19209.0,4761741.0,291887.0,False,82455.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+84,21,Jharkhand,Ramgarh,607,67.2,high,-4.8,1202.0,780.0,25378.0,190947.0,4225.0,6672047.0,102826.0,False,7562.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+88,3,Bihar,Patna,212,67.0,high,-6.7,17797.0,3289.0,291416.0,1294175.0,23553.0,18713982.0,,False,87687.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+87,1,Tamil Nadu,Perambalur,581,67.0,high,-3.3,0.0,12.0,7074.0,104409.0,697.0,6718512.0,105851.0,False,1034.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+90,13,Odisha,Anugul,344,66.7,high,-2.8,0.0,33.0,24893.0,267211.0,8957.0,12999757.0,93249.0,False,4416.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+92,5,Chhattisgarh,Rajnandgaon,388,66.7,high,-1.8,0.0,606.0,42527.0,284679.0,11666.0,21993402.0,281303.0,False,15108.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+89,7,Maharashtra,Parbhani,489,66.7,high,-14.2,41155.0,18856.0,46397.0,323001.0,58748.0,20973417.0,167407.0,True,97992.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+91,2,Andhra Pradesh,Sri Sathya sai,754,66.7,high,-5.2,1478.0,77.0,58561.0,268023.0,2157.0,13051239.0,153032.0,False,5356.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+93,6,Chhattisgarh,Korba,383,66.6,high,-4.1,9.0,5.0,23611.0,254164.0,66.0,18134060.0,126721.0,False,14.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+96,2,Jammu & Kashmir,Badgam,2,66.5,high,-15.0,308.0,48.0,10338.0,146186.0,270.0,1821755.0,,False,966.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+94,7,Karnataka,Ramanagara,631,66.5,high,-12.2,490.0,144.0,8931.0,144568.0,589.0,11295380.0,234368.0,True,616.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+95,7,Chhattisgarh,Gariaband,645,66.5,high,-7.6,0.0,90.0,17878.0,122638.0,637.0,7765347.0,85214.0,False,1267.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+97,8,Karnataka,Chikkaballapura,630,66.3,high,-6.1,1135.0,69.0,22934.0,167598.0,1501.0,11734255.0,,True,2761.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+98,1,Rajasthan,Rajsamand,112,66.2,high,-3.6,0.0,307.0,33159.0,214451.0,10886.0,8822813.0,227740.0,False,24636.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+99,3,Andhra Pradesh,Palnadu,751,66.1,high,-9.9,10781.0,2038.0,32511.0,356930.0,7473.0,17872853.0,111748.0,True,14857.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+100,14,Odisha,Baudh,349,66.0,high,-2.8,0.0,7.0,11106.0,66050.0,3903.0,4468657.0,64222.0,False,7410.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+101,2,West Bengal,Purba Medinipur,317,65.9,high,-15.0,1397.0,2098.0,52119.0,1025125.0,3264.0,28925121.0,,False,8634.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+102,9,Karnataka,Davanagere,535,65.9,high,-11.9,0.0,420.0,31722.0,249365.0,4707.0,8717437.0,200707.0,False,13936.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+103,3,Jammu & Kashmir,Pulwama,11,65.8,high,-15.0,100.0,8.0,8343.0,119687.0,76.0,1618101.0,,False,270.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+104,10,Karnataka,Kolar,542,65.8,high,-6.7,490.0,232.0,21747.0,196593.0,1384.0,11517349.0,204053.0,True,2628.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+105,4,Andhra Pradesh,Anantpur,502,65.7,high,-14.6,12314.0,3353.0,126838.0,580516.0,16739.0,32938975.0,371189.0,False,34592.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+106,8,Maharashtra,Chandrapur,473,65.6,high,-3.6,2940.0,2227.0,52698.0,366014.0,23354.0,14126404.0,234004.0,True,67258.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+108,5,Assam,Baksa,616,65.6,high,-1.7,100.0,93.0,23109.0,214064.0,1403.0,11010314.0,171377.0,False,1258.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+107,8,Gujarat,Tapi,641,65.6,high,-2.7,0.0,147.0,22468.0,199073.0,2203.0,8682765.0,,True,4968.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+109,4,Bihar,Purba Champaran,213,65.5,high,-8.1,25970.0,577.0,270749.0,965257.0,25932.0,42753199.0,,False,76812.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+110,4,Jammu & Kashmir,Kulgam,622,65.5,high,-8.5,4.0,3.0,5770.0,91417.0,13.0,1714711.0,,False,45.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+113,5,Jammu & Kashmir,Punch,10,65.3,high,-15.0,3511.0,0.0,11412.0,75909.0,3066.0,5040272.0,,False,1859.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+111,22,Jharkhand,Garhwa,328,65.3,high,-4.8,3250.0,1336.0,66059.0,267740.0,8846.0,8775279.0,116503.0,False,28961.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+115,15,Madhya Pradesh,Seoni,428,65.3,high,-13.4,0.0,10795.0,37057.0,265197.0,60470.0,11966434.0,173466.0,False,170162.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+114,11,Karnataka,Dharwad,536,65.3,high,-13.4,0.0,11177.0,33712.0,282415.0,39553.0,17451750.0,120809.0,False,23099.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+112,5,Telangana,Kamareddy,685,65.3,high,-10.6,0.0,5190.0,19771.0,143507.0,31579.0,4056638.0,127320.0,False,112989.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+117,5,Bihar,Begusarai,191,65.2,high,-6.2,26251.0,154.0,146721.0,617245.0,20935.0,16009371.0,,False,68573.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+116,16,Madhya Pradesh,Burhanpur,397,65.2,high,-4.4,4421.0,1632.0,28322.0,139403.0,7425.0,3024576.0,80063.0,False,28335.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+118,12,Karnataka,Ballari,528,65.2,high,-5.5,3996.0,283.0,97551.0,469691.0,6625.0,9638109.0,333010.0,False,24712.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+119,6,Assam,Bajali,739,65.2,high,-1.6,113.0,,6855.0,40809.0,702.0,1596407.0,27328.0,False,1376.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+123,6,Bihar,Jamui,198,65.1,high,-1.4,696.0,37.0,98604.0,437323.0,5473.0,15360918.0,,False,13353.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+121,15,Odisha,Deogarh,351,65.1,high,-2.8,,,7489.0,62265.0,,4610218.0,40785.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+120,13,Karnataka,Vijayapura,530,65.1,high,-10.9,0.0,2457.0,81096.0,335962.0,27751.0,14682769.0,247765.0,True,75718.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+122,2,Tamil Nadu,Pudukkottai,582,65.1,high,-3.2,197.0,52.0,22799.0,282593.0,823.0,2595568.0,185893.0,False,3662.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+125,16,Odisha,Sambalpur,371,65.0,high,-2.8,,,16406.0,191940.0,,7745152.0,71704.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+124,6,Telangana,Medak,513,65.0,high,-14.5,0.0,40.0,32173.0,224252.0,21905.0,1165333.0,137759.0,False,101563.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+126,6,Jammu & Kashmir,Rajouri,12,64.9,high,-9.8,0.0,0.0,17100.0,114015.0,10068.0,7240639.0,149512.0,False,4637.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+128,8,Chhattisgarh,Jashpur,380,64.9,high,-5.4,0.0,38.0,24960.0,166388.0,627.0,17317424.0,269703.0,False,139.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+129,9,Maharashtra,Mumbai,482,64.9,high,-4.9,,,43492.0,423700.0,,,,,,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+127,7,Telangana,Nagarkurnool,694,64.9,high,-10.2,0.0,750.0,24969.0,119935.0,11955.0,1219297.0,147471.0,True,54406.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+130,2,Uttar Pradesh,Banda,128,64.8,high,-11.1,0.0,15342.0,89049.0,296829.0,65388.0,11324891.0,268387.0,False,213850.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+131,1,Kerala,Wayanad,567,64.8,high,-4.0,5.0,4.0,18116.0,61964.0,38.0,7154501.0,57052.0,False,21.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+132,3,Tamil Nadu,Ramanathapuram,583,64.8,high,-1.5,238.0,10.0,17969.0,202629.0,2708.0,10072704.0,126487.0,False,4905.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+133,7,Jammu & Kashmir,Reasi,627,64.8,high,-8.5,0.0,,8761.0,57989.0,2964.0,4630255.0,102635.0,False,845.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+135,17,Odisha,Sonepur,372,64.7,high,-2.8,,,13327.0,99292.0,,3878903.0,72681.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+134,2,Kerala,Thrissur,566,64.7,high,-14.5,5790.0,0.0,32990.0,390522.0,3125.0,3780138.0,45262.0,False,7360.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+136,9,Gujarat,Devbhumi Dwarka,674,64.7,high,-2.5,2863.0,2151.0,23032.0,116369.0,13604.0,6130632.0,,False,30399.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+139,8,Jammu & Kashmir,Udhampur,14,64.3,high,-9.2,0.0,0.0,12397.0,91827.0,6860.0,5762192.0,118370.0,False,3327.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+138,3,West Bengal,Medinipur West,318,64.3,high,-8.8,0.0,470.0,90075.0,1129066.0,1103.0,31707895.0,,False,2962.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+140,18,Odisha,Jharsuguda,357,64.3,high,-2.8,595.0,3.0,9030.0,108734.0,2525.0,4274942.0,27623.0,False,1530.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+137,10,Maharashtra,Nashik,487,64.3,high,-5.6,12612.0,1653.0,218977.0,1026858.0,24022.0,55476643.0,1063527.0,False,42939.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+141,14,Karnataka,Chitradurga,533,64.2,high,-8.9,5092.0,1850.0,35554.0,217209.0,10753.0,15631142.0,271130.0,False,20668.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+143,7,Bihar,Lakhisarai,204,64.1,high,-3.9,4341.0,437.0,41673.0,240051.0,9426.0,5332921.0,,False,33599.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+144,4,Tamil Nadu,Karur,576,64.1,high,-4.4,803.0,208.0,18878.0,193362.0,5592.0,5180535.0,88789.0,True,15965.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+142,15,Karnataka,Vijayanagar,738,64.1,high,-7.0,0.0,424.0,38589.0,185799.0,10325.0,6717118.0,,False,28521.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+145,7,Assam,Barpeta,280,64.0,high,-1.4,225.0,86.0,56480.0,336208.0,2786.0,13152160.0,218706.0,False,5460.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+146,8,Assam,Kokrajhar,294,63.9,high,-2.5,105.0,50.0,16856.0,163596.0,664.0,11426565.0,178997.0,False,409.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+147,3,Kerala,Malappuram,562,63.9,high,-2.8,0.0,0.0,99631.0,402181.0,8.0,12006406.0,62350.0,False,7.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+148,8,Bihar,Jehanabad,199,63.8,high,-1.7,1450.0,241.0,64829.0,253158.0,7550.0,2831448.0,,False,32607.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+149,4,Kerala,Ernakulam,555,63.8,high,-14.5,3.0,3.0,28105.0,293218.0,8.0,5506300.0,54630.0,False,8.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+150,11,Maharashtra,Jalgaon,478,63.7,high,-4.1,22549.0,3629.0,102983.0,825111.0,59437.0,44588079.0,370624.0,True,105232.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+151,5,Andhra Pradesh,Anakapalli,744,63.6,high,-4.9,494.0,304.0,38029.0,318773.0,2558.0,11291220.0,98697.0,False,5767.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+152,8,Telangana,Medchal Malkajgiri,700,63.5,high,-10.0,1061.0,1.0,5071.0,34203.0,1156.0,124525.0,,False,5389.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+154,3,Uttar Pradesh,Mahoba,165,63.4,high,-8.9,0.0,11700.0,29065.0,136746.0,41217.0,7118685.0,84905.0,False,107619.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+153,9,Telangana,Mahabubnagar,512,63.4,high,-10.7,0.0,8.0,33375.0,197970.0,9485.0,3171324.0,,False,37004.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+155,10,Gujarat,Morbi,673,63.2,high,-6.3,11323.0,2689.0,27874.0,156823.0,14315.0,2611166.0,,True,55786.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+156,9,Assam,Nalbari,298,63.1,high,-1.4,0.0,20.0,16288.0,156742.0,538.0,3946702.0,66483.0,False,1008.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+157,10,Telangana,Nizamabad,516,63.1,high,-16.8,0.0,2127.0,47764.0,277205.0,36597.0,1031566.0,133508.0,False,172301.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+158,19,Odisha,Jajapur,356,63.0,high,-2.8,,,26182.0,320550.0,,17999672.0,97398.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+159,9,Bihar,Buxar,194,62.9,high,-3.7,0.0,228.0,71823.0,373163.0,18499.0,1912806.0,,False,86779.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+160,4,West Bengal,South Twenty Four Pargana,304,62.9,high,-1.3,509.0,487.0,164309.0,1431057.0,5750.0,33204029.0,,False,15161.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+161,12,Maharashtra,Buldana,472,62.8,high,-5.6,19395.0,13644.0,62662.0,447232.0,61833.0,31684698.0,330317.0,False,106136.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+164,10,Assam,Darrang,283,62.7,high,-0.7,0.0,40.0,20728.0,190248.0,2478.0,10500476.0,134179.0,False,2705.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+163,17,Madhya Pradesh,Ratlam,423,62.7,high,-3.6,0.0,1822.0,43542.0,277931.0,49154.0,13970962.0,177437.0,False,119912.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+162,6,Andhra Pradesh,Alluri Sitharama Raju,745,62.7,high,-7.6,1429.0,737.0,18056.0,151348.0,2941.0,7798277.0,42678.0,False,2957.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+165,10,Bihar,Nawada,210,62.6,high,-0.9,1169.0,41.0,137483.0,516096.0,11400.0,4669315.0,,False,50719.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+166,11,Assam,Bongaigaon,281,62.6,high,-4.9,214.0,174.0,21560.0,157176.0,1308.0,6627844.0,81658.0,False,1618.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+167,9,Chhattisgarh,Durg,378,62.6,high,-7.2,0.0,1131.0,33830.0,282804.0,7854.0,4546309.0,46553.0,False,27370.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+169,11,Gujarat,Navsari,453,62.4,high,-11.2,268.0,181.0,27847.0,291713.0,500.0,4628737.0,,False,1842.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+168,13,Maharashtra,Osmanabad,488,62.4,high,-8.9,33487.0,16728.0,32082.0,243494.0,84855.0,19968172.0,165651.0,False,136320.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+170,4,Uttar Pradesh,Mirzapur,170,62.3,high,-3.8,0.0,897.0,106689.0,332201.0,28426.0,8210878.0,183493.0,False,109041.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+176,6,Uttar Pradesh,Prayagraj,120,62.2,high,-7.5,44121.0,2870.0,211268.0,873095.0,57467.0,12450451.0,535528.0,False,235931.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+175,5,Uttar Pradesh,Fatehpur,142,62.2,high,-4.7,0.0,2620.0,123421.0,524147.0,46601.0,9934445.0,357194.0,False,181976.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+174,23,Jharkhand,Latehar,335,62.2,high,-0.3,74.0,33.0,48135.0,149257.0,6807.0,9314934.0,117108.0,False,11701.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+173,11,Telangana,Adilabad,501,62.2,high,-9.9,11312.0,4606.0,30359.0,228134.0,12838.0,9320386.0,137768.0,True,21587.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+171,5,Tamil Nadu,Cuddalore,570,62.2,high,-5.2,0.0,1475.0,35028.0,426749.0,11092.0,12769894.0,135220.0,False,34469.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+172,6,Tamil Nadu,Chengalpattu,730,62.2,high,-4.8,46.0,36.0,26268.0,284821.0,285.0,1106.0,53231.0,False,1425.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+177,16,Karnataka,Haveri,540,62.0,high,-5.2,0.0,555.0,28923.0,238192.0,28074.0,16907252.0,159232.0,False,46968.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+178,1,Arunachal Pradesh,Kurung Kumey,233,61.9,high,-2.8,2.0,2.0,1060.0,4758.0,11.0,646271.0,,False,12.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+179,20,Odisha,Nayagarh,367,61.9,high,-2.8,,,10717.0,166528.0,,11422535.0,79042.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+180,14,Maharashtra,Yavatmal,500,61.9,high,-2.4,4677.0,2639.0,83371.0,484388.0,38580.0,34085625.0,273274.0,True,62692.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+181,12,Telangana,Vikarabad,698,61.8,high,-9.3,0.0,748.0,18427.0,140425.0,9647.0,8088204.0,170159.0,True,21234.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+183,18,Madhya Pradesh,Niwari,722,61.8,high,-9.9,0.0,400.0,13875.0,63807.0,15195.0,2450.0,111528.0,False,75953.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+182,7,Andhra Pradesh,Nandyal,755,61.8,high,-5.9,0.0,4248.0,67729.0,301588.0,28820.0,12106128.0,76078.0,False,77901.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+186,19,Madhya Pradesh,Chhatarpur,398,61.7,high,-8.8,0.0,13909.0,66427.0,359260.0,76612.0,16767319.0,339646.0,False,177816.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+184,13,Telangana,Nalgonda,514,61.7,high,-9.1,0.0,122.0,37058.0,298041.0,35448.0,8625582.0,164609.0,True,118575.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+185,2,Arunachal Pradesh,Kra Daadi,677,61.7,high,-2.8,3.0,3.0,600.0,3178.0,12.0,702718.0,,False,12.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+187,21,Odisha,Dhenkanal,352,61.5,high,-2.8,1658.0,31.0,18274.0,217974.0,5939.0,9999713.0,69459.0,False,8059.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+188,12,Assam,Charaideo,708,61.5,high,-6.2,18.0,11.0,11338.0,96658.0,79.0,3560343.0,51893.0,False,5.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+190,7,Uttar Pradesh,Bhadohi,179,61.4,high,-5.7,7830.0,112.0,50944.0,218447.0,10404.0,3013079.0,109748.0,False,42349.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+191,5,West Bengal,Hooghly,312,61.4,high,-4.8,134.0,104.0,45794.0,1186530.0,813.0,26136957.0,,False,1831.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+189,12,Gujarat,Kheda,450,61.4,high,-3.3,0.0,93.0,74633.0,501523.0,15499.0,0.0,252870.0,True,77495.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+192,7,Tamil Nadu,Nagapattinam,579,61.2,high,-4.6,189.0,107.0,18312.0,282782.0,5825.0,8345104.0,37771.0,False,17732.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+193,8,Tamil Nadu,Viluppuram,596,61.2,high,-5.0,1584.0,1164.0,28614.0,353756.0,7740.0,8089587.0,169883.0,False,28054.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+194,9,Jammu & Kashmir,Shupiyan,625,61.2,high,-8.5,0.0,0.0,3069.0,47253.0,1.0,1370838.0,,False,3.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+197,13,Gujarat,Sabar Kantha,458,61.1,high,-10.9,27611.0,742.0,64902.0,301369.0,18098.0,4405091.0,,False,71948.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+195,17,Karnataka,Chamarajanagara,531,61.1,high,-4.2,1649.0,411.0,16131.0,138706.0,4706.0,6965578.0,,False,13066.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+196,9,Tamil Nadu,Kallakurichchi,729,61.1,high,-3.1,0.0,708.0,35476.0,222365.0,10058.0,7069943.0,158660.0,False,34670.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+198,6,West Bengal,Birbhum,307,61.0,high,-2.1,0.0,784.0,87399.0,778496.0,12227.0,21072390.0,162955.0,False,34597.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+199,8,Andhra Pradesh,Prakasam,517,61.0,high,-10.3,14442.0,6980.0,44354.0,572851.0,20733.0,35958211.0,252240.0,True,29659.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+203,8,Uttar Pradesh,Siddharthnagar,182,60.9,high,-4.2,0.0,312.0,129939.0,414092.0,37822.0,4064721.0,327303.0,False,173472.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+200,11,Bihar,Muzaffarpur,208,60.9,high,-5.1,17344.0,71.0,243375.0,934167.0,27682.0,14981226.0,,False,113176.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+204,13,Assam,Dhubri,285,60.9,high,-2.5,517.0,243.0,51628.0,287594.0,3367.0,15536685.0,163008.0,False,3964.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+201,18,Karnataka,Bangalore,525,60.9,high,-3.5,15.0,1.0,120291.0,1002423.0,70.0,6788237.0,107834.0,True,109.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+202,14,Telangana,Nirmal,680,60.9,high,-11.1,0.0,4210.0,15459.0,92353.0,21557.0,2821736.0,99162.0,False,71579.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+206,10,Jammu & Kashmir,Kathua,7,60.8,high,-10.7,0.0,2.0,14428.0,96714.0,10025.0,4083752.0,60114.0,False,17645.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+205,1,Mizoram,Mamit,266,60.8,high,-5.0,11.0,8.0,2108.0,8599.0,44.0,1336964.0,,False,23.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+207,20,Madhya Pradesh,Tikamgarh,434,60.8,high,-12.9,0.0,1471.0,40270.0,163984.0,41929.0,9044469.0,244261.0,False,117967.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+209,15,Maharashtra,Wardha,498,60.8,high,-2.4,3028.0,2257.0,22326.0,233500.0,20644.0,13914949.0,144002.0,True,32927.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+208,10,Tamil Nadu,Mayiladuthurai,735,60.8,high,-3.0,0.0,282.0,13755.0,161856.0,9813.0,3742323.0,8252.0,False,34026.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+210,9,Andhra Pradesh,Bapatla,750,60.7,high,-9.1,0.0,8141.0,23105.0,253661.0,21832.0,7759372.0,51569.0,False,68990.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+213,12,Bihar,Rohtas,215,60.6,high,-3.8,0.0,104.0,103918.0,634594.0,40912.0,476737.0,,False,202636.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+214,2,Mizoram,Lawngtlai,264,60.6,high,-2.8,20.0,11.0,2457.0,16692.0,93.0,1629749.0,,False,55.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+211,15,Telangana,Warangal Rural,522,60.6,high,-11.2,0.0,10.0,27309.0,283112.0,16311.0,157847.0,,False,80827.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+212,19,Karnataka,Bagalkote,524,60.6,high,-8.6,0.0,2708.0,56365.0,266210.0,27257.0,5589300.0,,True,107038.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+215,13,Bihar,Samastipur,217,60.4,high,-4.4,14589.0,80.0,197525.0,851719.0,17141.0,15122453.0,,False,69953.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+216,22,Odisha,Kendrapara,360,60.3,high,-2.8,,,22331.0,233960.0,,13247772.0,114878.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+217,10,Chhattisgarh,Baloda Bazar,644,60.3,high,-1.8,0.0,28.0,32482.0,253359.0,1375.0,11967130.0,187654.0,False,3813.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+218,21,Madhya Pradesh,Alirajpur,639,60.2,high,-2.5,0.0,338.0,49730.0,141586.0,11429.0,11228403.0,302992.0,False,17538.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+219,14,Bihar,Madhepura,205,60.1,high,-1.9,4926.0,19.0,117718.0,434460.0,10683.0,4878628.0,,False,47511.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+220,16,Telangana,Sangareddy,691,60.1,high,-10.7,0.0,1157.0,16184.0,138286.0,13737.0,10320933.0,113338.0,True,27426.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+221,22,Madhya Pradesh,Guna,406,60.0,high,-7.9,0.0,4229.0,44194.0,198481.0,44578.0,11662742.0,230946.0,False,110821.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+222,16,Maharashtra,Latur,481,60.0,high,-18.5,51023.0,41559.0,54758.0,372263.0,69226.0,26320969.0,151359.0,False,120487.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+224,11,Jammu & Kashmir,Doda,4,59.9,high,-4.2,224.0,2.0,6854.0,78361.0,1326.0,4482790.0,71513.0,False,564.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+223,17,Telangana,Ranga Reddy,518,59.9,high,-9.0,14135.0,211.0,91413.0,703319.0,8834.0,8561710.0,187463.0,False,27614.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+225,11,Tamil Nadu,Tiruppattur,732,59.9,high,-2.1,311.0,91.0,18208.0,164532.0,2356.0,5279324.0,67503.0,False,4822.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+227,10,Uttar Pradesh,Balrampur,127,59.8,high,-3.5,0.0,949.0,112480.0,364627.0,28340.0,6064014.0,323047.0,False,121038.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+226,9,Uttar Pradesh,Pratapgarh,174,59.8,high,-4.5,20732.0,416.0,87196.0,495911.0,33914.0,7230654.0,340590.0,False,145357.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+228,18,Telangana,Mulugu,720,59.8,high,-9.6,0.0,35.0,7273.0,53554.0,4487.0,561467.0,35377.0,False,20137.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+233,11,Chhattisgarh,Bilaspur,375,59.7,high,2.1,0.0,0.0,42535.0,297535.0,1439.0,12276391.0,129668.0,False,3524.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+231,23,Madhya Pradesh,Rajgarh,422,59.7,high,-8.1,0.0,4903.0,40642.0,259535.0,75753.0,15675006.0,217071.0,False,190481.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+229,20,Karnataka,Uttara Kannada,550,59.7,high,-10.8,894.0,133.0,23376.0,188114.0,1150.0,5949506.0,,False,2935.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+232,20,Telangana,Jangoan,689,59.7,high,-9.6,0.0,5.0,8219.0,76505.0,15731.0,2116103.0,,False,58322.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+230,19,Telangana,Yadadri Bhuvanagiri,697,59.7,high,-9.9,0.0,3.0,11135.0,99996.0,23549.0,1899889.0,,False,94315.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+234,12,Chhattisgarh,Raipur,387,59.6,high,-1.8,0.0,51.0,41583.0,405688.0,1661.0,3702827.0,108509.0,False,6754.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+235,24,Madhya Pradesh,East Nimar,405,59.6,high,-11.4,0.0,11035.0,44780.0,272447.0,49559.0,11190922.0,151813.0,False,139633.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+237,10,Andhra Pradesh,Y.S.R.,504,59.5,high,-21.0,29919.0,20036.0,41024.0,451740.0,21513.0,19357762.0,,False,51244.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+236,12,Tamil Nadu,Ranipet,731,59.5,high,-2.5,85.0,29.0,16392.0,190475.0,656.0,1519672.0,52222.0,False,2794.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+239,11,Uttar Pradesh,Sonbhadra,184,59.4,high,-1.4,3041.0,348.0,95352.0,261924.0,22772.0,11206277.0,144454.0,False,73678.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+241,23,Odisha,Kalahandi,358,59.4,high,-2.8,0.0,100.0,36119.0,280161.0,16613.0,11390362.0,119641.0,False,46632.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+240,21,Karnataka,Bengaluru Rural,526,59.4,high,-6.3,89.0,10.0,12715.0,128540.0,192.0,7321635.0,143671.0,True,278.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+238,13,Tamil Nadu,Sivaganga,585,59.4,high,-1.5,22.0,9.0,19586.0,192724.0,322.0,4748693.0,119321.0,False,1125.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+242,14,Tamil Nadu,Ariyalur,610,59.4,high,-3.6,0.0,176.0,18306.0,131639.0,2402.0,6894798.0,98498.0,False,5312.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+244,13,Chhattisgarh,Mahasamund,385,59.3,high,-1.8,0.0,3.0,31779.0,206687.0,329.0,13819589.0,121601.0,False,567.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+245,14,Gujarat,Vadodara,461,59.3,high,-3.5,2610.0,35.0,95585.0,712877.0,6388.0,584905.0,,True,31219.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+243,5,Kerala,Kozhikode,561,59.3,high,-2.8,0.0,0.0,40716.0,259176.0,2.0,6198123.0,28694.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+248,15,Gujarat,Surendranagar,460,59.2,high,-3.8,6524.0,1930.0,56023.0,275355.0,17233.0,5457243.0,193622.0,True,66071.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+247,17,Maharashtra,Palghar,665,59.2,high,-1.9,76.0,62.0,76590.0,509018.0,1063.0,5150686.0,237348.0,False,4280.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+246,11,Andhra Pradesh,Parvathipuram Manyam,743,59.2,high,-7.0,0.0,347.0,15363.0,166086.0,3135.0,5326357.0,46668.0,False,9382.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+249,12,Andhra Pradesh,Tirupati,752,59.2,high,-5.7,14700.0,22.0,43602.0,324885.0,15702.0,3243351.0,237481.0,False,69880.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+250,13,Andhra Pradesh,Annamayya,753,59.2,high,-4.7,689.0,71.0,24287.0,267444.0,1531.0,8801023.0,139335.0,False,4577.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+251,3,Mizoram,Aizawl,261,59.1,high,-2.8,6.0,5.0,6495.0,35654.0,43.0,1916075.0,,False,19.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+252,22,Karnataka,Tumakuru,548,59.1,high,-8.9,368.0,47.0,29610.0,387609.0,772.0,19712860.0,527973.0,True,1875.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+253,12,Uttar Pradesh,Sant Kabir Nagar,178,59.0,high,-2.9,0.0,167.0,55837.0,235779.0,20419.0,3010113.0,,False,91935.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+255,15,Bihar,Katihar,201,59.0,high,-0.1,0.0,1.0,201224.0,693924.0,10557.0,13276589.0,,False,41966.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+256,25,Madhya Pradesh,Sagar,425,59.0,high,-14.2,0.0,27115.0,82991.0,380244.0,106568.0,16099849.0,163740.0,False,280433.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+254,18,Maharashtra,Akola,467,59.0,high,-0.7,1083.0,776.0,52134.0,285902.0,28635.0,19652529.0,68935.0,False,43496.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+260,2,Rajasthan,Dungarpur,99,58.9,high,-3.2,5044.0,706.0,63082.0,319817.0,17043.0,13888441.0,249658.0,False,30857.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+257,14,Andhra Pradesh,Guntur,506,58.9,high,-13.8,0.0,5358.0,74486.0,817759.0,11783.0,21922027.0,298130.0,False,39914.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+259,21,Telangana,Warangal Urban,686,58.9,high,-10.0,0.0,7.0,4866.0,56060.0,14493.0,711569.0,,False,63561.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+261,22,Telangana,Bhadradri Kothagudem,690,58.9,high,-11.1,0.0,129.0,7753.0,143957.0,6744.0,5830170.0,,True,19131.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+258,7,West Bengal,Paschim Bardhaman,704,58.9,high,-2.0,129.0,50.0,16661.0,212971.0,769.0,3148309.0,22289.0,False,1775.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+263,8,West Bengal,Howrah,313,58.8,high,-1.3,30.0,26.0,39579.0,906850.0,431.0,7524361.0,,False,1102.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+262,26,Madhya Pradesh,Neemuch,419,58.8,high,-6.2,0.0,1787.0,18694.0,133389.0,21037.0,8228161.0,164204.0,False,48238.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+264,15,Tamil Nadu,Dindigul,572,58.8,high,-2.3,4767.0,170.0,30941.0,257132.0,15230.0,14401737.0,176236.0,True,34938.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+265,13,Uttar Pradesh,Kasganj,633,58.8,high,-5.3,0.0,86.0,77240.0,293299.0,21072.0,4996795.0,274493.0,False,84163.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+268,14,Uttar Pradesh,Rae Bareli,175,58.7,high,-4.4,0.0,341.0,112370.0,440758.0,35912.0,7251304.0,258973.0,False,152196.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+271,14,Chhattisgarh,Uttar Bastar Kanker,381,58.7,high,-3.2,0.0,14.0,19090.0,154990.0,292.0,12715690.0,204336.0,False,237.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+267,23,Karnataka,Shivamogga,547,58.7,high,-5.2,154.0,6.0,29558.0,215532.0,235.0,5712534.0,220562.0,False,880.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+266,16,Tamil Nadu,Madurai,578,58.7,high,-1.3,1164.0,15.0,35857.0,407549.0,4449.0,9431771.0,94304.0,False,12899.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+270,24,Telangana,Jagitial,681,58.7,high,-9.5,0.0,47.0,15575.0,123451.0,26307.0,670588.0,,False,123300.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+269,23,Telangana,Mahabubabad,688,58.7,high,-9.6,0.0,166.0,14303.0,125826.0,14860.0,3087275.0,126539.0,False,56653.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+272,15,Uttar Pradesh,Kanpur Nagar,157,58.6,high,-7.3,27352.0,2011.0,122952.0,825214.0,26504.0,7674200.0,210974.0,False,101128.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+273,16,Bihar,Nalanda,209,58.5,high,-0.2,424.0,24.0,158937.0,674945.0,21110.0,3819543.0,,False,97919.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+275,25,Telangana,Suryapet,696,58.5,high,-10.6,0.0,27.0,12868.0,153217.0,35623.0,103086.0,92507.0,False,177009.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+274,9,West Bengal,Jhargram,703,58.5,high,-1.8,0.0,126.0,19986.0,250829.0,1440.0,8165198.0,87125.0,False,3986.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+277,16,Uttar Pradesh,Etah,138,58.4,high,-3.9,0.0,31.0,82799.0,310661.0,29508.0,6287763.0,292471.0,False,116157.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+276,26,Telangana,Mancherial,684,58.4,high,-9.4,0.0,36.0,7836.0,73741.0,8641.0,2812604.0,31770.0,True,27543.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+278,6,Kerala,Kollam,559,58.3,high,-1.6,1.0,0.0,26458.0,267354.0,18.0,8866069.0,61427.0,False,4.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+279,10,West Bengal,Bankura,305,58.2,high,-1.9,0.0,151.0,67971.0,792994.0,2098.0,26673116.0,215527.0,False,5080.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+281,24,Odisha,Khordha,362,58.2,high,-2.8,,,18670.0,424678.0,,9087304.0,77312.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+282,16,Gujarat,Anand,440,58.2,high,-4.4,0.0,338.0,66578.0,439881.0,12862.0,0.0,,True,64312.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+280,15,Andhra Pradesh,NTR,749,58.2,high,-9.8,9206.0,590.0,25504.0,350504.0,5130.0,12232255.0,26971.0,True,13225.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+286,17,Uttar Pradesh,Chandauli,135,58.1,high,-3.8,0.0,373.0,62246.0,300527.0,24345.0,3281394.0,147816.0,False,107068.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+284,27,Madhya Pradesh,Dewas,402,58.1,high,-4.4,0.0,5451.0,51130.0,257486.0,75184.0,15193216.0,197171.0,False,183448.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+283,19,Maharashtra,Aurangabad,469,58.1,high,-6.6,18570.0,3139.0,95561.0,581215.0,42957.0,33215278.0,497563.0,True,76442.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+285,24,Karnataka,Mandya,544,58.1,high,-14.1,1874.0,679.0,18589.0,249079.0,2449.0,13478107.0,436752.0,True,6416.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+288,11,West Bengal,North Twenty Four Pargan*,303,58.0,high,-4.4,623.0,566.0,107393.0,1871215.0,3067.0,26857355.0,,False,7810.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+287,7,Kerala,Thiruvananthapuram,565,58.0,high,-3.5,4.0,3.0,22189.0,307013.0,26.0,7214311.0,42009.0,False,9.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+289,17,Tamil Nadu,Virudhunagar,597,58.0,high,-1.6,3354.0,41.0,30308.0,308845.0,11241.0,6474411.0,43376.0,False,25055.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+291,3,Rajasthan,Dhaulpur,98,57.9,high,-0.9,0.0,3.0,74198.0,262196.0,9382.0,6571893.0,271846.0,True,28905.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+290,20,Maharashtra,Raigarh,491,57.9,high,-3.3,153.0,153.0,37829.0,427151.0,2725.0,20581598.0,236094.0,False,1159.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+293,25,Odisha,Cuttack,350,57.8,high,-2.8,,,26532.0,468158.0,,14358405.0,137776.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+294,28,Madhya Pradesh,Damoh,400,57.8,high,-8.8,0.0,18668.0,39346.0,195211.0,57314.0,10519891.0,101956.0,False,134458.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+292,18,Tamil Nadu,Thanjavur,586,57.8,high,-4.8,0.0,856.0,29390.0,396588.0,6723.0,1345750.0,69863.0,False,32050.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+295,1,Puducherry,Yanam,601,57.8,high,-3.9,,,1463.0,10928.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+301,18,Uttar Pradesh,Kaushambi,158,57.7,high,-4.0,0.0,744.0,95171.0,274989.0,19579.0,5535298.0,157260.0,False,78638.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+302,3,Arunachal Pradesh,Tawang,238,57.7,high,-2.8,51.0,2.0,766.0,8881.0,245.0,348990.0,,False,78.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+296,29,Madhya Pradesh,Bhind,395,57.7,high,-6.5,0.0,601.0,58640.0,382147.0,18831.0,8566930.0,278458.0,False,68507.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+298,17,Gujarat,Jamnagar,447,57.7,high,-10.8,28998.0,15954.0,24723.0,222269.0,23390.0,2736573.0,,True,94438.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+299,8,Kerala,Kannur,557,57.7,high,-2.8,7.0,5.0,30217.0,282260.0,68.0,7264915.0,39573.0,False,29.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+300,19,Tamil Nadu,KAnchipuram,574,57.7,high,-4.8,16.0,14.0,20325.0,184248.0,153.0,17082.0,32508.0,False,765.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+297,15,Chhattisgarh,Balod,646,57.7,high,-3.2,0.0,525.0,18571.0,147886.0,6301.0,8054465.0,154191.0,False,16525.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+303,26,Odisha,Ganjam,354,57.6,high,-8.6,,,52355.0,553752.0,,19751607.0,249658.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+304,18,Gujarat,Banas Kantha,441,57.6,high,-2.7,0.0,34.0,147058.0,596707.0,14218.0,10917916.0,582960.0,True,55755.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+305,30,Madhya Pradesh,Chhindwara,399,57.5,high,-6.7,0.0,5777.0,48143.0,279905.0,71124.0,22272490.0,295347.0,False,147405.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+306,20,Tamil Nadu,Tirunelveli,592,57.5,high,-3.5,230.0,150.0,22240.0,234662.0,1797.0,1673921.0,51067.0,False,7483.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+307,1,Meghalaya,East Jaintia Hills,657,57.5,high,-2.8,1.0,1.0,6788.0,16269.0,9.0,870619.0,,False,19.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+309,19,Uttar Pradesh,Varanasi,187,57.4,high,-4.5,7378.0,342.0,100628.0,436887.0,15534.0,4603167.0,230664.0,False,64822.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+310,16,Andhra Pradesh,Visakhapatnam,520,57.4,high,-6.5,396.0,21.0,81057.0,679456.0,357.0,21389423.0,343198.0,False,914.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+308,27,Telangana,Siddipet,692,57.4,high,-8.8,0.0,146.0,11052.0,142053.0,29896.0,2128300.0,144839.0,False,126205.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+312,21,Tamil Nadu,Vellore,595,57.3,high,-2.8,228.0,68.0,19894.0,221048.0,1021.0,4550649.0,58101.0,False,2530.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+311,28,Telangana,Rajanna Sircilla,683,57.3,high,-9.2,0.0,16.0,8789.0,69931.0,13948.0,711284.0,,False,62109.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+314,20,Uttar Pradesh,Bareilly,130,57.1,high,-0.1,0.0,10.0,147149.0,854691.0,44063.0,6055766.0,435790.0,False,195330.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+315,21,Maharashtra,Solapur,496,57.1,high,-5.0,24160.0,2685.0,118924.0,704024.0,98967.0,36447065.0,673751.0,True,206644.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+313,22,Tamil Nadu,Kanniyakumari,575,57.1,high,-3.5,8.0,4.0,26968.0,237865.0,76.0,3254950.0,15996.0,False,143.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+316,4,Rajasthan,Bharatpur,91,57.0,high,-0.8,0.0,14.0,120971.0,491569.0,20003.0,17527177.0,552589.0,True,59209.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+319,21,Uttar Pradesh,Agra,118,57.0,high,-3.6,18236.0,90.0,161564.0,829462.0,28011.0,10190405.0,341725.0,True,104536.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+317,1,Nagaland,Wokha,250,57.0,high,-5.0,130.0,38.0,2708.0,15236.0,370.0,2047028.0,,False,403.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+318,25,Karnataka,Belagavi,527,57.0,high,-5.4,0.0,3767.0,98882.0,742045.0,67838.0,23993314.0,786461.0,True,222542.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+320,29,Telangana,Jayashankar,687,57.0,high,-11.0,0.0,12.0,5253.0,70801.0,7756.0,1465799.0,,True,30873.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+323,12,West Bengal,Maldah,316,56.9,high,-2.5,0.0,542.0,135199.0,834573.0,14434.0,19682866.0,161589.0,False,41035.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+321,22,Maharashtra,Bid,470,56.9,high,-4.2,0.0,6184.0,47920.0,392638.0,78669.0,30402301.0,417196.0,True,135586.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+322,9,Kerala,Kottayam,560,56.9,high,-2.8,760.0,2.0,21065.0,215338.0,2258.0,5801707.0,54037.0,False,1330.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+324,22,Uttar Pradesh,Auraiya,122,56.8,high,-3.2,0.0,186.0,50987.0,170459.0,22272.0,5283901.0,190615.0,False,87004.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+326,23,Uttar Pradesh,Kannauj,155,56.8,high,-2.4,0.0,58.0,71991.0,341331.0,13829.0,3643691.0,265946.0,False,60244.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+325,27,Odisha,Bargarh,347,56.8,high,-2.8,,,36004.0,256614.0,,8698380.0,159368.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+327,24,Uttar Pradesh,Bahraich,125,56.7,high,-3.5,0.0,1793.0,228035.0,537859.0,51093.0,10428318.0,448331.0,False,215816.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+329,30,Telangana,Peddapalli,682,56.7,high,-8.8,0.0,3.0,6228.0,91084.0,17368.0,762072.0,37138.0,False,78962.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+328,4,Mizoram,Khawzawl,728,56.7,high,-2.8,1.0,1.0,859.0,2910.0,6.0,577111.0,,False,3.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+330,19,Gujarat,Bhavnagar,443,56.6,high,-4.8,4633.0,1677.0,54468.0,378155.0,9341.0,13748370.0,231122.0,True,24388.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+334,1,Ladakh,Kargil,6,56.5,high,-3.2,410.0,22.0,3223.0,37433.0,1634.0,73.0,,False,8168.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+338,5,Rajasthan,Dausa,97,56.5,high,-1.4,0.0,510.0,47911.0,312666.0,20331.0,16068910.0,441768.0,True,41658.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+336,25,Uttar Pradesh,Unnao,186,56.5,high,-1.0,0.0,54.0,106570.0,480338.0,49652.0,9560447.0,518284.0,False,203126.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+333,5,Mizoram,Lunglei,265,56.5,high,-2.8,35.0,6.0,1617.0,12743.0,122.0,1450728.0,,False,111.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+332,14,Assam,Goalpara,287,56.5,high,2.4,0.0,0.0,33971.0,200164.0,1333.0,10098597.0,132968.0,False,1583.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+331,31,Madhya Pradesh,Shivpuri,432,56.5,high,-10.3,0.0,7566.0,74339.0,280228.0,63643.0,9028718.0,447130.0,False,232456.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+335,20,Gujarat,Junagadh,448,56.5,high,-10.6,0.0,14226.0,28292.0,285910.0,35841.0,9421971.0,,False,107702.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+337,17,Andhra Pradesh,Vizianagaram,521,56.5,high,-7.5,0.0,1269.0,39094.0,422635.0,11387.0,14046762.0,144409.0,False,33244.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+339,17,Bihar,Gaya,196,56.4,high,4.6,0.0,0.0,289916.0,932798.0,15468.0,7879825.0,,False,69468.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+342,32,Madhya Pradesh,Gwalior,407,56.4,high,-6.2,0.0,773.0,59075.0,403768.0,29271.0,4756669.0,149450.0,False,107365.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+340,10,Kerala,Idukki,556,56.4,high,-2.8,7.0,7.0,18556.0,100003.0,15.0,8823229.0,109368.0,False,18.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+341,15,Assam,Hojai,709,56.4,high,0.2,0.0,0.0,33190.0,159813.0,287.0,11901558.0,130465.0,False,44.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+344,33,Madhya Pradesh,Jabalpur,411,56.3,high,-4.9,0.0,3112.0,54701.0,386586.0,48476.0,2096997.0,120541.0,False,220858.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+343,21,Gujarat,Surat,459,56.3,high,-1.8,296.0,44.0,154096.0,1337310.0,1819.0,6904989.0,,True,6625.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+345,23,Tamil Nadu,Coimbatore,569,56.3,high,-14.5,3092.0,372.0,55180.0,472752.0,3663.0,3930472.0,86611.0,True,13433.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+346,11,Kerala,Pathanamthitta,564,56.2,high,-0.6,0.0,0.0,11229.0,122825.0,1.0,5929436.0,44835.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+349,2,Nagaland,Peren,613,56.2,high,-6.6,32.0,28.0,3008.0,8466.0,100.0,1070163.0,,False,154.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+348,6,Rajasthan,Pratapgarh,629,56.2,high,-4.8,0.0,1670.0,46738.0,146198.0,26040.0,8996178.0,329722.0,False,64189.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+347,13,West Bengal,Alipurduar,664,56.2,high,-0.6,0.0,34.0,22560.0,301342.0,4103.0,6136107.0,80017.0,False,10659.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+353,6,Mizoram,Kolasib,263,56.1,high,-5.0,58.0,40.0,1991.0,8930.0,178.0,1125874.0,,False,44.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+351,16,Chhattisgarh,Kabeerdham,382,56.1,high,-3.2,0.0,1870.0,23162.0,113923.0,20737.0,9405682.0,146549.0,False,48214.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+352,24,Tamil Nadu,Tiruvannamalai,593,56.1,high,-5.0,0.0,1142.0,40058.0,389875.0,8778.0,5465885.0,288207.0,False,37034.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+350,34,Madhya Pradesh,Agar Malwa,667,56.1,high,-5.5,0.0,685.0,13655.0,108569.0,27559.0,6191316.0,108775.0,False,65990.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+357,2,Ladakh,Leh,9,56.0,high,-6.9,688.0,30.0,1989.0,36122.0,1408.0,178.0,,False,7038.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+356,1,Himachal Pradesh,Solan,25,56.0,high,-9.6,0.0,287.0,11656.0,78989.0,4972.0,4045527.0,154949.0,False,9379.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+355,7,Rajasthan,Sirohi,115,56.0,high,-0.2,200.0,11.0,50019.0,210606.0,7894.0,3828770.0,125555.0,False,28180.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+354,26,Uttar Pradesh,Kanpur Dehat,156,56.0,high,-3.4,0.0,1239.0,67407.0,311623.0,32149.0,7410446.0,236739.0,False,123373.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+358,17,Chhattisgarh,Dhamtari,377,55.9,high,-8.5,0.0,986.0,14778.0,151423.0,3697.0,4422993.0,129846.0,False,13185.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+362,27,Uttar Pradesh,Hamirpur,149,55.7,high,-5.0,0.0,5571.0,38032.0,160875.0,50900.0,7403934.0,115065.0,False,154609.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+359,16,Assam,Jorhat,290,55.7,high,5.3,0.0,0.0,14144.0,203164.0,235.0,7060777.0,106169.0,False,32.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+363,28,Odisha,Jagatsinghapur,355,55.7,high,-2.8,,,9962.0,188160.0,,7302995.0,109419.0,False,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+364,1,Goa,North Goa,551,55.7,high,-1.4,121.0,35.0,5672.0,73811.0,1108.0,812835.0,13574.0,False,2092.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+361,22,Gujarat,Aravalli,672,55.7,high,-4.1,0.0,563.0,40353.0,252150.0,19755.0,5125904.0,223026.0,False,68845.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+360,2,Meghalaya,Eastern West Khasi Hills,740,55.7,high,-2.8,7.0,,9422.0,21238.0,31.0,1162433.0,,False,80.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+365,28,Uttar Pradesh,Amroha,154,55.5,high,-1.8,5928.0,12.0,59898.0,276811.0,18670.0,1393769.0,262352.0,True,88365.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+366,14,West Bengal,Jalpaiguri,314,55.5,high,-1.7,220.0,67.0,33199.0,500241.0,1681.0,8306200.0,103310.0,False,4735.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+368,29,Uttar Pradesh,Farrukhabad,141,55.4,high,-2.2,0.0,103.0,81334.0,338982.0,16153.0,3965601.0,285155.0,False,69894.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+369,23,Gujarat,Bharuch,442,55.4,high,-1.6,922.0,342.0,46815.0,354917.0,10824.0,8724416.0,95753.0,True,30644.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+367,25,Tamil Nadu,Thoothukkudi,594,55.4,high,-1.3,2890.0,501.0,21476.0,267781.0,27774.0,9940030.0,21237.0,False,25205.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+370,30,Uttar Pradesh,Sultanpur,185,55.2,high,-1.2,0.0,259.0,81961.0,386485.0,27059.0,5943206.0,251858.0,False,114609.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+371,15,West Bengal,Purba Bardhaman,306,55.2,high,-2.4,0.0,237.0,62347.0,1462903.0,2567.0,33287011.0,131034.0,False,6749.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+372,35,Madhya Pradesh,Betul,394,55.2,high,-3.7,0.0,2182.0,44870.0,284219.0,65190.0,16121272.0,213989.0,False,152186.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+373,31,Uttar Pradesh,Sambhal,659,55.2,high,-0.7,0.0,10.0,126669.0,356618.0,28121.0,8348982.0,337292.0,True,107646.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+374,3,Nagaland,Mon,247,55.1,high,-6.2,213.0,88.0,8160.0,22778.0,526.0,4257877.0,,False,337.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+375,7,Mizoram,Hnahthial,726,55.1,high,-2.8,1.0,1.0,676.0,2989.0,3.0,502678.0,,False,2.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+378,2,Himachal Pradesh,Bilaspur,15,55.0,high,-1.2,0.0,0.0,6126.0,58108.0,5094.0,4716375.0,127024.0,False,3138.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+376,32,Uttar Pradesh,Hathras,163,55.0,high,-3.5,0.0,11.0,75876.0,287781.0,16392.0,3348873.0,148845.0,False,69437.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+377,4,Nagaland,Kiphire,614,55.0,high,-2.8,0.0,66.0,2924.0,6935.0,497.0,1052209.0,,False,316.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+381,24,Gujarat,Amreli,439,54.9,medium,-7.9,19761.0,11349.0,37209.0,241087.0,22918.0,0.0,,False,95099.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+380,27,Tamil Nadu,The Nilgiris,587,54.9,medium,-3.5,1.0,0.0,10471.0,90836.0,1.0,0.0,16767.0,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+379,26,Tamil Nadu,Tiruchirappalli,591,54.9,medium,-3.2,1378.0,124.0,39301.0,473886.0,4533.0,0.0,163588.0,False,12242.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+382,18,Andhra Pradesh,Kakinada,746,54.9,medium,-6.7,0.0,391.0,23222.0,351427.0,14762.0,0.0,12761.0,False,61881.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+386,8,Mizoram,Champhai,262,54.8,medium,-2.8,4.0,4.0,1700.0,5603.0,40.0,0.0,,False,29.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+387,17,Assam,Nagaon,297,54.8,medium,2.1,0.0,0.0,53662.0,352796.0,2392.0,0.0,253242.0,False,3289.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+384,23,Maharashtra,Gondiya,476,54.8,medium,2.9,0.0,0.0,27233.0,238232.0,3943.0,0.0,210106.0,False,9473.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+385,19,Andhra Pradesh,East Godavari,505,54.8,medium,-8.3,29301.0,152.0,61982.0,937980.0,13338.0,0.0,152962.0,False,60093.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+388,28,Tamil Nadu,Dharmapuri,571,54.8,medium,-3.5,829.0,323.0,15500.0,178966.0,3306.0,0.0,207995.0,False,6993.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+389,18,Assam,Chirang,612,54.8,medium,3.9,0.0,0.0,10266.0,98017.0,1771.0,0.0,90886.0,False,1125.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+383,25,Gujarat,Mahisagar,669,54.8,medium,-3.0,0.0,485.0,37652.0,229817.0,9952.0,0.0,,False,31165.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+391,18,Bihar,Madhubani,206,54.7,medium,6.5,0.0,0.0,244635.0,910192.0,19016.0,0.0,,False,57239.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+390,36,Madhya Pradesh,Morena,417,54.7,medium,-0.8,0.0,42.0,85784.0,426008.0,17351.0,0.0,368879.0,False,45754.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+394,12,Kerala,Kasaragod,558,54.7,medium,-2.8,1.0,1.0,26513.0,130420.0,7.0,0.0,25707.0,False,15.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+392,5,Nagaland,Longleng,615,54.7,medium,-6.2,0.0,57.0,1198.0,5264.0,212.0,0.0,,False,153.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+393,19,Assam,Biswanath,705,54.7,medium,3.9,0.0,0.0,13806.0,144625.0,1041.0,0.0,131078.0,False,862.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+395,20,Andhra Pradesh,Sri Potti Sriramulu Nell*,515,54.6,medium,-1.6,8223.0,286.0,48184.0,495838.0,29125.0,0.0,170256.0,False,116618.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+401,33,Uttar Pradesh,Gorakhpur,148,54.5,medium,-4.1,26681.0,207.0,91820.0,742225.0,40627.0,0.0,269267.0,False,184163.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+399,21,Andhra Pradesh,Srikakulam,519,54.5,medium,-8.6,4866.0,1730.0,31082.0,476627.0,12411.0,0.0,59001.0,False,38333.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+400,26,Karnataka,Hassan,539,54.5,medium,-2.5,0.0,54.0,17589.0,220007.0,3037.0,0.0,,False,4123.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+398,29,Tamil Nadu,Namakkal,580,54.5,medium,-5.1,2288.0,142.0,15186.0,248393.0,9022.0,0.0,163490.0,False,22168.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+397,9,Mizoram,Saitual,727,54.5,medium,-2.8,2.0,2.0,967.0,3723.0,7.0,0.0,,False,3.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+396,18,Chhattisgarh,Gaurela-Pendra-Marwahi,734,54.5,medium,2.1,0.0,0.0,7004.0,68825.0,375.0,0.0,53640.0,False,174.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+405,8,Rajasthan,Udaipur,117,54.4,medium,2.3,0.0,0.0,130656.0,589088.0,29294.0,0.0,619913.0,False,59643.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+403,34,Uttar Pradesh,Sitapur,183,54.4,medium,-1.9,0.0,471.0,262854.0,783603.0,47733.0,0.0,662997.0,False,204584.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+404,4,Arunachal Pradesh,East Kameng,231,54.4,medium,-2.8,17.0,11.0,1922.0,5257.0,134.0,0.0,,False,88.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+402,19,Chhattisgarh,Balrampur,649,54.4,medium,0.5,0.0,0.0,28314.0,147123.0,860.0,0.0,153125.0,False,144.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+406,19,Bihar,Bhagalpur,192,54.3,medium,5.5,0.0,0.0,177037.0,729644.0,12391.0,0.0,,False,39279.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+407,37,Madhya Pradesh,West Nimar,414,54.2,medium,-1.0,0.0,1607.0,68415.0,301053.0,62363.0,0.0,346978.0,False,248674.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+411,9,Rajasthan,Jalor,104,54.1,medium,-0.3,0.0,12.0,111419.0,347520.0,8504.0,0.0,486835.0,False,20991.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+413,36,Uttar Pradesh,Basti,131,54.1,medium,-2.7,0.0,227.0,64108.0,310743.0,28478.0,0.0,319181.0,False,130371.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+408,35,Uttar Pradesh,Etawah,139,54.1,medium,-2.8,0.0,81.0,59408.0,286927.0,21022.0,0.0,194456.0,False,83487.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+409,38,Madhya Pradesh,Ashoknagar,391,54.1,medium,-7.6,0.0,5821.0,35422.0,125064.0,39974.0,0.0,116849.0,False,109709.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+410,30,Tamil Nadu,Thiruvarur,590,54.1,medium,-3.6,0.0,404.0,20280.0,205627.0,12863.0,0.0,2213.0,False,53246.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+412,22,Andhra Pradesh,Eluru,748,54.1,medium,-8.8,0.0,1684.0,34000.0,340502.0,14897.0,0.0,33110.0,False,62775.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+414,10,Rajasthan,Barmer,90,54.0,medium,0.8,0.0,0.0,112167.0,408065.0,2220.0,0.0,771946.0,False,3672.0,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+415,37,Uttar Pradesh,Ballia,126,54.0,medium,-2.6,13097.0,778.0,88729.0,534430.0,35170.0,0.0,230563.0,False,150405.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+416,13,Kerala,Alappuzha,554,54.0,medium,-2.8,1913.0,1.0,20244.0,191276.0,5097.0,0.0,23307.0,False,11066.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+417,20,Bihar,Sheohar,220,53.9,medium,5.3,0.0,0.0,34980.0,133542.0,3261.0,0.0,,False,9342.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+418,26,Gujarat,Botad,676,53.8,medium,-4.0,2802.0,944.0,13232.0,122523.0,4833.0,0.0,,False,21447.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+419,38,Uttar Pradesh,Jalaun,151,53.6,medium,-6.6,0.0,15528.0,52984.0,236052.0,68789.0,0.0,187782.0,False,237631.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+420,10,Mizoram,Serchhip,268,53.6,medium,-2.8,10.0,10.0,1343.0,6531.0,64.0,0.0,,False,16.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+422,21,Bihar,Kaimur (bhabua),200,53.5,medium,4.2,0.0,0.0,79384.0,377703.0,23046.0,0.0,,False,112083.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+421,31,Telangana,Karimnagar,508,53.5,medium,-9.2,0.0,5.0,34836.0,288957.0,23588.0,0.0,77027.0,False,111843.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+423,3,Himachal Pradesh,Hamirpur,17,53.4,medium,-4.2,1839.0,,6325.0,64616.0,6284.0,0.0,139313.0,False,1373.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+424,39,Uttar Pradesh,Ghazipur,146,53.4,medium,-2.3,0.0,669.0,88898.0,522833.0,43253.0,0.0,433552.0,False,189232.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+427,6,Nagaland,Dimapur,244,53.3,medium,-6.6,69.0,13.0,6475.0,38675.0,143.0,0.0,,False,356.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+426,1,Tripura,Dhalai,269,53.3,medium,6.7,0.0,0.0,7580.0,78091.0,513.0,0.0,38411.0,False,529.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+425,32,Telangana,Khammam,509,53.3,medium,-8.9,0.0,294.0,27320.0,311718.0,14993.0,0.0,100999.0,False,53916.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+429,1,Delhi,North East,81,53.2,medium,1.2,,,36713.0,220920.0,,,,,,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+432,20,Assam,Sonitpur,301,53.2,medium,2.9,0.0,0.0,23874.0,231532.0,2118.0,0.0,155578.0,False,802.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+431,27,Gujarat,Gandhinagar,446,53.2,medium,-1.4,1467.0,30.0,33689.0,305373.0,6705.0,0.0,127753.0,False,24465.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+428,24,Maharashtra,Ahmadnagar,466,53.2,medium,-3.7,19505.0,3616.0,95919.0,683689.0,90175.0,0.0,1106818.0,False,170565.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+430,25,Maharashtra,Washim,499,53.2,medium,3.4,0.0,0.0,32235.0,202006.0,24323.0,0.0,121881.0,False,35962.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+433,12,Jammu & Kashmir,Jammu,5,53.1,medium,-6.5,0.0,11.0,19882.0,298080.0,16519.0,0.0,52160.0,False,54455.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+434,1,Andaman & Nicobar,North  & Middle Andaman,632,53.1,medium,-2.8,5.0,5.0,1226.0,18168.0,114.0,0.0,,False,1.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+436,21,Assam,Golaghat,288,53.0,medium,0.2,0.0,0.0,21459.0,251964.0,750.0,0.0,222451.0,False,10.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+435,22,Bihar,Arwal,611,53.0,medium,5.8,0.0,0.0,36245.0,154888.0,2531.0,0.0,,False,11306.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+437,22,Assam,South Salmara Mancachar,707,53.0,medium,4.3,0.0,0.0,18153.0,78533.0,453.0,0.0,46362.0,False,588.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+439,23,Bihar,Banka,190,52.9,medium,0.0,0.0,0.0,116660.0,442967.0,4748.0,0.0,,False,22223.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+440,27,Maharashtra,Amravati,468,52.9,medium,0.9,0.0,0.0,65238.0,460996.0,31265.0,0.0,163177.0,False,44318.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+438,26,Maharashtra,Nagpur,484,52.9,medium,-2.5,7424.0,2580.0,67064.0,746249.0,37512.0,0.0,227748.0,False,79975.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+444,40,Uttar Pradesh,Faizabad,140,52.8,medium,-4.0,12102.0,334.0,67065.0,408394.0,22882.0,0.0,297833.0,False,102694.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+442,39,Madhya Pradesh,Sehore,427,52.8,medium,-0.8,0.0,584.0,31990.0,190699.0,77277.0,0.0,122398.0,False,234343.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+441,28,Maharashtra,Ratnagiri,492,52.8,medium,-4.3,175.0,171.0,16224.0,209707.0,1196.0,0.0,340841.0,False,833.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+443,16,West Bengal,Kalimpong,702,52.8,medium,-0.4,0.0,0.0,1681.0,38799.0,14.0,0.0,27469.0,False,30.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+445,41,Uttar Pradesh,Mau,168,52.7,medium,-6.0,17572.0,290.0,54053.0,308822.0,20220.0,0.0,171270.0,False,94722.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+446,42,Uttar Pradesh,Bara Banki,129,52.6,medium,-2.0,0.0,356.0,132944.0,568654.0,37297.0,0.0,474635.0,False,164237.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+448,24,Bihar,Bhojpur,193,52.4,medium,4.9,0.0,0.0,97592.0,663374.0,24779.0,0.0,,False,118160.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+449,28,Gujarat,Rajkot,457,52.4,medium,-7.2,31520.0,9497.0,63760.0,586514.0,32930.0,0.0,,False,144217.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+447,43,Uttar Pradesh,Amethi,640,52.4,medium,-1.4,0.0,202.0,66759.0,271393.0,28614.0,0.0,174286.0,False,124213.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+451,25,Bihar,Araria,188,52.3,medium,5.6,0.0,0.0,185852.0,630653.0,23626.0,0.0,,False,102785.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+452,17,West Bengal,Nadia,320,52.3,medium,-5.1,6417.0,1751.0,86323.0,1086379.0,12501.0,0.0,271472.0,False,38385.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+450,29,Maharashtra,Bhandara,471,52.3,medium,0.5,0.0,0.0,27093.0,234315.0,11318.0,0.0,112337.0,False,49340.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+454,44,Uttar Pradesh,Kheri,159,52.2,medium,-1.7,0.0,284.0,182507.0,673672.0,43271.0,0.0,635714.0,False,197511.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+453,31,Tamil Nadu,Thiruvallur,589,52.2,medium,-4.7,415.0,352.0,20858.0,372831.0,2529.0,0.0,58769.0,False,12491.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+456,18,West Bengal,Murshidabad,319,52.1,medium,-2.4,9016.0,1208.0,162234.0,1578450.0,28690.0,0.0,309671.0,False,93014.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+455,20,Chhattisgarh,Koriya,384,52.1,medium,0.7,0.0,0.0,16819.0,134678.0,441.0,0.0,134918.0,False,127.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+458,5,Arunachal Pradesh,Upper Subansiri,241,51.9,medium,-2.8,9.0,9.0,1692.0,8457.0,60.0,0.0,,False,48.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+457,30,Maharashtra,Sindhudurg,495,51.9,medium,-0.8,32.0,24.0,8956.0,104730.0,1137.0,0.0,141908.0,False,1198.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+461,7,Nagaland,Tuensang,249,51.8,medium,-4.0,78.0,75.0,5737.0,17047.0,364.0,0.0,,False,237.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+460,32,Tamil Nadu,Krishnagiri,577,51.8,medium,-3.5,1031.0,532.0,37715.0,229197.0,4644.0,0.0,252996.0,False,9687.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+459,2,Tripura,Sipahijala,653,51.8,medium,4.5,0.0,0.0,10999.0,92386.0,317.0,0.0,35112.0,False,295.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+462,3,Tripura,Unokoti,655,51.8,medium,6.7,0.0,0.0,5378.0,49047.0,239.0,0.0,11734.0,False,237.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+463,23,Assam,Sivasagar,300,51.7,medium,5.3,0.0,0.0,14336.0,147662.0,163.0,0.0,106549.0,False,20.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+464,23,Andhra Pradesh,Chittoor,503,51.6,medium,-1.4,417.0,45.0,81734.0,609016.0,2753.0,0.0,448097.0,False,7705.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+467,25,Assam,Kamrup,291,51.5,medium,1.1,0.0,0.0,34114.0,338053.0,2740.0,0.0,210616.0,False,1210.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+465,40,Madhya Pradesh,Ujjain,435,51.5,medium,-1.3,0.0,330.0,48546.0,347617.0,87502.0,0.0,210262.0,False,217573.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+466,24,Assam,Kamrup Metropolitan,618,51.5,medium,1.1,0.0,0.0,14143.0,279568.0,241.0,0.0,27449.0,False,61.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+469,26,Bihar,Supaul,223,51.4,medium,1.3,0.0,0.0,125240.0,446977.0,13097.0,0.0,,False,49645.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+468,26,Assam,Dibrugarh,286,51.4,medium,5.6,0.0,0.0,35097.0,287269.0,373.0,0.0,156726.0,False,51.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+470,24,Andhra Pradesh,Krishna,510,51.4,medium,-3.8,10128.0,6715.0,55830.0,767266.0,29715.0,0.0,91086.0,False,87896.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+472,11,Rajasthan,Banswara,88,51.3,medium,0.9,0.0,0.0,104091.0,300784.0,29799.0,0.0,607623.0,False,62070.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+473,45,Uttar Pradesh,Kushinagar,160,51.3,medium,-1.0,4008.0,37.0,95315.0,476486.0,25685.0,0.0,286716.0,False,119294.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+471,41,Madhya Pradesh,Raisen,421,51.3,medium,-5.9,0.0,10947.0,44896.0,243233.0,83122.0,0.0,99224.0,False,345163.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+475,33,Tamil Nadu,Theni,588,51.3,medium,-2.8,1215.0,91.0,18279.0,143448.0,3726.0,0.0,41119.0,False,11809.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+474,25,Andhra Pradesh,Konaseema,747,51.3,medium,-5.9,0.0,9.0,19547.0,295802.0,14215.0,0.0,,False,61159.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+476,1,Uttarakhand,Champawat,48,51.2,medium,-3.1,307.0,20.0,4852.0,26089.0,1161.0,0.0,68246.0,False,821.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+477,12,Rajasthan,Tonk,116,51.1,medium,3.0,0.0,0.0,42882.0,238084.0,17830.0,0.0,301240.0,False,52118.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+478,8,Nagaland,Mokokchung,246,51.1,medium,-5.1,112.0,28.0,3268.0,14664.0,309.0,0.0,,False,284.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+479,42,Madhya Pradesh,Sheopur,431,51.1,medium,-2.2,0.0,775.0,37837.0,143312.0,21680.0,0.0,123038.0,False,102731.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+480,29,Gujarat,Mahesana,451,51.0,medium,-1.9,3507.0,24.0,58351.0,450691.0,13620.0,0.0,233438.0,False,49576.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+481,31,Maharashtra,Mumbai Suburban,483,51.0,medium,-4.9,,,185354.0,1399709.0,,,,,,True,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+484,13,Jammu & Kashmir,Srinagar,13,50.9,medium,-8.9,10.0,10.0,7465.0,186928.0,42.0,0.0,,,162.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+483,46,Uttar Pradesh,Mainpuri,166,50.9,medium,-1.4,0.0,82.0,64074.0,341298.0,31284.0,0.0,324747.0,False,134836.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+482,30,Gujarat,Kachchh,449,50.9,medium,-3.1,2637.0,42.0,61555.0,383435.0,6623.0,0.0,,False,16603.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+487,43,Madhya Pradesh,Dhar,403,50.8,medium,0.4,0.0,0.0,92715.0,352249.0,86741.0,0.0,398086.0,False,257273.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+486,27,Karnataka,Mysuru,545,50.8,medium,-4.0,3093.0,730.0,27575.0,422769.0,16854.0,0.0,392743.0,False,31577.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+485,34,Tamil Nadu,Tenkasi,733,50.8,medium,-0.6,432.0,58.0,22732.0,226919.0,10023.0,0.0,61715.0,False,31016.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+488,27,Bihar,Pashchim Champaran,211,50.7,medium,2.4,0.0,0.0,186010.0,657766.0,15576.0,0.0,,False,64913.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+489,1,Haryana,Karnal,67,50.6,medium,-3.0,0.0,0.0,38128.0,299058.0,35700.0,0.0,130109.0,False,178501.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+490,13,Rajasthan,Jhunjhunun,106,50.6,medium,-1.7,4687.0,1351.0,35119.0,375601.0,30334.0,0.0,530636.0,False,72710.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+492,47,Uttar Pradesh,Ambedkar Nagar,121,50.5,medium,-3.2,0.0,315.0,51840.0,399342.0,25331.0,0.0,245206.0,False,115786.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+491,1,Sikkim,East District,225,50.5,medium,-2.8,12.0,,2688.0,36264.0,84.0,0.0,34189.0,False,24.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+493,44,Madhya Pradesh,Datia,401,50.5,medium,-7.5,0.0,2515.0,26002.0,151351.0,35824.0,0.0,175379.0,False,144674.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+494,9,Nagaland,Zunheboto,251,50.4,medium,-2.8,24.0,16.0,3539.0,13193.0,155.0,0.0,,False,124.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+496,49,Uttar Pradesh,Aligarh,119,50.3,medium,-2.6,0.0,31.0,165317.0,655965.0,40460.0,0.0,332238.0,False,172481.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+495,48,Uttar Pradesh,Shrawasti,181,50.3,medium,-0.4,0.0,56.0,73647.0,156777.0,24747.0,0.0,176758.0,False,104965.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+497,35,Tamil Nadu,Salem,584,50.2,medium,-3.3,4578.0,284.0,38433.0,450538.0,10930.0,0.0,272521.0,False,31172.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+500,4,Himachal Pradesh,Sirmaur,24,50.1,medium,-5.9,0.0,92.0,11325.0,76197.0,5405.0,0.0,200747.0,False,9927.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+498,14,Rajasthan,Pali,111,50.1,medium,3.9,0.0,0.0,83463.0,380096.0,30760.0,0.0,210566.0,False,40481.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+499,50,Uttar Pradesh,Rampur,176,50.1,medium,0.4,0.0,0.0,75519.0,408936.0,30925.0,0.0,251927.0,False,143784.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+501,24,Jharkhand,Kodarma,334,50.1,medium,0.0,0.0,0.0,24390.0,149999.0,6347.0,0.0,,False,10057.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+503,15,Rajasthan,Nagaur,110,50.0,medium,1.6,0.0,0.0,71197.0,475371.0,19443.0,0.0,785014.0,False,31245.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+502,51,Uttar Pradesh,Firozabad,143,50.0,medium,-0.7,0.0,17.0,95427.0,450777.0,22330.0,0.0,219289.0,False,84618.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+505,5,Himachal Pradesh,Una,26,49.9,medium,-4.4,0.0,4.0,7095.0,90363.0,7081.0,0.0,77208.0,False,13663.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+504,27,Assam,Morigaon,296,49.9,medium,1.2,0.0,0.0,38033.0,188036.0,2191.0,0.0,180216.0,False,3705.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+509,16,Rajasthan,Churu,96,49.8,medium,-0.2,0.0,302.0,52050.0,342289.0,74921.0,0.0,534211.0,False,94475.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+508,10,Nagaland,Phek,248,49.8,medium,-2.8,60.0,19.0,3483.0,14728.0,309.0,0.0,,False,580.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+506,28,Assam,Dima Hasao,299,49.8,medium,2.6,0.0,0.0,2056.0,39626.0,299.0,0.0,52092.0,False,27.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+507,26,Andhra Pradesh,West Godavari,523,49.8,medium,-5.1,23094.0,49.0,70777.0,708812.0,18277.0,0.0,124923.0,False,89803.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+512,1,Punjab,Moga,38,49.7,medium,-3.9,0.0,3.0,15453.0,158997.0,35640.0,0.0,,False,170110.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+514,17,Rajasthan,Ajmer,86,49.7,medium,5.7,0.0,0.0,60591.0,431864.0,52394.0,0.0,275829.0,False,74242.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+513,28,Bihar,Aurangabad,189,49.7,medium,1.9,0.0,0.0,108952.0,507660.0,28239.0,0.0,,False,120664.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+510,11,Nagaland,Kohima,245,49.7,medium,-6.6,53.0,50.0,3472.0,12034.0,162.0,0.0,,False,229.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+511,14,Jammu & Kashmir,Ramban,621,49.7,medium,4.1,0.0,,6415.0,48366.0,966.0,0.0,43649.0,False,248.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+516,29,Bihar,Kishanganj,203,49.6,medium,5.7,0.0,0.0,108323.0,363532.0,7090.0,0.0,,False,27089.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+517,30,Bihar,Saharsa,216,49.6,medium,2.5,0.0,0.0,135861.0,410005.0,11825.0,0.0,,False,46377.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+515,32,Maharashtra,Kolhapur,480,49.6,medium,-1.5,457.0,70.0,71553.0,580971.0,4380.0,0.0,758775.0,False,16560.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+518,52,Uttar Pradesh,Azamgarh,123,49.5,medium,-3.3,0.0,473.0,99041.0,791727.0,49844.0,0.0,505715.0,False,226763.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+519,31,Bihar,Sitamarhi,221,49.4,medium,4.2,0.0,0.0,206707.0,697809.0,19805.0,0.0,,False,85251.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+520,32,Bihar,Vaishali,224,49.4,medium,1.3,0.0,0.0,174242.0,733206.0,9526.0,0.0,,False,36877.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+521,1,Manipur,Jiribam,713,49.4,medium,5.8,0.0,,1330.0,4744.0,427.0,0.0,,False,105.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+522,53,Uttar Pradesh,Gonda,147,49.3,medium,-2.3,0.0,481.0,121392.0,534987.0,34546.0,0.0,520051.0,False,154042.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+524,29,Assam,Lakhimpur,295,49.3,medium,-0.7,43.0,34.0,22548.0,207704.0,1358.0,0.0,256666.0,False,1043.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+523,2,Puducherry,Karaikal,598,49.3,medium,3.0,0.0,,5831.0,48196.0,892.0,0.0,948.0,False,3946.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+525,2,Goa,South Goa,552,49.2,medium,0.8,0.0,0.0,12744.0,86395.0,1464.0,0.0,20482.0,False,2124.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+526,2,Haryana,Nuh,604,49.2,medium,1.0,0.0,0.0,93412.0,211892.0,13641.0,0.0,121005.0,False,46965.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+527,33,Bihar,Khagaria,202,49.1,medium,3.1,0.0,0.0,89947.0,327638.0,11920.0,0.0,,False,45041.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+528,34,Bihar,Purnia,214,49.1,medium,5.6,0.0,0.0,218438.0,711784.0,12148.0,0.0,,False,59353.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+529,21,Chhattisgarh,Mungeli,647,49.1,medium,2.1,0.0,0.0,20144.0,121486.0,15512.0,0.0,110925.0,False,31335.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+530,30,Assam,West Karbi Anglong,710,49.0,medium,4.1,0.0,0.0,8228.0,52344.0,716.0,0.0,103703.0,False,592.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+531,18,Rajasthan,Jaisalmer,103,48.9,medium,5.2,0.0,0.0,27449.0,94364.0,32927.0,0.0,104853.0,False,73428.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+532,33,Maharashtra,Sangli,493,48.9,medium,-4.4,10284.0,1021.0,30292.0,401056.0,38764.0,0.0,545605.0,False,97238.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+534,3,Puducherry,Puducherry,600,48.8,medium,4.4,0.0,0.0,10671.0,209141.0,1279.0,0.0,9687.0,False,5396.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+533,31,Gujarat,Gir Somnath,675,48.8,medium,-0.8,1727.0,350.0,35369.0,192548.0,14608.0,0.0,,False,46138.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+535,19,West Bengal,Cooch Behar,308,48.7,medium,-0.5,0.0,35.0,36790.0,603793.0,10478.0,0.0,,False,29549.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+537,54,Uttar Pradesh,Deoria,137,48.6,medium,-0.9,0.0,23.0,85255.0,331220.0,33620.0,0.0,262642.0,False,152886.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+536,35,Bihar,Darbhanga,195,48.6,medium,5.5,0.0,0.0,214057.0,788767.0,12260.0,0.0,,False,47990.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+538,22,Chhattisgarh,Surajpur,648,48.6,medium,0.7,0.0,0.0,20037.0,150757.0,1520.0,0.0,177193.0,False,764.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+539,28,Karnataka,Udupi,549,48.4,medium,-0.3,38.0,4.0,12403.0,163436.0,1616.0,0.0,70074.0,False,3577.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+541,55,Uttar Pradesh,Muzaffarnagar,172,48.2,medium,1.4,0.0,0.0,79247.0,411367.0,15760.0,0.0,270793.0,False,76490.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+540,4,Tripura,Gomati,654,48.2,medium,4.5,0.0,0.0,5688.0,72694.0,648.0,0.0,28834.0,False,1026.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+542,19,Rajasthan,Alwar,87,48.0,medium,0.4,0.0,0.0,115075.0,620119.0,30970.0,0.0,1024205.0,False,90417.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+543,45,Madhya Pradesh,Vidisha,437,47.7,medium,-2.8,0.0,6650.0,39290.0,180308.0,100324.0,0.0,87849.0,False,271829.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+544,20,Rajasthan,Bikaner,93,47.5,medium,-4.6,14932.0,3799.0,63610.0,441782.0,47900.0,0.0,495780.0,False,120109.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+545,21,Rajasthan,Karauli,108,47.5,medium,0.1,0.0,0.0,77028.0,284518.0,14382.0,0.0,391577.0,False,37235.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+546,56,Uttar Pradesh,Hardoi,150,47.4,medium,0.2,0.0,0.0,192069.0,772157.0,64200.0,0.0,691423.0,False,271372.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+547,36,Bihar,Sheikhpura,219,47.4,medium,4.7,0.0,0.0,38309.0,146099.0,5537.0,0.0,,False,24988.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+549,29,Karnataka,Dakshina Kannada,534,47.4,medium,-0.3,8.0,0.0,33966.0,237948.0,221.0,0.0,37873.0,False,1006.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+548,3,Meghalaya,South West Khasi Hills,658,47.4,medium,6.3,0.0,0.0,6648.0,17571.0,6.0,0.0,,False,5.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+550,57,Uttar Pradesh,Jhansi,153,47.3,medium,-1.3,0.0,3665.0,45741.0,260845.0,76390.0,0.0,160024.0,False,225655.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+551,5,Tripura,North Tripura,270,47.2,medium,6.7,0.0,0.0,10160.0,93131.0,95.0,0.0,20756.0,False,128.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+553,32,Gujarat,Patan,455,47.2,medium,2.9,0.0,0.0,45700.0,256144.0,17282.0,0.0,167471.0,False,55899.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+552,4,Puducherry,Mahe,599,47.2,medium,-1.1,,,649.0,5848.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+555,58,Uttar Pradesh,Moradabad,171,47.1,medium,0.7,0.0,0.0,102359.0,443619.0,24476.0,0.0,241235.0,False,112747.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+554,6,Arunachal Pradesh,Lower Subansiri,236,47.1,medium,-2.8,0.0,9.0,709.0,8237.0,47.0,0.0,,False,47.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+558,59,Uttar Pradesh,Shahjahanpur,180,47.0,medium,2.7,0.0,0.0,132247.0,572915.0,53086.0,0.0,415903.0,False,234745.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+556,37,Bihar,Siwan,222,47.0,medium,0.8,0.0,0.0,92316.0,584213.0,19439.0,0.0,,False,47858.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+557,6,Tripura,West Tripura,272,47.0,medium,5.2,0.0,0.0,10131.0,194798.0,308.0,0.0,25090.0,False,387.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+559,3,Haryana,Palwal,619,47.0,medium,1.5,0.0,0.0,36767.0,191455.0,19376.0,0.0,103637.0,False,60724.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+560,46,Madhya Pradesh,Narsimhapur,418,46.9,medium,-1.4,0.0,2113.0,23026.0,164390.0,51556.0,0.0,105923.0,False,189106.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+563,60,Uttar Pradesh,Lalitpur,161,46.8,medium,-2.6,0.0,3551.0,40264.0,147081.0,58221.0,0.0,201948.0,False,160661.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+561,36,Tamil Nadu,Chennai,568,46.8,medium,-3.5,7.0,,63527.0,989062.0,7.0,0.0,,,26.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+562,7,Tripura,Khowai,652,46.8,medium,5.2,0.0,0.0,3414.0,50128.0,340.0,0.0,14540.0,False,380.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+564,20,West Bengal,Darjiling,309,46.7,medium,2.0,0.0,0.0,16808.0,278776.0,139.0,0.0,,False,412.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+565,2,Punjab,Amritsar,27,46.5,medium,-0.4,0.0,1.0,42646.0,380860.0,37840.0,0.0,,False,176164.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+566,4,Meghalaya,South Garo Hills,277,46.4,medium,6.3,0.0,0.0,3969.0,24113.0,161.0,0.0,32604.0,False,212.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+567,8,Tripura,South Tripura,271,46.3,medium,4.4,0.0,0.0,6580.0,94855.0,489.0,0.0,21527.0,False,667.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+569,61,Uttar Pradesh,Gautam Buddha Nagar,144,46.2,medium,2.5,0.0,0.0,66672.0,309371.0,9233.0,0.0,86740.0,False,40142.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+568,34,Maharashtra,Pune,490,46.2,medium,-1.8,4730.0,555.0,106355.0,1464147.0,33990.0,0.0,1016945.0,False,84279.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+571,22,Rajasthan,Jaipur,102,46.1,medium,3.6,0.0,0.0,124796.0,1137269.0,61672.0,0.0,761835.0,False,96887.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+570,62,Uttar Pradesh,Pilibhit,173,46.1,medium,1.4,0.0,0.0,64735.0,333750.0,28910.0,0.0,253437.0,False,135834.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+572,33,Telangana,Hyderabad,507,45.9,medium,-10.2,,,61562.0,596377.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+573,63,Uttar Pradesh,Saharanpur,177,45.8,medium,1.4,0.0,0.0,104200.0,453506.0,23773.0,0.0,268708.0,False,112992.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+575,3,Punjab,Kapurthala,35,45.7,medium,-1.8,0.0,2.0,11836.0,130394.0,21720.0,0.0,,False,104538.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+574,23,Rajasthan,Bhilwara,92,45.7,medium,5.5,0.0,0.0,61834.0,385110.0,53633.0,0.0,549429.0,False,105737.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+576,2,Manipur,Ukhrul,260,45.7,medium,0.0,0.0,0.0,2357.0,8127.0,718.0,0.0,40160.0,False,332.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+577,64,Uttar Pradesh,Shamli,660,45.6,medium,0.4,0.0,0.0,44604.0,173109.0,10438.0,0.0,137118.0,False,49546.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+578,65,Uttar Pradesh,Mahrajganj,164,45.5,medium,2.5,0.0,0.0,91474.0,399598.0,31591.0,0.0,239638.0,False,143488.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+583,6,Himachal Pradesh,Kullu,20,45.3,medium,1.3,0.0,0.0,4872.0,66355.0,2316.0,0.0,217563.0,False,485.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+581,24,Rajasthan,Sawai Madhopur,113,45.3,medium,0.1,0.0,0.0,52349.0,243630.0,17897.0,0.0,331658.0,False,55455.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+579,38,Bihar,Gopalganj,197,45.3,medium,2.1,0.0,0.0,96865.0,455339.0,13608.0,0.0,,False,43042.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+582,3,Manipur,Churachandpur,254,45.3,medium,2.8,0.0,0.0,4216.0,22291.0,652.0,0.0,54454.0,False,501.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+580,23,Chhattisgarh,Bametara,650,45.3,medium,1.4,0.0,0.0,17784.0,118810.0,28064.0,0.0,79287.0,False,74581.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+585,67,Uttar Pradesh,Budaun,133,45.2,medium,1.6,0.0,0.0,157007.0,546569.0,45688.0,0.0,539685.0,False,175008.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+584,66,Uttar Pradesh,Ghaziabad,145,45.2,medium,0.8,0.0,0.0,75583.0,583210.0,5706.0,0.0,80184.0,False,27113.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+589,4,Punjab,Faridkot,29,45.1,medium,-1.8,0.0,1.0,9465.0,114544.0,23080.0,0.0,,False,110080.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+587,2,Sikkim,North  District,226,45.1,medium,-2.8,4.0,,704.0,5441.0,29.0,0.0,,False,31.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+586,2,Andaman & Nicobar,Nicobars,603,45.1,medium,-2.2,0.0,,682.0,3909.0,0.0,0.0,,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+588,4,Manipur,Pherzawl,715,45.1,medium,2.8,0.0,,974.0,3896.0,341.0,0.0,,False,262.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+590,68,Uttar Pradesh,Baghpat,124,45.0,medium,0.8,0.0,0.0,34460.0,219479.0,11023.0,0.0,151349.0,False,52791.0,True,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+592,2,Uttarakhand,Uttarkashi,57,44.9,low,4.8,0.0,0.0,9913.0,62148.0,0.0,0.0,136559.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+593,69,Uttar Pradesh,Bijnor,132,44.9,low,0.9,0.0,0.0,107883.0,535343.0,0.0,0.0,281134.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+591,31,Assam,Karbi Anglong,292,44.9,low,0.2,0.0,0.0,5932.0,119267.0,0.0,0.0,157460.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+594,5,Punjab,Jalandhar,34,44.6,low,-0.3,0.0,0.0,28511.0,366971.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+595,4,Haryana,Mahendragarh,69,44.6,low,2.7,0.0,0.0,21277.0,181148.0,0.0,0.0,149167.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+599,7,Himachal Pradesh,Mandi,22,44.5,low,2.4,0.0,0.0,15612.0,140332.0,0.0,0.0,427026.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+596,3,Uttarakhand,Tehri Garhwal,55,44.5,low,0.1,0.0,0.0,17894.0,80797.0,0.0,0.0,211959.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+597,7,Arunachal Pradesh,Upper Siang,240,44.5,low,-2.8,0.0,6.0,513.0,2660.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+598,21,West Bengal,Kolkata,315,44.5,low,-2.2,,,32932.0,749366.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+601,15,Jammu & Kashmir,Samba,624,44.4,low,1.2,0.0,0.0,4800.0,57489.0,0.0,0.0,10569.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+600,5,Meghalaya,South West Garo Hills,663,44.4,low,6.3,0.0,0.0,4777.0,32692.0,0.0,0.0,35922.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+602,70,Uttar Pradesh,Meerut,169,44.3,low,1.6,0.0,0.0,76881.0,495155.0,0.0,0.0,237933.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+606,25,Rajasthan,Chittaurgarh,95,44.2,low,-0.2,0.0,302.0,42224.0,220964.0,0.0,0.0,438427.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+605,6,Meghalaya,East Garo Hills,273,44.2,low,6.3,0.0,0.0,3695.0,22319.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+604,37,Tamil Nadu,Tiruppur,634,44.2,low,-2.0,3036.0,121.0,24494.0,381945.0,0.0,0.0,144602.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+603,8,Arunachal Pradesh,Longding,666,44.2,low,-6.2,0.0,8.0,555.0,5417.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+607,5,Manipur,Imphal West,256,44.0,low,2.8,0.0,0.0,5171.0,41628.0,0.0,0.0,42798.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+608,6,Manipur,Kangpokpi,712,43.9,low,3.7,0.0,,3702.0,15400.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+611,7,Punjab,Bathinda,28,43.5,low,-1.6,0.0,1.0,20565.0,243300.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+609,6,Punjab,Firozpur,31,43.5,low,-2.0,0.0,2.0,15524.0,171094.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+610,38,Tamil Nadu,Erode,573,43.5,low,-0.3,85.0,3.0,31546.0,346276.0,0.0,0.0,189791.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+612,47,Madhya Pradesh,Bhopal,396,43.4,low,-0.6,2795.0,26.0,56420.0,407224.0,0.0,0.0,54824.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+613,71,Uttar Pradesh,Hapur,661,43.3,low,0.3,0.0,0.0,44417.0,214000.0,0.0,0.0,111424.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+615,8,Manipur,Imphal East,255,43.2,low,3.7,0.0,0.0,5047.0,43142.0,0.0,0.0,33649.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+614,7,Manipur,Tamenglong,258,43.2,low,5.8,0.0,0.0,1549.0,6770.0,0.0,0.0,30226.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+616,22,West Bengal,Dakshin Dinajpur,310,43.2,low,5.9,0.0,0.0,31557.0,393584.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+617,9,Manipur,Senapati,257,43.1,low,3.1,0.0,0.0,7841.0,33527.0,0.0,0.0,142605.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+619,23,West Bengal,Uttar Dinajpur,311,43.1,low,4.1,0.0,0.0,92785.0,623403.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+618,2,Delhi,Shahdara,671,43.1,low,1.2,,,22967.0,167708.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+621,24,Chhattisgarh,Janjgir - Champa,379,43.0,low,1.8,0.0,0.0,17134.0,341134.0,0.0,0.0,328645.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+620,10,Manipur,Tengnoupal,716,43.0,low,1.6,0.0,,1269.0,4883.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+623,26,Rajasthan,Jodhpur,107,42.9,low,0.8,0.0,0.0,84101.0,507674.0,0.0,0.0,609797.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+622,35,Maharashtra,Thane,497,42.9,low,0.2,0.0,0.0,153500.0,1419664.0,0.0,0.0,148912.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+624,7,Meghalaya,West Garo Hills,278,42.8,low,6.3,0.0,0.0,15010.0,78014.0,0.0,0.0,103650.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+625,5,Haryana,Jhajjar,64,42.6,low,-0.1,0.0,0.0,20385.0,184898.0,0.0,0.0,126938.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+626,48,Madhya Pradesh,Indore,410,42.4,low,3.4,0.0,0.0,60881.0,505962.0,0.0,0.0,130690.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+628,72,Uttar Pradesh,Bulandshahr,134,42.3,low,1.1,0.0,0.0,109286.0,575009.0,0.0,0.0,388961.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+627,32,Assam,Tinsukia,302,42.3,low,5.6,0.0,0.0,29980.0,295424.0,0.0,0.0,171064.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+631,9,Arunachal Pradesh,West Siang,243,42.2,low,-2.8,0.0,2.0,1053.0,4827.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+629,49,Madhya Pradesh,Mandsaur,416,42.2,low,0.6,0.0,0.0,27735.0,243982.0,0.0,0.0,243123.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+630,11,Manipur,Kamjong,717,42.2,low,0.0,0.0,,910.0,3053.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+633,73,Uttar Pradesh,Jaunpur,152,41.8,low,0.7,0.0,0.0,109052.0,482878.0,0.0,0.0,642715.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+632,8,Meghalaya,East Khasi Hills,274,41.8,low,4.1,0.0,0.0,20397.0,120005.0,0.0,0.0,88996.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+634,36,Maharashtra,Satara,494,41.5,low,0.8,0.0,0.0,36092.0,445735.0,0.0,0.0,672768.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+636,27,Rajasthan,Ganganagar,100,41.3,low,-2.0,0.0,705.0,41514.0,368530.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+635,10,Arunachal Pradesh,Upper Dibang Valley,230,41.3,low,-2.8,0.0,5.0,157.0,1517.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+637,33,Gujarat,Ahmadabad,438,41.3,low,1.4,0.0,0.0,175531.0,1433082.0,0.0,0.0,158799.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+638,6,Haryana,Yamunanagar,76,41.2,low,-0.8,0.0,0.0,23203.0,220606.0,0.0,0.0,71205.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+639,33,Assam,Dhemaji,284,41.0,low,1.2,0.0,0.0,9838.0,130408.0,0.0,0.0,265841.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+640,3,Delhi,North,80,40.9,low,1.1,,,44275.0,232915.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+642,4,Uttarakhand,"Almora
+",45,40.8,low,5.6,0.0,0.0,7121.0,64279.0,0.0,0.0,240292.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+641,4,Delhi,South,83,40.8,low,1.6,,,24877.0,196180.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+644,3,Andaman & Nicobar,South Andaman,602,40.7,low,-4.7,3.0,0.0,2091.0,38070.0,0.0,0.0,,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+643,9,Meghalaya,North Garo Hills,656,40.7,low,6.3,0.0,0.0,5024.0,30301.0,0.0,0.0,46103.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+646,8,Himachal Pradesh,Kangra,18,40.6,low,1.6,0.0,0.0,15392.0,274587.0,0.0,0.0,302078.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+645,28,Rajasthan,Jhalawar,105,40.6,low,1.9,0.0,0.0,51955.0,230556.0,0.0,0.0,278659.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+647,10,Meghalaya,West Khasi Hills,279,40.6,low,1.1,0.0,0.0,19709.0,44424.0,0.0,0.0,77658.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+649,9,Himachal Pradesh,Kinnaur,19,40.5,low,2.4,0.0,0.0,700.0,12484.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+648,12,Manipur,Kakching,711,40.5,low,2.6,0.0,,3045.0,9278.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+650,13,Manipur,Noney,714,40.5,low,4.7,0.0,,924.0,3477.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+651,11,Arunachal Pradesh,Kamle,718,40.2,low,-0.7,0.0,1.0,749.0,2575.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+652,10,Himachal Pradesh,Shimla,23,40.1,low,2.7,0.0,0.0,8715.0,108632.0,0.0,0.0,275745.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+653,14,Manipur,Chandel,253,40.0,low,1.0,0.0,0.0,1879.0,6981.0,0.0,0.0,30472.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+654,11,Meghalaya,West Jaintia Hills,275,40.0,low,4.1,0.0,0.0,13282.0,45866.0,0.0,0.0,42410.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+655,7,Haryana,Fatehabad,61,39.9,low,-1.1,0.0,7.0,18757.0,188388.0,0.0,0.0,127727.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+656,5,Delhi,South East,670,39.9,low,1.1,,,27397.0,201658.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+657,74,Uttar Pradesh,Lucknow,162,39.7,low,0.5,0.0,0.0,117598.0,809352.0,0.0,0.0,200276.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+658,8,Punjab,Tarn Taran,609,39.7,low,3.3,0.0,0.0,14674.0,202807.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+659,9,Punjab,Sangrur,43,39.6,low,-0.3,0.0,1.0,19230.0,255530.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+660,29,Rajasthan,Sikar,114,39.6,low,3.4,0.0,0.0,48408.0,373602.0,0.0,0.0,515206.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+661,12,Arunachal Pradesh,Anjaw,628,39.5,low,-2.8,0.0,4.0,340.0,2277.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+664,11,Himachal Pradesh,Chamba,16,39.3,low,3.4,0.0,0.0,10902.0,65111.0,0.0,0.0,211726.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+663,5,Uttarakhand,Bageshwar,46,39.3,low,1.2,0.0,0.0,3093.0,22337.0,0.0,0.0,97455.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+662,13,Arunachal Pradesh,Shi Yomi,725,39.3,low,-2.8,0.0,1.0,413.0,1171.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+666,30,Rajasthan,Bundi,94,39.2,low,0.7,0.0,0.0,31191.0,197012.0,0.0,0.0,233630.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+665,12,Meghalaya,Ribhoi,276,39.2,low,1.1,0.0,0.0,13601.0,48689.0,0.0,0.0,64712.0,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+667,6,Delhi,New Delhi,79,39.1,low,1.5,,,18295.0,156689.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+670,16,Manipur,Bishnupur,252,39.0,low,3.0,0.0,0.0,2458.0,24161.0,0.0,0.0,35218.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+669,15,Manipur,Thoubal,259,39.0,low,2.6,0.0,0.0,6376.0,18969.0,0.0,0.0,46154.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+668,50,Madhya Pradesh,Hoshangabad,409,39.0,low,0.2,0.0,0.0,30204.0,205542.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+671,14,Arunachal Pradesh,Siang,679,39.0,low,-2.8,0.0,12.0,475.0,2299.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+673,75,Uttar Pradesh,Mathura,167,38.9,low,0.5,0.0,0.0,91392.0,507115.0,0.0,0.0,217919.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+672,12,Nagaland,Noklak,736,38.9,low,-4.3,0.0,40.0,1729.0,5139.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+674,15,Arunachal Pradesh,Pakke Kessang,723,38.8,low,3.3,0.0,0.0,298.0,1363.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+676,6,Uttarakhand,Pithoragarh,53,38.6,low,1.6,0.0,0.0,5362.0,38042.0,0.0,0.0,158929.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+675,16,Arunachal Pradesh,Lepa Rada,724,38.6,low,-2.8,0.0,3.0,411.0,1973.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+678,7,Delhi,West,85,38.4,low,1.9,,,58059.0,443550.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+677,30,Karnataka,Chikkamagaluru,532,38.4,low,3.0,0.0,0.0,14016.0,136259.0,0.0,0.0,173495.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+681,7,Uttarakhand,Hardwar,50,38.3,low,3.9,0.0,0.0,50183.0,255985.0,0.0,0.0,107425.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+679,8,Delhi,Central,77,38.3,low,1.1,,,13516.0,155305.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+680,51,Madhya Pradesh,Shajapur,430,38.3,low,0.1,0.0,0.0,16912.0,138413.0,0.0,0.0,121982.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+682,9,Delhi,East,78,38.1,low,0.9,,,23099.0,198174.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+683,12,Himachal Pradesh,Lahul & Spiti,21,38.0,low,1.6,0.0,,471.0,7438.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+684,8,Haryana,Gurugram,62,37.7,low,3.5,0.0,0.0,30290.0,328142.0,0.0,0.0,63048.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+685,9,Haryana,Sirsa,74,37.7,low,-0.1,0.0,2.0,23730.0,257355.0,0.0,0.0,116128.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+686,10,Punjab,Ludhiana,36,37.6,low,0.7,0.0,0.0,56957.0,660293.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+687,10,Haryana,Faridabad,60,37.5,low,1.7,0.0,0.0,44884.0,314864.0,0.0,0.0,33540.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+688,17,Arunachal Pradesh,West Kameng,242,37.5,low,2.9,0.0,0.0,1050.0,9455.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+689,8,Uttarakhand,Garhwal,52,37.3,low,4.4,0.0,0.0,8828.0,85675.0,0.0,0.0,174332.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+690,34,Assam,Majuli,706,37.0,low,5.3,0.0,0.0,3218.0,34701.0,0.0,0.0,60295.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+691,9,Uttarakhand,Dehradun,49,36.8,low,3.0,0.0,0.0,20459.0,251280.0,0.0,0.0,83105.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+692,11,Haryana,Rewari,72,36.8,low,1.2,0.0,0.0,19556.0,178608.0,0.0,0.0,97964.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+693,52,Madhya Pradesh,Harda,408,36.7,low,1.0,0.0,0.0,16921.0,114641.0,0.0,0.0,40720.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+694,31,Rajasthan,Baran,89,36.4,low,2.2,0.0,0.0,45505.0,233435.0,0.0,0.0,207237.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+695,12,Haryana,Panipat,71,36.3,low,3.6,0.0,0.0,38471.0,258923.0,0.0,0.0,86541.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+696,13,Haryana,Jind,65,36.1,low,2.5,0.0,0.0,16877.0,254256.0,0.0,0.0,251856.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+698,10,Uttarakhand,Chamoli,47,35.9,low,5.1,0.0,0.0,6401.0,50607.0,0.0,0.0,141779.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+697,18,Arunachal Pradesh,Papum Pare,237,35.9,low,0.5,0.0,0.0,3716.0,20431.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+699,14,Haryana,Panchkula,70,35.8,low,3.7,0.0,0.0,12536.0,102881.0,0.0,0.0,31112.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+700,11,Punjab,Mansa,37,35.7,low,0.9,0.0,0.0,9638.0,136459.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+701,15,Haryana,Kurukshetra,68,35.7,low,3.1,0.0,0.0,15328.0,176814.0,0.0,0.0,75514.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+702,16,Haryana,Kaithal,66,35.4,low,2.4,0.0,0.0,25296.0,213108.0,0.0,0.0,145727.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+703,19,Arunachal Pradesh,Lower Siang,719,35.4,low,-2.8,0.0,12.0,314.0,2400.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+704,17,Haryana,Bhiwani,59,35.0,low,3.3,0.0,0.0,35336.0,241317.0,0.0,0.0,149947.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+705,11,Uttarakhand,Nainital,51,34.7,low,2.1,0.0,0.0,9964.0,101818.0,0.0,0.0,161405.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+706,32,Rajasthan,Kota,109,34.4,low,2.8,0.0,0.0,39432.0,320079.0,0.0,0.0,94818.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+708,12,Punjab,Pathankot,662,34.3,low,1.6,0.0,0.0,8673.0,109221.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+707,18,Haryana,Charki Dadri,701,34.3,low,2.0,0.0,0.0,8692.0,117054.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+709,10,Delhi,North West,82,34.0,low,2.0,,,51212.0,393151.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+710,12,Uttarakhand,Rudraprayag,54,33.9,low,0.5,0.0,0.0,3944.0,33196.0,0.0,0.0,97977.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+711,19,Haryana,Rohtak,73,33.9,low,3.5,0.0,0.0,20744.0,222444.0,0.0,0.0,109330.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+712,13,Punjab,Gurdaspur,32,33.8,low,1.7,0.0,0.0,20299.0,262742.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+713,14,Punjab,Sri Muktsar Sahib,39,33.4,low,1.6,0.0,,16017.0,161473.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+714,13,Uttarakhand,Udham Singh Nagar,56,32.9,low,3.2,0.0,0.0,34932.0,256475.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+715,15,Punjab,Patiala,41,32.5,low,1.7,0.0,0.0,23507.0,370468.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+716,16,Punjab,Barnala,605,32.5,low,3.0,0.0,0.0,7720.0,96484.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+717,17,Punjab,Fazilka,651,32.5,low,1.4,0.0,0.0,19218.0,212245.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+718,33,Rajasthan,Hanumangarh,101,32.2,low,4.8,0.0,0.0,32586.0,339503.0,0.0,0.0,323217.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+719,18,Punjab,Fatehgarh Sahib,30,32.1,low,4.1,0.0,,5959.0,114574.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+720,11,Delhi,South West,84,31.7,low,1.8,,,24281.0,244676.0,,,,,,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+721,20,Haryana,Ambala,58,31.4,low,4.0,0.0,0.0,22577.0,166976.0,0.0,0.0,59861.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+722,19,Punjab,Shahid Bhagat Singh Nagar,40,31.3,low,1.5,0.0,0.0,5261.0,89498.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+723,21,Haryana,Hisar,63,31.2,low,2.9,0.0,0.0,40409.0,357157.0,0.0,0.0,237666.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+724,20,Punjab,Malerkotla,737,31.1,low,1.4,0.0,,5062.0,67260.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+725,21,Punjab,Rupnagar,42,30.9,low,3.9,0.0,0.0,7667.0,129607.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+726,20,Arunachal Pradesh,Tirap,239,30.1,low,5.6,0.0,0.0,349.0,5714.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+727,22,Haryana,Sonipat,75,29.9,low,1.5,0.0,0.0,26252.0,248087.0,0.0,0.0,157149.0,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+728,22,Punjab,Sahibzada Ajit Singh Nag*,608,29.0,low,1.7,0.0,0.0,15765.0,167507.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+729,23,Punjab,Hoshiarpur,33,28.8,low,1.8,0.0,0.0,14024.0,251933.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,ensemble,rabi_2026_27,elnino_strong
+730,1,Chandigarh,Chandigarh,44,28.0,low,0.4,0.0,,16288.0,193266.0,0.0,0.0,,,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+731,21,Arunachal Pradesh,Namsai,678,27.4,low,5.6,0.0,0.0,2660.0,15835.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+732,22,Arunachal Pradesh,East Siang,232,25.1,low,5.6,0.0,0.0,973.0,7526.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+733,23,Arunachal Pradesh,Changlang,229,24.9,low,5.6,0.0,0.0,1239.0,25548.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+734,24,Arunachal Pradesh,Lohit,234,22.9,low,5.6,0.0,0.0,753.0,7079.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong
+735,25,Arunachal Pradesh,Lower Dibang Valley,235,22.0,low,5.6,0.0,0.0,891.0,5638.0,0.0,0.0,,False,0.0,False,by 2026-11-15,by 2027-05-15,neighbours,rabi_2026_27,elnino_strong

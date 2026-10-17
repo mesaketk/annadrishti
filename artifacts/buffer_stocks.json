@@ -1,0 +1,57 @@
+{
+ "source": "Food Corporation of India stock position, via Dataful (dataful.in/datasets/14292), accessed 2026-10-17",
+ "units": "lakh metric tonnes",
+ "series": [
+  {
+   "date": "2026-08-01",
+   "rice": 402.01,
+   "wheat": 505.31,
+   "total_rice_wheat": 907.32,
+   "unmilled_paddy": 353.47,
+   "coarse_grain": 9.58
+  },
+  {
+   "date": "2026-09-01",
+   "rice": 390.53,
+   "wheat": 479.92,
+   "total_rice_wheat": 870.45,
+   "unmilled_paddy": 307.51,
+   "coarse_grain": 7.14
+  }
+ ],
+ "buffer_norms": {
+  "source": "DFPD buffer norms (2015), incl. strategic reserve",
+  "01-01": {
+   "rice": 76.1,
+   "wheat": 138.0
+  },
+  "04-01": {
+   "rice": 135.8,
+   "wheat": 74.6
+  },
+  "07-01": {
+   "rice": 135.4,
+   "wheat": 275.8
+  },
+  "10-01": {
+   "rice": 102.5,
+   "wheat": 205.2
+  }
+ },
+ "nfsa_monthly_offtake_lmt": {
+  "value": 48.0,
+  "note": "approx. PMGKAY/NFSA + other welfare schemes rice+wheat offtake per month (\u224881 crore beneficiaries \u00d7 5 kg \u2248 40.7 LMT + OWS); verify against DFPD monthly offtake"
+ },
+ "latest": {
+  "date": "2026-09-01",
+  "rice": 390.53,
+  "wheat": 479.92,
+  "total_rice_wheat": 870.45,
+  "unmilled_paddy": 307.51,
+  "coarse_grain": 7.14,
+  "norm_total_nearest": 307.7,
+  "norm_date": "2026-10-01",
+  "pct_of_norm": 282.9,
+  "months_of_offtake": 18.1
+ }
+}

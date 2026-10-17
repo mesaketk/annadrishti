@@ -1,0 +1,755 @@
+priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,mgnrega_persondays,pmfby_gap_farmers,fodder_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
+1,1,Odisha,Kendujhar,361,67.7,high,-11.9,30485.0,47.0,58054.0,345043.0,30484.0,22786326.0,204439.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+2,2,Odisha,Balangir,345,67.6,high,-8.9,33074.0,596.0,43468.0,271218.0,40947.0,22357597.0,124841.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+3,1,Jharkhand,Gumla,331,66.9,high,-15.1,19651.0,3171.0,54791.0,196919.0,41424.0,20152417.0,381582.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+4,1,Chhattisgarh,Bilaspur,375,66.5,high,-9.7,0.0,0.0,42535.0,297535.0,19517.0,12276391.0,129668.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+5,1,Maharashtra,Nandurbar,486,66.5,high,-5.5,11834.0,1022.0,72890.0,316594.0,40907.0,18147572.0,239866.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+6,1,Gujarat,Devbhumi Dwarka,674,66.0,high,-7.4,2851.0,3577.0,23032.0,116369.0,27768.0,6130632.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+7,3,Odisha,Kandhamal,359,65.5,high,-10.0,3619.0,38.0,25526.0,99210.0,7398.0,9684231.0,81848.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+9,2,Jharkhand,Palamu,338,65.3,high,-13.4,12753.0,505.0,87941.0,381996.0,17060.0,22667659.0,130447.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+8,4,Odisha,Nuapada,368,65.3,high,-13.0,0.0,185.0,13400.0,108108.0,21544.0,8475952.0,92100.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+10,2,Chhattisgarh,Korba,383,65.2,high,-11.9,23577.0,68.0,23611.0,254164.0,23444.0,18134060.0,126721.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+11,3,Jharkhand,Pakur,337,64.8,high,-8.0,3238.0,0.0,54152.0,231665.0,13956.0,12791646.0,113303.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+12,3,Chhattisgarh,Narayanpur,637,64.4,high,-11.4,2677.0,70.0,6634.0,31864.0,4951.0,2756623.0,52122.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+13,4,Jharkhand,Saraikela-kharsawan,341,64.3,high,-10.4,11709.0,86.0,36551.0,241157.0,23436.0,15747638.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+14,5,Jharkhand,Dumka,326,64.2,high,-9.1,8532.0,0.0,42624.0,313112.0,23277.0,23283280.0,231225.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+15,6,Jharkhand,Giridih,329,64.2,high,-8.3,9390.0,1437.0,114426.0,504027.0,16523.0,30420872.0,425793.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+17,7,Jharkhand,Simdega,342,64.1,high,-9.7,0.0,4440.0,22259.0,136649.0,31066.0,12112414.0,181995.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+16,1,Madhya Pradesh,Dindori,404,64.1,high,-8.9,0.0,360.0,24115.0,147462.0,52345.0,14355459.0,181706.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+18,1,Assam,Udalguri,617,64.0,high,-3.7,895.0,0.0,14052.0,214467.0,18139.0,10163125.0,148176.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+19,1,Bihar,Sheohar,220,63.8,high,-7.6,4534.0,285.0,34980.0,133542.0,3773.0,5762526.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+20,5,Odisha,Baudh,349,63.7,high,-10.7,0.0,49.0,11106.0,66050.0,8643.0,4468657.0,64222.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+21,2,Madhya Pradesh,Mandla,415,63.7,high,-9.3,0.0,175.0,36863.0,205222.0,49436.0,16748329.0,177692.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+22,4,Chhattisgarh,Gaurela-Pendra-Marwahi,734,63.6,high,-9.3,0.0,114.0,7004.0,68825.0,12255.0,5553811.0,53640.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+23,6,Odisha,Anugul,344,63.5,high,-14.5,30395.0,59.0,24893.0,267211.0,24159.0,12999757.0,93249.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+26,2,Bihar,Saran,218,63.3,high,-8.9,25822.0,83.0,137739.0,819848.0,14673.0,30406210.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+25,8,Jharkhand,Sahibganj,340,63.3,high,-9.2,7732.0,0.0,77102.0,265567.0,16963.0,16666302.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+24,7,Odisha,Mayurbhanj,365,63.3,high,-9.7,32553.0,26.0,57569.0,503465.0,48518.0,28020832.0,247568.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+27,8,Odisha,Malkangiri,364,63.2,high,-8.0,0.0,69.0,23865.0,118420.0,25770.0,10135194.0,152833.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+28,9,Jharkhand,Pashchimi Singhbhum,343,63.1,high,-9.2,12417.0,2232.0,99997.0,351915.0,45065.0,27300585.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+29,9,Odisha,Nabarangapur,366,63.0,high,-12.8,0.0,332.0,38369.0,234100.0,38287.0,20054803.0,177289.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+30,3,Bihar,Samastipur,217,62.9,high,-7.7,30554.0,616.0,197525.0,851719.0,8851.0,15122453.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+31,4,Bihar,Gopalganj,197,62.6,high,-7.3,15866.0,69.0,96865.0,455339.0,10228.0,17987909.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+32,3,Madhya Pradesh,Sidhi,433,62.6,high,-6.9,0.0,984.0,49801.0,201525.0,10570.0,4545372.0,123346.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+33,5,Bihar,Jehanabad,199,62.5,high,-6.9,8959.0,442.0,64829.0,253158.0,2684.0,2831448.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+34,10,Odisha,Deogarh,351,62.4,high,-13.7,0.0,14.0,7489.0,62265.0,7483.0,4610218.0,40785.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+36,1,Uttar Pradesh,Chitrakoot,136,62.3,high,-6.3,0.0,6399.0,46703.0,146045.0,18873.0,8258444.0,177167.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+35,6,Bihar,Bhojpur,193,62.3,high,-8.1,30969.0,0.0,97592.0,663374.0,2115.0,2169113.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+37,5,Chhattisgarh,Bastar,374,62.2,high,-10.5,0.0,64.0,37486.0,199403.0,30743.0,14261785.0,128518.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+38,1,Rajasthan,Barmer,90,62.1,high,-7.0,66057.0,8689.0,112167.0,408065.0,222366.0,31364511.0,771946.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+39,10,Jharkhand,Dhanbad,325,61.9,high,-12.6,2186.0,307.0,66381.0,552776.0,2586.0,11564347.0,105960.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+41,7,Bihar,Bhagalpur,192,61.8,high,-2.9,12610.0,65.0,177037.0,729644.0,10128.0,17433530.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+40,11,Odisha,Jharsuguda,357,61.8,high,-14.4,9663.0,13.0,9030.0,108734.0,6943.0,4274942.0,27623.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+42,11,Jharkhand,Godda,330,61.6,high,-7.7,6621.0,478.0,76718.0,279089.0,16511.0,20694605.0,161553.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+43,1,Karnataka,Kolar,542,61.6,high,-7.7,7356.0,549.0,21747.0,196593.0,9302.0,11517349.0,204053.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+44,12,Jharkhand,Hazaribagh,332,61.5,high,-13.0,9939.0,206.0,60763.0,314117.0,14229.0,19853864.0,280974.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+45,13,Jharkhand,Khunti,606,61.5,high,-15.6,12293.0,190.0,19859.0,120191.0,17557.0,9857423.0,189968.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+46,12,Odisha,Sundargarh,373,61.3,high,-13.1,26405.0,97.0,43050.0,404382.0,35301.0,20470268.0,153597.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+47,14,Jharkhand,Deoghar,324,61.2,high,-7.4,5801.0,1010.0,81340.0,336055.0,13255.0,18182798.0,126701.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+48,2,Maharashtra,Gadchiroli,475,61.2,high,-9.1,0.0,537.0,27735.0,212504.0,34496.0,13692891.0,251248.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+49,2,Karnataka,Bidar,529,61.2,high,-8.1,20353.0,21927.0,45320.0,279435.0,92471.0,20548361.0,52660.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+50,8,Bihar,Vaishali,224,60.9,high,-5.2,11045.0,774.0,174242.0,733206.0,5672.0,14436742.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+51,9,Bihar,Madhubani,206,60.8,high,-2.6,19036.0,236.0,244635.0,910192.0,22262.0,37082831.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+52,13,Odisha,Rayagada,370,60.6,high,-6.7,5932.0,162.0,48141.0,185093.0,11886.0,10504197.0,97353.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+53,14,Odisha,Sonepur,372,60.6,high,-8.5,0.0,20.0,13327.0,99292.0,12091.0,3878903.0,72681.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+54,6,Chhattisgarh,Surguja,389,60.6,high,-8.5,0.0,145.0,26495.0,156419.0,29548.0,15198105.0,195482.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+55,10,Bihar,Munger,207,60.5,high,-5.2,2872.0,20.0,51659.0,322613.0,1580.0,3437913.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+56,7,Chhattisgarh,Raigarh,386,60.4,high,-8.8,0.0,1.0,35375.0,295197.0,47580.0,24354791.0,239667.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+60,11,Bihar,Gaya,196,60.2,high,-5.1,14329.0,66.0,289916.0,932798.0,3733.0,7879825.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+59,15,Jharkhand,Chatra,323,60.2,high,-10.7,11703.0,0.0,52302.0,188530.0,13347.0,15169408.0,133025.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+57,8,Chhattisgarh,Dakshin Bastar Dantewada,376,60.2,high,-10.7,0.0,23.0,11872.0,68440.0,16889.0,5190950.0,89631.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+58,3,Karnataka,Yadgir,635,60.2,high,-7.8,0.0,3681.0,48584.0,197470.0,42020.0,9908664.0,,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+62,12,Bihar,Katihar,201,60.1,high,-6.1,0.0,0.0,201224.0,693924.0,8367.0,13276589.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+63,17,Jharkhand,Purbi Singhbhum,327,60.1,high,-7.5,13891.0,1019.0,75057.0,476892.0,21279.0,21365788.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+61,16,Jharkhand,Latehar,335,60.1,high,-9.6,6292.0,0.0,48135.0,149257.0,16579.0,9314934.0,117108.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+65,4,Madhya Pradesh,Rewa,424,60.1,high,-7.7,0.0,0.0,81868.0,468460.0,47332.0,15499764.0,300430.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+64,13,Bihar,Arwal,611,60.1,high,-6.9,3748.0,15.0,36245.0,154888.0,679.0,1555413.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+66,4,Karnataka,Kalaburagi,538,59.8,high,-4.7,0.0,37017.0,95489.0,421772.0,151845.0,28185424.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+68,14,Bihar,Patna,212,59.7,high,-6.3,21207.0,1538.0,291416.0,1294175.0,10454.0,18713982.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+67,9,Chhattisgarh,Bijapur,636,59.7,high,-9.1,0.0,6.0,9263.0,58458.0,14441.0,5238888.0,77201.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+69,18,Jharkhand,Bokaro,322,59.5,high,-12.5,7819.0,2199.0,58842.0,453187.0,9428.0,17138463.0,142058.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+70,10,Chhattisgarh,Koriya,384,59.5,high,-11.1,12274.0,149.0,16819.0,134678.0,19567.0,10521082.0,134918.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+73,2,Rajasthan,Rajsamand,112,59.1,high,-10.1,14695.0,1243.0,33159.0,214451.0,13770.0,8822813.0,227740.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+71,19,Jharkhand,Garhwa,328,59.1,high,-9.8,14471.0,0.0,66059.0,267740.0,12173.0,8775279.0,116503.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+72,3,Maharashtra,Hingoli,477,59.1,high,-6.6,0.0,13358.0,40289.0,180698.0,78691.0,14878477.0,182573.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+74,20,Jharkhand,Ranchi,339,59.0,high,-13.1,25697.0,1170.0,88867.0,554113.0,36503.0,31963009.0,335664.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+75,15,Bihar,Araria,188,58.7,high,-5.8,0.0,22.0,185852.0,630653.0,4487.0,7935979.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+76,4,Maharashtra,Mumbai,482,58.7,high,-5.7,0.0,,43492.0,423700.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+78,16,Bihar,Nawada,210,58.5,high,-5.8,13684.0,85.0,137483.0,516096.0,2894.0,4669315.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+77,15,Odisha,Sambalpur,371,58.5,high,-11.5,3769.0,38.0,16406.0,191940.0,17855.0,7745152.0,71704.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+79,17,Bihar,Supaul,223,58.4,high,-4.5,16662.0,2587.0,125240.0,446977.0,11082.0,11804882.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+82,18,Bihar,Pashchim Champaran,211,58.3,high,-6.9,17644.0,669.0,186010.0,657766.0,11765.0,13693227.0,,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+81,16,Odisha,Gajapati,353,58.3,high,-8.7,5425.0,29.0,16066.0,105699.0,6450.0,4773329.0,64189.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+80,5,Maharashtra,Jalna,479,58.3,high,-8.5,33302.0,11662.0,54180.0,340328.0,125075.0,23088389.0,322802.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+83,21,Jharkhand,Lohardaga,336,58.2,high,-11.0,9052.0,0.0,20813.0,91978.0,11953.0,6864029.0,116830.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+84,6,Maharashtra,Chandrapur,473,58.2,high,-8.6,35077.0,5132.0,52698.0,366014.0,50074.0,14126404.0,234004.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+85,2,Uttar Pradesh,Balrampur,127,58.1,high,-5.8,0.0,0.0,112480.0,364627.0,11923.0,6064014.0,323047.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+86,5,Madhya Pradesh,Shahdol,429,58.0,high,-8.1,0.0,277.0,32417.0,193018.0,34213.0,12621630.0,100490.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+87,7,Maharashtra,Gondiya,476,58.0,high,-7.3,0.0,472.0,27233.0,238232.0,30627.0,11072822.0,210106.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+90,12,Chhattisgarh,Uttar Bastar Kanker,381,57.9,high,-10.0,0.0,83.0,19090.0,154990.0,34280.0,12715690.0,204336.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+89,11,Chhattisgarh,Rajnandgaon,388,57.9,high,-7.9,0.0,3527.0,42527.0,284679.0,80985.0,21993402.0,281303.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+88,8,Maharashtra,Washim,499,57.9,high,-4.7,8392.0,2809.0,32235.0,202006.0,73322.0,16203214.0,121881.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+91,13,Chhattisgarh,Jashpur,380,57.8,high,-8.5,0.0,207.0,24960.0,166388.0,44489.0,17317424.0,269703.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+92,2,Assam,Dibrugarh,286,57.7,high,-2.5,0.0,0.0,35097.0,287269.0,16572.0,10634825.0,156726.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+93,14,Chhattisgarh,Kondagaon,643,57.5,high,-5.9,0.0,294.0,22931.0,146037.0,27449.0,10592393.0,185360.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+94,22,Jharkhand,Jamtara,333,57.3,high,-7.9,8189.0,2781.0,28881.0,197161.0,22854.0,12782642.0,119341.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+96,17,Odisha,Bhadrak,348,57.3,high,-6.2,7629.0,33.0,20824.0,266796.0,17275.0,12263284.0,139392.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+95,1,Tamil Nadu,Vellore,595,57.3,high,-6.3,2880.0,0.0,19894.0,221048.0,4010.0,4550649.0,58101.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+97,3,Rajasthan,Ajmer,86,57.2,high,-13.3,0.0,27158.0,60591.0,431864.0,110474.0,19050091.0,275829.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+98,19,Bihar,Sitamarhi,221,57.2,high,-4.0,20918.0,301.0,206707.0,697809.0,6521.0,9249560.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+99,1,Lakshadweep,Lakshadweep,553,57.2,high,-1.7,,,1182.0,4730.0,,0.0,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+100,1,Telangana,Narayanpet,721,57.1,high,-5.2,0.0,774.0,18823.0,82432.0,20001.0,4194132.0,81798.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+102,20,Bihar,Buxar,194,56.9,high,-8.0,0.0,448.0,71823.0,373163.0,2360.0,1912806.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+104,18,Odisha,Nayagarh,367,56.9,high,-11.0,14524.0,1018.0,10717.0,166528.0,26831.0,11422535.0,79042.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+103,9,Maharashtra,Parbhani,489,56.9,high,-9.4,33402.0,19326.0,46397.0,323001.0,113396.0,20973417.0,167407.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+101,23,Jharkhand,Ramgarh,607,56.9,high,-15.9,9093.0,2028.0,25378.0,190947.0,8494.0,6672047.0,102826.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+105,10,Maharashtra,Buldana,472,56.7,high,-6.6,33226.0,23005.0,62662.0,447232.0,146669.0,31684698.0,330317.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+109,3,Assam,Cachar,282,56.6,high,-2.7,0.0,0.0,36430.0,304943.0,17631.0,12128023.0,132297.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+106,6,Madhya Pradesh,Anuppur,390,56.6,high,-8.5,0.0,1005.0,14429.0,124881.0,38358.0,12296670.0,133516.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+108,11,Maharashtra,Wardha,498,56.6,high,-8.9,17787.0,16491.0,22326.0,233500.0,76672.0,13914949.0,144002.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+107,15,Chhattisgarh,Gariaband,645,56.6,high,-9.2,0.0,0.0,17878.0,122638.0,18812.0,7765347.0,85214.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+110,2,Tamil Nadu,Perambalur,581,56.4,high,-2.3,0.0,2.0,7074.0,104409.0,14228.0,6718512.0,105851.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+111,19,Odisha,Dhenkanal,352,56.3,high,-8.6,13320.0,0.0,18274.0,217974.0,14564.0,9999713.0,69459.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+112,12,Maharashtra,Amravati,468,56.3,high,-5.7,22173.0,15150.0,65238.0,460996.0,122566.0,33342054.0,163177.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+113,21,Bihar,Purnia,214,56.1,high,-6.1,0.0,0.0,218438.0,711784.0,1292.0,1559129.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+114,20,Odisha,Kalahandi,358,56.1,high,-7.2,0.0,408.0,36119.0,280161.0,24038.0,11390362.0,119641.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+115,21,Odisha,Koraput,363,56.1,high,-6.3,0.0,51.0,53989.0,222212.0,17098.0,10580763.0,217938.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+116,3,Uttar Pradesh,Sant Kabir Nagar,178,56.0,high,-5.9,0.0,0.0,55837.0,235779.0,3898.0,3010113.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+119,4,Uttar Pradesh,Prayagraj,120,55.9,high,-4.6,46394.0,4353.0,211268.0,873095.0,18628.0,12450451.0,535528.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+117,22,Bihar,Khagaria,202,55.9,high,-5.6,8809.0,16.0,89947.0,327638.0,5193.0,7938979.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+118,2,Gujarat,Panch Mahals,454,55.9,high,-4.1,11602.0,199.0,80981.0,365329.0,20178.0,15538529.0,364324.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+120,23,Bihar,Begusarai,191,55.8,high,-7.6,24505.0,0.0,146721.0,617245.0,12981.0,16009371.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+121,13,Maharashtra,Akola,467,55.8,high,-6.1,11957.0,14638.0,52134.0,285902.0,84291.0,19652529.0,68935.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+122,24,Bihar,Nalanda,209,55.7,high,-6.4,24717.0,0.0,158937.0,674945.0,3388.0,3819543.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+123,22,Odisha,Baleshwar,346,55.6,high,-7.2,0.0,10.0,44953.0,396874.0,30212.0,22949934.0,293088.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+124,4,Assam,Charaideo,708,55.5,high,-1.3,0.0,5.0,11338.0,96658.0,7314.0,3560343.0,51893.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+127,8,Madhya Pradesh,Jhabua,412,55.4,high,-5.1,0.0,1165.0,78072.0,193490.0,31316.0,12776187.0,382084.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+126,7,Madhya Pradesh,Panna,420,55.4,high,-6.9,0.0,3660.0,37462.0,192533.0,25044.0,5584592.0,157418.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+125,14,Maharashtra,Osmanabad,488,55.4,high,-8.8,29347.0,15474.0,32082.0,243494.0,138324.0,19968172.0,165651.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+128,25,Bihar,Kaimur (bhabua),200,55.3,high,-6.3,0.0,51.0,79384.0,377703.0,1410.0,868928.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+129,1,Andhra Pradesh,Sri Sathya sai,754,55.2,high,-2.6,3467.0,88.0,58561.0,268023.0,14102.0,13051239.0,153032.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+130,5,Assam,Goalpara,287,55.1,high,-3.3,1209.0,157.0,33971.0,200164.0,15413.0,10098597.0,132968.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+134,6,Assam,Barpeta,280,55.0,high,-4.3,3503.0,0.0,56480.0,336208.0,19040.0,13152160.0,218706.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+133,10,Madhya Pradesh,Umaria,436,55.0,high,-7.6,0.0,493.0,22024.0,106543.0,12466.0,3675699.0,70247.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+132,9,Madhya Pradesh,Singrauli,638,55.0,high,-6.7,0.0,0.0,47505.0,204320.0,20801.0,8468953.0,178893.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+131,16,Chhattisgarh,Sukma,642,55.0,high,-5.7,0.0,0.0,9415.0,67293.0,19345.0,5871583.0,111011.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+136,15,Maharashtra,Bhandara,471,54.8,medium,-5.6,0.0,2284.0,27093.0,234315.0,8034.0,0.0,112337.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+135,2,Telangana,Kumuram Bheem Asifabad,699,54.8,medium,-5.4,0.0,864.0,14730.0,82822.0,31154.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+137,7,Assam,Jorhat,290,54.7,medium,-2.6,0.0,0.0,14144.0,203164.0,14725.0,0.0,106169.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+138,5,Uttar Pradesh,Fatehpur,142,54.5,medium,-5.1,0.0,9011.0,123421.0,524147.0,19245.0,0.0,357194.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+139,23,Odisha,Khordha,362,54.5,medium,-7.1,7043.0,276.0,18670.0,424678.0,15003.0,0.0,77312.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+141,5,Karnataka,Haveri,540,54.4,medium,-1.9,0.0,131.0,28923.0,238192.0,66746.0,0.0,159232.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+140,3,Telangana,Jogulamba Gadwal,695,54.4,medium,-4.6,0.0,521.0,20820.0,101372.0,4249.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+142,2,Andhra Pradesh,Anantpur,502,54.3,medium,-3.9,9410.0,2942.0,126838.0,580516.0,42148.0,0.0,371189.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+143,6,Uttar Pradesh,Gorakhpur,148,54.2,medium,-5.1,36058.0,0.0,91820.0,742225.0,6400.0,0.0,269267.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+147,8,Assam,Hailakandi,289,54.1,medium,-1.6,0.0,0.0,16860.0,123837.0,9108.0,0.0,75853.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+145,16,Maharashtra,Yavatmal,500,54.1,medium,-5.8,18443.0,17455.0,83371.0,484388.0,148484.0,0.0,273274.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+146,3,Andhra Pradesh,Kurnool,511,54.1,medium,-5.0,0.0,8162.0,149868.0,667345.0,145671.0,0.0,279788.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+144,4,Telangana,Wanaparthy,693,54.1,medium,-4.1,0.0,336.0,14939.0,81780.0,3896.0,0.0,51995.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+148,17,Chhattisgarh,Balrampur,649,54.0,medium,-6.9,0.0,0.0,28314.0,147123.0,33919.0,0.0,153125.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+151,4,Rajasthan,Udaipur,117,53.9,medium,-4.9,26160.0,3380.0,130656.0,589088.0,40348.0,0.0,619913.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+153,7,Uttar Pradesh,Sonbhadra,184,53.9,medium,-5.9,15718.0,1299.0,95352.0,261924.0,14971.0,0.0,144454.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+154,9,Assam,Karimganj,293,53.9,medium,-3.8,394.0,82.0,25759.0,195259.0,13404.0,0.0,108169.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+152,4,Gujarat,Dohad,445,53.9,medium,-3.4,0.0,1601.0,139492.0,509108.0,36354.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+149,3,Gujarat,Porbandar,456,53.9,medium,-5.1,2444.0,3674.0,11367.0,88701.0,13556.0,0.0,80221.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+150,3,Tamil Nadu,Tiruppattur,732,53.9,medium,-2.8,2638.0,400.0,18208.0,164532.0,6590.0,0.0,67503.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+155,11,Madhya Pradesh,Katni,413,53.8,medium,-7.4,0.0,2578.0,37207.0,243473.0,5299.0,0.0,129194.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+156,26,Bihar,Muzaffarpur,208,53.7,medium,-5.5,27237.0,1103.0,243375.0,934167.0,11776.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+159,28,Bihar,Saharsa,216,53.7,medium,-3.6,0.0,686.0,135861.0,410005.0,7586.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+158,27,Bihar,Siwan,222,53.7,medium,-3.4,28264.0,122.0,92316.0,584213.0,20970.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+157,5,Gujarat,Surendranagar,460,53.7,medium,-5.3,5297.0,3807.0,56023.0,275355.0,27791.0,0.0,193622.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+161,5,Rajasthan,Nagaur,110,53.6,medium,-11.1,44659.0,31555.0,71197.0,475371.0,184344.0,0.0,785014.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+160,29,Bihar,Aurangabad,189,53.6,medium,-5.8,0.0,497.0,108952.0,507660.0,8455.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+162,1,"Dadra,Nagar Haveli,Daman & Diu",Dadra & Nagar Haveli,465,53.6,medium,0.0,662.0,,28015.0,145870.0,3182.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+163,8,Uttar Pradesh,Mirzapur,170,53.5,medium,-5.8,0.0,1222.0,106689.0,332201.0,13054.0,0.0,183493.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+166,24,Jharkhand,Kodarma,334,53.5,medium,-8.8,7252.0,0.0,24390.0,149999.0,11412.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+164,24,Odisha,Bargarh,347,53.5,medium,-5.0,0.0,129.0,36004.0,256614.0,24940.0,0.0,159368.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+165,10,Assam,Baksa,616,53.5,medium,-1.4,66.0,61.0,23109.0,214064.0,17978.0,0.0,171377.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+167,18,Chhattisgarh,Durg,378,53.4,medium,-8.7,19820.0,576.0,33830.0,282804.0,11687.0,0.0,46553.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+168,6,Karnataka,Bangalore,525,53.4,medium,-3.4,1745.0,37.0,120291.0,1002423.0,3068.0,0.0,107834.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+169,7,Karnataka,Chikkaballapura,630,53.4,medium,-5.7,12251.0,377.0,22934.0,167598.0,17000.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+171,9,Uttar Pradesh,Mahrajganj,164,53.3,medium,-3.8,0.0,504.0,91474.0,399598.0,6480.0,0.0,239638.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+170,17,Maharashtra,Nashik,487,53.3,medium,-3.2,44594.0,286.0,218977.0,1026858.0,95284.0,0.0,1063527.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+174,10,Uttar Pradesh,Siddharthnagar,182,53.2,medium,-5.8,0.0,75.0,129939.0,414092.0,6025.0,0.0,327303.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+173,18,Maharashtra,Latur,481,53.2,medium,-11.0,34582.0,33858.0,54758.0,372263.0,133977.0,0.0,151359.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+172,8,Karnataka,Koppal,543,53.2,medium,-6.0,0.0,4701.0,45879.0,223552.0,57372.0,0.0,123665.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+176,30,Bihar,Purba Champaran,213,53.1,medium,-2.3,35098.0,130.0,270749.0,965257.0,31844.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+175,19,Chhattisgarh,Mahasamund,385,53.1,medium,-5.4,0.0,58.0,31779.0,206687.0,40164.0,0.0,121601.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+177,11,Assam,Nagaon,297,53.0,medium,-0.6,0.0,0.0,53662.0,352796.0,26222.0,0.0,253242.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+178,1,West Bengal,Puruliya,321,52.9,medium,-3.0,6516.0,481.0,78221.0,643514.0,22409.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+179,19,Maharashtra,Nanded,485,52.9,medium,-6.0,31093.0,29060.0,88109.0,576227.0,150308.0,0.0,208182.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+181,11,Uttar Pradesh,Kaushambi,158,52.7,medium,-2.5,0.0,1648.0,95171.0,274989.0,7556.0,0.0,157260.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+180,31,Bihar,Jamui,198,52.7,medium,3.0,5814.0,0.0,98604.0,437323.0,7357.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+184,12,Assam,Sivasagar,300,52.6,medium,-2.3,51.0,14.0,14336.0,147662.0,14391.0,0.0,106549.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+182,6,Gujarat,Jamnagar,447,52.6,medium,-6.2,11927.0,4002.0,24723.0,222269.0,16632.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+183,1,Kerala,Malappuram,562,52.6,medium,-2.1,242.0,0.0,99631.0,402181.0,1544.0,0.0,62350.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+185,12,Uttar Pradesh,Bhadohi,179,52.5,medium,-3.4,11812.0,182.0,50944.0,218447.0,3968.0,0.0,109748.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+189,1,Delhi,North East,81,52.4,medium,-3.0,,,36713.0,220920.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+188,14,Assam,Nalbari,298,52.4,medium,-3.2,356.0,38.0,16288.0,156742.0,8614.0,0.0,66483.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+190,20,Chhattisgarh,Baloda Bazar,644,52.4,medium,-4.1,0.0,90.0,32482.0,253359.0,22839.0,0.0,187654.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+186,7,Gujarat,Chota Udaipur,668,52.4,medium,-0.4,987.0,126.0,56160.0,269518.0,21659.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+187,13,Assam,Hojai,709,52.4,medium,-0.5,332.0,4.0,33190.0,159813.0,14534.0,0.0,130465.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+194,6,Rajasthan,Pali,111,52.3,medium,-6.7,31596.0,21231.0,83463.0,380096.0,102871.0,0.0,210566.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+193,13,Uttar Pradesh,Basti,131,52.3,medium,-5.7,0.0,0.0,64108.0,310743.0,6010.0,0.0,319181.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+191,32,Bihar,Lakhisarai,204,52.3,medium,-5.7,5680.0,1286.0,41673.0,240051.0,4982.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+192,15,Assam,Sonitpur,301,52.3,medium,-2.1,1201.0,110.0,23874.0,231532.0,22386.0,0.0,155578.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+196,16,Assam,Kokrajhar,294,52.2,medium,-2.5,0.0,70.0,16856.0,163596.0,18031.0,0.0,178997.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+195,20,Maharashtra,Dhule,474,52.2,medium,-4.0,13606.0,4786.0,57488.0,375509.0,57011.0,0.0,253713.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+199,7,Rajasthan,Dungarpur,99,52.1,medium,-1.9,10940.0,32.0,63082.0,319817.0,21599.0,0.0,249658.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+198,25,Odisha,Jajapur,356,52.1,medium,-3.7,9460.0,117.0,26182.0,320550.0,27317.0,0.0,97398.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+197,12,Madhya Pradesh,Sagar,425,52.1,medium,-6.3,0.0,11398.0,82991.0,380244.0,95275.0,0.0,163740.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+200,8,Rajasthan,Banswara,88,52.0,medium,-4.5,0.0,848.0,104091.0,300784.0,43364.0,0.0,607623.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+201,33,Bihar,Madhepura,205,52.0,medium,-4.0,10866.0,1444.0,117718.0,434460.0,3723.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+202,34,Bihar,Rohtas,215,51.9,medium,-6.1,0.0,0.0,103918.0,634594.0,764.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+203,17,Assam,Bajali,739,51.9,medium,-0.9,57.0,13.0,6855.0,40809.0,2961.0,0.0,27328.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+205,9,Rajasthan,Sirohi,115,51.8,medium,-5.7,9155.0,539.0,50019.0,210606.0,11050.0,0.0,125555.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+204,13,Madhya Pradesh,Balaghat,392,51.8,medium,-5.2,0.0,960.0,47892.0,329956.0,11617.0,0.0,291887.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+206,14,Uttar Pradesh,Bareilly,130,51.7,medium,-3.9,0.0,2998.0,147149.0,854691.0,11773.0,0.0,435790.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+210,1,Meghalaya,South Garo Hills,277,51.7,medium,-1.1,147.0,12.0,3969.0,24113.0,1533.0,0.0,32604.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+212,18,Assam,Darrang,283,51.7,medium,-4.0,0.0,325.0,20728.0,190248.0,19222.0,0.0,134179.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+208,14,Madhya Pradesh,Satna,426,51.7,medium,-4.3,0.0,0.0,80680.0,410005.0,20763.0,0.0,255561.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+211,8,Gujarat,Narmada,452,51.7,medium,-2.6,1583.0,0.0,26290.0,142790.0,14419.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+207,21,Maharashtra,Jalgaon,478,51.7,medium,-2.4,30947.0,870.0,102983.0,825111.0,130584.0,0.0,370624.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+209,4,Tamil Nadu,Dharmapuri,571,51.7,medium,-3.1,21184.0,1250.0,15500.0,178966.0,18055.0,0.0,207995.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+214,15,Uttar Pradesh,Banda,128,51.5,medium,-6.7,0.0,11793.0,89049.0,296829.0,34018.0,0.0,268387.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+213,9,Karnataka,Ramanagara,631,51.5,medium,-3.2,4931.0,0.0,8931.0,144568.0,14730.0,0.0,234368.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+216,9,Gujarat,Patan,455,51.3,medium,-2.5,3103.0,1727.0,45700.0,256144.0,22026.0,0.0,167471.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+215,19,Assam,Biswanath,705,51.3,medium,-0.5,236.0,27.0,13806.0,144625.0,12651.0,0.0,131078.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+219,35,Bihar,Darbhanga,195,51.2,medium,-1.2,20372.0,287.0,214057.0,788767.0,10528.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+217,21,Chhattisgarh,Raipur,387,51.2,medium,-7.2,0.0,60.0,41583.0,405688.0,6988.0,0.0,108509.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+218,10,Gujarat,Amreli,439,51.2,medium,-4.9,10296.0,10644.0,37209.0,241087.0,22652.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+220,16,Uttar Pradesh,Varanasi,187,51.1,medium,-5.0,15137.0,632.0,100628.0,436887.0,4840.0,0.0,230664.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+221,15,Madhya Pradesh,Neemuch,419,51.1,medium,-7.3,0.0,2951.0,18694.0,133389.0,31857.0,0.0,164204.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+223,17,Uttar Pradesh,Pratapgarh,174,50.9,medium,-5.3,27597.0,2594.0,87196.0,495911.0,9241.0,0.0,340590.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+224,18,Uttar Pradesh,Rampur,176,50.9,medium,-3.5,0.0,126.0,75519.0,408936.0,4576.0,0.0,251927.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+225,16,Madhya Pradesh,Damoh,400,50.9,medium,-6.9,0.0,13972.0,39346.0,195211.0,64384.0,0.0,101956.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+226,17,Madhya Pradesh,Dhar,403,50.9,medium,-4.2,0.0,3620.0,92715.0,352249.0,69500.0,0.0,398086.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+222,5,Telangana,Nagarkurnool,694,50.9,medium,-3.7,0.0,300.0,24969.0,119935.0,4994.0,0.0,147471.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+227,26,Odisha,Cuttack,350,50.8,medium,-5.2,8746.0,582.0,26532.0,468158.0,19621.0,0.0,137776.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+228,10,Karnataka,Chitradurga,533,50.8,medium,-3.7,13260.0,359.0,35554.0,217209.0,45147.0,0.0,271130.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+229,11,Karnataka,Raichur,546,50.7,medium,-3.4,0.0,7929.0,90718.0,341887.0,66125.0,0.0,243662.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+230,4,Andhra Pradesh,Prakasam,517,50.6,medium,-3.7,10781.0,0.0,44354.0,572851.0,30915.0,0.0,252240.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+231,12,Karnataka,Davanagere,535,50.6,medium,-2.4,0.0,0.0,31722.0,249365.0,18470.0,0.0,200707.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+232,13,Karnataka,Gadag,537,50.6,medium,-5.3,0.0,5029.0,30264.0,157777.0,66734.0,0.0,48455.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+236,20,Assam,Dhubri,285,50.5,medium,-2.5,1092.0,837.0,51628.0,287594.0,23652.0,0.0,163008.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+235,18,Madhya Pradesh,Barwani,393,50.5,medium,-4.8,0.0,2935.0,85756.0,259697.0,24759.0,0.0,342539.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+234,6,Telangana,Medak,513,50.5,medium,-5.9,0.0,27.0,32173.0,224252.0,3581.0,0.0,137759.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+233,19,Uttar Pradesh,Amethi,640,50.5,medium,-4.1,0.0,138.0,66759.0,271393.0,7570.0,0.0,174286.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+241,10,Rajasthan,Tonk,116,50.4,medium,-7.2,0.0,21995.0,42882.0,238084.0,53106.0,0.0,301240.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+237,20,Uttar Pradesh,Ballia,126,50.4,medium,-4.4,33477.0,773.0,88729.0,534430.0,9194.0,0.0,230563.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+239,21,Uttar Pradesh,Sultanpur,185,50.4,medium,-4.5,0.0,2985.0,81961.0,386485.0,8277.0,0.0,251858.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+242,15,Karnataka,Ballari,528,50.4,medium,-3.6,19291.0,434.0,97551.0,469691.0,9379.0,0.0,333010.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+240,14,Karnataka,Vijayapura,530,50.4,medium,-5.6,0.0,15417.0,81096.0,335962.0,72020.0,0.0,247765.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+243,2,Kerala,Wayanad,567,50.4,medium,-0.4,199.0,,18116.0,61964.0,1284.0,0.0,57052.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+238,11,Gujarat,Tapi,641,50.4,medium,-3.6,0.0,0.0,22468.0,199073.0,16166.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+244,19,Madhya Pradesh,Seoni,428,50.3,medium,-8.0,0.0,1287.0,37057.0,265197.0,59108.0,0.0,173466.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+246,27,Odisha,Kendrapara,360,50.2,medium,-3.8,8232.0,0.0,22331.0,233960.0,21103.0,0.0,114878.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+245,20,Madhya Pradesh,East Nimar,405,50.2,medium,-4.9,0.0,0.0,44780.0,272447.0,49000.0,0.0,151813.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+247,22,Uttar Pradesh,Sitapur,183,50.1,medium,-3.8,0.0,168.0,262854.0,783603.0,19114.0,0.0,662997.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+248,23,Uttar Pradesh,Sambhal,659,50.1,medium,-4.3,0.0,691.0,126669.0,356618.0,14897.0,0.0,337292.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+249,5,Andhra Pradesh,Palnadu,751,50.0,medium,-2.5,4622.0,1064.0,32511.0,356930.0,17250.0,0.0,111748.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+250,21,Madhya Pradesh,Rajgarh,422,49.9,medium,-4.3,0.0,0.0,40642.0,259535.0,84462.0,0.0,217071.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+251,22,Maharashtra,Satara,494,49.9,medium,-4.6,16342.0,2182.0,36092.0,445735.0,53964.0,0.0,672768.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+252,6,Andhra Pradesh,Chittoor,503,49.9,medium,-2.3,1682.0,122.0,81734.0,609016.0,7645.0,0.0,448097.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+254,24,Uttar Pradesh,Mau,168,49.8,medium,-5.9,16556.0,324.0,54053.0,308822.0,2366.0,0.0,171270.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+255,22,Chhattisgarh,Surajpur,648,49.8,medium,-6.3,0.0,31.0,20037.0,150757.0,29274.0,0.0,177193.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+253,7,Telangana,Kamareddy,685,49.8,medium,-4.2,0.0,1864.0,19771.0,143507.0,21052.0,0.0,127320.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+257,26,Uttar Pradesh,Agra,118,49.7,medium,-4.5,22653.0,666.0,161564.0,829462.0,18530.0,0.0,341725.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+256,25,Uttar Pradesh,Rae Bareli,175,49.7,medium,-4.1,0.0,630.0,112370.0,440758.0,10447.0,0.0,258973.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+258,27,Uttar Pradesh,Auraiya,122,49.6,medium,-4.4,0.0,1188.0,50987.0,170459.0,10071.0,0.0,190615.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+260,28,Uttar Pradesh,Shahjahanpur,180,49.5,medium,-3.2,0.0,2765.0,132247.0,572915.0,14375.0,0.0,415903.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+261,16,Karnataka,Bengaluru Rural,526,49.5,medium,-4.3,7467.0,31.0,12715.0,128540.0,11387.0,0.0,143671.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+262,17,Karnataka,Dharwad,536,49.5,medium,-4.1,0.0,11199.0,33712.0,282415.0,80251.0,0.0,120809.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+259,21,Assam,Chirang,612,49.5,medium,0.8,0.0,46.0,10266.0,98017.0,11865.0,0.0,90886.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+263,23,Maharashtra,Ratnagiri,492,49.4,medium,-5.8,8000.0,55.0,16224.0,209707.0,10255.0,0.0,340841.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+264,12,Gujarat,Morbi,673,49.4,medium,-1.9,4713.0,1110.0,27874.0,156823.0,15742.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+265,22,Assam,South Salmara Mancachar,707,49.4,medium,-0.7,106.0,10.0,18153.0,78533.0,4487.0,0.0,46362.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+266,29,Uttar Pradesh,Kanpur Nagar,157,49.2,medium,-4.5,26485.0,2084.0,122952.0,825214.0,14285.0,0.0,210974.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+270,31,Uttar Pradesh,Bahraich,125,49.1,medium,-2.0,0.0,2681.0,228035.0,537859.0,18940.0,0.0,448331.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+269,30,Uttar Pradesh,Unnao,186,49.1,medium,-4.3,0.0,2035.0,106570.0,480338.0,16733.0,0.0,518284.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+272,23,Assam,Tinsukia,302,49.1,medium,2.3,1133.0,0.0,29980.0,295424.0,17536.0,0.0,171064.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+271,22,Madhya Pradesh,Burhanpur,397,49.1,medium,-5.1,5897.0,1632.0,28322.0,139403.0,5297.0,0.0,80063.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+267,8,Telangana,Mahabubnagar,512,49.1,medium,-5.3,0.0,67.0,33375.0,197970.0,8008.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+268,5,Tamil Nadu,Pudukkottai,582,49.1,medium,-1.4,5074.0,0.0,22799.0,282593.0,2392.0,0.0,185893.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+273,11,Rajasthan,Jodhpur,107,49.0,medium,-8.8,29432.0,23815.0,84101.0,507674.0,192367.0,0.0,609797.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+275,24,Maharashtra,Nagpur,484,49.0,medium,-7.9,32036.0,18090.0,67064.0,746249.0,74208.0,0.0,227748.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+274,1,Puducherry,Puducherry,600,49.0,medium,-2.8,268.0,17.0,10671.0,209141.0,535.0,0.0,9687.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+276,25,Maharashtra,Ahmadnagar,466,48.9,medium,-4.4,61271.0,6423.0,95919.0,683689.0,161527.0,0.0,1106818.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+277,26,Maharashtra,Solapur,496,48.8,medium,-5.4,34539.0,5599.0,118924.0,704024.0,115089.0,0.0,673751.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+280,12,Rajasthan,Bhilwara,92,48.7,medium,-9.3,0.0,16198.0,61834.0,385110.0,80701.0,0.0,549429.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+278,32,Uttar Pradesh,Moradabad,171,48.7,medium,-4.3,16040.0,0.0,102359.0,443619.0,4676.0,0.0,241235.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+279,36,Bihar,Kishanganj,203,48.7,medium,5.4,0.0,1.0,108323.0,363532.0,8137.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+283,1,Jammu & Kashmir,Kupwara,8,48.6,medium,-1.3,0.0,0.0,22841.0,182572.0,3767.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+281,33,Uttar Pradesh,Kushinagar,160,48.6,medium,-5.1,19034.0,37.0,95315.0,476486.0,4805.0,0.0,286716.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+284,23,Madhya Pradesh,Guna,406,48.6,medium,-7.6,0.0,4585.0,44194.0,198481.0,60346.0,0.0,230946.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+285,24,Madhya Pradesh,Indore,410,48.6,medium,-4.2,20838.0,589.0,60881.0,505962.0,44011.0,0.0,130690.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+282,24,Assam,Kamrup Metropolitan,618,48.6,medium,1.6,233.0,0.0,14143.0,279568.0,3460.0,0.0,27449.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+287,34,Uttar Pradesh,Chandauli,135,48.5,medium,-4.9,0.0,704.0,62246.0,300527.0,5950.0,0.0,147816.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+290,35,Uttar Pradesh,Ghazipur,146,48.5,medium,-5.5,0.0,1125.0,88898.0,522833.0,10518.0,0.0,433552.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+288,37,Bihar,Banka,190,48.5,medium,0.3,7153.0,0.0,116660.0,442967.0,1677.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+286,13,Gujarat,The Dangs,444,48.5,medium,-3.7,0.0,885.0,12895.0,56168.0,12381.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+291,18,Karnataka,Chamarajanagara,531,48.5,medium,-1.3,3221.0,159.0,16131.0,138706.0,10150.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+289,6,Tamil Nadu,Madurai,578,48.5,medium,-1.5,1690.0,35.0,35857.0,407549.0,6723.0,0.0,94304.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+292,27,Maharashtra,Sindhudurg,495,48.4,medium,-3.9,8077.0,37.0,8956.0,104730.0,11306.0,0.0,141908.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+294,9,Telangana,Nizamabad,516,48.4,medium,-4.6,0.0,343.0,47764.0,277205.0,4633.0,0.0,133508.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+293,13,Rajasthan,Pratapgarh,629,48.4,medium,-5.3,0.0,0.0,46738.0,146198.0,32848.0,0.0,329722.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+295,36,Uttar Pradesh,Gautam Buddha Nagar,144,48.3,medium,-3.1,2640.0,103.0,66672.0,309371.0,1458.0,0.0,86740.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+297,28,Maharashtra,Pune,490,48.3,medium,-4.6,25434.0,986.0,106355.0,1464147.0,50713.0,0.0,1016945.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+296,7,Andhra Pradesh,Nandyal,755,48.3,medium,-2.3,0.0,1627.0,67729.0,301588.0,30006.0,0.0,76078.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+298,14,Rajasthan,Bharatpur,91,48.2,medium,-5.4,0.0,130.0,120971.0,491569.0,45215.0,0.0,552589.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+299,37,Uttar Pradesh,Kanpur Dehat,156,48.2,medium,-4.4,0.0,2823.0,67407.0,311623.0,16830.0,0.0,236739.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+300,19,Karnataka,Hassan,539,48.2,medium,-2.3,0.0,127.0,17589.0,220007.0,43355.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+301,25,Assam,West Karbi Anglong,710,48.2,medium,-0.2,0.0,5.0,8228.0,52344.0,13649.0,0.0,103703.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+306,15,Rajasthan,Jaisalmer,103,48.1,medium,-3.0,0.0,312.0,27449.0,94364.0,108729.0,0.0,104853.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+302,38,Uttar Pradesh,Ambedkar Nagar,121,48.1,medium,-3.9,0.0,289.0,51840.0,399342.0,4691.0,0.0,245206.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+305,38,Bihar,Sheikhpura,219,48.1,medium,3.7,2836.0,0.0,38309.0,146099.0,1046.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+304,26,Assam,Bongaigaon,281,48.1,medium,5.8,1709.0,0.0,21560.0,157176.0,12974.0,0.0,81658.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+307,7,Tamil Nadu,KAnchipuram,574,48.1,medium,-2.1,2099.0,3.0,20325.0,184248.0,26.0,0.0,32508.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+308,29,Maharashtra,Palghar,665,48.1,medium,-1.5,7675.0,205.0,76590.0,509018.0,4494.0,0.0,237348.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+309,25,Madhya Pradesh,Agar Malwa,667,48.1,medium,-5.2,0.0,344.0,13655.0,108569.0,34875.0,0.0,108775.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+303,10,Telangana,Rajanna Sircilla,683,48.1,medium,-3.9,0.0,12.0,8789.0,69931.0,3591.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+314,17,Rajasthan,Churu,96,48.0,medium,-7.0,101.0,12534.0,52050.0,342289.0,244558.0,0.0,534211.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+312,16,Rajasthan,Dausa,97,48.0,medium,-7.4,0.0,1798.0,47911.0,312666.0,39078.0,0.0,441768.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+311,26,Madhya Pradesh,Ujjain,435,48.0,medium,-4.1,0.0,0.0,48546.0,347617.0,90450.0,0.0,210262.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+313,23,Chhattisgarh,Balod,646,48.0,medium,-4.6,0.0,973.0,18571.0,147886.0,21784.0,0.0,154191.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+315,11,Telangana,Sangareddy,691,48.0,medium,-5.0,0.0,2243.0,16184.0,138286.0,44313.0,0.0,113338.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+310,1,Manipur,Pherzawl,715,48.0,medium,-1.6,0.0,15.0,974.0,3896.0,2926.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+316,39,Uttar Pradesh,Deoria,137,47.8,medium,-5.0,0.0,0.0,85255.0,331220.0,6083.0,0.0,262642.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+317,12,Telangana,Jangoan,689,47.8,medium,-3.5,0.0,16.0,8219.0,76505.0,11235.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+318,20,Karnataka,Uttara Kannada,550,47.7,medium,-3.0,3190.0,121.0,23376.0,188114.0,6518.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+319,8,Andhra Pradesh,Annamayya,753,47.7,medium,-2.4,1961.0,43.0,24287.0,267444.0,3714.0,0.0,139335.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+320,40,Uttar Pradesh,Gonda,147,47.6,medium,-2.2,0.0,213.0,121392.0,534987.0,10315.0,0.0,520051.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+322,41,Uttar Pradesh,Shamli,660,47.6,medium,-2.8,2878.0,0.0,44604.0,173109.0,1541.0,0.0,137118.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+321,2,Manipur,Jiribam,713,47.6,medium,-1.4,0.0,20.0,1330.0,4744.0,2899.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+324,18,Rajasthan,Karauli,108,47.4,medium,-6.5,0.0,87.0,77028.0,284518.0,23829.0,0.0,391577.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+323,42,Uttar Pradesh,Hapur,661,47.4,medium,-3.2,2963.0,183.0,44417.0,214000.0,399.0,0.0,111424.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+325,14,Gujarat,Kheda,450,47.3,medium,-2.9,0.0,119.0,74633.0,501523.0,0.0,0.0,252870.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+327,1,Arunachal Pradesh,East Kameng,231,47.2,medium,-1.4,0.0,9.0,1922.0,5257.0,1934.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+328,8,Tamil Nadu,Karur,576,47.2,medium,10.0,0.0,0.0,18878.0,193362.0,4057.0,0.0,88789.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+326,27,Assam,Majuli,706,47.2,medium,-0.4,0.0,26.0,3218.0,34701.0,10533.0,0.0,60295.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+330,28,Assam,Golaghat,288,47.1,medium,0.4,0.0,10.0,21459.0,251964.0,27653.0,0.0,222451.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+331,15,Gujarat,Vadodara,461,47.1,medium,-2.2,2517.0,0.0,95585.0,712877.0,1169.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+329,2,"Dadra,Nagar Haveli,Daman & Diu",Daman,463,47.1,medium,0.2,60.0,,9705.0,79336.0,245.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+337,19,Rajasthan,Jaipur,102,47.0,medium,-8.1,68772.0,41281.0,124796.0,1137269.0,123098.0,0.0,761835.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+339,43,Uttar Pradesh,Mahoba,165,47.0,medium,-5.8,0.0,9642.0,29065.0,136746.0,34268.0,0.0,84905.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+334,29,Assam,Dhemaji,284,47.0,medium,-0.9,0.0,16.0,9838.0,130408.0,19152.0,0.0,265841.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+336,30,Assam,Kamrup,291,47.0,medium,0.3,2899.0,36.0,34114.0,338053.0,27489.0,0.0,210616.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+333,28,Madhya Pradesh,Mandsaur,416,47.0,medium,-6.2,0.0,2678.0,27735.0,243982.0,60875.0,0.0,243123.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+332,27,Madhya Pradesh,Ratlam,423,47.0,medium,-5.0,0.0,1477.0,43542.0,277931.0,60135.0,0.0,177437.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+340,30,Maharashtra,Aurangabad,469,47.0,medium,-3.7,32396.0,2959.0,95561.0,581215.0,118441.0,0.0,497563.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+335,9,Tamil Nadu,Tiruvannamalai,593,47.0,medium,-1.4,0.0,853.0,40058.0,389875.0,8908.0,0.0,288207.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+338,2,Meghalaya,South West Khasi Hills,658,47.0,medium,-0.4,15.0,0.0,6648.0,17571.0,557.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+342,16,Gujarat,Sabar Kantha,458,46.9,medium,-4.5,9968.0,983.0,64902.0,301369.0,12622.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+341,13,Telangana,Nirmal,680,46.9,medium,-4.3,0.0,1537.0,15459.0,92353.0,19958.0,0.0,99162.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+344,44,Uttar Pradesh,Ghaziabad,145,46.8,medium,-3.1,1583.0,41.0,75583.0,583210.0,551.0,0.0,80184.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+343,29,Madhya Pradesh,Morena,417,46.8,medium,-4.6,0.0,0.0,85784.0,426008.0,47909.0,0.0,368879.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+347,45,Uttar Pradesh,Azamgarh,123,46.7,medium,-4.8,0.0,831.0,99041.0,791727.0,8691.0,0.0,505715.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+345,24,Chhattisgarh,Mungeli,647,46.7,medium,3.0,0.0,0.0,20144.0,121486.0,25293.0,0.0,110925.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+346,3,Meghalaya,South West Garo Hills,663,46.7,medium,-0.5,0.0,9.0,4777.0,32692.0,3432.0,0.0,35922.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+348,20,Rajasthan,Alwar,87,46.6,medium,-5.8,0.0,1835.0,115075.0,620119.0,70888.0,0.0,1024205.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+351,17,Gujarat,Valsad,462,46.6,medium,-2.8,3874.0,114.0,50346.0,411508.0,1744.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+349,21,Karnataka,Shivamogga,547,46.6,medium,-2.5,6945.0,12.0,29558.0,215532.0,5793.0,0.0,220562.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+350,9,Andhra Pradesh,Bapatla,750,46.6,medium,-2.4,0.0,1949.0,23105.0,253661.0,14399.0,0.0,51569.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+352,46,Uttar Pradesh,Budaun,133,46.5,medium,-4.2,0.0,1986.0,157007.0,546569.0,28312.0,0.0,539685.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+353,31,Maharashtra,Bid,470,46.5,medium,-6.7,14188.0,31908.0,47920.0,392638.0,170878.0,0.0,417196.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+354,3,Kerala,Palakkad,563,46.3,medium,-1.4,1490.0,5.0,45455.0,392753.0,7966.0,0.0,73390.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+355,18,Gujarat,Junagadh,448,46.2,medium,-4.0,0.0,9131.0,28292.0,285910.0,43681.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+356,10,Tamil Nadu,Ramanathapuram,583,46.2,medium,-0.4,3759.0,0.0,17969.0,202629.0,17446.0,0.0,126487.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+357,2,Puducherry,Yanam,601,46.2,medium,-1.9,,,1463.0,10928.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+359,47,Uttar Pradesh,Faizabad,140,46.1,medium,-4.3,17623.0,852.0,67065.0,408394.0,5519.0,0.0,297833.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+358,32,Maharashtra,Raigarh,491,46.1,medium,-2.9,6864.0,148.0,37829.0,427151.0,19631.0,0.0,236094.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+363,48,Uttar Pradesh,Bara Banki,129,46.0,medium,-3.9,0.0,1835.0,132944.0,568654.0,9814.0,0.0,474635.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+364,19,Gujarat,Rajkot,457,46.0,medium,-4.2,17683.0,9296.0,63760.0,586514.0,16237.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+360,3,"Dadra,Nagar Haveli,Daman & Diu",Diu,464,46.0,medium,-0.5,8.0,,2343.0,17878.0,100.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+361,11,Tamil Nadu,Tiruchirappalli,591,46.0,medium,-0.5,13090.0,15.0,39301.0,473886.0,11206.0,0.0,163588.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+362,25,Chhattisgarh,Bametara,650,46.0,medium,-3.6,0.0,2553.0,17784.0,118810.0,35314.0,0.0,79287.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+366,30,Madhya Pradesh,Dewas,402,45.9,medium,-4.6,0.0,0.0,51130.0,257486.0,79980.0,0.0,197171.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+365,12,Tamil Nadu,Cuddalore,570,45.9,medium,-2.1,0.0,375.0,35028.0,426749.0,18761.0,0.0,135220.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+367,31,Assam,Morigaon,296,45.8,medium,2.0,0.0,0.0,38033.0,188036.0,14128.0,0.0,180216.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+369,28,Odisha,Jagatsinghapur,355,45.8,medium,-1.9,5993.0,22.0,9962.0,188160.0,13113.0,0.0,109419.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+368,31,Madhya Pradesh,Chhatarpur,398,45.8,medium,-5.3,0.0,0.0,66427.0,359260.0,90562.0,0.0,339646.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+370,1,Tripura,Sipahijala,653,45.8,medium,-0.8,0.0,15.0,10999.0,92386.0,8182.0,0.0,35112.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+371,21,Rajasthan,Chittaurgarh,95,45.7,medium,-7.1,0.0,6280.0,42224.0,220964.0,66905.0,0.0,438427.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+372,32,Madhya Pradesh,Ashoknagar,391,45.7,medium,-4.3,0.0,0.0,35422.0,125064.0,50637.0,0.0,116849.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+375,3,Manipur,Ukhrul,260,45.5,medium,-2.0,633.0,55.0,2357.0,8127.0,3298.0,0.0,40160.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+373,49,Uttar Pradesh,Kasganj,633,45.5,medium,-4.1,0.0,207.0,77240.0,293299.0,10157.0,0.0,274493.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+374,14,Telangana,Medchal Malkajgiri,700,45.5,medium,-4.0,904.0,1.0,5071.0,34203.0,175.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+376,4,Manipur,Kangpokpi,712,45.5,medium,-2.6,425.0,24.0,3702.0,15400.0,1849.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+377,2,West Bengal,Birbhum,307,45.4,medium,-1.6,0.0,1952.0,87399.0,778496.0,40709.0,0.0,162955.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+378,26,Chhattisgarh,Kabeerdham,382,45.4,medium,4.7,0.0,0.0,23162.0,113923.0,30789.0,0.0,146549.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+379,20,Gujarat,Bhavnagar,443,45.4,medium,-2.4,4931.0,1557.0,54468.0,378155.0,41275.0,0.0,231122.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+380,15,Telangana,Nalgonda,514,45.4,medium,-3.8,0.0,139.0,37058.0,298041.0,40286.0,0.0,164609.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+381,4,Kerala,Pathanamthitta,564,45.4,medium,-1.8,12.0,,11229.0,122825.0,609.0,0.0,44835.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+383,33,Madhya Pradesh,Tikamgarh,434,45.3,medium,-3.1,0.0,2433.0,40270.0,163984.0,36117.0,0.0,244261.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+382,16,Telangana,Vikarabad,698,45.3,medium,-5.3,0.0,1845.0,18427.0,140425.0,31830.0,0.0,170159.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+385,50,Uttar Pradesh,Hardoi,150,45.2,medium,-3.2,0.0,415.0,192069.0,772157.0,20608.0,0.0,691423.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+386,17,Telangana,Adilabad,501,45.2,medium,-2.5,7920.0,1104.0,30359.0,228134.0,39898.0,0.0,137768.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+384,21,Gujarat,Gir Somnath,675,45.2,medium,-2.8,3721.0,1974.0,35369.0,192548.0,18232.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+387,13,Tamil Nadu,Chengalpattu,730,45.1,medium,-0.1,0.0,1.0,26268.0,284821.0,1.0,0.0,53231.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+391,51,Uttar Pradesh,Kannauj,155,45.0,medium,-3.9,0.0,447.0,71991.0,341331.0,5785.0,0.0,265946.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+389,2,Arunachal Pradesh,Kurung Kumey,233,45.0,medium,-0.3,0.0,0.0,1060.0,4758.0,231.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+390,1,Mizoram,Saiha,267,45.0,medium,-2.5,0.0,0.0,1250.0,7306.0,289.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+388,14,Tamil Nadu,Viluppuram,596,45.0,medium,-1.7,6748.0,391.0,28614.0,353756.0,9189.0,0.0,169883.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+392,2,Jammu & Kashmir,Baramula,3,44.8,low,-1.9,0.0,0.0,15017.0,210780.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+395,22,Rajasthan,Jalor,104,44.8,low,2.5,0.0,0.0,111419.0,347520.0,0.0,0.0,486835.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+396,2,Mizoram,Aizawl,261,44.8,low,-3.2,3.0,10.0,6495.0,35654.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+394,33,Maharashtra,Mumbai Suburban,483,44.8,low,-5.7,6.0,,185354.0,1399709.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+393,1,Haryana,Palwal,619,44.8,low,-3.1,0.0,1.0,36767.0,191455.0,0.0,0.0,103637.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+399,1,Nagaland,Wokha,250,44.7,low,-6.8,726.0,47.0,2708.0,15236.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+400,3,West Bengal,South Twenty Four Pargana,304,44.7,low,-1.7,2000.0,1174.0,164309.0,1431057.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+403,23,Gujarat,Banas Kantha,441,44.7,low,-4.1,0.0,508.0,147058.0,596707.0,0.0,0.0,582960.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+398,22,Gujarat,Mahesana,451,44.7,low,-2.7,5082.0,655.0,58351.0,450691.0,0.0,0.0,233438.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+402,5,Kerala,Kollam,559,44.7,low,-0.8,0.0,0.0,26458.0,267354.0,0.0,0.0,61427.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+401,18,Telangana,Bhadradri Kothagudem,690,44.7,low,-4.8,0.0,95.0,7753.0,143957.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+397,22,Karnataka,Vijayanagar,738,44.7,low,-1.6,0.0,121.0,38589.0,185799.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+409,5,Manipur,Imphal West,256,44.6,low,-1.7,1162.0,13.0,5171.0,41628.0,0.0,0.0,42798.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+406,2,Tripura,Dhalai,269,44.6,low,-1.3,0.0,48.0,7580.0,78091.0,0.0,0.0,38411.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+405,34,Madhya Pradesh,Shajapur,430,44.6,low,-3.6,0.0,0.0,16912.0,138413.0,0.0,0.0,121982.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+408,35,Madhya Pradesh,Vidisha,437,44.6,low,-5.3,0.0,5767.0,39290.0,180308.0,0.0,0.0,87849.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+407,19,Telangana,Ranga Reddy,518,44.6,low,-4.0,18683.0,174.0,91413.0,703319.0,0.0,0.0,187463.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+404,3,Arunachal Pradesh,Kra Daadi,677,44.6,low,-0.2,0.0,0.0,600.0,3178.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+410,52,Uttar Pradesh,Shrawasti,181,44.4,low,-1.0,0.0,0.0,73647.0,156777.0,0.0,0.0,176758.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+412,27,Chhattisgarh,Janjgir - Champa,379,44.4,low,-5.3,0.0,15.0,17134.0,341134.0,0.0,0.0,328645.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+411,1,Andaman & Nicobar,North  & Middle Andaman,632,44.4,low,1.5,0.0,0.0,1226.0,18168.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+417,53,Uttar Pradesh,Jaunpur,152,44.3,low,-4.6,0.0,2367.0,109052.0,482878.0,0.0,0.0,642715.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+413,4,Arunachal Pradesh,Tawang,238,44.3,low,-1.0,0.0,3.0,766.0,8881.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+415,6,Manipur,Imphal East,255,44.3,low,-2.7,2495.0,13.0,5047.0,43142.0,0.0,0.0,33649.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+414,15,Tamil Nadu,Sivaganga,585,44.3,low,3.7,1338.0,17.0,19586.0,192724.0,0.0,0.0,119321.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+416,20,Telangana,Mancherial,684,44.3,low,-3.6,0.0,5.0,7836.0,73741.0,0.0,0.0,31770.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+420,54,Uttar Pradesh,Pilibhit,173,44.2,low,-3.2,0.0,184.0,64735.0,333750.0,0.0,0.0,253437.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+419,23,Karnataka,Kodagu,541,44.2,low,-1.9,672.0,,6467.0,64933.0,0.0,0.0,23521.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+418,36,Madhya Pradesh,Alirajpur,639,44.2,low,2.9,0.0,0.0,49730.0,141586.0,0.0,0.0,302992.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+421,21,Telangana,Mulugu,720,44.2,low,-1.5,0.0,5.0,7273.0,53554.0,0.0,0.0,35377.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+422,3,Jammu & Kashmir,Punch,10,44.1,low,-3.9,0.0,0.0,11412.0,75909.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+424,55,Uttar Pradesh,Muzaffarnagar,172,44.0,low,-3.0,2825.0,46.0,79247.0,411367.0,0.0,0.0,270793.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+425,4,Jammu & Kashmir,Ramban,621,44.0,low,-0.6,0.0,,6415.0,48366.0,0.0,0.0,43649.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+423,4,West Bengal,Alipurduar,664,44.0,low,-1.9,0.0,131.0,22560.0,301342.0,0.0,0.0,80017.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+426,5,Jammu & Kashmir,Badgam,2,43.9,low,-1.8,0.0,0.0,10338.0,146186.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+430,6,Kerala,Idukki,556,43.9,low,-1.2,23.0,6.0,18556.0,100003.0,0.0,0.0,109368.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+427,16,Tamil Nadu,Krishnagiri,577,43.9,low,1.5,15600.0,0.0,37715.0,229197.0,0.0,0.0,252996.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+429,6,Jammu & Kashmir,Samba,624,43.9,low,-6.0,0.0,28.0,4800.0,57489.0,0.0,0.0,10569.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+428,22,Telangana,Jagitial,681,43.9,low,-3.1,0.0,20.0,15575.0,123451.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+432,10,Andhra Pradesh,Y.S.R.,504,43.8,low,-4.0,7094.0,7306.0,41024.0,451740.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+431,17,Tamil Nadu,Kallakurichchi,729,43.8,low,-0.1,0.0,10.0,35476.0,222365.0,0.0,0.0,158660.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+433,5,West Bengal,Jhargram,703,43.7,low,-1.0,0.0,66.0,19986.0,250829.0,0.0,0.0,87125.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+434,4,Meghalaya,West Garo Hills,278,43.6,low,-0.9,675.0,27.0,15010.0,78014.0,0.0,0.0,103650.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+437,6,West Bengal,Uttar Dinajpur,311,43.6,low,-2.4,0.0,213.0,92785.0,623403.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+436,24,Gujarat,Gandhinagar,446,43.6,low,-3.3,3205.0,0.0,33689.0,305373.0,0.0,0.0,127753.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+438,3,Tripura,Unokoti,655,43.6,low,-0.9,0.0,4.0,5378.0,49047.0,0.0,0.0,11734.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+435,11,Andhra Pradesh,Alluri Sitharama Raju,745,43.6,low,-1.6,4389.0,114.0,18056.0,151348.0,0.0,0.0,42678.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+440,57,Uttar Pradesh,Etah,138,43.4,low,-4.2,0.0,25.0,82799.0,310661.0,0.0,0.0,292471.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+442,58,Uttar Pradesh,Hamirpur,149,43.4,low,-5.5,0.0,7647.0,38032.0,160875.0,0.0,0.0,115065.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+439,56,Uttar Pradesh,Saharanpur,177,43.4,low,-3.4,8667.0,0.0,104200.0,453506.0,0.0,0.0,268708.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+441,32,Assam,Dima Hasao,299,43.4,low,3.7,593.0,0.0,2056.0,39626.0,0.0,0.0,52092.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+443,23,Rajasthan,Sawai Madhopur,113,43.3,low,-5.7,0.0,9284.0,52349.0,243630.0,0.0,0.0,331658.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+447,3,Mizoram,Champhai,262,43.3,low,-1.1,0.0,3.0,1700.0,5603.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+445,37,Madhya Pradesh,Betul,394,43.3,low,-5.8,0.0,1961.0,44870.0,284219.0,0.0,0.0,213989.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+448,7,Kerala,Kozhikode,561,43.3,low,-1.9,17.0,0.0,40716.0,259176.0,0.0,0.0,28694.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+446,18,Tamil Nadu,Virudhunagar,597,43.3,low,-1.5,1619.0,20.0,30308.0,308845.0,0.0,0.0,43376.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+444,23,Telangana,Mahabubabad,688,43.3,low,-3.8,0.0,87.0,14303.0,125826.0,0.0,0.0,126539.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+450,7,Manipur,Churachandpur,254,43.2,low,0.1,407.0,0.0,4216.0,22291.0,0.0,0.0,54454.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+449,5,Meghalaya,West Khasi Hills,279,43.2,low,-1.1,190.0,2.0,19709.0,44424.0,0.0,0.0,77658.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+451,25,Gujarat,Bharuch,442,43.2,low,0.4,3389.0,0.0,46815.0,354917.0,0.0,0.0,95753.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+452,19,Tamil Nadu,Nagapattinam,579,43.1,low,-1.5,1874.0,0.0,18312.0,282782.0,0.0,0.0,37771.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+454,24,Rajasthan,Dhaulpur,98,43.0,low,-4.6,0.0,27.0,74198.0,262196.0,0.0,0.0,271846.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+453,12,Andhra Pradesh,Guntur,506,43.0,low,-2.2,0.0,246.0,74486.0,817759.0,0.0,0.0,298130.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+458,7,West Bengal,Maldah,316,42.9,low,-1.6,0.0,562.0,135199.0,834573.0,0.0,0.0,161589.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+455,29,Odisha,Ganjam,354,42.9,low,-2.0,18781.0,737.0,52355.0,553752.0,0.0,0.0,249658.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+457,2,Haryana,Nuh,604,42.9,low,-1.5,0.0,0.0,93412.0,211892.0,0.0,0.0,121005.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+456,7,Jammu & Kashmir,Reasi,627,42.9,low,-0.8,0.0,0.0,8761.0,57989.0,0.0,0.0,102635.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+461,59,Uttar Pradesh,Etawah,139,42.8,low,-4.2,0.0,1276.0,59408.0,286927.0,0.0,0.0,194456.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+463,60,Uttar Pradesh,Kheri,159,42.8,low,-3.2,0.0,0.0,182507.0,673672.0,0.0,0.0,635714.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+465,26,Gujarat,Surat,459,42.8,low,-2.2,2113.0,293.0,154096.0,1337310.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+462,13,Andhra Pradesh,West Godavari,523,42.8,low,-1.8,9718.0,17.0,70777.0,708812.0,0.0,0.0,124923.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+464,24,Karnataka,Udupi,549,42.8,low,-2.5,2013.0,29.0,12403.0,163436.0,0.0,0.0,70074.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+459,8,Jammu & Kashmir,Kishtwar,620,42.8,low,7.5,221.0,0.0,3812.0,57618.0,0.0,0.0,42055.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+460,4,Mizoram,Khawzawl,728,42.8,low,-0.6,0.0,0.0,859.0,2910.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+469,61,Uttar Pradesh,Farrukhabad,141,42.7,low,-3.6,0.0,357.0,81334.0,338982.0,0.0,0.0,285155.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+472,62,Uttar Pradesh,Firozabad,143,42.7,low,-3.4,0.0,623.0,95427.0,450777.0,0.0,0.0,219289.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+467,28,Chhattisgarh,Dhamtari,377,42.7,low,-5.4,0.0,796.0,14778.0,151423.0,0.0,0.0,129846.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+468,27,Gujarat,Ahmadabad,438,42.7,low,-2.3,12204.0,1392.0,175531.0,1433082.0,0.0,0.0,158799.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+471,8,Kerala,Ernakulam,555,42.7,low,-2.0,71.0,,28105.0,293218.0,0.0,0.0,54630.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+470,21,Tamil Nadu,Ariyalur,610,42.7,low,2.4,0.0,0.0,18306.0,131639.0,0.0,0.0,98498.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+466,20,Tamil Nadu,Ranipet,731,42.7,low,-0.2,3685.0,4.0,16392.0,190475.0,0.0,0.0,52222.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+477,6,Meghalaya,East Garo Hills,273,42.6,low,-0.8,97.0,1.0,3695.0,22319.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+475,25,Karnataka,Tumakuru,548,42.6,low,3.5,12746.0,0.0,29610.0,387609.0,0.0,0.0,527973.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+478,9,Kerala,Kasaragod,558,42.6,low,-1.4,33.0,1.0,26513.0,130420.0,0.0,0.0,25707.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+473,2,Nagaland,Kiphire,614,42.6,low,-6.2,0.0,66.0,2924.0,6935.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+474,9,Jammu & Kashmir,Kulgam,622,42.6,low,-3.4,0.0,6.0,5770.0,91417.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+476,14,Andhra Pradesh,Anakapalli,744,42.6,low,-1.0,3321.0,67.0,38029.0,318773.0,0.0,0.0,98697.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+479,22,Tamil Nadu,Dindigul,572,42.5,low,4.8,4531.0,485.0,30941.0,257132.0,0.0,0.0,176236.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+480,33,Assam,Lakhimpur,295,42.4,low,-0.5,0.0,76.0,22548.0,207704.0,0.0,0.0,256666.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+483,38,Madhya Pradesh,Chhindwara,399,42.4,low,-4.2,0.0,9517.0,48143.0,279905.0,0.0,0.0,295347.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+481,28,Gujarat,Navsari,453,42.4,low,-1.9,2268.0,84.0,27847.0,291713.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+485,10,Kerala,Thrissur,566,42.4,low,-1.9,425.0,0.0,32990.0,390522.0,0.0,0.0,45262.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+486,3,Nagaland,Longleng,615,42.4,low,-6.1,0.0,29.0,1198.0,5264.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+484,7,Meghalaya,East Jaintia Hills,657,42.4,low,-1.4,81.0,1.0,6788.0,16269.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+482,8,Manipur,Tengnoupal,716,42.4,low,-2.4,296.0,20.0,1269.0,4883.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+490,4,Nagaland,Mon,247,42.3,low,-5.1,1364.0,131.0,8160.0,22778.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+488,3,Puducherry,Karaikal,598,42.3,low,-2.1,31.0,5.0,5831.0,48196.0,0.0,0.0,948.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+487,24,Telangana,Warangal Urban,686,42.3,low,-3.6,0.0,7.0,4866.0,56060.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+489,25,Telangana,Siddipet,692,42.3,low,-3.6,0.0,44.0,11052.0,142053.0,0.0,0.0,144839.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+492,5,Arunachal Pradesh,Upper Dibang Valley,230,42.2,low,-4.3,0.0,13.0,157.0,1517.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+493,39,Madhya Pradesh,Bhind,395,42.2,low,-4.9,0.0,1627.0,58640.0,382147.0,0.0,0.0,278458.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+491,2,Delhi,Shahdara,671,42.2,low,-3.0,,,22967.0,167708.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+495,10,Jammu & Kashmir,Pulwama,11,42.1,low,-3.2,0.0,4.0,8343.0,119687.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+496,8,West Bengal,Purba Medinipur,317,42.1,low,-1.1,0.0,0.0,52119.0,1025125.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+497,26,Karnataka,Belagavi,527,42.1,low,-4.3,0.0,5306.0,98882.0,742045.0,0.0,0.0,786461.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+498,11,Kerala,Kannur,557,42.1,low,-1.1,55.0,3.0,30217.0,282260.0,0.0,0.0,39573.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+494,26,Telangana,Yadadri Bhuvanagiri,697,42.1,low,-3.4,0.0,30.0,11135.0,99996.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+499,15,Andhra Pradesh,Konaseema,747,42.1,low,-2.3,0.0,2.0,19547.0,295802.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+500,27,Telangana,Warangal Rural,522,42.0,low,-3.6,0.0,5.0,27309.0,283112.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+502,30,Odisha,Puri,369,41.9,low,-1.6,9542.0,183.0,10079.0,297281.0,0.0,0.0,134227.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+501,1,Goa,South Goa,552,41.9,low,-2.0,593.0,6.0,12744.0,86395.0,0.0,0.0,20482.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+503,9,West Bengal,Medinipur West,318,41.8,low,-1.6,0.0,0.0,90075.0,1129066.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+506,1,Ladakh,Kargil,6,41.7,low,6.1,121.0,0.0,3223.0,37433.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+507,64,Uttar Pradesh,Jalaun,151,41.7,low,-4.2,0.0,8593.0,52984.0,236052.0,0.0,0.0,187782.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+504,63,Uttar Pradesh,Amroha,154,41.7,low,-3.6,6662.0,0.0,59898.0,276811.0,0.0,0.0,262352.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+505,16,Andhra Pradesh,Tirupati,752,41.7,low,-2.1,10091.0,7.0,43602.0,324885.0,0.0,0.0,237481.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+509,65,Uttar Pradesh,Bulandshahr,134,41.6,low,-3.3,0.0,453.0,109286.0,575009.0,0.0,0.0,388961.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+508,5,Mizoram,Serchhip,268,41.6,low,-3.3,88.0,34.0,1343.0,6531.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+511,66,Uttar Pradesh,Lucknow,162,41.5,low,-3.6,5491.0,322.0,117598.0,809352.0,0.0,0.0,200276.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+510,29,Gujarat,Mahisagar,669,41.5,low,-1.2,0.0,340.0,37652.0,229817.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+517,25,Rajasthan,Jhunjhunun,106,41.4,low,-4.5,27275.0,1625.0,35119.0,375601.0,0.0,0.0,530636.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+518,10,West Bengal,Bankura,305,41.4,low,-0.8,0.0,49.0,67971.0,792994.0,0.0,0.0,215527.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+516,30,Gujarat,Anand,440,41.4,low,-1.6,0.0,381.0,66578.0,439881.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+515,34,Maharashtra,Kolhapur,480,41.4,low,-2.7,14502.0,0.0,71553.0,580971.0,0.0,0.0,758775.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+512,23,Tamil Nadu,Namakkal,580,41.4,low,3.5,8020.0,0.0,15186.0,248393.0,0.0,0.0,163490.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+519,5,Nagaland,Peren,613,41.4,low,-7.9,917.0,20.0,3008.0,8466.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+513,28,Telangana,Peddapalli,682,41.4,low,-2.0,0.0,1.0,6228.0,91084.0,0.0,0.0,37138.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+514,8,Meghalaya,Eastern West Khasi Hills,740,41.4,low,-1.7,50.0,1.0,9422.0,21238.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+520,35,Maharashtra,Sangli,493,41.3,low,-4.4,16580.0,882.0,30292.0,401056.0,0.0,0.0,545605.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+522,11,West Bengal,Howrah,313,41.2,low,-2.8,1684.0,41.0,39579.0,906850.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+523,40,Madhya Pradesh,Shivpuri,432,41.2,low,-2.8,0.0,1677.0,74339.0,280228.0,0.0,0.0,447130.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+521,31,Gujarat,Aravalli,672,41.2,low,-1.9,0.0,0.0,40353.0,252150.0,0.0,0.0,223026.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+530,12,Jammu & Kashmir,Anantnag,1,41.1,low,-2.5,0.0,3.0,19210.0,219171.0,0.0,0.0,147164.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+525,6,Mizoram,Mamit,266,41.1,low,3.9,6.0,0.0,2108.0,8599.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+526,41,Madhya Pradesh,Jabalpur,411,41.1,low,-5.3,0.0,6210.0,54701.0,386586.0,0.0,0.0,120541.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+528,42,Madhya Pradesh,West Nimar,414,41.1,low,-3.5,0.0,6907.0,68415.0,301053.0,0.0,0.0,346978.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+527,11,Jammu & Kashmir,Ganderbal,626,41.1,low,-1.0,0.0,0.0,4230.0,63170.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+524,4,Tripura,Gomati,654,41.1,low,-0.5,0.0,14.0,5688.0,72694.0,0.0,0.0,28834.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+529,12,West Bengal,Paschim Bardhaman,704,41.1,low,-0.1,432.0,3.0,16661.0,212971.0,0.0,0.0,22289.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+533,43,Madhya Pradesh,Sheopur,431,41.0,low,-5.8,0.0,3676.0,37837.0,143312.0,0.0,0.0,123038.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+531,12,Kerala,Alappuzha,554,41.0,low,-0.5,0.0,0.0,20244.0,191276.0,0.0,0.0,23307.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+532,17,Andhra Pradesh,Kakinada,746,41.0,low,-2.3,0.0,137.0,23222.0,351427.0,0.0,0.0,12761.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+535,7,Mizoram,Lawngtlai,264,40.9,low,-0.2,0.0,1.0,2457.0,16692.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+536,8,Mizoram,Lunglei,265,40.9,low,2.9,0.0,0.0,1617.0,12743.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+534,5,Tripura,West Tripura,272,40.9,low,-0.4,115.0,4.0,10131.0,194798.0,0.0,0.0,25090.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+539,1,Uttarakhand,Tehri Garhwal,55,40.8,low,-1.8,492.0,158.0,17894.0,80797.0,0.0,0.0,211959.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+538,34,Assam,Karbi Anglong,292,40.8,low,-0.1,0.0,8.0,5932.0,119267.0,0.0,0.0,157460.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+540,44,Madhya Pradesh,Datia,401,40.8,low,-4.7,0.0,600.0,26002.0,151351.0,0.0,0.0,175379.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+541,27,Karnataka,Bagalkote,524,40.8,low,-3.5,0.0,2708.0,56365.0,266210.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+537,24,Tamil Nadu,The Nilgiris,587,40.8,low,0.4,5.0,,10471.0,90836.0,0.0,0.0,16767.0,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+542,9,Manipur,Noney,714,40.8,low,-1.4,105.0,11.0,924.0,3477.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+544,2,Uttarakhand,"Almora
+",45,40.7,low,-2.1,798.0,0.0,7121.0,64279.0,0.0,0.0,240292.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+545,26,Rajasthan,Jhalawar,105,40.7,low,-4.2,0.0,3702.0,51955.0,230556.0,0.0,0.0,278659.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+543,6,Tripura,Khowai,652,40.7,low,0.0,0.0,0.0,3414.0,50128.0,0.0,0.0,14540.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+546,10,Manipur,Kakching,711,40.7,low,-1.5,0.0,21.0,3045.0,9278.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+548,25,Tamil Nadu,Kanniyakumari,575,40.6,low,-1.0,382.0,1.0,26968.0,237865.0,0.0,0.0,15996.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+551,26,Tamil Nadu,Salem,584,40.6,low,1.8,24929.0,0.0,38433.0,450538.0,0.0,0.0,272521.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+550,32,Gujarat,Botad,676,40.6,low,-0.6,1108.0,131.0,13232.0,122523.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+549,29,Telangana,Suryapet,696,40.6,low,-3.8,0.0,33.0,12868.0,153217.0,0.0,0.0,92507.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+547,9,Mizoram,Saitual,727,40.6,low,0.1,0.0,0.0,967.0,3723.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+552,27,Rajasthan,Bundi,94,40.5,low,-6.2,0.0,5063.0,31191.0,197012.0,0.0,0.0,233630.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+555,67,Uttar Pradesh,Hathras,163,40.5,low,-3.3,0.0,171.0,75876.0,287781.0,0.0,0.0,148845.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+556,1,Sikkim,West District,228,40.5,low,-1.9,212.0,17.0,1458.0,17528.0,0.0,0.0,47038.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+554,13,West Bengal,Jalpaiguri,314,40.5,low,-1.4,89.0,70.0,33199.0,500241.0,0.0,0.0,103310.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+557,28,Karnataka,Mysuru,545,40.5,low,-1.8,22542.0,259.0,27575.0,422769.0,0.0,0.0,392743.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+558,13,Kerala,Kottayam,560,40.5,low,-1.8,150.0,2.0,21065.0,215338.0,0.0,0.0,54037.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+553,30,Telangana,Jayashankar,687,40.5,low,-3.3,0.0,7.0,5253.0,70801.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+560,14,Kerala,Thiruvananthapuram,565,40.4,low,-0.9,0.0,1.0,22189.0,307013.0,0.0,0.0,42009.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+559,11,Manipur,Kamjong,717,40.4,low,-2.3,0.0,31.0,910.0,3053.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+561,68,Uttar Pradesh,Bijnor,132,40.3,low,-3.1,3776.0,63.0,107883.0,535343.0,0.0,0.0,281134.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+562,6,Arunachal Pradesh,Upper Siang,240,40.3,low,-0.9,0.0,4.0,513.0,2660.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+563,10,Mizoram,Kolasib,263,40.2,low,-2.2,26.0,27.0,1991.0,8930.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+564,27,Tamil Nadu,Thanjavur,586,40.1,low,-1.8,0.0,306.0,29390.0,396588.0,0.0,0.0,69863.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+565,1,Himachal Pradesh,Kinnaur,19,40.0,low,-0.3,0.0,15.0,700.0,12484.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+566,9,Meghalaya,East Khasi Hills,274,40.0,low,-1.3,262.0,26.0,20397.0,120005.0,0.0,0.0,88996.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+568,7,Arunachal Pradesh,West Siang,243,39.9,low,-2.6,0.0,5.0,1053.0,4827.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+567,18,Andhra Pradesh,Krishna,510,39.9,low,-1.9,17362.0,0.0,55830.0,767266.0,0.0,0.0,91086.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+569,45,Madhya Pradesh,Niwari,722,39.7,low,-1.1,0.0,180.0,13875.0,63807.0,0.0,0.0,111528.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+570,69,Uttar Pradesh,Mathura,167,39.6,low,-3.4,0.0,129.0,91392.0,507115.0,0.0,0.0,217919.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+571,29,Karnataka,Chikkamagaluru,532,39.6,low,-1.0,2721.0,11.0,14016.0,136259.0,0.0,0.0,173495.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+573,47,Madhya Pradesh,Harda,408,39.5,low,-4.2,0.0,36872.0,16921.0,114641.0,0.0,0.0,40720.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+572,46,Madhya Pradesh,Narsimhapur,418,39.5,low,-4.9,0.0,12868.0,23026.0,164390.0,0.0,0.0,105923.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+574,28,Tamil Nadu,Mayiladuthurai,735,39.5,low,0.8,0.0,0.0,13755.0,161856.0,0.0,0.0,8252.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+576,70,Uttar Pradesh,Mainpuri,166,39.3,low,-3.5,0.0,888.0,64074.0,341298.0,0.0,0.0,324747.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+575,48,Madhya Pradesh,Bhopal,396,39.3,low,-4.4,12539.0,324.0,56420.0,407224.0,0.0,0.0,54824.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+577,29,Tamil Nadu,Thoothukkudi,594,39.3,low,1.5,2056.0,0.0,21476.0,267781.0,0.0,0.0,21237.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+579,71,Uttar Pradesh,Baghpat,124,39.2,low,-2.8,1710.0,37.0,34460.0,219479.0,0.0,0.0,151349.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+578,6,Nagaland,Phek,248,39.2,low,-6.2,1045.0,82.0,3483.0,14728.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+583,7,Tripura,North Tripura,270,39.2,low,-0.8,355.0,8.0,10160.0,93131.0,0.0,0.0,20756.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+581,49,Madhya Pradesh,Sehore,427,39.2,low,-3.0,0.0,2082.0,31990.0,190699.0,0.0,0.0,122398.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+582,20,Andhra Pradesh,East Godavari,505,39.2,low,-1.4,7364.0,0.0,61982.0,937980.0,0.0,0.0,152962.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+580,19,Andhra Pradesh,Parvathipuram Manyam,743,39.2,low,-0.8,0.0,34.0,15363.0,166086.0,0.0,0.0,46668.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+584,3,Uttarakhand,Uttarkashi,57,39.1,low,-0.3,0.0,16.0,9913.0,62148.0,0.0,0.0,136559.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+585,30,Tamil Nadu,Theni,588,39.1,low,10.0,0.0,0.0,18279.0,143448.0,0.0,0.0,41119.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+586,8,Tripura,South Tripura,271,39.0,low,-1.2,0.0,33.0,6580.0,94855.0,0.0,0.0,21527.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+587,12,Manipur,Thoubal,259,38.9,low,-1.2,0.0,6.0,6376.0,18969.0,0.0,0.0,46154.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+588,72,Uttar Pradesh,Lalitpur,161,38.8,low,-4.9,0.0,7099.0,40264.0,147081.0,0.0,0.0,201948.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+590,13,Jammu & Kashmir,Kathua,7,38.7,low,-4.2,0.0,24.0,14428.0,96714.0,0.0,0.0,60114.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+591,13,Manipur,Senapati,257,38.7,low,0.1,305.0,2.0,7841.0,33527.0,0.0,0.0,142605.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+589,8,Arunachal Pradesh,Anjaw,628,38.7,low,-3.0,0.0,6.0,340.0,2277.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+592,73,Uttar Pradesh,Aligarh,119,38.6,low,-3.8,0.0,721.0,165317.0,655965.0,0.0,0.0,332238.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+594,9,Arunachal Pradesh,West Kameng,242,38.6,low,-0.8,0.0,7.0,1050.0,9455.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+593,36,Maharashtra,Thane,497,38.6,low,-2.7,4993.0,5.0,153500.0,1419664.0,0.0,0.0,148912.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+595,2,Himachal Pradesh,Shimla,23,38.5,low,-1.4,429.0,0.0,8715.0,108632.0,0.0,0.0,275745.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+596,21,Andhra Pradesh,Eluru,748,38.5,low,-1.7,0.0,339.0,34000.0,340502.0,0.0,0.0,33110.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+597,3,Delhi,North,80,38.4,low,-2.4,,,44275.0,232915.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+598,10,Arunachal Pradesh,Tirap,239,38.4,low,-2.8,110.0,6.0,349.0,5714.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+601,31,Telangana,Karimnagar,508,38.4,low,-2.0,0.0,6.0,34836.0,288957.0,0.0,0.0,77027.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+600,31,Tamil Nadu,Tirunelveli,592,38.4,low,-0.4,1608.0,14.0,22240.0,234662.0,0.0,0.0,51067.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+599,22,Andhra Pradesh,NTR,749,38.4,low,-2.1,8653.0,226.0,25504.0,350504.0,0.0,0.0,26971.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+602,14,West Bengal,Purba Bardhaman,306,38.3,low,-1.2,0.0,60.0,62347.0,1462903.0,0.0,0.0,131034.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+604,14,Manipur,Bishnupur,252,38.2,low,-0.9,0.0,0.0,2458.0,24161.0,0.0,0.0,35218.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+603,11,Arunachal Pradesh,Kamle,718,38.2,low,-1.3,0.0,4.0,749.0,2575.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+606,28,Rajasthan,Baran,89,38.1,low,-3.6,0.0,3833.0,45505.0,233435.0,0.0,0.0,207237.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+605,23,Andhra Pradesh,Vizianagaram,521,38.1,low,-1.1,0.0,136.0,39094.0,422635.0,0.0,0.0,144409.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+607,74,Uttar Pradesh,Meerut,169,37.8,low,-2.9,2628.0,341.0,76881.0,495155.0,0.0,0.0,237933.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+608,4,Delhi,South East,670,37.8,low,-2.9,,,27397.0,201658.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+610,7,Nagaland,Mokokchung,246,37.7,low,-5.7,1030.0,44.0,3268.0,14664.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+609,12,Arunachal Pradesh,Pakke Kessang,723,37.7,low,1.1,0.0,0.0,298.0,1363.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+611,32,Telangana,Khammam,509,37.6,low,-3.4,0.0,0.0,27320.0,311718.0,0.0,0.0,100999.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+613,30,Karnataka,Dakshina Kannada,534,37.6,low,-2.1,237.0,0.0,33966.0,237948.0,0.0,0.0,37873.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+612,13,Arunachal Pradesh,Longding,666,37.6,low,-2.3,0.0,5.0,555.0,5417.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+615,3,Haryana,Mahendragarh,69,37.5,low,-1.8,0.0,28.0,21277.0,181148.0,0.0,0.0,149167.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+617,8,Nagaland,Tuensang,249,37.5,low,-5.6,902.0,209.0,5737.0,17047.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+618,16,West Bengal,Cooch Behar,308,37.5,low,-1.7,0.0,424.0,36790.0,603793.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+616,15,West Bengal,Dakshin Dinajpur,310,37.5,low,-0.6,0.0,31.0,31557.0,393584.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+619,2,Goa,North Goa,551,37.5,low,-1.2,106.0,23.0,5672.0,73811.0,0.0,0.0,13574.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+614,14,Arunachal Pradesh,Namsai,678,37.5,low,-1.7,0.0,26.0,2660.0,15835.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+620,4,Uttarakhand,Champawat,48,37.4,low,0.3,542.0,0.0,4852.0,26089.0,0.0,0.0,68246.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+621,15,Arunachal Pradesh,Upper Subansiri,241,37.4,low,-1.3,0.0,8.0,1692.0,8457.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+622,29,Rajasthan,Kota,109,37.3,low,-5.8,0.0,12047.0,39432.0,320079.0,0.0,0.0,94818.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+623,50,Madhya Pradesh,Gwalior,407,37.3,low,-4.8,0.0,292.0,59075.0,403768.0,0.0,0.0,149450.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+624,14,Jammu & Kashmir,Doda,4,37.2,low,-0.2,0.0,3.0,6854.0,78361.0,0.0,0.0,71513.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+627,9,Nagaland,Zunheboto,251,37.2,low,-5.6,806.0,58.0,3539.0,13193.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+626,15,Manipur,Tamenglong,258,37.2,low,-1.1,0.0,5.0,1549.0,6770.0,0.0,0.0,30226.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+625,17,West Bengal,Hooghly,312,37.2,low,-1.4,1993.0,50.0,45794.0,1186530.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+628,32,Tamil Nadu,Thiruvallur,589,37.1,low,-1.6,4650.0,20.0,20858.0,372831.0,0.0,0.0,58769.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+629,15,Jammu & Kashmir,Bandipore,623,37.0,low,7.0,329.0,0.0,6427.0,82797.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+630,16,Jammu & Kashmir,Shupiyan,625,37.0,low,1.8,0.0,0.0,3069.0,47253.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+631,10,Meghalaya,West Jaintia Hills,275,36.9,low,-0.2,6.0,0.0,13282.0,45866.0,0.0,0.0,42410.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+632,17,Jammu & Kashmir,Udhampur,14,36.8,low,-1.1,0.0,64.0,12397.0,91827.0,0.0,0.0,118370.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+634,30,Rajasthan,Ganganagar,100,36.8,low,-4.5,0.0,4870.0,41514.0,368530.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+633,10,Nagaland,Kohima,245,36.8,low,-6.7,1001.0,72.0,3472.0,12034.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+635,18,West Bengal,Darjiling,309,36.8,low,2.1,539.0,0.0,16808.0,278776.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+636,3,Himachal Pradesh,Lahul & Spiti,21,36.7,low,-0.4,9.0,,471.0,7438.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+637,16,Manipur,Chandel,253,36.6,low,-0.3,0.0,6.0,1879.0,6981.0,0.0,0.0,30472.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+639,24,Andhra Pradesh,Srikakulam,519,36.5,low,-0.8,0.0,115.0,31082.0,476627.0,0.0,0.0,59001.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+638,4,Puducherry,Mahe,599,36.5,low,-1.7,,,649.0,5848.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+640,2,Ladakh,Leh,9,36.4,low,0.0,13.0,0.0,1989.0,36122.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+641,16,Arunachal Pradesh,Siang,679,36.4,low,-2.5,0.0,17.0,475.0,2299.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+643,25,Andhra Pradesh,Visakhapatnam,520,36.3,low,5.0,7964.0,0.0,81057.0,679456.0,0.0,0.0,343198.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+642,31,Karnataka,Mandya,544,36.3,low,-1.8,6107.0,529.0,18589.0,249079.0,0.0,0.0,436752.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+646,18,Jammu & Kashmir,Rajouri,12,36.1,low,2.2,0.0,0.0,17100.0,114015.0,0.0,0.0,149512.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+644,4,Himachal Pradesh,Kullu,20,36.1,low,-1.4,316.0,39.0,4872.0,66355.0,0.0,0.0,217563.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+645,11,Meghalaya,Ribhoi,276,36.1,low,-0.1,50.0,0.0,13601.0,48689.0,0.0,0.0,64712.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+647,5,Delhi,South,83,36.0,low,-2.1,,,24877.0,196180.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+648,75,Uttar Pradesh,Jhansi,153,36.0,low,-2.8,0.0,17139.0,45741.0,260845.0,0.0,0.0,160024.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+652,5,Uttarakhand,Garhwal,52,35.7,low,-1.6,332.0,76.0,8828.0,85675.0,0.0,0.0,174332.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+650,31,Rajasthan,Sikar,114,35.7,low,-1.5,0.0,2724.0,48408.0,373602.0,0.0,0.0,515206.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+651,33,Gujarat,Kachchh,449,35.7,low,0.9,6116.0,0.0,61555.0,383435.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+649,19,West Bengal,Kalimpong,702,35.7,low,7.5,0.0,0.0,1681.0,38799.0,0.0,0.0,27469.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+653,20,West Bengal,Murshidabad,319,35.6,low,-1.8,4858.0,3445.0,162234.0,1578450.0,0.0,0.0,309671.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+655,4,Haryana,Jind,65,35.4,low,-2.3,0.0,0.0,16877.0,254256.0,0.0,0.0,251856.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+654,6,Delhi,East,78,35.4,low,-2.9,,,23099.0,198174.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+656,51,Madhya Pradesh,Raisen,421,35.4,low,-3.5,0.0,12205.0,44896.0,243233.0,0.0,0.0,99224.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+657,12,Meghalaya,North Garo Hills,656,35.3,low,0.6,0.0,0.0,5024.0,30301.0,0.0,0.0,46103.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+658,11,Nagaland,Noklak,736,35.3,low,-5.0,0.0,84.0,1729.0,5139.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+659,6,Uttarakhand,Hardwar,50,35.2,low,-1.3,757.0,0.0,50183.0,255985.0,0.0,0.0,107425.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+661,7,Delhi,New Delhi,79,35.1,low,-2.3,,,18295.0,156689.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+660,12,Nagaland,Dimapur,244,35.1,low,-6.3,1687.0,116.0,6475.0,38675.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+662,33,Tamil Nadu,Erode,573,34.9,low,-1.6,3209.0,264.0,31546.0,346276.0,0.0,0.0,189791.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+664,5,Himachal Pradesh,Bilaspur,15,34.8,low,-0.1,0.0,0.0,6126.0,58108.0,0.0,0.0,127024.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+665,8,Delhi,West,85,34.8,low,-2.1,,,58059.0,443550.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+663,2,Sikkim,East District,225,34.8,low,-1.6,144.0,27.0,2688.0,36264.0,0.0,0.0,34189.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+667,6,Himachal Pradesh,Mandi,22,34.7,low,-0.7,0.0,21.0,15612.0,140332.0,0.0,0.0,427026.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+666,7,Uttarakhand,Bageshwar,46,34.7,low,-1.8,572.0,0.0,3093.0,22337.0,0.0,0.0,97455.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+668,9,Delhi,Central,77,34.7,low,-2.7,,,13516.0,155305.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+669,17,Arunachal Pradesh,Papum Pare,237,34.6,low,-0.4,0.0,3.0,3716.0,20431.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+670,1,Punjab,Tarn Taran,609,34.5,low,-1.2,0.0,38.0,14674.0,202807.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+671,5,Haryana,Karnal,67,34.4,low,-2.1,0.0,1.0,38128.0,299058.0,0.0,0.0,130109.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+672,32,Rajasthan,Bikaner,93,34.4,low,-1.7,7294.0,2935.0,63610.0,441782.0,0.0,0.0,495780.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+675,7,Himachal Pradesh,Hamirpur,17,34.3,low,-0.4,364.0,,6325.0,64616.0,0.0,0.0,139313.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+673,8,Uttarakhand,Pithoragarh,53,34.3,low,-1.8,278.0,140.0,5362.0,38042.0,0.0,0.0,158929.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+676,3,Sikkim,North  District,226,34.3,low,-2.2,87.0,6.0,704.0,5441.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+674,52,Madhya Pradesh,Hoshangabad,409,34.3,low,-3.7,0.0,14494.0,30204.0,205542.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+677,11,Mizoram,Hnahthial,726,34.3,low,0.7,0.0,0.0,676.0,2989.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+678,21,West Bengal,North Twenty Four Pargan*,303,34.2,low,-1.8,866.0,278.0,107393.0,1871215.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+679,34,Tamil Nadu,Thiruvarur,590,34.0,low,0.1,0.0,2.0,20280.0,205627.0,0.0,0.0,2213.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+681,19,Jammu & Kashmir,Jammu,5,33.9,low,-1.5,0.0,144.0,19882.0,298080.0,0.0,0.0,52160.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+682,33,Rajasthan,Hanumangarh,101,33.9,low,-1.4,0.0,0.0,32586.0,339503.0,0.0,0.0,323217.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+680,35,Tamil Nadu,Coimbatore,569,33.9,low,5.6,358.0,0.0,55180.0,472752.0,0.0,0.0,86611.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+684,4,Sikkim,South District,227,33.8,low,-1.9,444.0,16.0,1114.0,17414.0,0.0,0.0,43415.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+683,18,Arunachal Pradesh,Lepa Rada,724,33.8,low,1.1,0.0,0.0,411.0,1973.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+686,26,Andhra Pradesh,Sri Potti Sriramulu Nell*,515,33.2,low,-0.9,2092.0,96.0,48184.0,495838.0,0.0,0.0,170256.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+685,19,Arunachal Pradesh,Shi Yomi,725,33.2,low,1.0,0.0,0.0,413.0,1171.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+687,20,Arunachal Pradesh,Lower Dibang Valley,235,33.0,low,-1.0,0.0,11.0,891.0,5638.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+688,2,Punjab,Amritsar,27,32.9,low,-1.2,0.0,0.0,42646.0,380860.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+689,36,Tamil Nadu,Chennai,568,32.8,low,0.4,6.0,,63527.0,989062.0,0.0,0.0,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+690,9,Uttarakhand,Dehradun,49,32.7,low,-0.3,389.0,12.0,20459.0,251280.0,0.0,0.0,83105.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+691,8,Himachal Pradesh,Sirmaur,24,32.6,low,-1.0,0.0,0.0,11325.0,76197.0,0.0,0.0,200747.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+693,7,Haryana,Gurugram,62,32.3,low,-2.4,1740.0,,30290.0,328142.0,0.0,0.0,63048.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+692,6,Haryana,Rohtak,73,32.3,low,-2.4,0.0,7.0,20744.0,222444.0,0.0,0.0,109330.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+694,9,Himachal Pradesh,Chamba,16,32.1,low,0.0,0.0,0.0,10902.0,65111.0,0.0,0.0,211726.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+696,8,Haryana,Faridabad,60,32.0,low,-0.8,460.0,1.0,44884.0,314864.0,0.0,0.0,33540.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+695,21,Arunachal Pradesh,Lohit,234,32.0,low,-1.1,0.0,13.0,753.0,7079.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+699,23,Arunachal Pradesh,Changlang,229,31.9,low,-0.4,0.0,4.0,1239.0,25548.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+698,22,Arunachal Pradesh,East Siang,232,31.9,low,-0.5,0.0,4.0,973.0,7526.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+697,37,Tamil Nadu,Tiruppur,634,31.9,low,2.7,3331.0,0.0,24494.0,381945.0,0.0,0.0,144602.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+700,3,Punjab,Sri Muktsar Sahib,39,31.7,low,-0.5,0.0,0.0,16017.0,161473.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+701,10,Uttarakhand,Chamoli,47,31.7,low,-0.8,0.0,12.0,6401.0,50607.0,0.0,0.0,141779.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+702,11,Uttarakhand,Rudraprayag,54,31.7,low,1.6,230.0,0.0,3944.0,33196.0,0.0,0.0,97977.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+703,9,Haryana,Jhajjar,64,31.7,low,-1.9,0.0,0.0,20385.0,184898.0,0.0,0.0,126938.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+704,4,Punjab,Jalandhar,34,31.6,low,-0.5,0.0,2.0,28511.0,366971.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+705,10,Haryana,Rewari,72,31.4,low,-2.1,0.0,0.0,19556.0,178608.0,0.0,0.0,97964.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+706,12,Uttarakhand,Nainital,51,31.1,low,-0.9,0.0,38.0,9964.0,101818.0,0.0,0.0,161405.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+707,5,Punjab,Fatehgarh Sahib,30,31.0,low,0.6,0.0,0.0,5959.0,114574.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+709,11,Haryana,Hisar,63,31.0,low,-1.4,0.0,182.0,40409.0,357157.0,0.0,0.0,237666.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+710,22,West Bengal,Nadia,320,31.0,low,-1.3,2966.0,570.0,86323.0,1086379.0,0.0,0.0,271472.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+708,38,Tamil Nadu,Tenkasi,733,31.0,low,1.3,183.0,0.0,22732.0,226919.0,0.0,0.0,61715.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+711,6,Punjab,Moga,38,30.9,low,-1.2,0.0,0.0,15453.0,158997.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+713,33,Telangana,Hyderabad,507,30.8,low,-3.9,4.0,,61562.0,596377.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+712,24,Arunachal Pradesh,Lower Siang,719,30.8,low,-1.1,0.0,7.0,314.0,2400.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+714,20,Jammu & Kashmir,Srinagar,13,30.7,low,-0.8,0.0,,7465.0,186928.0,0.0,0.0,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+715,25,Arunachal Pradesh,Lower Subansiri,236,30.6,low,-0.3,0.0,1.0,709.0,8237.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+716,10,Himachal Pradesh,Kangra,18,30.5,low,-0.2,0.0,1.0,15392.0,274587.0,0.0,0.0,302078.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+717,2,Andaman & Nicobar,Nicobars,603,30.1,low,-0.2,0.0,,682.0,3909.0,0.0,0.0,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+718,10,Delhi,North West,82,30.0,low,-2.0,,,51212.0,393151.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+719,13,Uttarakhand,Udham Singh Nagar,56,29.9,low,-1.1,0.0,0.0,34932.0,256475.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+720,12,Haryana,Fatehabad,61,29.6,low,-1.1,0.0,0.0,18757.0,188388.0,0.0,0.0,127727.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+721,13,Haryana,Panchkula,70,29.4,low,-0.5,0.0,0.0,12536.0,102881.0,0.0,0.0,31112.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+723,3,Andaman & Nicobar,South Andaman,602,29.2,low,-1.3,3.0,,2091.0,38070.0,0.0,0.0,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+722,7,Punjab,Fazilka,651,29.2,low,-0.7,0.0,43.0,19218.0,212245.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+724,14,Haryana,Bhiwani,59,29.1,low,-0.4,0.0,23.0,35336.0,241317.0,0.0,0.0,149947.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+726,16,Haryana,Kaithal,66,29.1,low,-1.8,0.0,,25296.0,213108.0,0.0,0.0,145727.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+725,15,Haryana,Sirsa,74,29.1,low,-1.2,0.0,69.0,23730.0,257355.0,0.0,0.0,116128.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+727,11,Himachal Pradesh,Solan,25,29.0,low,0.1,0.0,0.0,11656.0,78989.0,0.0,0.0,154949.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+728,8,Punjab,Ludhiana,36,28.8,low,-0.7,0.0,0.0,56957.0,660293.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+729,9,Punjab,Mansa,37,28.7,low,-1.2,0.0,0.0,9638.0,136459.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+732,11,Punjab,Faridkot,29,28.6,low,-0.4,0.0,0.0,9465.0,114544.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+730,10,Punjab,Sangrur,43,28.6,low,-0.9,0.0,12.0,19230.0,255530.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+731,23,West Bengal,Kolkata,315,28.6,low,-1.0,,,32932.0,749366.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+733,17,Haryana,Charki Dadri,701,28.2,low,-0.4,0.0,1.0,8692.0,117054.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+734,18,Haryana,Kurukshetra,68,28.0,low,-1.7,0.0,,15328.0,176814.0,0.0,0.0,75514.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+735,19,Haryana,Yamunanagar,76,27.8,low,-1.1,0.0,0.0,23203.0,220606.0,0.0,0.0,71205.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+736,12,Punjab,Kapurthala,35,27.7,low,-0.3,0.0,0.0,11836.0,130394.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+737,20,Haryana,Panipat,71,27.5,low,-0.5,0.0,,38471.0,258923.0,0.0,0.0,86541.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+739,13,Punjab,Patiala,41,26.7,low,-0.2,0.0,1.0,23507.0,370468.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+738,21,Haryana,Sonipat,75,26.7,low,-1.5,0.0,0.0,26252.0,248087.0,0.0,0.0,157149.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+741,14,Punjab,Bathinda,28,26.5,low,-0.4,0.0,0.0,20565.0,243300.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+740,11,Delhi,South West,84,26.5,low,-1.8,,,24281.0,244676.0,,,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current
+742,15,Punjab,Shahid Bhagat Singh Nagar,40,26.0,low,-0.5,0.0,0.0,5261.0,89498.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+743,16,Punjab,Barnala,605,25.5,low,-0.9,0.0,18.0,7720.0,96484.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+744,17,Punjab,Sahibzada Ajit Singh Nag*,608,25.2,low,1.2,0.0,0.0,15765.0,167507.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+745,22,Haryana,Ambala,58,24.9,low,-0.6,0.0,,22577.0,166976.0,0.0,0.0,59861.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+746,18,Punjab,Rupnagar,42,24.8,low,-0.1,0.0,0.0,7667.0,129607.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+747,19,Punjab,Firozpur,31,24.7,low,-0.6,0.0,0.0,15524.0,171094.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+749,12,Himachal Pradesh,Una,26,24.5,low,0.0,0.0,0.0,7095.0,90363.0,0.0,0.0,77208.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+748,20,Punjab,Pathankot,662,24.5,low,0.0,0.0,0.0,8673.0,109221.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+750,21,Punjab,Gurdaspur,32,23.8,low,-0.6,0.0,5.0,20299.0,262742.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+751,22,Punjab,Malerkotla,737,23.4,low,-0.4,0.0,0.0,5062.0,67260.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+752,23,Punjab,Hoshiarpur,33,20.5,low,-0.3,0.0,0.0,14024.0,251933.0,0.0,0.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,current
+753,1,Chandigarh,Chandigarh,44,18.7,low,0.0,13.0,,16288.0,193266.0,0.0,0.0,,,by 2026-11-15,by 2027-05-15,neighbours,kharif_2027,current

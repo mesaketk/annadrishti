@@ -1,0 +1,29 @@
+# Used by: gcloud builds submit --ignore-file=deploy/gcloudignore
+# (gcloud does NOT read .dockerignore when uploading source, so mirror it here.)
+.git
+.DS_Store
+**/.DS_Store
+.pytest_cache
+**/__pycache__
+.venv
+venv
+data
+set 1
+set 2
+INDIA_DISTRICTS.geojson
+pipeline
+docs
+**/node_modules
+web/dist
+artifacts/*
+!artifacts/districts.json
+!artifacts/kpis.json
+!artifacts/timeseries
+!artifacts/history
+artifacts/timeseries_climate
+
+# GCP service-account keys — never ship
+aibuildercup-*.json
+gcp-sa*.json
+*.iam.json
+ee-chvi-*.json
