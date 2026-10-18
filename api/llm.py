@@ -50,6 +50,13 @@ class LLMUnavailable(Exception):
 _client_cache: dict[tuple, Any] = {}
 
 
+def _http_options():
+    """No SDK-internal retries (we handle retry/fallback ourselves) and a hard per-call timeout."""
+    from google.genai import types
+    timeout_ms = int(config.env("GEMINI_TIMEOUT_MS", "60000"))
+    return types.HttpOptions(timeout=timeout_ms, retry_options=types.HttpRetryOptions(attempts=1))
+
+
 def get_client():
     from google import genai
 
@@ -61,13 +68,13 @@ def get_client():
         loc = config.env("VERTEX_LOCATION", "global")
         ck = ("vertex", project, loc)
         if ck not in _client_cache:
-            _client_cache[ck] = genai.Client(vertexai=True, project=project, location=loc)
+            _client_cache[ck] = genai.Client(vertexai=True, project=project, location=loc, http_options=_http_options())
         return _client_cache[ck]
     key = config.env("GEMINI_API_KEY")
     if key:
         ck = ("key", key)
         if ck not in _client_cache:
-            _client_cache[ck] = genai.Client(api_key=key)
+            _client_cache[ck] = genai.Client(api_key=key, http_options=_http_options())
         return _client_cache[ck]
     raise LLMUnavailable("GEMINI_API_KEY not set")
 
