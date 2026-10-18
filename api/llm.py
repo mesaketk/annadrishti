@@ -689,26 +689,45 @@ def silent_wav(seconds: float = 1.0, rate: int = 24000) -> bytes:
 
 
 def synthesize_speech(text: str) -> bytes:
-    """Gemini TTS -> WAV bytes (24 kHz, 16-bit, mono)."""
+    """Gemini TTS -> WAV bytes (24 kHz, 16-bit, mono).
+
+    Tries the configured TTS model, then a fallback model; retries with backoff on 429/5xx so
+    a temporarily exhausted quota on a new model does not break the voice feature.
+    """
+    import time
     from google.genai import types
 
     client = get_client()
-    model = config.env("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
+    primary = config.env("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
+    fallback = config.env("GEMINI_TTS_FALLBACK_MODEL", "gemini-2.5-flash-preview-tts")
     voice = config.env("TTS_VOICE", "Kore")
-    resp = client.models.generate_content(
-        model=model, contents=text,
-        config=types.GenerateContentConfig(
-            response_modalities=["AUDIO"],
-            speech_config=types.SpeechConfig(voice_config=types.VoiceConfig(
-                prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name=voice)))))
-    part = resp.candidates[0].content.parts[0]
-    inline = part.inline_data
-    if inline is None or not inline.data:
-        raise RuntimeError("Gemini TTS returned no audio")
-    rate = 24000
-    m = re.search(r"rate=(\d+)", inline.mime_type or "")
-    if m:
-        rate = int(m.group(1))
-    if (inline.mime_type or "").startswith("audio/wav"):
-        return inline.data
-    return pcm_to_wav(inline.data, rate)
+    models = [primary] + ([fallback] if fallback and fallback != primary else [])
+    cfg = types.GenerateContentConfig(
+        response_modalities=["AUDIO"],
+        speech_config=types.SpeechConfig(voice_config=types.VoiceConfig(
+            prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name=voice))))
+    last_err: Exception | None = None
+    for model in models:
+        for attempt, delay in enumerate((0, 3, 8)):
+            if delay:
+                time.sleep(delay)
+            try:
+                resp = client.models.generate_content(model=model, contents=text, config=cfg)
+                part = resp.candidates[0].content.parts[0]
+                inline = part.inline_data
+                if inline is None or not inline.data:
+                    raise RuntimeError("Gemini TTS returned no audio")
+                rate = 24000
+                m = re.search(r"rate=(\d+)", inline.mime_type or "")
+                if m:
+                    rate = int(m.group(1))
+                if (inline.mime_type or "").startswith("audio/wav"):
+                    return inline.data
+                return pcm_to_wav(inline.data, rate)
+            except Exception as e:  # noqa: BLE001 - retry on quota/transient, fall through to next model
+                last_err = e
+                msg = str(e)
+                transient = any(code in msg for code in ("429", "503", "500", "RESOURCE_EXHAUSTED", "UNAVAILABLE"))
+                if not transient:
+                    break  # e.g. 404 model not found -> try the fallback model immediately
+    raise RuntimeError(f"Gemini TTS failed on {models}: {last_err}")
