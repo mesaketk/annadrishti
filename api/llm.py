@@ -331,17 +331,24 @@ def _transient(err: Exception) -> bool:
     return any(code in msg for code in ("429", "503", "500", "RESOURCE_EXHAUSTED", "UNAVAILABLE", "overloaded"))
 
 
-def generate_with_fallback(client, model: str, *, allow_fallback: bool = True, **kwargs):
-    """generate_content with retry/backoff on transient errors and a fallback model.
+def generate_with_fallback(client, model: str, *, allow_fallback: bool = True, budget_s: float = 45.0, **kwargs):
+    """generate_content with a short retry on transient errors, then a fallback model.
 
-    Returns (response, model_used). Fallback model: GEMINI_FALLBACK_MODEL (default gemini-2.5-flash).
+    Primary model: one quick retry (2 s). Fallback model (GEMINI_FALLBACK_MODEL, default gemini-2.5-flash):
+    up to three attempts (0/3/8 s). A per-call time budget keeps the whole request inside Cloud Run's timeout.
+    Returns (response, model_used).
     """
     import time
     fallback = config.env("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
-    models = [model] + ([fallback] if allow_fallback and fallback and fallback != model else [])
+    plan = [(model, (0, 2))]
+    if allow_fallback and fallback and fallback != model:
+        plan.append((fallback, (0, 3, 8)))
+    t0 = time.monotonic()
     last: Exception | None = None
-    for m in models:
-        for delay in (0, 2, 5, 10):
+    for m, delays in plan:
+        for delay in delays:
+            if time.monotonic() - t0 + delay > budget_s:
+                break
             if delay:
                 time.sleep(delay)
             try:
@@ -349,8 +356,8 @@ def generate_with_fallback(client, model: str, *, allow_fallback: bool = True, *
             except Exception as e:  # noqa: BLE001
                 last = e
                 if not _transient(e):
-                    break  # e.g. 404/400 -> try fallback model right away
-    raise RuntimeError(f"Gemini request failed on {models}: {last}")
+                    break  # e.g. 404/400 -> next model right away
+    raise RuntimeError(f"Gemini request failed on {[m for m, _ in plan]}: {last}")
 
 
 def generate_advisory(d: dict, audience: str, language: str, scenario: str, profile: dict | None = None,
