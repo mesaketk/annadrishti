@@ -326,6 +326,33 @@ def build_advisory_prompt(d: dict, audience: str, language: str, scenario: str, 
 
 
 # ------------------------------------------------------------------ generation
+def _transient(err: Exception) -> bool:
+    msg = str(err)
+    return any(code in msg for code in ("429", "503", "500", "RESOURCE_EXHAUSTED", "UNAVAILABLE", "overloaded"))
+
+
+def generate_with_fallback(client, model: str, *, allow_fallback: bool = True, **kwargs):
+    """generate_content with retry/backoff on transient errors and a fallback model.
+
+    Returns (response, model_used). Fallback model: GEMINI_FALLBACK_MODEL (default gemini-2.5-flash).
+    """
+    import time
+    fallback = config.env("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
+    models = [model] + ([fallback] if allow_fallback and fallback and fallback != model else [])
+    last: Exception | None = None
+    for m in models:
+        for delay in (0, 2, 5, 10):
+            if delay:
+                time.sleep(delay)
+            try:
+                return client.models.generate_content(model=m, **kwargs), m
+            except Exception as e:  # noqa: BLE001
+                last = e
+                if not _transient(e):
+                    break  # e.g. 404/400 -> try fallback model right away
+    raise RuntimeError(f"Gemini request failed on {models}: {last}")
+
+
 def generate_advisory(d: dict, audience: str, language: str, scenario: str, profile: dict | None = None,
                       department: str | None = None) -> tuple[str, list[str], str]:
     """Returns (markdown, fields_used, model). `profile` (farmer) / `department` (official) per Addendum C."""
@@ -336,8 +363,8 @@ def generate_advisory(d: dict, audience: str, language: str, scenario: str, prof
 
     client = get_client()
     model = config.gemini_model()
-    resp = client.models.generate_content(
-        model=model, contents=prompt,
+    resp, model = generate_with_fallback(
+        client, model, contents=prompt,
         config=types.GenerateContentConfig(system_instruction=advisory_system(audience), temperature=0.3))
     text = (resp.text or "").strip()
     if not text:
@@ -366,8 +393,8 @@ def run_chat(messages: list[dict], scenario: str, lgd: int | None = None, role: 
     resp = None
     for rnd in range(max_rounds + 1):
         # after max_rounds tool rounds, force a plain-text answer
-        resp = client.models.generate_content(model=model, contents=contents,
-                                              config=cfg_tools if rnd < max_rounds else cfg_plain)
+        resp, model = generate_with_fallback(client, model, allow_fallback=(rnd == 0), contents=contents,
+                                             config=cfg_tools if rnd < max_rounds else cfg_plain)
         calls = resp.function_calls if rnd < max_rounds else None
         if not calls:
             break
@@ -630,8 +657,8 @@ def generate_state_brief(state: str, scenario: str, rows: list[dict], totals: di
 
     client = get_client()
     model = config.gemini_model()
-    resp = client.models.generate_content(
-        model=model, contents=build_state_brief_prompt(state, scenario, rows, totals, n_high),
+    resp, model = generate_with_fallback(
+        client, model, contents=build_state_brief_prompt(state, scenario, rows, totals, n_high),
         config=types.GenerateContentConfig(system_instruction=STATE_BRIEF_SYSTEM, temperature=0.3))
     text = (resp.text or "").strip()
     if not text:
