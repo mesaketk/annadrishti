@@ -11,7 +11,7 @@
 **Project name:** AnnaDrishti — season‑by‑season food‑security early warning for India's districts
 **Theme:** Sustainability & Social Impact
 **One‑liner:** Before every Rabi and Kharif, AnnaDrishti tells each of India's 753 districts how exposed its food system is, who will be hurt first, how much buffer the state holds, and what farmers should plant — grounded Gemini briefings per department and farmer advisories in nine languages with voice. This season's situation: a record El Niño.
-**Google Cloud / AI used:** Gemini 2.5 Flash (grounded generation, function calling, personalised by profile/department), Gemini TTS, Earth Engine (CHIRPS, MODIS, ERA5‑Land, WorldPop, WeatherNext 2), BigQuery + BigQuery ML `AI.FORECAST` (TimesFM 2.5/3.0), Cloud Run, Artifact Registry, Secret Manager, Cloud Storage, Material Design 3.
+**Google Cloud / AI used:** Gemini 3.8 Flash (grounded generation, function calling, personalised by profile/department), Gemini TTS, Earth Engine (CHIRPS, MODIS, ERA5‑Land, WorldPop, WeatherNext 2), BigQuery + BigQuery ML `AI.FORECAST` (TimesFM 2.5/3.0), Cloud Run, Artifact Registry, Secret Manager, Cloud Storage, Material Design 3.
 **What's new vs existing tools:** connects climate outlook → district yield (ensemble validated out‑of‑sample) → food availability → nutrition → buffer stock → department actions; History mode replays 2003–2024; works every season, not only El Niño.
 
 ## Demo flow for the video (≈170 s)

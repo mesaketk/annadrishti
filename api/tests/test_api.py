@@ -171,7 +171,7 @@ def test_gemini_tool_loop_with_fake_client(client, monkeypatch):
     monkeypatch.setattr(llm, "get_client", lambda: FakeClient2())
     r = client.post("/api/advisory/486", json={"audience": "official", "language": "en", "scenario": "elnino"})
     assert r.status_code == 200 and r.json()["markdown"] == "## advisory"
-    assert r.json()["model"] == "gemini-2.5-flash"
+    assert r.json()["model"] == "gemini-3.8-flash"
 
 
 def test_gcs_sync_downloads_json(client, tmp_path, monkeypatch):
@@ -277,7 +277,7 @@ def test_audio_503_without_key_and_real_path(client, monkeypatch, tmp_path):
     monkeypatch.setattr(llm, "get_client", lambda: type("C", (), {"models": Models()})())
     r = client.post("/api/advisory/486/audio", json={"language": "en", "scenario": "elnino"})
     assert r.status_code == 200 and r.content[:4] == b"RIFF"
-    assert seen["tts_model"] == "gemini-2.5-flash-preview-tts"
+    assert seen["tts_model"] == "gemini-3.8-flash-tts"
     assert "*" not in seen["text"] and "#" not in seen["text"] and "Sow late" in seen["text"]
     assert (tmp_path / "artifacts" / "_audio_cache" / "486_en_elnino.wav").exists()
     assert client.post("/api/advisory/486/audio", json={"language": "en"}).headers["x-audio-cache"] == "hit"

@@ -21,7 +21,7 @@ A season‑by‑season food‑security early‑warning system for all 753 distri
 ## Google tools used
 | Tool | Use |
 |---|---|
-| **Gemini 2.5 Flash** (Gemini API) | grounded briefings, farmer advisories, function‑calling chat, state briefs |
+| **Gemini 3.8 Flash** (Gemini API) | grounded briefings, farmer advisories, function‑calling chat, state briefs |
 | **Gemini TTS** | spoken farmer advisories in Indian languages |
 | **Google Earth Engine** | CHIRPS rainfall, MODIS NDVI, ERA5‑Land soil moisture, WorldPop, **WeatherNext 2** 10‑day ensemble forecasts |
 | **BigQuery + BigQuery ML `AI.FORECAST`** | 17‑table warehouse; **TimesFM 2.5 / 3.0** forecasts (rainfall with ONI covariate, Poshan trend) — shown as a secondary view |

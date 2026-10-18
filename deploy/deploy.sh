@@ -6,7 +6,7 @@
 #   ./deploy/deploy.sh
 #
 # Optional env:
-#   REGION=asia-south1  SERVICE=annadrishti  REPO=annadrishti  GEMINI_MODEL=gemini-2.5-flash
+#   REGION=asia-south1  SERVICE=annadrishti  REPO=annadrishti  GEMINI_MODEL=gemini-3.8-flash
 #   USE_VERTEX=1            use Vertex AI with the Cloud Run service account (no API key / secret)
 #   ARTIFACTS_GCS_URI=gs://bucket/prefix   API downloads *.json from here at startup
 #   ENABLE_EE=1             also enable the Earth Engine API
@@ -16,7 +16,7 @@ cd "$(dirname "$0")/.."
 REGION="${REGION:-asia-south1}"
 SERVICE="${SERVICE:-annadrishti}"
 REPO="${REPO:-annadrishti}"
-GEMINI_MODEL="${GEMINI_MODEL:-gemini-2.5-flash}"
+GEMINI_MODEL="${GEMINI_MODEL:-gemini-3.8-flash}"
 USE_VERTEX="${USE_VERTEX:-0}"
 ARTIFACTS_GCS_URI="${ARTIFACTS_GCS_URI:-}"
 PROJECT="${GCP_PROJECT:-${GOOGLE_CLOUD_PROJECT:-$(gcloud config get-value project 2>/dev/null || true)}}"

@@ -31,7 +31,7 @@ def dist_dir() -> Path:
 
 
 def gemini_model() -> str:
-    return env("GEMINI_MODEL", "gemini-2.5-flash")  # type: ignore[return-value]
+    return env("GEMINI_MODEL", "gemini-3.8-flash")  # type: ignore[return-value]
 
 
 def mock_llm() -> bool:

@@ -693,7 +693,7 @@ def synthesize_speech(text: str) -> bytes:
     from google.genai import types
 
     client = get_client()
-    model = config.env("GEMINI_TTS_MODEL", "gemini-2.5-flash-preview-tts")
+    model = config.env("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
     voice = config.env("TTS_VOICE", "Kore")
     resp = client.models.generate_content(
         model=model, contents=text,

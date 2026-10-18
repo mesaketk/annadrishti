@@ -10,7 +10,7 @@ substitutions:
   _REPO: annadrishti
   _SERVICE: annadrishti
   _TAG: latest
-  _GEMINI_MODEL: gemini-2.5-flash
+  _GEMINI_MODEL: gemini-3.8-flash
   _USE_VERTEX: "0"            # "1" = use Vertex AI (runtime service account) instead of a Gemini API key
   _ARTIFACTS_GCS_URI: ""      # optional gs://bucket/prefix with updated *.json artifacts
   _VERTEX_LOCATION: "global"  # Vertex location (global = all Gemini models incl. TTS)

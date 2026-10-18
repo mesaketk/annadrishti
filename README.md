@@ -50,7 +50,7 @@ Open http://localhost:8080.
 See [deploy/README_GCP.md](deploy/README_GCP.md). Short version: `GEMINI_API_KEY=... PROJECT_ID=... bash deploy/deploy.sh`.
 
 ## Google Cloud / Google AI used
-Earth Engine (CHIRPS, MODIS, ERA5‑Land, WeatherNext 2) · BigQuery warehouse (17 tables) + BigQuery ML `AI.FORECAST` with TimesFM 2.5 / 3.0 · Gemini 2.5 Flash (grounded generation, function calling, personalised by farmer profile and department) · Gemini TTS · Cloud Run · Cloud Build · Artifact Registry · Secret Manager · Cloud Storage.
+Earth Engine (CHIRPS, MODIS, ERA5‑Land, WeatherNext 2) · BigQuery warehouse (17 tables) + BigQuery ML `AI.FORECAST` with TimesFM 2.5 / 3.0 · Gemini 3.8 Flash (grounded generation, function calling, personalised by farmer profile and department) · Gemini TTS · Cloud Run · Cloud Build · Artifact Registry · Secret Manager · Cloud Storage.
 
 ## Caveats (we say them in the app too)
 District‑level consumption is normative (ICMR‑NIN norm × projected population), buffer stock is national (central pool), NFHS rounds are not annual, WeatherNext covers 10‑15 days (in‑season layer, not the annual outlook), hindcast skill is modest (LightGBM out‑of‑sample ρ 0.24–0.46 by year; analog in‑sample score ρ −0.1 to −0.5), and TimesFM has no district‑level skill (display only).
