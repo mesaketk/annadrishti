@@ -48,6 +48,12 @@ METRICS: dict[str, Callable[[dict, str], Any]] = {
     "population_2026": lambda d, s: d.get("population_2026"),
     "children_u5_est": lambda d, s: d.get("children_u5_est"),
     "rainfed_share": lambda d, s: _g(d, "crops", "rainfed_share"),
+    # pre-positioning quantities from the planner (season-specific actions block)
+    "pulses_preposition_t": lambda d, s: (_risk(d, s).get("actions") or {}).get("pulses_preposition_t"),
+    "grain_preposition_t": lambda d, s: (_risk(d, s).get("actions") or {}).get("grain_preposition_t"),
+    "anganwadi_children": lambda d, s: (_risk(d, s).get("actions") or {}).get("anganwadi_children"),
+    "seed_bank_ha": lambda d, s: (_risk(d, s).get("actions") or {}).get("seed_bank_ha"),
+    "poshan_underweight_live": lambda d, s: ((d.get("nutrition") or {}).get("poshan_live") or {}).get("underweight_pct"),
     "irrigated_share": lambda d, s: _g(d, "crops", "irrigated_share"),
     "yield_cv10": lambda d, s: _g(d, "crops", "yield_cv10"),
     "clim_vuln_index": lambda d, s: _g(d, "climate", "clim_vuln_index"),

@@ -53,7 +53,7 @@ _client_cache: dict[tuple, Any] = {}
 def _http_options():
     """No SDK-internal retries (we handle retry/fallback ourselves) and a hard per-call timeout."""
     from google.genai import types
-    timeout_ms = int(config.env("GEMINI_TIMEOUT_MS", "60000"))
+    timeout_ms = int(config.env("GEMINI_TIMEOUT_MS", "30000"))
     return types.HttpOptions(timeout=timeout_ms, retry_options=types.HttpRetryOptions(attempts=1))
 
 
@@ -216,7 +216,8 @@ def advisory_system(audience: str) -> str:
         return f"{ADVISORY_COMMON}\n\n" + ADVISORY_FARMER.replace("{crop_table}", personalize.crop_substitution_table())
     return f"{ADVISORY_COMMON}\n\n{ADVISORY_OFFICIAL}"
 
-CHAT_SYSTEM = """You are AnnaDrishti's "Ask the map" assistant for Indian districts, season by season (Rabi 2026-27 \
+CHAT_SYSTEM = """RANKING RULE: for "which districts should pre-position / move / stock X first" questions, rank with rank_districts(metric="pulses_preposition_t" or "grain_preposition_t" or "anganwadi_children" or "seed_bank_ha") descending (these are the planner's computed quantities), never by self_sufficiency alone, and exclude urban consumption-side districts unless the user asks about cities. For "who is most at risk" use risk_score.
+You are AnnaDrishti's "Ask the map" assistant for Indian districts, season by season (Rabi 2026-27 \
 and Kharif 2027, each under La Niña, neutral, El Niño or the ENSO-weighted "current" outlook). Scenario ids are \
 "<season>:<phase>" (e.g. kharif_2027:lanina) or legacy neutral|elnino|elnino_strong. La Niña = excess-rain/flood \
 framing; neutral = structural vulnerability; El Niño = deficit/heat. You serve FARMERS, district/state OFFICERS and \
