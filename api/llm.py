@@ -338,17 +338,32 @@ def _transient(err: Exception) -> bool:
     return any(code in msg for code in ("429", "503", "500", "RESOURCE_EXHAUSTED", "UNAVAILABLE", "overloaded"))
 
 
+_cooldown_until: dict[str, float] = {}   # model -> monotonic time until which we skip it (circuit breaker)
+
+
+def preferred_model(model: str) -> str:
+    """Return the model to use now: the configured one, or its fallback while the primary is cooling down."""
+    import time
+    fallback = config.env("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
+    if fallback and fallback != model and _cooldown_until.get(model, 0) > time.monotonic():
+        return fallback
+    return model
+
+
 def generate_with_fallback(client, model: str, *, allow_fallback: bool = True, budget_s: float = 45.0, **kwargs):
     """generate_content with a short retry on transient errors, then a fallback model.
 
-    Primary model: one quick retry (2 s). Fallback model (GEMINI_FALLBACK_MODEL, default gemini-2.5-flash):
-    up to three attempts (0/3/8 s). A per-call time budget keeps the whole request inside Cloud Run's timeout.
+    Primary model: one quick retry (2 s); on a quota error the primary is put on a cooldown
+    (GEMINI_COOLDOWN_S, default 600 s) so later requests go straight to the fallback.
+    Fallback model (GEMINI_FALLBACK_MODEL, default gemini-2.5-flash): up to three attempts (0/3/8 s).
     Returns (response, model_used).
     """
     import time
     fallback = config.env("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
-    plan = [(model, (0, 2))]
-    if allow_fallback and fallback and fallback != model:
+    cooldown = float(config.env("GEMINI_COOLDOWN_S", "600"))
+    start_model = preferred_model(model) if allow_fallback else model
+    plan = [(start_model, (0, 2))]
+    if allow_fallback and fallback and fallback != start_model:
         plan.append((fallback, (0, 3, 8)))
     t0 = time.monotonic()
     last: Exception | None = None
@@ -364,6 +379,8 @@ def generate_with_fallback(client, model: str, *, allow_fallback: bool = True, b
                 last = e
                 if not _transient(e):
                     break  # e.g. 404/400 -> next model right away
+        if m == model and m != fallback and last is not None and _transient(last):
+            _cooldown_until[m] = time.monotonic() + cooldown
     raise RuntimeError(f"Gemini request failed on {[m for m, _ in plan]}: {last}")
 
 
@@ -387,13 +404,13 @@ def generate_advisory(d: dict, audience: str, language: str, scenario: str, prof
 
 
 def run_chat(messages: list[dict], scenario: str, lgd: int | None = None, role: str | None = None,
-             language: str | None = None) -> tuple[str, list[int]]:
+             language: str | None = None, _forced_model: str | None = None) -> tuple[str, list[int]]:
     if config.mock_llm():
         return mock_chat(messages, scenario, lgd, role, language)
     from google.genai import types
 
     client = get_client()
-    model = config.gemini_model()
+    model = _forced_model or config.gemini_model()
     system = chat_system(scenario, lgd, role, language)
     contents = [types.Content(role="user" if m["role"] == "user" else "model",
                               parts=[types.Part.from_text(text=m["content"])]) for m in messages]
@@ -405,10 +422,19 @@ def run_chat(messages: list[dict], scenario: str, lgd: int | None = None, role: 
     lgds: list[int] = []
     max_rounds = 4
     resp = None
+    model = _forced_model or preferred_model(model)
     for rnd in range(max_rounds + 1):
         # after max_rounds tool rounds, force a plain-text answer
-        resp, model = generate_with_fallback(client, model, allow_fallback=(rnd == 0), contents=contents,
-                                             config=cfg_tools if rnd < max_rounds else cfg_plain)
+        try:
+            resp, model = generate_with_fallback(client, model, allow_fallback=(rnd == 0), contents=contents,
+                                                 config=cfg_tools if rnd < max_rounds else cfg_plain)
+        except RuntimeError:
+            fb = config.env("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
+            if rnd > 0 and fb and model != fb:
+                # restart the conversation on the fallback model (thought signatures are model-specific)
+                _cooldown_until[model] = __import__("time").monotonic() + float(config.env("GEMINI_COOLDOWN_S", "600"))
+                return run_chat(messages, scenario, lgd=lgd, role=role, language=language, _forced_model=fb)
+            raise
         calls = resp.function_calls if rnd < max_rounds else None
         if not calls:
             break
