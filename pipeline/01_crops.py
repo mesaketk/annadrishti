@@ -17,6 +17,7 @@ Key data facts discovered while building this (see report for numbers):
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -68,6 +69,16 @@ GROUP_OVERRIDE = {
     "Kapas": "cash", "Jute & Mesta": "cash",
     "Ricebean (Nagadal)": "pulses", "Rajmash Kholar": "pulses", "Lab-Lab": "pulses",
 }
+
+# ---- v6 (SCHEMA Addendum I): per-season top crops --------------------------------------------------------------
+UNRELIABLE_SEASON_STATES = {"Bihar", "Odisha", "West Bengal", "Assam", "Jharkhand"}   # season labels shift between years / rows missing (see CAVEATS)
+MIN_LABELLED_SHARE = 0.50     # kharif+rabi labelled area must cover >= 50 % of gross area, else the crop-calendar fallback is used
+RICE_RABI_SHARE = 0.10        # fallback: rice also counted in rabi if rice is > 10 % of the rabi-labelled area (eastern boro / rabi rice)
+# crop calendar (names after NAME_MAP harmonisation). Sugarcane is annual -> both seasons.
+CAL_KHARIF = {"Rice", "Cotton", "Soybean", "Maize", "Bajra", "Jowar", "Tur", "Moong", "Urad", "Groundnut", "Sesamum", "Castorseed",
+              "Ragi", "Small Millets", "Samai", "Korra", "Varagu", "Sunflower", "Jute", "Mesta", "Jute & Mesta", "Nigerseed"}
+CAL_RABI = {"Wheat", "Gram", "Rapeseed & Mustard", "Barley", "Lentil", "Peas & Beans (Pulses)", "Potato", "Linseed", "Safflower", "Onion", "Khesari"}
+CAL_BOTH = {"Sugarcane"}
 SEASON_GRP = {"Kharif": "kharif", "Autumn": "kharif", "Winter": "kharif", "Rabi": "rabi",
               "Summer": "summer", "Whole Year": "whole"}
 
@@ -357,6 +368,70 @@ def top_crops_json(c: pd.DataFrame, sel: pd.DataFrame) -> pd.Series:
     return t.groupby("lgd").apply(mk)
 
 
+def _crop_rows(g: pd.DataFrame, denom: float) -> list:
+    """Top-5 crop rows (crop, share of the season area, yield t/ha, area_ha) from a (crop, area_ha, area_wp, prod_t) frame."""
+    g = g[(g.area_ha > 0) & ~g.crop.str.startswith("Other ")].sort_values("area_ha", ascending=False).head(5)
+    out = []
+    for r in g.itertuples():
+        y = r.prod_t / r.area_wp if (r.area_wp and r.area_wp > 0 and pd.notna(r.prod_t)) else np.nan
+        out.append({"crop": r.crop, "share": round(float(r.area_ha / denom), 4) if denom > 0 else None,
+                    "yield_t_ha": None if (pd.isna(y) or y > 12) else round(float(y), 3), "area_ha": round(float(r.area_ha), 1)})
+    return out
+
+
+def season_top_crops(long_all: pd.DataFrame, c_all: pd.DataFrame, sel: pd.DataFrame, state_of_lgd: dict) -> pd.DataFrame:
+    """v6 (Addendum I): per district, top-5 crops by area for the KHARIF and RABI season of the district's latest snapshot (same lgd x year x source as `top_json`).
+    Label basis (`apy_season_labels`): rows labelled Kharif / Autumn / Winter (kharif) and Rabi; Whole Year, Summer (and the dropped APY 'Total') are ignored.
+    Fallback (`crop_calendar`): states in UNRELIABLE_SEASON_STATES, or kharif+rabi labelled area < 50 % of the gross area -> each crop is assigned to its sowing season
+    from the crop calendar (CAL_*), using the crop's total area; sugarcane counts in both; rice also in rabi when it is > 10 % of the rabi-labelled area (rabi rice area = its rabi-labelled area).
+    Share = crop area / total area of that season on the same basis (labelled season area, or calendar-classified area). 'Other ...' aggregates are not listed.
+    Returns a frame indexed by lgd: kharif_top_json, rabi_top_json, season_top_source, season_labelled_share."""
+    s = sel.reset_index()[["lgd", "crop_year", "source"]].rename(columns={"crop_year": "cy", "source": "src"})
+    lg = long_all.merge(s, on=["lgd", "cy", "src"])
+    cc = c_all.merge(s, on=["lgd", "cy", "src"])
+    lg["area_wp"] = lg["area_ha"].where(lg["prod_t"].notna())
+    out = {}
+    cc_by = {l: g for l, g in cc.groupby("lgd")}
+    for lgd, g in lg.groupby("lgd"):
+        gross = float(g.area_ha.sum())
+        lab = g[g.season_grp.isin(["kharif", "rabi"])]
+        lab_share = float(lab.area_ha.sum() / gross) if gross > 0 else 0.0
+        fallback = (state_of_lgd.get(lgd) in UNRELIABLE_SEASON_STATES) or lab_share < MIN_LABELLED_SHARE
+        agg = lambda d: d.groupby("crop", as_index=False).agg(area_ha=("area_ha", "sum"), area_wp=("area_wp", "sum"), prod_t=("prod_t", lambda x: x.sum(min_count=1)))
+        if not fallback:
+            res = {}
+            for sg in ("kharif", "rabi"):
+                a = agg(lab[lab.season_grp == sg])
+                res[sg] = _crop_rows(a, float(a.area_ha.sum()))
+            out[lgd] = (res["kharif"], res["rabi"], "apy_season_labels", lab_share)
+            continue
+        tot = cc_by[lgd][["crop", "area_ha", "area_wp", "prod_t"]].copy()
+        rab_lab = agg(g[g.season_grp == "rabi"]).set_index("crop")
+        rice_rabi_share = (float(rab_lab.area_ha.get("Rice", 0.0) / rab_lab.area_ha.sum()) if len(rab_lab) and rab_lab.area_ha.sum() > 0 else 0.0)
+        rows = {"kharif": [], "rabi": []}
+        for r in tot.itertuples():
+            if r.crop in CAL_BOTH:
+                rows["kharif"].append(r); rows["rabi"].append(r)
+            elif r.crop in CAL_KHARIF:
+                if r.crop == "Rice" and rice_rabi_share > RICE_RABI_SHARE:      # split: rabi-labelled rice goes to rabi, the remainder to kharif
+                    ra = float(rab_lab.area_ha.get("Rice", 0.0)); frac = min(max(ra / r.area_ha, 0.0), 1.0) if r.area_ha > 0 else 0.0
+                    rows["kharif"].append(r._replace(area_ha=r.area_ha * (1 - frac), area_wp=r.area_wp * (1 - frac), prod_t=r.prod_t * (1 - frac) if pd.notna(r.prod_t) else r.prod_t))
+                    rows["rabi"].append(r._replace(area_ha=r.area_ha * frac, area_wp=r.area_wp * frac, prod_t=r.prod_t * frac if pd.notna(r.prod_t) else r.prod_t))
+                else:
+                    rows["kharif"].append(r)
+            elif r.crop in CAL_RABI:
+                rows["rabi"].append(r)
+        res = {}
+        for sg in ("kharif", "rabi"):
+            a = pd.DataFrame([x[1:] for x in rows[sg]], columns=["crop", "area_ha", "area_wp", "prod_t"]) if rows[sg] else pd.DataFrame(columns=["crop", "area_ha", "area_wp", "prod_t"])
+            res[sg] = _crop_rows(a, float(a.area_ha.sum()) if len(a) else 0.0)
+        out[lgd] = (res["kharif"], res["rabi"], "crop_calendar", lab_share)
+    R = pd.DataFrame.from_dict(out, orient="index", columns=["kharif_top", "rabi_top", "season_top_source", "season_labelled_share"])
+    R.index.name = "lgd"
+    return R
+
+
+
 def yield_cv10(P: pd.DataFrame, sel: pd.DataFrame) -> pd.Series:
     """CV (std ddof=1 / mean) of foodgrain yield over the 10 crop years ending at each district's latest year; >=5 obs."""
     w = P.pivot(index="lgd", columns="crop_year", values="foodgrain_yield_t_ha")
@@ -541,6 +616,13 @@ def main():
     L["groups_json"] = pd.Series(gj)
     tj = top_crops_json(c_all, s)
     L["top_json"] = tj.map(json.dumps)
+    # v6 (Addendum I): per-season top-5 crops (additive columns)
+    long_all = pd.concat([apy.assign(src="APY"), upag.assign(src="UPAG")], ignore_index=True)
+    ST = season_top_crops(long_all, c_all, s, master.set_index("lgd").state.to_dict())
+    L["kharif_top_json"] = ST.kharif_top.map(json.dumps)
+    L["rabi_top_json"] = ST.rabi_top.map(json.dumps)
+    L["season_top_source"] = ST.season_top_source
+    L["season_labelled_share"] = ST.season_labelled_share.round(3)
     L["yield_cv10"] = yield_cv10(P, s).round(4)
     # APY all-crop gross area reference (latest complete APY year <= 2022): comparable across districts even where
     # the snapshot year is UPAG-only (UPAG lists ~30 major crops, no horticulture/plantation)
@@ -679,6 +761,28 @@ def write_report(stats, master, P, L, S, c_all):
           f"districts per crop year min / median / max: {int(yc.min())} / {int(yc.median())} / {int(yc.max())}")
     both = P[P.kharif_fg_yield_t_ha.notna() & P.rabi_fg_yield_t_ha.notna()]
     w(f"- median rabi share of foodgrain production (district-years with both): {(both.rabi_fg_prod_t / (both.rabi_fg_prod_t + both.kharif_fg_prod_t)).median():.2f}\n")
+    w("## Per-season top crops (v6, Addendum I)\n")
+    w("- `kharif_top_json` / `rabi_top_json` (top-5 by area, share of the season's area on the same basis, yield t/ha) and `season_top_source` for the latest snapshot (same lgd x year x source as `top_json`). "
+      "`apy_season_labels` = rows labelled Kharif / Autumn / Winter (kharif) or Rabi (Whole Year, Summer, Total ignored); `crop_calendar` = fallback for Bihar, Odisha, West Bengal, Assam, Jharkhand "
+      "and for districts whose kharif+rabi labelled area is < 50 % of gross area (sowing-season crop list; sugarcane in both seasons; rice also in rabi where it is > 10 % of the rabi-labelled area).")
+    okk = L.kharif_top_json.notna()
+    w(f"- Districts with by-season tops: {int(okk.sum())} / {len(L)}; source: " + ", ".join(f"{k}: {v}" for k, v in L.season_top_source.value_counts().items()))
+    emp_k = int((L.kharif_top_json.dropna() == "[]").sum()); emp_r = int((L.rabi_top_json.dropna() == "[]").sum())
+    w(f"- Empty lists: kharif {emp_k}, rabi {emp_r} (no crop of that season in the snapshot)")
+    fb = L[L.season_top_source == "crop_calendar"]
+    w(f"- Calendar fallback districts: {len(fb)} (of which in the five listed states: {int(fb.state.isin(UNRELIABLE_SEASON_STATES).sum())}; "
+      f"by the < 50 % labelled-area rule: {int((~fb.state.isin(UNRELIABLE_SEASON_STATES)).sum())})")
+    w("")
+    w("| lgd | district | source | labelled share | kharif top 3 | rabi top 3 |")
+    w("|---|---|---|---|---|---|")
+    jl_ = lambda x: ", ".join(f"{q['crop']} {q['share']:.0%}" for q in json.loads(x)[:3]) if isinstance(x, str) else ""  # noqa: E731
+    for l_ in (486, 358, 673, 191, 502):
+        r_ = L[L.lgd == l_]
+        if r_.empty:
+            continue
+        r_ = r_.iloc[0]
+        w(f"| {l_} | {r_.district} ({r_.state}) | {r_.season_top_source} | {r_.season_labelled_share} | {jl_(r_.kharif_top_json)} | {jl_(r_.rabi_top_json)} |")
+    w("")
     w("## Caveats\n")
     for t in CAVEATS:
         w(f"- {t}")
@@ -701,6 +805,10 @@ CAVEATS = [
     "Kharif / Autumn / Winter / Rabi / Summer between years; Odisha 2023 has no Rabi row; Summer/boro rice is in neither season column). `kharif_fg_*` and `rabi_fg_*` "
     "are therefore least reliable there and the season-split yield deviations built on them (04b --season rabi) inherit label-switch jumps; treat rabi results for those "
     "states as indicative. UPAG 2023+ covers major crops only, so season production is a lower bound in those years.",
+    "PER-SEASON TOP CROPS (v6): season = label of the APY / UPAG row. Autumn and Winter (APY) count as kharif; Whole Year (sugarcane, plantation, banana), Summer (boro / summer rice, summer pulses) and APY 'Total' are ignored on the label basis, "
+    "so sugarcane never appears in a label-based list. Fallback districts use a sowing-calendar crop list (CAL_KHARIF / CAL_RABI / sugarcane both) on the crop's all-season area: crops outside the list (vegetables, fruit, spices, plantation) are not listed, "
+    "so the fallback share is of the classified area only; calendar assignment ignores rabi maize / rabi groundnut / summer crops. UPAG-sourced snapshots (676 districts, 2023-24) list ~30 major crops only. "
+    "'Other ...' aggregate rows (Other Pulses, Other Oilseeds, ...) are not listed. Yields from UPAG/APY production / area of rows reporting production; > 12 t/ha nulled.",
     "Production is summed over crops that report it; yield = production / area of crops with production, so missing production does not bias yield down "
     "but foodgrain_prod_t is a lower bound when fg_area_missing_prod_share > 0. Latest-year selection requires <= 15 % of foodgrain area lacking production.",
     "Latest year is capped at 2023-24: 2024-25 UPAG is provisional (kept in the panel and used in sensitivity). A district-year is 'complete' when <=15 % of foodgrain area lacks production, "

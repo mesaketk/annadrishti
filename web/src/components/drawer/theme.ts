@@ -5,6 +5,6 @@ import { M3 } from '../../lib/m3'
 export const C = {
   ink: M3.onSurface, muted: M3.onSurfaceVariant, line: M3.outlineVariant, bg: M3.surface, surface: M3.surfaceContainerLow,
   low: M3.lowFill, watch: M3.watchFill, act: M3.error, info: M3.tertiary, accent: M3.primary, nodata: M3.outlineVariant,
-  elnino: M3.errorContainer, actStrong: M3.actFill,
+  elnino: M3.elninoShade, actStrong: M3.actFill,
 } as const
 export const AXIS = { stroke: C.line, tick: { fill: C.muted, fontSize: 12 }, tickLine: false } as const

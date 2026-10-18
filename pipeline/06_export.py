@@ -11,6 +11,8 @@ v4 (seasons, SCHEMA Addendum F): per-district `risk` carries every `<season>:<ph
 v5 (imputation, SCHEMA Addendum G): the source layers are overlaid with artifacts/imputed_district.parquet (03c_impute.py) where they are null; `data_quality` gains `imputed` {dotted path: source},
 `imputed_count`, `imputed_data_count`, `consumption_side` (from risk_district.json); blocks built from imputed values carry `estimated` (+ the imputed field names); `kpis.data_coverage` gains imputation counts; the
 before/after null table, the imputed-count distribution and the imputed-vs-neighbour score table are written below the marker line of artifacts/reports/03c_impute_report.md.
+v6 (SCHEMA Addendum I): per-district `crops.by_season` (01_crops kharif_top_json / rabi_top_json / season_top_source; split children take the parent's lists, flagged estimated), `season_outlook`
+(04_risk), `kpis.season_outlook_national`; user-facing "MGNREGA" label is "NREGA" (CSV headers; JSON keys keep `mgnrega_persondays`). MAX_MB raised 17 -> 21 for these blocks.
 Run    : python3 pipeline/06_export.py   (after 04_risk.py; idempotent, no network)
 """
 from __future__ import annotations
@@ -25,7 +27,7 @@ from common import districts, ART, ROOT, save_json
 
 T0 = time.time()
 SCEN = ["neutral", "elnino", "elnino_strong"]       # legacy scenario ids (aliases of <kharif>:<phase>)
-MAX_MB = 17.0          # v5: was 15.0; the 188 newly rabi-scored + 34 newly kharif-scored districts add ~1.5 MB at the floor of the driver trimming
+MAX_MB = 21.0          # v6: was 17.0 (season_outlook + crops.by_season add ~3 MB; drivers were already at the 3-per-scenario floor); v5: was 15.0; the 188 newly rabi-scored + 34 newly kharif-scored districts add ~1.5 MB at the floor of the driver trimming
 GROUPS = ["cereals", "millets", "pulses", "oilseeds"]
 MOCK = ROOT / "web" / "public" / "mock"
 
@@ -158,6 +160,33 @@ def nfhs_block(js, lgd=None, rnd=None):
     return out
 
 
+SPLIT_PARENT = {}
+_ij = ART / "imputed_district.json"
+if _ij.exists() and not os.environ.get("NO_IMPUTE"):
+    SPLIT_PARENT = {int(k): int(v) for k, v in (json.load(open(_ij)).get("split_parent") or {}).items()}
+
+
+def _season_top(js):
+    return [{"crop": t["crop"], "share": num(t.get("share"), 4), "yield_t_ha": num(t.get("yield_t_ha"), 3), "area_ha": num(t.get("area_ha"), 0)}
+            for t in (jl(js) or [])[:5]]
+
+
+def by_season_block(lgd):
+    """SCHEMA Addendum I `crops.by_season`: top-5 crops per season (01_crops v6). Split children without their own snapshot take the parent's lists (flagged `estimated`)."""
+    src_l, est = lgd, False
+    if (lgd not in crops.index or not isinstance(crops.loc[lgd].kharif_top_json, str)) and lgd in SPLIT_PARENT:
+        src_l, est = SPLIT_PARENT[lgd], True
+    if src_l not in crops.index or not isinstance(crops.loc[src_l].kharif_top_json, str):
+        return None
+    r = crops.loc[src_l]
+    src = r.season_top_source if isinstance(r.season_top_source, str) else None
+    o = {"kharif": {"top": _season_top(r.kharif_top_json), "source": src}, "rabi": {"top": _season_top(r.rabi_top_json), "source": src}}
+    if est:
+        for v in o.values():
+            v["estimated"] = True; v["estimated_from"] = "parent_split_area_share"; v["share_basis"] = "parent district"
+    return o
+
+
 def crops_block(lgd):
     if lgd not in crops.index:
         return None
@@ -176,6 +205,7 @@ def crops_block(lgd):
             "kharif_rabi_ratio": num(r.kharif_rabi_ratio, 2), "yield_cv10": num(r.yield_cv10, 3),
             "irrigated_share": num(r.irrigated_share, 3), "rainfed_share": num(r.rainfed_share, 3),
             "small_marginal_share": num(r.small_marginal_share, 3), "pmfby_farmers": integer(r.pmfby_farmers),
+            "by_season": by_season_block(lgd),
             **({"estimated": True} if est else {})}
 
 
@@ -371,6 +401,7 @@ for _, r in m.iterrows():
         "markets": markets_block(lgd), "groundwater": groundwater_block(lgd),
         "climate": climate_block(lgd), "yield_sensitivity": ys_block(lgd, rk),
         "risk": rk["risk"], "hindcast": rk["hindcast"], "hindcast_rabi": rk.get("hindcast_rabi"), "season_context": rk.get("season_context"),
+        "season_outlook": rk.get("season_outlook"),
         "models": models_block(lgd, rk),
     })
 for d_ in D:
@@ -560,7 +591,7 @@ if ENSM_R and models_kpi is not None:
         "eligibility": ENSM_R.get("eligibility"),
     }
 kp.update({
-    "outlook": OUTLOOK, "by_season_scenario": by_season_scenario,
+    "outlook": OUTLOOK, "by_season_scenario": by_season_scenario, "season_outlook_national": meta.get("season_outlook_national"),
     "hindcast_rabi": meta.get("hindcast_rabi"), "band_counts_by_scenario": cnt_key,
     "models": models_kpi,
     "scenario_counts": sc_counts,

@@ -147,9 +147,23 @@ export interface District {
   hindcast: Record<string, { predicted_score: number | null; actual_foodgrain_yield_dev_pct: number | null; rain_anomaly_pct?: number | null; predicted_shock_lgbm_oos_pct?: number | null }> | null
   /** Addendum E (optional): analog / LightGBM / ensemble expected-shock block. Parsed defensively (lib/models.ts). */
   models?: unknown
+  /** Addendum I (optional): expected season rain / heat per season and phase. */
+  season_outlook?: SeasonOutlookMap | null
   /** Addendum F (optional): rabi hindcast block, same shape as `hindcast`. */
   hindcast_rabi?: Record<string, { predicted_score: number | null; actual_foodgrain_yield_dev_pct: number | null; rain_anomaly_pct?: number | null; predicted_shock_lgbm_oos_pct?: number | null }> | null
 }
+/** Addendum I: expected season conditions per season id and phase. Every field optional; parsed defensively. */
+export interface SeasonOutlook {
+  rain_anom_pct?: number | null
+  rain_window?: string | null
+  p_deficit_gt10?: number | null
+  tmax_anom_c?: number | null
+  heat_window?: string | null
+  onset_delay_days?: number | null
+  timesfm_rain_anom_pct?: number | null
+  plain?: string | null
+}
+export type SeasonOutlookMap = Record<string, Partial<Record<string, SeasonOutlook>>>
 export interface ActionsTotal {
   grain_preposition_t: number | null
   pulses_preposition_t: number | null
@@ -186,6 +200,8 @@ export interface Kpis {
   method_note?: string
   actions_total?: Partial<Record<ScenarioKey, ActionsTotal>>
   top_states?: { state: string; grain_preposition_t: number }[]
+  /** Addendum I (optional): cropped-area-weighted national means of District.season_outlook. */
+  season_outlook_national?: SeasonOutlookMap | null
 }
 export interface Timeseries {
   yield: { foodgrain_t_ha: Record<string, number | null>; by_group?: Record<string, Record<string, number | null>> }
@@ -194,7 +210,11 @@ export interface Timeseries {
   nfhs?: unknown[]
   pds_monthly?: { date: string; rice_t: number | null; wheat_t: number | null }[]
 }
-export interface ChatMsg { role: 'user' | 'assistant'; content: string; citations?: number[] }
+export interface ChatMsg {
+  role: 'user' | 'assistant'; content: string; citations?: number[]
+  /** The API asked a clarifying question (optionally with quick-reply `options`). Not sent back to the API. */
+  clarify?: boolean; options?: string[]
+}
 
 /** One row of the pre-positioning planner (GET /api/actions). */
 export interface ActionRow {

@@ -32,7 +32,7 @@ export default {
         nodata: c('outline-variant'),
         low: { DEFAULT: c('low'), soft: c('low-container'), ink: c('on-low-container'), fill: c('low-fill') },
         watch: { DEFAULT: c('watch'), soft: c('watch-container'), ink: c('on-watch-container'), fill: c('watch-fill') },
-        act: { DEFAULT: c('error'), soft: c('error-container'), ink: c('on-error-container'), fill: c('act-fill') },
+        act: { DEFAULT: c('act'), soft: c('act-container'), ink: c('on-act-container'), fill: c('act-fill'), on: c('on-act') },
         info: { DEFAULT: c('tertiary'), soft: c('tertiary-container'), ink: c('on-tertiary-container') },
         accent: { DEFAULT: c('primary'), soft: c('primary-container'), ink: c('on-primary-container') },
       },

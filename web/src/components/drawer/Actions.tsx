@@ -1,10 +1,11 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { normalizeRow, rowsToCsv } from '../../lib/api'
 import { DEPARTMENTS } from '../../lib/extra'
 import type { Department, District, Risk } from '../../types'
 import { bigNum, leadDate, NB, tonnes } from './copy'
 import { Icon, type IconName } from '../ui'
-import { Button, Card, Pill } from './ui'
+import { trackerApi } from './tracker'
+import { Button, Card, Pill, cx } from './ui'
 
 interface Item { icon: IconName; what: string; qty: string; dept: Department }
 type Ex = NonNullable<Risk['actions']> & { protective_irrigation_ha?: number | null; groundwater_budget_flag?: boolean | null }
@@ -18,10 +19,24 @@ export function actionItems(a: Ex): Item[] {
   if (a.seed_bank_ha) out.push({ icon: 'eco', what: 'Keep short-duration and millet seed ready', qty: `enough for ${bigNum(a.seed_bank_ha)} hectares`, dept: 'agriculture' })
   if (a.protective_irrigation_ha) out.push({ icon: 'water_drop', what: 'Plan one or two protective irrigations for standing crops', qty: `${bigNum(a.protective_irrigation_ha)} hectares`, dept: 'agriculture' })
   if (a.pmfby_gap_farmers) out.push({ icon: 'shield', what: 'Enrol farmers not yet covered by crop insurance (PMFBY)', qty: `${bigNum(a.pmfby_gap_farmers)} farmers`, dept: 'agriculture' })
-  if (a.mgnrega_persondays) out.push({ icon: 'construction', what: 'Keep village works ready under MGNREGA', qty: `${bigNum(a.mgnrega_persondays)} person-days of work`, dept: 'rural_development' })
+  if (a.mgnrega_persondays) out.push({ icon: 'construction', what: 'Keep village works ready under NREGA', qty: `${bigNum(a.mgnrega_persondays)} person-days of work`, dept: 'rural_development' })
   if (a.groundwater_budget_flag) out.push({ icon: 'water_drop', what: 'Draw up a village groundwater budget before irrigation starts', qty: 'all stressed blocks', dept: 'rural_development' })
   if (a.fodder_flag) out.push({ icon: 'pets', what: 'Set up fodder banks and cattle camps', qty: 'where fodder is short', dept: 'animal_husbandry' })
   return out
+}
+function TrackerButton({ lgd, action, dept, due }: { lgd: number; action: string; dept: string; due: string | null }) {
+  const [, bump] = useState(0)
+  const api = trackerApi()
+  const added = !!api?.has?.(lgd, action)
+  return (
+    <Button variant={added ? 'ghost' : 'outlined'} size="sm" disabled={!api || added} aria-pressed={added}
+      title={api ? undefined : 'Action tracker is not available yet'}
+      onClick={() => { api?.add({ lgd, action, dept, due }); bump((n) => n + 1) }}
+      className={cx('mt-2', added && '!text-low-ink')}
+      iconLeft={<Icon name={added ? 'check_circle' : 'push_pin'} size={18} fill={added} />}>
+      {added ? 'Added to tracker' : 'Add to tracker'}
+    </Button>
+  )
 }
 const deptShort = (id: Department) => DEPARTMENTS.find((x) => x.id === id)?.short ?? id
 
@@ -30,7 +45,9 @@ export default function PrepositionCard({ d, r, scenarioKey, seasonId, seasonLab
   const items = useMemo(() => (a ? actionItems(a) : []), [a])
   if (!a) return <Card title="What to prepare"><p className="md-body text-muted">No action plan is available for this district yet.</p></Card>
   const leads = Object.entries(a.lead ?? {})
-  const lead = leadDate((seasonId && a.lead?.[seasonId]) || leads[0]?.[1])
+  const leadRaw = (seasonId && a.lead?.[seasonId]) || leads[0]?.[1]
+  const lead = leadDate(leadRaw)
+  const due = /(\d{4}-\d{2}-\d{2})/.exec(leadRaw ?? '')?.[1] ?? null
 
   const download = () => {
     const row = normalizeRow({ ...a, lgd: d.lgd, district: d.district, state: d.state, score: r?.score, band: r?.band })
@@ -60,6 +77,7 @@ export default function PrepositionCard({ d, r, scenarioKey, seasonId, seasonLab
                   <Pill tone="info">{deptShort(it.dept)}</Pill>
                   {lead && <span className="md-body-small text-muted">{lead}</span>}
                 </div>
+                <TrackerButton lgd={d.lgd} action={`${it.what} (${it.qty})`} dept={deptShort(it.dept)} due={due} />
               </div>
             </li>
           ))}

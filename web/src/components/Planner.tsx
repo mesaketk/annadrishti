@@ -7,7 +7,7 @@ import { useScenario } from '../lib/useScenario'
 import type { ActionRow, Band } from '../types'
 import { DEPARTMENTS } from '../lib/plain'
 import type { Department } from '../types'
-import { BandPill, Button, ErrorNote, Icon, IconButton, Sheet, SelectField, Skeleton, Stat } from './ui'
+import { AiBadge, BandPill, Button, ErrorNote, Icon, IconButton, Sheet, SelectField, Skeleton, Stat } from './ui'
 import { useMedia } from '../lib/useMedia'
 
 type SortKey = keyof ActionRow
@@ -23,7 +23,7 @@ const COLS: { k: SortKey; label: string; num?: boolean; render?: (r: ActionRow) 
   { k: 'anganwadi_children', label: 'Children needing extra nutrition', num: true, depts: ['wcd_icds', 'health'], title: 'Children under 5 to reach with extra Anganwadi food', render: (r) => fmtNum(r.anganwadi_children) },
   { k: 'women_anaemia_target', label: 'Women with anaemia to reach', num: true, depts: ['health', 'wcd_icds'], render: (r) => fmtNum(r.women_anaemia_target) },
   { k: 'seed_bank_ha', label: 'Seed to stock (hectares)', num: true, depts: ['agriculture'], title: 'Area that can be sown from short-duration or millet seed kept in reserve', render: (r) => r.seed_bank_ha ? fmtNum(r.seed_bank_ha) : dash },
-  { k: 'mgnrega_persondays', label: 'Rural work days (MGNREGA)', num: true, depts: ['rural_development'], render: (r) => r.mgnrega_persondays ? fmtCompact(r.mgnrega_persondays) : dash },
+  { k: 'mgnrega_persondays', label: 'Rural work days (NREGA)', num: true, depts: ['rural_development'], render: (r) => r.mgnrega_persondays ? fmtCompact(r.mgnrega_persondays) : dash },
   { k: 'pmfby_gap_farmers', label: 'Farmers without crop insurance', num: true, depts: ['agriculture'], title: 'Farmers not yet covered by PMFBY crop insurance', render: (r) => fmtNum(r.pmfby_gap_farmers) },
   { k: 'fodder_flag', label: 'Fodder needed', depts: ['animal_husbandry'], render: (r) => r.fodder_flag ? <span className="font-medium text-watch-ink">Yes</span> : dash },
   { k: 'lead_rabi', label: 'Act by', render: (r) => <span className="whitespace-nowrap text-muted">{[r.lead_rabi && `Rabi ${r.lead_rabi.replace('by ', '')}`, r.lead_kharif && `Kharif ${r.lead_kharif.replace('by ', '')}`].filter(Boolean).join(' · ') || '–'}</span> },
@@ -33,7 +33,7 @@ const BASE_COLS = new Set<SortKey>(['priority_rank_national', 'district', 'state
 const ALL_HIDDEN = new Set<SortKey>(['women_anaemia_target', 'fodder_flag'])
 
 export default function Planner() {
-  const { districts, kpis, mock, select, setView } = useStore()
+  const { districts, kpis, mock, select, setView, selected, byLgd, stateFilter } = useStore()
   const { season, phase, gkey, key: keyOf, label: scLabel } = useScenario()
   const wide = useMedia('(min-width: 1024px)')
   const [res, setRes] = useState<ActionsResult | null>(null)
@@ -42,6 +42,8 @@ export default function Planner() {
   const [band, setBand] = useState<'' | Band>('')
   const [dept, setDept] = useState<'' | Department>('')
   const [sort, setSort] = useState<{ k: SortKey; dir: 1 | -1 }>({ k: 'priority_rank_national', dir: 1 })
+  const [picking, setPicking] = useState(false)
+  const [pickVal, setPickVal] = useState('')
   const [brief, setBrief] = useState<{ state: string; md: string | null; loading: boolean; err: string | null } | null>(null)
 
   useEffect(() => {
@@ -84,22 +86,26 @@ export default function Planner() {
     setTimeout(() => URL.revokeObjectURL(a.href), 2000)
   }
 
-  const briefState = state || kpis?.top_states?.[0]?.state || states[0] || ''
-  const genBrief = async () => {
-    if (!briefState) return
-    setBrief({ state: briefState, md: null, loading: true, err: null })
+  // State for the plan, in order: this table's state filter, the map's "show one state" filter, the selected district's state; else ask.
+  const briefState = state || stateFilter || (selected != null ? byLgd.get(selected)?.state : '') || ''
+  const allStates = useMemo(() => [...new Set(districts.map((d) => d.state))].sort(), [districts])
+  const genBrief = async (forState?: string) => {
+    const st = forState ?? briefState
+    if (!st) { setPicking(true); return }
+    setPicking(false)
+    setBrief({ state: st, md: null, loading: true, err: null })
     try {
-      const md = await getStateBrief(briefState, gkey, districts, mock)
-      setBrief({ state: briefState, md, loading: false, err: null })
+      const md = await getStateBrief(st, gkey, districts, mock)
+      setBrief({ state: st, md, loading: false, err: null })
     } catch (e) {
-      setBrief({ state: briefState, md: null, loading: false, err: e instanceof Error ? e.message : 'Failed' })
+      setBrief({ state: st, md: null, loading: false, err: e instanceof Error ? e.message : 'Failed' })
     }
   }
   const show = (k: SortKey) => !dept || BASE_COLS.has(k) || COLS.find((c) => c.k === k)?.depts?.includes(dept)
   const briefBody = brief && (
     <div className="p-4">
       {brief.loading && <div className="space-y-2">{Array.from({ length: 7 }).map((_, i) => <Skeleton key={i} className="h-3" />)}<div className="md-body-small text-muted">Drafting the plan…</div></div>}
-      {brief.err && <ErrorNote onRetry={genBrief}>Could not write the plan: {brief.err}</ErrorNote>}
+      {brief.err && <ErrorNote onRetry={() => void genBrief(brief.state)}>Could not write the plan: {brief.err}</ErrorNote>}
       {brief.md && (
         <>
           <div className="md"><ReactMarkdown>{brief.md}</ReactMarkdown></div>
@@ -118,7 +124,7 @@ export default function Planner() {
             {show('pulses_preposition_t') && <Stat dense label="Pulses" value={t?.pulses_preposition_t == null ? '–' : fmtCompact(t.pulses_preposition_t)} unit="tonnes" sub={filtered ? `filtered: ${fmtCompact(sumF('pulses_preposition_t'))} tonnes` : undefined} />}
             {show('anganwadi_children') && <Stat dense label="Children needing extra nutrition" value={fmtCompact(t?.anganwadi_children)} unit="children" sub={filtered ? `filtered: ${fmtCompact(sumF('anganwadi_children'))}` : 'Anganwadi top-up'} />}
             {show('seed_bank_ha') && <Stat dense label="Reserve seed for" value={t?.seed_bank_ha == null ? '–' : fmtCompact(t.seed_bank_ha)} unit="hectares" sub={filtered ? `filtered: ${fmtCompact(sumF('seed_bank_ha'))}` : 'short-duration or millet seed'} />}
-            {show('mgnrega_persondays') && <Stat dense label="Rural work days to open" value={fmtCompact(t?.mgnrega_persondays)} unit="days (MGNREGA)" sub={filtered ? `filtered: ${fmtCompact(sumF('mgnrega_persondays'))}` : 'in Act-now districts'} />}
+            {show('mgnrega_persondays') && <Stat dense label="Rural work days to open" value={fmtCompact(t?.mgnrega_persondays)} unit="days (NREGA)" sub={filtered ? `filtered: ${fmtCompact(sumF('mgnrega_persondays'))}` : 'in Act-now districts'} />}
             {show('pmfby_gap_farmers') && <Stat dense label="Farmers without crop insurance" value={fmtCompact(t?.pmfby_gap_farmers)} unit="farmers" sub={filtered ? `filtered: ${fmtCompact(sumF('pmfby_gap_farmers'))}` : 'not yet in PMFBY'} />}
           </div>
           <div className="flex flex-wrap items-center gap-x-2 gap-y-3 md-body-medium">
@@ -138,9 +144,22 @@ export default function Planner() {
             </SelectField>
             <div className="flex gap-2 sm:ml-auto">
               <Button size="sm" onClick={download} iconLeft={<Icon name="download" size={18} />}>Download table (CSV)</Button>
-              <Button size="sm" variant="primary" onClick={genBrief} disabled={!briefState || brief?.loading} iconLeft={<Icon name="auto_awesome" size={18} />}>Write state plan{briefState ? ` · ${briefState}` : ''}</Button>
+              <Button size="sm" variant="primary" onClick={() => void genBrief()} disabled={brief?.loading} className="ai-gradient ai-sheen disabled:[background-image:none]" title="Sanket: early-warning plan, powered by Gemini">
+                <AiBadge feature="sanket" variant="glass" />State plan{briefState ? ` · ${briefState}` : ''}
+              </Button>
             </div>
           </div>
+          {picking && !briefState && (
+            <div className="flex flex-wrap items-center gap-3 rounded-m3-md bg-surface-container p-3" role="group" aria-label="Choose a state for the plan">
+              <AiBadge feature="sanket" />
+              <SelectField label="Which state is the plan for?" dense value={pickVal} onChange={setPickVal} fieldBg="surface-container" className="min-w-[220px]">
+                <option value="">Choose a state</option>
+                {allStates.map((s) => <option key={s} value={s}>{s}</option>)}
+              </SelectField>
+              <Button size="sm" variant="primary" disabled={!pickVal} onClick={() => void genBrief(pickVal)}>Write plan</Button>
+              <Button size="sm" variant="ghost" onClick={() => setPicking(false)}>Cancel</Button>
+            </div>
+          )}
         </div>
 
         <div className="min-h-0 flex-1 overflow-auto bg-surface" data-scroll-root>
@@ -182,7 +201,7 @@ export default function Planner() {
         <aside className="flex h-full w-[420px] shrink-0 flex-col border-l border-outline-variant bg-surface" aria-label="State plan">
           <div className="flex items-center justify-between border-b border-outline-variant p-3 pl-4">
             <div>
-              <div className="flex items-center gap-1 md-label-medium text-muted"><Icon name="auto_awesome" size={16} className="text-primary" fill /> State plan</div>
+              <div className="flex items-center gap-2 md-label-medium text-muted"><AiBadge feature="sanket" /> State plan</div>
               <div className="md-title-medium">{brief.state} · {scLabel}</div>
             </div>
             <IconButton icon="close" label="Close plan" onClick={() => setBrief(null)} />

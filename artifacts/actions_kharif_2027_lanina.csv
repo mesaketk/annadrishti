@@ -1,4 +1,4 @@
-priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,mgnrega_persondays,pmfby_gap_farmers,fodder_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
+priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,nrega_persondays,pmfby_gap_farmers,fodder_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
 1,1,Karnataka,Yadgir,635,62.5,high,-8.9,0.0,3185.0,48584.0,197470.0,42020.0,9908664.0,,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,lanina
 2,1,Tamil Nadu,Perambalur,581,57.9,high,-6.2,0.0,20.0,7074.0,104409.0,14228.0,6718512.0,105851.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,lanina
 3,2,Karnataka,Kalaburagi,538,55.9,high,-1.2,0.0,5639.0,95489.0,421772.0,151845.0,28185424.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,lanina

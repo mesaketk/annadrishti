@@ -1,12 +1,12 @@
-import type { Band, District, Kpis, ScenarioKey } from '../types'
+import type { Band, District, Kpis, PhaseId, ScenarioKey } from '../types'
 import { gwStress, marketSpike } from './extra'
-import { phaseLabel } from './scenario'
+import { outlookOf, phaseLabel } from './scenario'
 import type { IconName } from './icons'
 import { M3 } from './m3'
 
 export type LayerId =
   | 'risk' | 'yield_shock' | 'self_suff' | 'stunting' | 'anaemia'
-  | 'rain_anom' | 'elnino_sens' | 'ndvi' | 'rain10d' | 'price_spike' | 'gw_stress'
+  | 'rain_anom' | 'season_rain' | 'elnino_sens' | 'ndvi' | 'rain10d' | 'price_spike' | 'gw_stress'
 
 export type NfhsRound = 'nfhs5' | 'nfhs6'
 
@@ -21,19 +21,20 @@ export interface Scale {
 }
 
 export const NULL_COLOR: string = M3.outlineVariant
-// Red = bad throughout. Sequential ramp: pale yellow -> deep red.
-const RED_SEQ = ['#ffeeb0', '#fdc468', '#f98a3a', '#e0422c', '#9d0f1e']
-// Diverging: red (bad) - neutral - blue
-const DIV = ['#b2182b', '#ef6a54', '#f4f1ea', '#7fb8d9', '#2166ac']
-const RISK_STOPS = ['#fff1b8', '#f6a541', '#e0422c', '#7f0d1b']
-const BLUE_SEQ = ['#e8f3fb', '#a6cfe8', '#5ea4d1', '#2f74b5', '#17448a']
+// Colour-blind-safe (Okabe-Ito style): orange = worse / drier, blue = better / wetter. Never red-green.
+// Sequential ramps are single-hue (orange for "more is worse", blue for "more rain").
+const ORANGE_SEQ = ['#FDF1E3', '#F9D2A6', '#F0A04B', '#D55E00', '#8A3B00']
+// Diverging: orange (worse / drier) - near-white - blue (better / wetter)
+const DIV = ['#A84A00', '#EE9B4F', '#F6F3EE', '#8DB6E2', '#1F5CA8']
+const RISK_STOPS = ['#2F6DB5', '#E8A317', '#D55E00', '#8A3B00']
+const BLUE_SEQ = ['#EAF2FB', '#B3D0EE', '#6FA3D8', '#2F6DB5', '#163F7A']
 
 const ramp = (cols: string[], lo: number, hi: number): [number, string][] =>
   cols.map((c, i) => [lo + ((hi - lo) * i) / (cols.length - 1), c])
 
-// Three semantic colours only (UX brief): low = green, watch = amber, act = M3 error red. Fill tones come from src/m3.css (via lib/m3.ts).
+// Three semantic colours only, colour-blind-safe: low = blue, watch = amber, act = vermilion. Fill tones come from src/m3.css (via lib/m3.ts).
 export const BAND_COLOR: Record<Band, string> = { low: M3.lowFill, medium: M3.watchFill, high: M3.actFill, no_data: NULL_COLOR }
-// History "hit / miss" layer: hit = low-risk green, miss = act red, no loss = quiet neutral
+// History "hit / miss" layer: hit = low-risk blue, miss = act vermilion, no loss = quiet neutral
 export const HIT_COLOR = { hit: BAND_COLOR.low, miss: BAND_COLOR.high, noloss: M3.surfaceContainerHighest } as const
 export const BAND_LABEL: Record<Band, string> = { low: 'Low risk', medium: 'Watch', high: 'Act now', no_data: 'No estimate' }
 
@@ -46,10 +47,11 @@ export const bandOf = (s: number | null | undefined, t: BandThresholds = DEFAULT
 
 /** `needs`: layer is shown only when some district carries the field ('live' = disabled instead of hidden). */
 export type LayerGroup = 'Risk' | 'Rain and crops' | 'People and food' | 'Prices and water'
-export const LAYERS: { id: LayerId; name: string; icon: IconName; group: LayerGroup; hint: string; needsLive?: boolean; needs?: 'markets' | 'groundwater' }[] = [
+export const LAYERS: { id: LayerId; name: string; icon: IconName; group: LayerGroup; hint: string; needsLive?: boolean; needs?: 'markets' | 'groundwater' | 'season_outlook' }[] = [
   { id: 'risk', name: 'Food-security risk', icon: 'traffic', group: 'Risk', hint: 'Act now, watch or low risk for the selected season and outlook' },
   { id: 'yield_shock', name: 'Expected harvest change', icon: 'trending_down', group: 'Risk', hint: 'How much the foodgrain harvest may fall below the usual trend' },
   { id: 'rain_anom', name: 'Rain this season vs normal', icon: 'rainy', group: 'Rain and crops', hint: 'Latest monsoon rain compared with the normal for the district' },
+  { id: 'season_rain', name: 'Upcoming season rain vs normal', icon: 'cloud', group: 'Rain and crops', hint: 'Expected rain for the coming season compared with normal, beyond the 10-day forecast', needs: 'season_outlook' },
   { id: 'elnino_sens', name: 'How much El Niño cuts rain', icon: 'thermostat', group: 'Rain and crops', hint: 'Average monsoon rain change in past El Niño years' },
   { id: 'ndvi', name: 'Crop greenness now (satellite)', icon: 'satellite_alt', group: 'Rain and crops', hint: 'Satellite greenness compared with a normal year', needsLive: true },
   { id: 'rain10d', name: 'Rain expected in 10 days', icon: 'umbrella', group: 'Rain and crops', hint: 'Forecast rain for the next 10 days', needsLive: true },
@@ -77,20 +79,22 @@ export function getScale(layer: LayerId, nfhs: NfhsRound = 'nfhs5', thr: BandThr
         unit: '', label: 'Food-security risk', format: (v) => v.toFixed(0), lowLabel: 'Low risk', highLabel: 'Act now',
       }
     case 'yield_shock':
-      // diverging around 0 = neutral grey; negative (loss) = red
+      // diverging around 0 = near-white; negative (loss) = orange
       return {
         kind: 'diverging',
-        stops: [[-40, '#7f0d1b'], [-20, '#d7362a'], [-8, '#f08a5d'], [0, '#c9ced8'], [10, '#7fb8d9']],
+        stops: [[-40, '#8A3B00'], [-20, '#D55E00'], [-8, '#F2B27A'], [0, '#F3F0EA'], [10, '#8DB6E2']],
         unit: '%', label: 'Expected harvest change vs usual', format: (v) => (v > 0 ? '+' : '') + v.toFixed(0) + '%', lowLabel: 'Harvest falls', highLabel: 'Harvest grows',
       }
     case 'self_suff':
       return { kind: 'diverging', stops: [[0.3, DIV[0]], [0.65, DIV[1]], [1, DIV[2]], [1.4, DIV[3]], [2, DIV[4]]], unit: 'x', label: 'Food grown vs food needed', format: (v) => v.toFixed(1) + 'x', lowLabel: 'Grows less than needed', highLabel: 'Grows more than needed' }
     case 'stunting':
-      return { kind: 'sequential', stops: ramp(RED_SEQ, 10, 50), unit: '%', label: `Children too short for their age (${r})`, format: (v) => v.toFixed(0) + '%', lowLabel: 'Fewer children', highLabel: 'More children' }
+      return { kind: 'sequential', stops: ramp(ORANGE_SEQ, 10, 50), unit: '%', label: `Children too short for their age (${r})`, format: (v) => v.toFixed(0) + '%', lowLabel: 'Fewer children', highLabel: 'More children' }
     case 'anaemia':
-      return { kind: 'sequential', stops: ramp(RED_SEQ, 40, 80), unit: '%', label: `Children with anaemia (${r})`, format: (v) => v.toFixed(0) + '%', lowLabel: 'Fewer children', highLabel: 'More children' }
+      return { kind: 'sequential', stops: ramp(ORANGE_SEQ, 40, 80), unit: '%', label: `Children with anaemia (${r})`, format: (v) => v.toFixed(0) + '%', lowLabel: 'Fewer children', highLabel: 'More children' }
     case 'rain_anom':
       return { kind: 'diverging', stops: ramp(DIV, -40, 40), unit: '%', label: 'Rain this season vs normal', format: (v) => (v > 0 ? '+' : '') + v.toFixed(0) + '%', lowLabel: 'Drier than normal', highLabel: 'Wetter than normal' }
+    case 'season_rain':
+      return { kind: 'diverging', stops: ramp(DIV, -30, 30), unit: '%', label: 'Upcoming season rain vs normal', format: (v) => (v > 0 ? '+' : '') + v.toFixed(0) + '%', lowLabel: 'Drier', highLabel: 'Wetter' }
     case 'elnino_sens':
       return { kind: 'diverging', stops: ramp(DIV, -35, 35), unit: '%', label: 'Rain change in past El Niño years', format: (v) => (v > 0 ? '+' : '') + v.toFixed(0) + '%', lowLabel: 'Much drier', highLabel: 'Wetter' }
     case 'ndvi':
@@ -98,13 +102,13 @@ export function getScale(layer: LayerId, nfhs: NfhsRound = 'nfhs5', thr: BandThr
     case 'rain10d':
       return { kind: 'sequential', stops: ramp(BLUE_SEQ, 0, 80), unit: 'mm', label: 'Rain expected in next 10 days', format: (v) => v.toFixed(0) + ' mm', lowLabel: 'Little rain', highLabel: 'Heavy rain (80+ mm)' }
     case 'price_spike':
-      return { kind: 'sequential', stops: ramp(RED_SEQ, -5, 25), unit: '%', label: 'Price rise in El Niño years', format: (v) => (v > 0 ? '+' : '') + v.toFixed(0) + '%', lowLabel: 'Steady prices', highLabel: 'Big price rise' }
+      return { kind: 'sequential', stops: ramp(ORANGE_SEQ, -5, 25), unit: '%', label: 'Price rise in El Niño years', format: (v) => (v > 0 ? '+' : '') + v.toFixed(0) + '%', lowLabel: 'Steady prices', highLabel: 'Big price rise' }
     case 'gw_stress':
-      return { kind: 'sequential', stops: ramp(RED_SEQ, 0, 1), unit: '', label: 'Groundwater stress', format: (v) => (v >= 0.67 ? 'High' : v >= 0.34 ? 'Medium' : 'Low'), lowLabel: 'Water secure', highLabel: 'Water stressed' }
+      return { kind: 'sequential', stops: ramp(ORANGE_SEQ, 0, 1), unit: '', label: 'Groundwater stress', format: (v) => (v >= 0.67 ? 'High' : v >= 0.34 ? 'Medium' : 'Low'), lowLabel: 'Water secure', highLabel: 'Water stressed' }
   }
 }
 
-export function layerValue(d: District, layer: LayerId, scenario: ScenarioKey, nfhs: NfhsRound): number | null {
+export function layerValue(d: District, layer: LayerId, scenario: ScenarioKey, nfhs: NfhsRound, ctx?: { season: string | null; phase: PhaseId }): number | null {
   switch (layer) {
     case 'risk': return d.risk[scenario]?.score ?? null
     case 'yield_shock': return d.risk[scenario]?.expected_yield_shock_pct ?? null
@@ -112,6 +116,7 @@ export function layerValue(d: District, layer: LayerId, scenario: ScenarioKey, n
     case 'stunting': return d.nutrition?.[nfhs]?.stunting ?? null
     case 'anaemia': return d.nutrition?.[nfhs]?.child_anaemia ?? null
     case 'rain_anom': { const y = latestYear(d); return y ? d.climate!.jjas_anomaly_pct[y] : null }
+    case 'season_rain': return ctx ? outlookOf(d, ctx.season, ctx.phase)?.rain_anom_pct ?? null : null
     case 'elnino_sens': return d.climate?.elnino_mean_anomaly_pct ?? null
     case 'ndvi': return d.climate?.live?.ndvi_anom ?? null
     case 'rain10d': return d.climate?.live?.wn_10d_rain_mm ?? null

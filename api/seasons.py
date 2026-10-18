@@ -225,3 +225,79 @@ def season_block(ctx: dict) -> str:
     if ctx.get("fallback_note"):
         lines.append(f"- DATA CAVEAT: {ctx['fallback_note']}")
     return "\n".join(lines)
+
+
+# ------------------------------------------------------------------ per-district season outlook (Addendum I)
+def season_kind_of(scenario: str, kpis: dict | None = None) -> str | None:
+    """'kharif' | 'rabi' for any scenario key (legacy keys -> default kharif season)."""
+    season, _ = split(scenario)
+    return season_kind(season or default_season(kpis))
+
+
+def district_outlook(d: dict | None, scenario: str, kpis: dict | None = None) -> dict | None:
+    """`d.season_outlook[season][phase]` for a scenario key, or None when absent (older artifacts).
+
+    `current` falls back to the outlook's default phase for the season; legacy keys use the default kharif season.
+    """
+    so = (d or {}).get("season_outlook")
+    if not isinstance(so, dict):
+        return None
+    season, phase = split(scenario)
+    season = season or default_season(kpis)
+    per = so.get(season)
+    if not isinstance(per, dict):
+        return None
+    cand = [phase] + ([default_phase(kpis, season)] if phase == "current" else [])
+    for p in cand:
+        e = per.get(p)
+        if isinstance(e, dict) and e:
+            return e
+    return None
+
+
+def phase_probability(scenario: str, kpis: dict | None = None) -> float | None:
+    """ENSO probability (0-1) of the scenario's phase for its season, from kpis.outlook; None if unknown."""
+    season, phase = split(scenario)
+    season = season or default_season(kpis)
+    probs = ((outlook(kpis).get("enso") or {}).get("p_by_season") or {}).get(season)
+    if not isinstance(probs, dict):
+        return None
+    v = probs.get("elnino" if phase == "elnino_strong" else phase)
+    return float(v) if isinstance(v, (int, float)) else None
+
+
+def likelihood_word(p: float | None) -> str:
+    """Farmer-facing wording: >= 0.8 very likely, 0.5-0.8 likely, else possible."""
+    if p is None:
+        return "possible"
+    return "very likely" if p >= 0.8 else "likely" if p >= 0.5 else "possible"
+
+
+_PLAIN_EVENT = {
+    ("elnino", "kharif"): "a weak monsoon", ("elnino_strong", "kharif"): "a very weak monsoon",
+    ("elnino", "rabi"): "a dry, warm winter", ("elnino_strong", "rabi"): "a very dry, warm winter",
+    ("lanina", "kharif"): "heavy rain and flooding", ("lanina", "rabi"): "a wetter-than-usual winter",
+    ("neutral", "kharif"): "a near-normal season", ("neutral", "rabi"): "a near-normal season",
+}
+
+
+def plain_outlook(d: dict | None, scenario: str, kpis: dict | None = None) -> str:
+    """One plain sentence about the season's climate: `season_outlook[...].plain` when present, else built from
+    the phase and its probability ('A weak monsoon is likely')."""
+    e = district_outlook(d, scenario, kpis)
+    if e and isinstance(e.get("plain"), str) and e["plain"].strip():
+        return e["plain"].strip()
+    kind = season_kind_of(scenario, kpis) or "kharif"
+    phase = split(scenario)[1]
+    if phase == "current":
+        season = split(scenario)[0] or default_season(kpis)
+        probs = ((outlook(kpis).get("enso") or {}).get("p_by_season") or {}).get(season)
+        nums = {k: v for k, v in (probs or {}).items() if isinstance(v, (int, float)) and k in PHASES}
+        if not nums:
+            return "The season outlook is mixed; no single outcome stands out"
+        phase = max(nums, key=nums.get)
+        p = float(nums[phase])
+    else:
+        p = phase_probability(scenario, kpis)
+    event = _PLAIN_EVENT.get((phase, kind), "a near-normal season")
+    return f"{event[0].upper() + event[1:]} is {likelihood_word(p)}"

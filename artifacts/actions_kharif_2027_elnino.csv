@@ -1,4 +1,4 @@
-priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,mgnrega_persondays,pmfby_gap_farmers,fodder_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
+priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,nrega_persondays,pmfby_gap_farmers,fodder_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
 1,1,Chhattisgarh,Bilaspur,375,72.8,high,-15.4,0.0,0.0,42535.0,297535.0,19517.0,12276391.0,129668.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,elnino
 2,1,Maharashtra,Nandurbar,486,72.1,high,-9.4,19244.0,1761.0,72890.0,316594.0,40907.0,18147572.0,239866.0,True,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,elnino
 3,1,Odisha,Balangir,345,72.0,high,-15.9,53557.0,1059.0,43468.0,271218.0,40947.0,22357597.0,124841.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,elnino

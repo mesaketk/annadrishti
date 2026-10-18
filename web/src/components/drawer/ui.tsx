@@ -3,7 +3,7 @@ import { useId, useState } from 'react'
 import type { KeyboardEvent, ReactNode } from 'react'
 import { LIGHTS, lightOf } from './copy'
 import type { LightKey } from './copy'
-import { Button as UiButton, ErrorNote, Icon, type ButtonProps, type IconName } from '../ui'
+import { Button as UiButton, ErrorNote, Icon, Tooltip, type ButtonProps, type IconName } from '../ui'
 import { CARD, cx } from '../ui/m3'
 
 export { cx, ErrorNote }
@@ -67,10 +67,17 @@ export function EstimatedTag({ note }: { note: string | null }) {
   )
 }
 
-export function Stat({ icon, label, value, sub, note, tone }: { icon: IconName; label: string; value: ReactNode; sub?: ReactNode; note?: string | null; tone?: 'bad' | 'good' }) {
+export function Stat({ icon, label, value, sub, note, tone, tooltip }: { icon: IconName; label: string; value: ReactNode; sub?: ReactNode; note?: string | null; tone?: 'bad' | 'good'; tooltip?: string }) {
   return (
     <div className={cx('flex flex-col p-4', CARD)}>
-      <div className="flex items-center gap-1.5 md-label-large text-muted"><span aria-hidden className="flex text-primary"><Icon name={icon} size={20} /></span>{label}<EstimatedTag note={note ?? null} /></div>
+      <div className="flex items-center gap-1.5 md-label-large text-muted">
+        <span aria-hidden className="flex text-primary"><Icon name={icon} size={20} /></span>{label}<EstimatedTag note={note ?? null} />
+        {tooltip && (
+          <Tooltip content={tooltip}>
+            <span tabIndex={0} role="img" aria-label={tooltip} className="flex cursor-help text-on-surface-variant"><Icon name="info" size={16} /></span>
+          </Tooltip>
+        )}
+      </div>
       <div className={cx('mt-2 md-title-large', tone === 'bad' ? 'text-act-ink' : 'text-on-surface')}>{value}</div>
       {sub && <div className="mt-1 md-body-small text-muted">{sub}</div>}
     </div>
@@ -80,6 +87,19 @@ export function Stat({ icon, label, value, sub, note, tone }: { icon: IconName; 
 /** Drawer buttons default to filled (primary); same M3 recipes as the shell Button. */
 export function Button({ variant = 'primary', ...rest }: ButtonProps) {
   return <UiButton variant={variant} {...rest} />
+}
+
+/** Branded Gemini action: filled M3 button with a leading auto_awesome icon and a primary -> tertiary gradient. */
+export function GeminiButton({ children, className, size = 'md', ...rest }: Omit<ButtonProps, 'variant' | 'iconLeft'>) {
+  return (
+    <UiButton variant="primary" size={size} iconLeft={<Icon name="auto_awesome" size={size === 'lg' ? 24 : 20} fill />} {...rest}
+      className={cx('bg-gradient-to-r from-primary to-tertiary shadow-sm hover:shadow-md disabled:bg-none', className)}>
+      {children}
+    </UiButton>
+  )
+}
+export function GeminiCaption({ text = 'Powered by Gemini', className = '' }: { text?: string; className?: string }) {
+  return <span className={cx('inline-flex items-center gap-1 md-label-small text-muted', className)}><Icon name="auto_awesome" size={12} />{text}</span>
 }
 
 export interface TabDef<T extends string> { id: T; label: string; icon?: IconName }

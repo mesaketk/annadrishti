@@ -1,4 +1,4 @@
-priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,mgnrega_persondays,pmfby_gap_farmers,fodder_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
+priority_rank_national,priority_rank_state,state,district,lgd,score,band,expected_yield_shock_pct,grain_preposition_t,pulses_preposition_t,anganwadi_children,women_anaemia_target,seed_bank_ha,nrega_persondays,pmfby_gap_farmers,fodder_flag,lead_rabi_2026_27,lead_kharif_2027,expected_shock_source,season,phase
 1,1,Assam,Udalguri,617,63.5,high,-3.2,0.0,0.0,14052.0,214467.0,18139.0,10163125.0,148176.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,neutral
 2,2,Assam,Dibrugarh,286,63.3,high,-3.6,0.0,0.0,35097.0,287269.0,16572.0,10634825.0,156726.0,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,neutral
 3,1,Bihar,Munger,207,60.6,high,-2.9,0.0,11.0,51659.0,322613.0,1580.0,3437913.0,,False,by 2026-11-15,by 2027-05-15,ensemble,kharif_2027,neutral

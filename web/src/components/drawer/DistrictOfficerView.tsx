@@ -67,7 +67,7 @@ export default function DistrictOfficerView({ lgd, department, year, onClose }: 
       <Tabs tabs={TABS} value={tab} onChange={setTab} idPrefix={idp} label="District details" />
       <div className="min-h-0 flex-1 overflow-y-auto p-3 sm:p-4" key={lgd}>
         <TabPanel id="overview" idPrefix={idp} active={tab === 'overview'}>
-          <OverviewTab d={d} r={r} scenarioKey={scenarioKey} seasonId={sc.season} seasonLabel={sc.seasonObj?.label ?? null} outlook={outlook} />
+          <OverviewTab d={d} r={r} scenarioKey={scenarioKey} seasonId={sc.season} seasonLabel={sc.seasonObj?.label ?? null} phase={sc.phase} outlook={outlook} />
         </TabPanel>
         <TabPanel id="why" idPrefix={idp} active={tab === 'why'} className="space-y-3">
           <Card title="The three biggest reasons"><TopDrivers d={d} r={r} n={3} /></Card>

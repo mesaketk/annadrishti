@@ -40,7 +40,10 @@ export default function MethodsModal({ onClose }: { onClose: () => void }) {
         <ul className="list-disc space-y-0.5 pl-5 text-muted">
           <li>Rainfall: IMD gridded JJAS anomalies; ENSO state from NOAA CPC (Niño-3.4 / ONI)</li>
           <li>Yields and crop mix: APY / UPAG district statistics; cost of cultivation and farm-gate prices (ICRISAT)</li>
-          <li>Nutrition and capacity: NFHS-5 / NFHS-6, Poshan Tracker; PDS and central pool stocks</li>
+          <li>Nutrition and capacity: NFHS-5 / NFHS-6, Poshan Tracker; PDS dependency</li>
+          <li><b className="text-on-surface">Central pool grain stock (FCI, national)</b>: not district stock. It is the national reserve, shown with the months of ration supply it covers.</li>
+          <li>Upcoming season rain: expected rain for the coming season versus normal, beyond the 10-day forecast, for the selected weather phase. A scenario, not a forecast.</li>
+          <li>Colours: a colour-blind-safe palette (blue = low risk, amber = watch, vermilion = act now; orange = drier or worse, blue = wetter or better)</li>
           <li>Live signals: NDVI, CHIRPS and WeatherNext short-range rainfall; groundwater levels</li>
         </ul>
 

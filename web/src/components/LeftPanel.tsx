@@ -4,21 +4,23 @@ import { useScenario } from '../lib/useScenario'
 import { LAYERS, LAYER_GROUPS, type LayerId } from '../lib/scales'
 import { HISTORY_LAYERS } from '../lib/history'
 import { gwStress, marketSpike } from '../lib/extra'
+import { outlookOf } from '../lib/scenario'
 import { Icon, TrafficLight, Segmented, SelectField } from './ui'
 
 /** Map layers (grouped, plain names), district search and state filter. */
 export default function LeftPanel({ className = '', onPick, hideSearch }: { className?: string; onPick?: () => void; hideSearch?: boolean }) {
   const { districts, layer, setLayer, nfhs, setNfhs, stateFilter, setStateFilter, select, mode, historyLayer, setHistoryLayer } = useStore()
-  const { key: keyOf } = useScenario()
+  const { key: keyOf, season, phase } = useScenario()
   const [q, setQ] = useState('')
   const hist = mode === 'history'
   const hasLive = useMemo(() => districts.some((d) => d.climate?.live), [districts])
   const hasData = useMemo(() => ({
     markets: districts.some((d) => marketSpike(d) != null),
     groundwater: districts.some((d) => gwStress(d) != null),
-  }), [districts])
+    season_outlook: districts.some((d) => outlookOf(d, season, phase)?.rain_anom_pct != null),
+  }), [districts, season, phase])
   const layers = LAYERS.filter((l) => !l.needs || hasData[l.needs])
-  useEffect(() => { if (!layers.some((l) => l.id === layer)) setLayer('risk') }, [layers.length]) // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (!layers.some((l) => l.id === layer)) setLayer('risk') }, [layers.length, hasData.season_outlook]) // eslint-disable-line react-hooks/exhaustive-deps
   const states = useMemo(() => [...new Set(districts.map((d) => d.state))].sort(), [districts])
   const results = useMemo(() => {
     const s = q.trim().toLowerCase()
@@ -106,7 +108,7 @@ export default function LeftPanel({ className = '', onPick, hideSearch }: { clas
               </div>
             )
           })}
-          <p className="mt-2 px-4 md-body-small text-muted">{LAYERS.find((l) => l.id === layer)?.hint}. Red always means worse.</p>
+          <p className="mt-2 px-4 md-body-small text-muted">{LAYERS.find((l) => l.id === layer)?.hint}. Orange always means worse.</p>
         </div>
       )}
     </aside>

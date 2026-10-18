@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import logging
 import mimetypes
+import contextvars
 import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -17,10 +18,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi import Query
 from fastapi.responses import FileResponse, JSONResponse, ORJSONResponse, Response
-from pydantic import AfterValidator, BaseModel, Field, StringConstraints
+from pydantic import AfterValidator, BaseModel, Field, StringConstraints, ValidationError
 
 from . import actions as actions_mod
-from . import config, data, llm, personalize, ratelimit, seasons
+from . import config, data, llm, personalize, ratelimit, seasons, tools
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("annadrishti.api")
@@ -173,7 +174,7 @@ def health():
     return {"status": "ok", "data_mode": "mock" if mock else "real", "n_districts": len(districts),
             **ratelimit.limiter.snapshot(),
             "llm": {"ready": llm.llm_ready(), "mock": config.mock_llm(), "model": llm.effective_model(),
-                    "backend": "gemini-api" if config.env("GEMINI_API_KEY")
+                    "backend": "vertex-ai" if config.use_vertex() else "gemini-api" if config.env("GEMINI_API_KEY")
                     else "vertex" if config.use_vertex() else "none"}}
 
 
@@ -252,7 +253,9 @@ def _get_advisory(lgd: int, audience: str, language: str, scenario: str,
         raise HTTPException(status_code=404, detail=f"unknown district lgd {lgd}")
     resolved = _resolve_scenario(d, scenario)
     # normalise: only the field that applies to the audience takes part in the cache key / prompt / grounding
-    prof = personalize.resolve_profile(profile.model_dump() if profile else None, d) if audience == "farmer" else None
+    kind = seasons.season_kind_of(scenario, data.get_kpis()[0])
+    prof = personalize.resolve_profile(profile.model_dump() if profile else None, d, kind) \
+        if audience == "farmer" else None
     dept = (department or personalize.DEFAULT_DEPARTMENT) if audience == "official" else None
     model = llm.effective_model()
     key = advisory_cache.key(lgd, audience, language, scenario, model, personalize.variant_for(audience, prof, dept))
@@ -303,7 +306,8 @@ def advisory_audio(lgd: int, body: AudioRequest, request: Request):
         return Response(llm.silent_wav(1.0), media_type="audio/wav", headers={"X-Audio-Mode": "mock"})
     # no profile -> legacy file name (backward compatible); with a profile the file is keyed by its resolved variant
     suffix = "" if body.profile is None else "_" + personalize.variant_slug(personalize.profile_variant(
-        personalize.resolve_profile(body.profile.model_dump(), d)))
+        personalize.resolve_profile(body.profile.model_dump(), d,
+                                    seasons.season_kind_of(body.scenario, data.get_kpis()[0]))))
     path = config.artifacts_dir() / "_audio_cache" / f"{lgd}_{body.language}_{seasons.slug(body.scenario)}{suffix}.wav"
     if path.is_file():
         return Response(path.read_bytes(), media_type="audio/wav", headers={"X-Audio-Cache": "hit"})
@@ -342,19 +346,22 @@ def actions(scenario: Scenario = "elnino", state: str | None = None, band: Liter
 
 
 class StateBriefRequest(BaseModel):
-    state: str = Field(min_length=2, max_length=80)
+    state: str | None = Field(default=None, max_length=80)  # required, checked in the handler for a clear 422
     scenario: Scenario = "elnino"
 
 
 @app.post("/api/state_brief")
 def state_brief(body: StateBriefRequest, request: Request):
+    if not body.state or not body.state.strip():
+        raise HTTPException(status_code=422, detail="state is required: choose a state to generate the state brief")
+    body.state = body.state.strip()
     rows = actions_mod.get_rows(body.scenario, body.state)
     if not rows:
         raise HTTPException(status_code=404, detail=f"no action rows for state {body.state!r} in scenario {body.scenario}")
     state = str(rows[0]["state"])
     totals = actions_mod.totals(rows)
     model = llm.effective_model()
-    key = f"brief|{state}|{body.scenario}|{model}"
+    key = f"brief|{state}|{body.scenario}|{personalize.PROMPT_VERSION}|{model}"
     hit = advisory_cache.get(key)
     if hit:
         return {**hit, "cached": True}
@@ -390,6 +397,24 @@ class ChatMessage(BaseModel):
 class ChatRequest(BaseModel):
     messages: list[ChatMessage] = Field(min_length=1)
     scenario: Scenario = "elnino"
+    lgd: int | None = Field(default=None, ge=1, le=10**7)  # selected district (used by default)
+    role: Literal["farmer", "officer", "planner"] | None = None
+    language: Language | None = None  # reply language (farmers)
+
+
+_chat_caller: contextvars.ContextVar[ratelimit.Caller | None] = contextvars.ContextVar("chat_caller", default=None)
+
+
+def _farmer_advice_provider(lgd: int, scenario: str, language: str, profile: dict) -> dict:
+    """The `farmer_advice` chat tool: same cached builder as POST /api/advisory/{lgd} (audience=farmer)."""
+    try:
+        prof = FarmerProfile(**profile)
+    except ValidationError as e:
+        raise ValueError(f"invalid farmer profile: {e.errors()[0].get('loc')}") from e
+    return _get_advisory(lgd, "farmer", language, scenario, prof, who=_chat_caller.get())
+
+
+tools.set_advisory_provider(_farmer_advice_provider)
 
 
 def _chat_too_large(msg: str) -> HTTPException:
@@ -408,13 +433,20 @@ def chat(body: ChatRequest, request: Request):
         raise HTTPException(status_code=422, detail="last message must have role 'user'")
     if not llm.llm_ready():
         raise llm.LLMUnavailable("GEMINI_API_KEY not set")
-    ratelimit.limiter.acquire("llm", ratelimit.caller(request))  # chat is never cached: always counts
+    if body.lgd is not None and data.district_by_lgd(body.lgd) is None:
+        raise HTTPException(status_code=404, detail=f"unknown district lgd {body.lgd}")
+    who = ratelimit.caller(request)
+    ratelimit.limiter.acquire("llm", who)  # chat is never cached: always counts
+    token = _chat_caller.set(who)  # lets the farmer_advice tool bill its cache misses to this caller
     try:
-        reply, lgds = llm.run_chat([m.model_dump() for m in body.messages], body.scenario)
+        reply, lgds = llm.run_chat([m.model_dump() for m in body.messages], body.scenario, body.lgd, body.role,
+                                   body.language)
     except llm.LLMUnavailable:
         raise
     except Exception as e:
         raise _llm_failure(e)
+    finally:
+        _chat_caller.reset(token)
     return {"reply": reply, "citations": lgds, "model": llm.effective_model()}
 
 

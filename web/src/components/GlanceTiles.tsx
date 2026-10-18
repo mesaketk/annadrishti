@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useStore } from '../lib/store'
-import { globalKey, kpiBlock, scenarioKey } from '../lib/scenario'
+import { globalKey, kpiBlock, nationalOutlook, scenarioKey } from '../lib/scenario'
+import { useTrackerCounts } from '../lib/tracker'
 import { plainCount } from '../lib/plain'
 import type { District, PhaseId } from '../types'
 import { Icon, Stat } from './ui'
@@ -34,23 +35,37 @@ export default function GlanceTiles() {
   }, [districts, kpis, season, phase])
 
   const cp = kpis?.central_pool
+  const track = useTrackerCounts()
+  const setTrackerOpen = useStore((s) => s.setTrackerOpen)
+  // Addendum I: hidden when the pipeline has not produced the field yet
+  const so = nationalOutlook(kpis, season, phase)
+  const rain = so?.rain_anom_pct
+  const soLead = so?.plain ? so.plain.split(':')[0].trim().replace(/^./, (c) => c.toLowerCase()) : ''
   const shock = k.shock
   const shockTxt = shock == null ? '–' : `${Math.abs(shock) < 0.5 ? 'about the same' : `${Math.abs(shock).toFixed(1)} %`}`
   const worse = k.pop > k.popNeutral
   const tiles = (
     <>
       <Stat dense icon={<Icon name="groups" size={20} />} tone="act" label="People in Act-now districts" value={plainCount(k.pop)} unit="people" sub={phase === 'neutral' ? 'in a normal year' : `${plainCount(k.popNeutral)} in a normal year`} className={worse ? '' : ''} />
-      <Stat dense icon={<Icon name="warning" size={20} />} tone="act" label="Districts that need action now" value={String(k.nAct)} unit="districts" sub={`out of ${k.scored} with an estimate`} />
+      <Stat dense icon={<Icon name="warning" size={20} />} tone="act" label="Districts: Act now" value={String(k.nAct)} unit="districts" sub={`out of ${k.scored} with an estimate`} />
       <Stat dense icon={<Icon name="child_care" size={20} />} tone="act" label="Children under 5 living there" value={plainCount(k.u5)} unit="children" />
       <Stat dense icon={<Icon name="grass" size={20} />} tone={shock != null && shock < -3 ? 'watch' : undefined} label="Foodgrain harvest vs usual" value={shockTxt} unit={shock == null || Math.abs(shock) < 0.5 ? '' : shock < 0 ? 'lower' : 'higher'} sub="expected, all India" />
-      <Stat dense icon={<Icon name="inventory_2" size={20} />} tone="low" label="Government grain stock" value={cp ? (Math.round(cp.total_lmt * 10) / 10).toString() : '–'} unit="lakh tonnes" sub={cp ? `enough for ${cp.months_of_offtake.toFixed(1)} months of ration supply` : undefined} />
+      <Stat dense icon={<Icon name="inventory_2" size={20} />} tone="low" label="Central pool grain stock (FCI, national)" value={cp ? (Math.round(cp.total_lmt * 10) / 10).toString() : '–'} unit="lakh tonnes" sub={cp ? `not district stock · ${Math.round(cp.months_of_offtake)} months of ration supply` : 'not district stock'} />
+      {rain != null && (
+        <Stat dense icon={<Icon name="cloud" size={20} />} tone={rain <= -10 ? 'act' : rain <= -4 ? 'watch' : undefined} label="Upcoming season rain"
+          value={Math.abs(rain) < 2 ? 'near normal' : `about ${Math.abs(rain).toFixed(0)} %`} unit={Math.abs(rain) < 2 ? '' : rain < 0 ? 'below normal' : 'above normal'}
+          sub={[soLead, so?.rain_window].filter(Boolean).join(' · ') || undefined} />
+      )}
       <Stat dense icon={<Icon name="restaurant" size={20} />} tone={k.below > k.known / 2 ? 'watch' : undefined} label="Districts growing less than they eat" value={String(k.below)} unit="districts" sub={`out of ${k.known} with data`} />
+      <button type="button" onClick={() => setTrackerOpen(true)} className="md-state rounded-m3-md text-left [&>*]:h-full" aria-label={`Actions tracked: ${track.total}, ${track.done} done. Open the action tracker`}>
+        <Stat dense icon={<Icon name="checklist" size={20} />} label="Actions tracked" value={String(track.total)} unit={`· ${track.done} done`} sub={track.total ? 'open the tracker' : 'none yet · add from a district'} />
+      </button>
     </>
   )
   return (
     <section aria-label="At a glance" className="shrink-0 border-b border-outline-variant bg-surface px-3 py-3">
       <h2 className="mb-2 md-title-small">At a glance</h2>
-      <div className="hide-scrollbar flex snap-x gap-2 overflow-x-auto xl:grid xl:grid-cols-6 xl:overflow-visible [&>*]:min-w-[200px] [&>*]:flex-1 [&>*]:snap-start">{tiles}</div>
+      <div className="hide-scrollbar flex snap-x gap-2 overflow-x-auto xl:grid xl:grid-cols-4 xl:overflow-visible 2xl:grid-cols-8 [&>*]:min-w-[200px] [&>*]:flex-1 [&>*]:snap-start">{tiles}</div>
     </section>
   )
 }

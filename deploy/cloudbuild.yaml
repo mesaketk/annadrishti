@@ -13,6 +13,7 @@ substitutions:
   _GEMINI_MODEL: gemini-2.5-flash
   _USE_VERTEX: "0"            # "1" = use Vertex AI (runtime service account) instead of a Gemini API key
   _ARTIFACTS_GCS_URI: ""      # optional gs://bucket/prefix with updated *.json artifacts
+  _VERTEX_LOCATION: "global"  # Vertex location (global = all Gemini models incl. TTS)
 
 options:
   logging: CLOUD_LOGGING_ONLY
@@ -35,7 +36,7 @@ steps:
     args:
       - -ceu
       - |
-        ENVVARS="GEMINI_MODEL=${_GEMINI_MODEL},VERTEX_LOCATION=${_REGION},XFF_POSITION=last"
+        ENVVARS="GEMINI_MODEL=${_GEMINI_MODEL},VERTEX_LOCATION=${_VERTEX_LOCATION},XFF_POSITION=last"
         SECRET_LIST=""
         if [ "${_USE_VERTEX}" = "1" ]; then
           ENVVARS="$$ENVVARS,USE_VERTEX=1,GOOGLE_CLOUD_PROJECT=$PROJECT_ID"

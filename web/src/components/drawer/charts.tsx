@@ -148,10 +148,10 @@ export function RainChart({ d, ts, year, lang }: { d: District; ts: Timeseries |
 const ROUND_BY_YEAR: [RegExp, string][] = [[/^2015/, 'NFHS-4'], [/^2019/, 'NFHS-5'], [/^2023|^2024/, 'NFHS-6']]
 interface NfhsRow { year: string; round: string; v: Record<string, number | null> }
 const MEASURES: { k: string; title: string; long: string }[] = [
-  { k: 'stunting', title: 'Too short for age', long: 'stunting' },
-  { k: 'wasting', title: 'Too thin for height', long: 'wasting' },
-  { k: 'underweight', title: 'Too light for age', long: 'underweight' },
-  { k: 'child_anaemia', title: 'Anaemic (low blood iron)', long: 'child anaemia' },
+  { k: 'stunting', title: 'Stunting (height-for-age)', long: 'stunting' },
+  { k: 'wasting', title: 'Wasting (weight-for-height)', long: 'wasting' },
+  { k: 'underweight', title: 'Underweight (weight-for-age)', long: 'underweight' },
+  { k: 'child_anaemia', title: 'Anaemia (children 6–59 months)', long: 'child anaemia' },
 ]
 function nfhsRows(d: District, ts: Timeseries | null): NfhsRow[] {
   const mk = (year: string, o: Rec): NfhsRow => ({ year, round: ROUND_BY_YEAR.find(([re]) => re.test(year))?.[1] ?? year, v: Object.fromEntries(MEASURES.map((m) => [m.k, numOrNull(o[m.k])])) })

@@ -24,15 +24,31 @@ WATER_TEXT = {"rainfed": "fully rainfed (no assured irrigation)",
 
 
 # ------------------------------------------------------------------ profile
-def district_top_crops(d: dict) -> list[str]:
-    return [str(c.get("crop")) for c in ((d.get("crops") or {}).get("top") or []) if c.get("crop")]
+PROMPT_VERSION = "p2"  # bump when advisory prompts change materially: part of every cache/audio variant key
 
 
-def resolve_profile(raw: dict | None, d: dict) -> dict:
-    """Fill defaults. crop: district's top crop (crops.top[0].crop) when absent; case-insensitive match against
-    the district's top crops is canonicalised; 'other' and unknown crops are kept as given."""
+def season_top(d: dict, kind: str | None) -> tuple[list[dict], str]:
+    """The district's top crops for a season kind (Addendum I): `crops.by_season[kind].top` when present and
+    non-empty, else the all-year `crops.top`. Returns (rows, source) with source 'season' | 'all_year'."""
+    crops = d.get("crops") or {}
+    bs = crops.get("by_season")
+    if kind and isinstance(bs, dict) and isinstance(bs.get(kind), dict):
+        top = [c for c in (bs[kind].get("top") or []) if isinstance(c, dict) and c.get("crop")]
+        if top:
+            return top, "season"
+    return [c for c in (crops.get("top") or []) if isinstance(c, dict) and c.get("crop")], "all_year"
+
+
+def district_top_crops(d: dict, kind: str | None = None) -> list[str]:
+    return [str(c.get("crop")) for c in season_top(d, kind)[0]]
+
+
+def resolve_profile(raw: dict | None, d: dict, kind: str | None = None) -> dict:
+    """Fill defaults. crop: the district's top crop for the season `kind` (crops.by_season[kind].top[0], else
+    crops.top[0]) when absent; case-insensitive match against those top crops is canonicalised; 'other' and
+    unknown crops are kept as given."""
     raw = {k: v for k, v in (raw or {}).items() if v is not None}
-    tops = district_top_crops(d)
+    tops = district_top_crops(d, kind)
     crop = str(raw.get("crop") or "").strip()
     if not crop:
         crop = tops[0] if tops else "other"
@@ -44,12 +60,12 @@ def resolve_profile(raw: dict | None, d: dict) -> dict:
 
 def profile_variant(p: dict) -> str:
     """Stable cache-key fragment (no '|')."""
-    return (f"h={p['holding']};w={p['water']};c={str(p['crop']).lower()};"
+    return (f"{PROMPT_VERSION};h={p['holding']};w={p['water']};c={str(p['crop']).lower()};"
             f"l={int(bool(p['livestock']))};t={int(bool(p['tenant']))}")
 
 
 def variant_for(audience: str, profile: dict | None, department: str | None) -> str:
-    return f"dept={department or DEFAULT_DEPARTMENT}" if audience == "official" else profile_variant(profile or {
+    return f"{PROMPT_VERSION};dept={department or DEFAULT_DEPARTMENT}" if audience == "official" else profile_variant(profile or {
         "holding": DEFAULT_HOLDING, "water": DEFAULT_WATER, "crop": "other", "livestock": False, "tenant": False})
 
 
@@ -178,11 +194,11 @@ def profile_emphasis(p: dict) -> list[str]:
     if h == "marginal" and w == "rainfed":
         out.append("ZERO/LOW-COST FIRST: residue mulching, field bunds and contour furrows, seed treatment, staggered "
                    "sowing, intercropping (cereal + pulse); nothing that needs borrowing. Link to safety nets: ration "
-                   "card/PDS entitlement and a MGNREGA job card (ask the Gram Panchayat / Rozgar Sevak; individual "
+                   "card/PDS entitlement and a NREGA job card (ask the Gram Panchayat / Rozgar Sevak; individual "
                    "bund or farm-pond works on own land can be eligible for small and marginal farmers).")
     elif h in ("marginal", "small") and w == "rainfed":
         out.append("LOW-COST FIRST: mulching, bunds, seed treatment, intercropping (cereal + pulse), staggered sowing; "
-                   "spend cash only on short-duration seed; keep MGNREGA job card and PDS linkage ready as a fallback.")
+                   "spend cash only on short-duration seed; keep NREGA job card and PDS linkage ready as a fallback.")
     elif h == "medium_large" and w == "irrigated":
         out.append("WATER BUDGETING: fix a seasonal water budget per plot, schedule PROTECTIVE irrigation only at "
                    "critical stages (not calendar-based), consider drip/sprinkler and a farm pond for storage, and "
@@ -219,7 +235,7 @@ DEPT_LABEL = {
     "food_civil_supplies": "Food, Civil Supplies & Consumer Affairs",
     "agriculture": "Agriculture",
     "wcd_icds": "Women & Child Development / ICDS",
-    "rural_development": "Rural Development / MGNREGA",
+    "rural_development": "Rural Development / NREGA",
     "health": "Health & Family Welfare",
     "animal_husbandry": "Animal Husbandry",
 }
@@ -249,8 +265,8 @@ DEPT_CATALOG: dict[str, dict[str, Any]] = {
              "District Agriculture Officer + KVK + ATMA", "by 15 Nov 2026 (Rabi) / by 15 May 2027 (Kharif)"),
             ("Front-load take-home rations and run SAM screening for the target children (anganwadi_children)",
              "CDPO + AWWs", "within 3 weeks"),
-            ("MGNREGA work-demand surge on water-conservation and drought-proofing works",
-             "BDO + MGNREGA PO", "shelf of works ready in 4 weeks"),
+            ("NREGA work-demand surge on water-conservation and drought-proofing works",
+             "BDO + NREGA PO", "shelf of works ready in 4 weeks"),
             ("Fodder banks and cattle-camp readiness where fodder_flag is true", "Dy Director AH + veterinary officers",
              "4-6 weeks"),
             ("IFA/deworming camps, ORS-zinc stock check and heat/water advisories", "CMO + ASHAs", "within 4 weeks"),
@@ -350,22 +366,22 @@ DEPT_CATALOG: dict[str, dict[str, Any]] = {
         "extra": "Prefer nutrition.poshan_live over NFHS for 'current' wording and always give the as-of month.",
     },
     "rural_development": {
-        "reader": "the Block Development Officers (BDOs), MGNREGA Programme Officers and the DRDA Project Director",
-        "lens": "MGNREGA person-days and work demand, water conservation and drought-proofing works, wage timeliness, "
+        "reader": "the Block Development Officers (BDOs), NREGA Programme Officers and the DRDA Project Director",
+        "lens": "NREGA person-days and work demand, water conservation and drought-proofing works, wage timeliness, "
                 "migration risk, SHG/NRLM livelihoods, groundwater",
         "focus": "Section 1: the income shock to agricultural labour and marginal farmers (rainfed share, yield shock) "
-                 "and the MGNREGA person-day target; groundwater stress if the block exists. Section 2: agricultural "
+                 "and the NREGA person-day target; groundwater stress if the block exists. Section 2: agricultural "
                  "workers, landless and migration-prone households.",
         "evidence": "risk.<scenario>.actions (mgnrega_persondays), crops (rainfed_share, small_marginal_share), "
                     "groundwater (gw_decline_10y_m_per_yr, gw_stress_idx), population_2026",
-        "units": "BDO + MGNREGA PO; DRDA PD; Gram Panchayats and Rozgar Sevaks",
+        "units": "BDO + NREGA PO; DRDA PD; Gram Panchayats and Rozgar Sevaks",
         "menu": [
             ("Surge work demand: pre-approve a shelf of works and open demand registration camps "
-             "(target mgnrega_persondays)", "BDO + MGNREGA PO + Gram Rozgar Sevaks", "shelf ready in 4 weeks"),
+             "(target mgnrega_persondays)", "BDO + NREGA PO + Gram Rozgar Sevaks", "shelf ready in 4 weeks"),
             ("Prioritise farm ponds, field bunds, check dams and percolation tanks for drought-proofing",
-             "BDO + MGNREGA PO + block agriculture and watershed officers", "start before Rabi, finish before pre-monsoon"),
+             "BDO + NREGA PO + block agriculture and watershed officers", "start before Rabi, finish before pre-monsoon"),
             ("Ensure wages are paid within the 15-day norm (FTO, bank/post-office agent readiness)",
-             "MGNREGA PO + banking correspondents", "from now, audit fortnightly"),
+             "NREGA PO + banking correspondents", "from now, audit fortnightly"),
             ("Target migration-prone Gram Panchayats with job-card updating and 100-day guarantee awareness",
              "BDO + Sarpanch + Rozgar Sevaks", "within 3 weeks"),
             ("Secure drinking-water sources (handpump/borewell repair, tanker plan) in groundwater-stressed GPs",
@@ -374,7 +390,7 @@ DEPT_CATALOG: dict[str, dict[str, Any]] = {
              "by 15 Nov 2026"),
         ],
         "public": "Register for work at your Gram Panchayat now; wages are due within 15 days; farm ponds and bunds "
-                  "on your land may be possible under MGNREGA.",
+                  "on your land may be possible under NREGA.",
         "extra": "Do not promise person-days beyond the evidence target.",
     },
     "health": {
@@ -469,13 +485,13 @@ RABI_MENUS: dict[str, list[tuple[str, str, str]]] = {
          "DAO + block agriculture officers", "weekly from now"),
     ],
     "rural_development": [
-        ("Irrigation works under MGNREGA/PMKSY-WDC: field channels, farm ponds, check dams, desilting of minor "
-         "irrigation tanks so rabi crops get protective irrigation", "BDO + MGNREGA PO + minor-irrigation and "
+        ("Irrigation works under NREGA/PMKSY-WDC: field channels, farm ponds, check dams, desilting of minor "
+         "irrigation tanks so rabi crops get protective irrigation", "BDO + NREGA PO + minor-irrigation and "
          "watershed officers", "shelf approved in 3 weeks; works complete before grain filling (Feb-Mar)"),
         ("Surge work demand: pre-approve a shelf of works and open demand-registration camps "
-         "(target mgnrega_persondays)", "BDO + MGNREGA PO + Gram Rozgar Sevaks", "shelf ready in 4 weeks"),
+         "(target mgnrega_persondays)", "BDO + NREGA PO + Gram Rozgar Sevaks", "shelf ready in 4 weeks"),
         ("Ensure wages are paid within the 15-day norm (FTO, bank/post-office agent readiness)",
-         "MGNREGA PO + banking correspondents", "from now, audit fortnightly"),
+         "NREGA PO + banking correspondents", "from now, audit fortnightly"),
         ("Target migration-prone Gram Panchayats (post-kharif outmigration) with job-card updating and 100-day "
          "guarantee awareness", "BDO + Sarpanch + Rozgar Sevaks", "within 3 weeks"),
         ("Secure drinking-water sources and irrigation pumps (handpump/borewell repair, pump-set power supply) in "
@@ -544,17 +560,29 @@ def department_block(department: str, ctx: dict, scenario: str, season_kind: str
 
 
 def profile_block(p: dict, d: dict, ctx: dict, season_kind: str | None = None, phase: str | None = None) -> str:
-    tops = district_top_crops(d)
+    tops = district_top_crops(d, season_kind)
     crop = p["crop"]
     if crop == "other":
         crop_line = "other (not one of the district's main crops) - give general advice only"
     elif crop in tops:
-        share = next((c.get("share") for c in (d.get("crops") or {}).get("top", []) if c.get("crop") == crop), None)
+        share = next((c.get("share") for c in season_top(d, season_kind)[0] if c.get("crop") == crop), None)
         crop_line = f"{crop} (district top-crop #{tops.index(crop) + 1}" + \
                     (f", about {round(share * 100)}% of cropped area)" if isinstance(share, (int, float)) else ")")
     else:
-        crop_line = f"{crop} (named by the farmer; not among the district's top 5 crops)"
+        crop_line = f"{crop} (named by the farmer; not among the district's top crops for this season)"
     pb = crop_playbook(crop, season_kind, phase)
+    srows, src = season_top(d, season_kind)
+    names = [str(c["crop"]) for c in srows[:5]]
+    if season_kind in ("kharif", "rabi"):
+        other = "rabi" if season_kind == "kharif" else "kharif"
+        crop_rule = (f"SEASON CROPS ({season_kind.upper()} only; from the district's "
+                     f"{'season-specific list' if src == 'season' else 'all-year list, season split not available'}): "
+                     f"{', '.join(names) or 'data not available'}. Every crop you recommend or mention as a choice MUST "
+                     f"come from this list or the playbook for a {season_kind} crop. NEVER suggest a {other} crop for "
+                     f"{season_kind} (kharif = rain-fed monsoon crops such as cotton, soybean, paddy, tur, jowar, "
+                     f"bajra, maize, groundnut; rabi = wheat, gram, mustard, winter jowar, rabi rice).")
+    else:
+        crop_rule = f"SEASON CROPS (season kind unknown; district list): {', '.join(names) or 'data not available'}."
     lines = [
         "FARMER PROFILE (facts about the reader; speak to them as 'you', never list the fields mechanically):",
         f"- Farmer type: {farmer_type_label(p)}",
@@ -566,7 +594,12 @@ def profile_block(p: dict, d: dict, ctx: dict, season_kind: str | None = None, p
         "PROFILE-DERIVED EMPHASIS (these decide which bullets you write):",
         *[f"  * {e}" for e in profile_emphasis(p)],
     ]
-    if pb:
+    lines.insert(1, crop_rule)
+    if pb and season_kind in ("kharif", "rabi") and pb["season"] not in (season_kind, "annual"):
+        lines += [f"NOTE: the farmer's named crop ({pb['label']}) is a {pb['season']} crop and the season is "
+                  f"{season_kind}; give no sowing advice for it now, say so in one short clause and advise from the "
+                  f"SEASON CROPS instead."]
+    elif pb:
         lines += [f"CROP PLAYBOOK for the main crop ({pb['label']}, {pb['season']} crop; general agronomy, not a "
                   f"district fact; phrase as 'consider'): {pb['advice']}"]
     else:
@@ -574,12 +607,10 @@ def profile_block(p: dict, d: dict, ctx: dict, season_kind: str | None = None, p
                   "the crops actually listed for the district."]
     econ = (ctx.get("crops") or {}).get("economics")
     if econ:
-        import json
-
-        lines += ["CROP ECONOMICS (cost of cultivation vs value of output; use for ONE line of margin comparison "
-                  "between the main crop and the substitute you recommend, only if both appear; otherwise cite the "
-                  "main crop's margin; do not compute for crops absent): "
-                  + json.dumps(econ, ensure_ascii=False, separators=(",", ":"))[:1800]]
+        lines += ["CROP ECONOMICS: present. Use AT MOST ONE simple sentence comparing which crop earned more per "
+                  "acre last year (e.g. \"Last year soybean earned more per acre than cotton here\"). No rupee "
+                  "figures, no costs, no percentages, never a table; skip the sentence if the evidence does not "
+                  "clearly support it."]
     else:
-        lines += ["CROP ECONOMICS: not available - do not mention costs or margins."]
+        lines += ["CROP ECONOMICS: not available - do not mention costs, prices or margins."]
     return "\n".join(lines)

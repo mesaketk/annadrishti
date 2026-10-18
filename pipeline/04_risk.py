@@ -1006,6 +1006,156 @@ else:
     log("rabi hindcast skipped (missing _ml_loyo_preds_rabi.parquet / meta / _ml_panel_rabi.parquet)")
 
 elig, rabi_elig = _elig_x, _rabi_elig_x
+# ── 8b. v6 (Addendum I): season_outlook[season][phase] per district + national means ─────────────────────────────────────────
+# Kharif: rain = the scenario anomaly used in exposure (a_scn; main season: JJAS, or OND for the OND-main districts); p_deficit_gt10 = share of El Nino years with a > 10 % deficit (strong: mean with the strong
+# analogs; neutral: climatological share of all years; La Nina: share of La Nina years > +15 %, i.e. the flood share, as the contract says; current: probability-weighted TRUE deficit share);
+# tmax = JJAS tmax anomaly of the phase's years (neutral 0); onset delay = phase-year mean onset day - climatology; TimesFM (JJAS 2027) display fields, JJAS-main districts only.
+# Rabi: rain = OND anomaly of the phase's years (ond_scn), tmax = Feb-Mar (following year) tmax anomaly of the phase's years, the same series as the rabi score's terminal-heat hazard (tf_scn; neutral 0, La Nina -0.3 stated assumption).
+def _nm(M, ys):
+    sub = M[:, [yidx[y] for y in ys if y in yidx]]
+    n = np.isfinite(sub).sum(1)
+    with np.errstate(invalid="ignore", divide="ignore"):
+        return np.where(n > 0, np.nansum(np.where(np.isfinite(sub), sub, 0.0), 1) / np.maximum(n, 1), np.nan)
+TJ_ = series("tmax_jjas_anomaly_json"); ON_ = series("onset_day_json")
+P_clim_def = share_def(YEARS); P_la_def = share_def(la_ys)
+TMAX_K = {"elnino": _nm(TJ_, el_ys), "elnino_strong": _nm(TJ_, STRONG_ANALOGS), "lanina": _nm(TJ_, la_ys)}
+TMAX_K["neutral"] = np.where(np.isfinite(TMAX_K["elnino"]), 0.0, np.nan)
+_on_clim = _nm(ON_, YEARS)
+ONSET_K = {"elnino": _nm(ON_, el_ys) - _on_clim, "elnino_strong": _nm(ON_, STRONG_ANALOGS) - _on_clim, "lanina": _nm(ON_, la_ys) - _on_clim, "neutral": _nm(ON_, ne_ys) - _on_clim}
+_tf_el = _nm(TF, el_ys)
+TMAX_R = {"elnino": tf_scn[RP["elnino"]], "elnino_strong": tf_scn[RP["elnino_strong"]], "neutral": np.where(np.isfinite(tf_scn[RP["elnino"]]), 0.0, np.nan), "lanina": np.where(np.isfinite(tf_scn[RP["elnino"]]), -0.3, np.nan)}
+PDEF_K = {"elnino": P_el, "elnino_strong": (P_el + P_strong) / 2, "neutral": P_clim_def, "lanina": P_flood}
+PDEF_TRUE = {"elnino": P_el, "neutral": P_clim_def, "lanina": P_la_def}
+_tfm = pd.read_parquet(ART / "timesfm_summary.parquet").set_index("lgd").reindex(df.lgd.values) if (ART / "timesfm_summary.parquet").exists() else None
+def _wmix(d, w):
+    """probability-weighted mean over lanina / neutral / elnino of the arrays / scalars in d (NaN where any member is NaN)"""
+    return sum(w[ph] * d[ph] for ph in ("lanina", "neutral", "elnino")) / sum(w[ph] for ph in ("lanina", "neutral", "elnino"))
+PDEF_K["current"] = _wmix(PDEF_TRUE, pk)
+TMAX_K["current"] = _wmix(TMAX_K, pk); ONSET_K["current"] = _wmix(ONSET_K, pk)
+TMAX_R["current"] = _wmix(TMAX_R, P_R)
+_TXT = {"lanina": "La Niña", "neutral": "neutral", "elnino": "El Niño", "elnino_strong": "El Niño"}
+def _lw(p):
+    """likelihood word from a phase probability: >= 0.8 very likely, 0.5-0.8 likely, 0.1-0.5 possible, < 0.1 unlikely (the contract's 'else possible' split at 0.1 so a 0 % phase is not called possible)"""
+    if p is None or not np.isfinite(p):
+        return "possible"
+    return "very likely" if p >= 0.8 else ("likely" if p >= 0.5 else ("possible" if p >= 0.10 else "unlikely"))
+def _rain_phr(a, wnd):
+    r = "rain" if wnd == "Jun–Sep" else f"{wnd} rain"
+    if a <= -5: return f"about {abs(a):.0f} % less {r} than normal"
+    if a >= 5: return f"about {a:.0f} % more {r} than normal"
+    return f"{r} close to normal on average"
+def _n10(p):
+    return max(1, int(round(p * 10)))
+def plain_kharif(ph, pword, a, pdef, wnd, drying=None, pflood=None):
+    """farmer-facing sentence (phrasing rule): El Nino -> weak monsoon, La Nina -> heavy rain / flooding, neutral -> near-normal season; probability word from the ENSO phase probability `pword`
+    (a phase with p < 0.1 is written as 'in <phase> years (unlikely this season)'; the strong El Nino analog carries no probability word - p_by_season has no strong split).
+    `drying` / `pflood` (default from a / pdef) decide whether the district's own record supports the El Nino / La Nina head line."""
+    if a is None or not np.isfinite(a):
+        return None
+    pd_ = pdef if (pdef is not None and np.isfinite(pdef)) else None
+    unl = (pword is not None and np.isfinite(pword) and pword < 0.10)
+    if ph in ("elnino", "elnino_strong"):
+        dry = drying if drying is not None else (a <= -5 or (pd_ is not None and pd_ >= 0.5))
+        w = "" if ph == "elnino_strong" else f" {_lw(pword)}"
+        if ph == "elnino_strong":
+            head = "In a strong El Ni\u00f1o, weak monsoon" if dry else "In a strong El Ni\u00f1o, near-normal monsoon"
+        else:
+            head = f"Weak monsoon{w}" if dry else "Near-normal monsoon possible even in El Ni\u00f1o years here"
+        tail = [_rain_phr(a, wnd)] + ([f"{_n10(pd_)} in 10 chance of a serious deficit"] if pd_ is not None and pd_ >= 0.15 else [])
+    elif ph == "lanina":
+        pf = pflood if pflood is not None else pd_
+        fl = (pf is not None and pf >= 0.25) or a >= 5
+        if fl:
+            head = f"Heavy rain / flooding {_lw(pword)}" if not unl else "Heavy rain / flooding possible in La Ni\u00f1a years here (unlikely this season)"
+        else:
+            head = "Heavy rain / flooding unlikely here even in La Ni\u00f1a years"
+        tail = ([_rain_phr(a, wnd)] if a >= 5 else []) + ([f"{_n10(pf)} in 10 La Ni\u00f1a years had flood-level excess rain"] if pf is not None and pf >= 0.15 else [])
+        if not tail:
+            tail = ["La Ni\u00f1a years have rarely brought excess rain here"]
+    else:
+        head = f"Near-normal season {_lw(pword)}"
+        tail = [_rain_phr(a, wnd)] + ([f"a serious deficit hits about {_n10(pd_)} in 10 years"] if pd_ is not None and pd_ >= 0.15 else [])
+    return f"{head}: {', '.join(tail)}"
+def plain_rabi(ph, pword, a, tmax, strong=False):
+    if a is None or not np.isfinite(a):
+        return None
+    dry, wet = a <= -5, a >= 5
+    hot = tmax is not None and np.isfinite(tmax) and tmax >= 0.3
+    cool = tmax is not None and np.isfinite(tmax) and tmax <= -0.3
+    w1 = "Dry" if dry else ("Wet" if wet else "")
+    w2 = "warm" if hot else ("cool" if cool else "")
+    name = (f"{w1}, {w2} winter" if (w1 and w2) else (f"{w1} winter" if w1 else (f"{w2.capitalize()} winter" if w2 else "Near-normal winter")))
+    rain = "less Oct\u2013Dec rain" if dry else ("more Oct\u2013Dec rain" if wet else "Oct\u2013Dec rain close to normal")
+    heat = f"hotter Feb\u2013Mar (about +{tmax:.1f} \u00b0C)" if hot else ("cooler Feb\u2013Mar" if cool else "Feb\u2013Mar temperatures close to normal")
+    if strong:
+        head = f"In a strong El Ni\u00f1o, {name[0].lower()}{name[1:]}"
+    elif pword is not None and np.isfinite(pword) and pword < 0.10:
+        head = f"{name} in {_TXT.get(ph, ph)} years (unlikely this season)"
+    else:
+        head = f"{name} {_lw(pword)}"
+    return f"{head}: {rain} and {heat}"
+def _dom(pdict):
+    return max(("elnino", "neutral", "lanina"), key=lambda k: pdict[k])
+def so_phase_obj(kind, ph, i):
+    """one season_outlook[season][phase] object for district index i (None fields where there is no data)"""
+    if kind == "kharif":
+        wnd = "Oct–Dec" if is_ond[i] else "Jun–Sep"
+        a = a_scn[KP[ph]][i]
+        pdef = PDEF_K[ph][i] if ph in PDEF_K else np.nan
+        pp = {k: float(pk[k][i]) for k in ("elnino", "neutral", "lanina")}
+        if ph == "current":
+            d = _dom(pp); pw = pp[d]
+            # the head line follows the dominant phase and that phase's own record (drying / flood-prone), numbers are the probability-weighted ones
+            dry = (a_scn[KP["elnino"]][i] <= -5 or P_el[i] >= 0.5) if d == "elnino" else None
+            txt = plain_kharif(d if d != "elnino" else "elnino", pw, a, pdef, wnd, drying=dry, pflood=P_flood[i])
+        else:
+            pw = pp["elnino" if ph == "elnino_strong" else ph]
+            txt = plain_kharif(ph, pw, a, pdef, wnd)
+        o = {"rain_anom_pct": nn(a, 1), "rain_window": wnd, "p_deficit_gt10": nn(pdef, 2), "tmax_anom_c": nn(TMAX_K[ph][i], 2), "heat_window": "Jun–Sep",
+             "onset_delay_days": nn(ONSET_K[ph][i], 1)}
+        if _tfm is not None and not is_ond[i]:
+            o.update(timesfm_rain_anom_pct=nn(_tfm.jjas2027_anom_pct.iat[i], 1), timesfm_p10=nn(_tfm.jjas2027_p10_pct.iat[i], 1), timesfm_p90=nn(_tfm.jjas2027_p90_pct.iat[i], 1))
+        else:
+            o.update(timesfm_rain_anom_pct=None, timesfm_p10=None, timesfm_p90=None)
+        o["plain"] = txt
+        return o
+    a = a_scn[RP[ph]][i]; tm = TMAX_R[ph][i]
+    d = _dom(P_R) if ph == "current" else None
+    pw = P_R[d] if ph == "current" else P_R["elnino" if ph == "elnino_strong" else ph]
+    return {"rain_anom_pct": nn(a, 1), "rain_window": "Oct–Dec", "tmax_anom_c": nn(tm, 2), "heat_window": "Feb–Mar", "plain": plain_rabi(d or ph, pw, a, tm, strong=(ph == "elnino_strong"))}
+SO_PH = ["lanina", "neutral", "elnino", "elnino_strong", "current"]
+SEASON_OUTLOOK = {}
+for _i in range(N):
+    if not has_climate[_i]:
+        SEASON_OUTLOOK[_i] = None; continue
+    SEASON_OUTLOOK[_i] = {KID: {ph: so_phase_obj("kharif", ph, _i) for ph in SO_PH}, RID: {ph: so_phase_obj("rabi", ph, _i) for ph in SO_PH}}
+# national: cropped-area-weighted means of the same fields, `plain` built from the national means with the national phase probabilities
+_wgt = df.gross_cropped_area_ha.astype(float).values
+SO_NATIONAL = {}
+for _kind, _sid, _P in (("kharif", KID, P_K), ("rabi", RID, P_R)):
+    SO_NATIONAL[_sid] = {}
+    for ph in SO_PH:
+        acc = {}
+        for f in (["rain_anom_pct", "p_deficit_gt10", "tmax_anom_c", "onset_delay_days", "timesfm_rain_anom_pct", "timesfm_p10", "timesfm_p90"] if _kind == "kharif" else ["rain_anom_pct", "tmax_anom_c"]):
+            v = np.array([np.nan if SEASON_OUTLOOK[i_] is None or SEASON_OUTLOOK[i_][_sid][ph][f] is None else SEASON_OUTLOOK[i_][_sid][ph][f] for i_ in range(N)], float)
+            w = np.where(np.isfinite(v) & np.isfinite(_wgt) & (_wgt > 0), _wgt, 0.0)
+            acc[f] = (float((np.nan_to_num(v) * w).sum() / w.sum()) if w.sum() > 0 else None, int((w > 0).sum()))
+        o = {f: (None if m is None else round(m, 2 if f in ("p_deficit_gt10", "tmax_anom_c") else 1)) for f, (m, n_) in acc.items()}
+        o["n_districts"] = max(n_ for _, n_ in acc.values())
+        if _kind == "kharif":
+            o = {"rain_anom_pct": o["rain_anom_pct"], "rain_window": "Jun–Sep", "p_deficit_gt10": o["p_deficit_gt10"], "tmax_anom_c": o["tmax_anom_c"], "heat_window": "Jun–Sep",
+                 "onset_delay_days": o["onset_delay_days"], "timesfm_rain_anom_pct": o["timesfm_rain_anom_pct"], "timesfm_p10": o["timesfm_p10"], "timesfm_p90": o["timesfm_p90"], "n_districts": o["n_districts"]}
+            if ph == "current":
+                d_ = _dom(_P); o["plain"] = plain_kharif(d_, _P[d_], o["rain_anom_pct"], o["p_deficit_gt10"], "Jun–Sep", drying=(None if d_ != "elnino" else (SO_NATIONAL[_sid]["elnino"]["rain_anom_pct"] <= -5 or SO_NATIONAL[_sid]["elnino"]["p_deficit_gt10"] >= 0.5)), pflood=SO_NATIONAL[_sid]["lanina"]["p_deficit_gt10"])
+            else:
+                o["plain"] = plain_kharif(ph, _P["elnino" if ph == "elnino_strong" else ph], o["rain_anom_pct"], o["p_deficit_gt10"], "Jun–Sep")
+        else:
+            o = {"rain_anom_pct": o["rain_anom_pct"], "rain_window": "Oct–Dec", "tmax_anom_c": o["tmax_anom_c"], "heat_window": "Feb–Mar", "n_districts": o["n_districts"]}
+            d_ = _dom(_P) if ph == "current" else None
+            o["plain"] = plain_rabi(d_ or ph, _P[d_] if d_ else _P["elnino" if ph == "elnino_strong" else ph], o["rain_anom_pct"], o["tmax_anom_c"], strong=(ph == "elnino_strong"))
+        SO_NATIONAL[_sid][ph] = o
+log("season_outlook built:", sum(v is not None for v in SEASON_OUTLOOK.values()), "districts")
+
 # ── 9. assemble per-district output ──────────────────────────────────────────
 IMP_FLAG_SHARE = 0.25            # risk.*.imputed = true when imputed inputs carry >= 25 % of the score weight (or the exposure itself is imputed)
 _I_prod = IM("foodgrain_prod_t")
@@ -1125,7 +1275,7 @@ for i, lgd in enumerate(df.lgd.values):
         "elnino_mean_anomaly_season_pct": nn(a_el[i], 1), "neutral_mean_anomaly_season_pct": nn(a_neu[i], 1),
         "strong_elnino_anomaly_season_pct": nn(a_strong[i], 1), "elnino_deficit_prob_season": nn(P_el[i], 3),
         "lanina_mean_anomaly_season_pct": nn(a_la[i], 1), "lanina_flood_prob_season": nn(P_flood[i], 3),
-        "risk": risk, "hindcast": hind, "hindcast_rabi": hind_r, "food_balance": fb,
+        "risk": risk, "hindcast": hind, "hindcast_rabi": hind_r, "food_balance": fb, "season_outlook": SEASON_OUTLOOK[i],
         "season_context": {"rabi": {"foodgrain_prod_t": nn(rabi_prod[i], 0), "share_of_foodgrain_prod": nn(rabi_share_prod[i], 3), "prev_kharif_dev_pct": nn(kdev_last[i], 1), "prev_rabi_dev_pct": nn(rdev_last[i], 1), "scored": bool(rabi_elig[i]),
                                     "terminal_heat_year_share_elnino": nn(pd_scn[RP["elnino"]][i], 2)}},
         "data_quality": {"has_crops": bool(has_crops[i]), "has_climate": bool(has_climate[i]),
@@ -1155,6 +1305,7 @@ meta = {"as_of": str(pd.Timestamp.today().date()), "band_thresholds": {"low_belo
         "rabi": {"heat_threshold_c": HEAT_THR_C, "eligibility": {"min_rabi_foodgrain_area_ha": 2000, "min_rabi_share_of_foodgrain_area": 0.05, "min_years_with_rabi_area": 3, "area_basis": "median crop years 2018+"},
                  "exposure_terms": {"expected_yield_loss": 0.5, "terminal_heat_risk": 0.3, "weak_kharif_carryover": 0.2},
                  "not_eligible_reasons": {k: int(v) for k, v in pd.Series(rabi_reason[elig & ~rabi_elig]).value_counts().items()}}}
+meta["season_outlook_national"] = SO_NATIONAL
 meta["imputation"] = {"overlay": USE_IMP, "n_scored_observed": int(elig_ref.sum()), "n_scored_regular": int(elig_reg.sum()), "n_consumption_side": int(CONS.sum()),
                       "n_rabi_scored_observed": int(rabi_elig_ref.sum()), "n_rabi_neighbour_shock": int(rabi_nb.sum()), "rabi_min_share": RABI_MIN_SHARE,
                       "imputed_flag_share": IMP_FLAG_SHARE, "reference": "percentile ranks and band thresholds use observed districts only (elig_ref)",
@@ -1178,6 +1329,7 @@ for s in KEYS:
     t = t[t.band != "no_data"].sort_values(["score", "lgd"], ascending=[False, True])
     for c in ["priority_rank_national", "priority_rank_state"]:
         t[c] = t[c].astype(int)
+    t = t.rename(columns={"mgnrega_persondays": "nrega_persondays"})        # user-facing CSV header says NREGA (JSON key stays mgnrega_persondays)
     t.to_csv(ART / f"actions_{s.replace(':', '_')}.csv", index=False)
     if s in [KP[x] for x in SCEN]:                      # legacy names = copies of the kharif files
         t.to_csv(ART / f"actions_{phase_of(s)}.csv", index=False)
@@ -1279,7 +1431,7 @@ lines += ["## Caveats", "",
           "- pmfby_gap_farmers: cultivators_est = pop_2026 x worker_participation x cultivator share of workers (Census 2011 ratios); PMFBY farmer_count is farmer-seasons so is halved to approximate unique farmers. Indicative only.",
           "- women_anaemia_target uses NFHS-5 (NFHS-6 district fact sheets carry no anaemia); anganwadi_children uses NFHS-6 stunting else NFHS-5.",
           "- fodder_flag = band high and (millets + cash-crop area) / gross cropped area > 0.3.",
-          "- Actions zero (not null) when not triggered by band (seed bank: low band; MGNREGA: not high); null when inputs are missing.",
+          "- Actions zero (not null) when not triggered by band (seed bank: low band; NREGA: not high); null when inputs are missing.",
           "- UPAG-sourced latest years cover major crops only; gross_cropped_area_ha (and thus seed_bank_ha) is a lower bound there. Split-parent districts have overstated population.",
           f"- Consistency check vs climate parquet (JJAS districts): max |El Nino mean anomaly diff| {chk_el:.2f} pp, max |deficit prob diff| {chk_p:.3f}.", ""]
 # ── 12. v2 section: before / after the extra sources ─────────────────────────
@@ -1564,7 +1716,7 @@ L = ["", "---", "", "## v5 — imputation (`pipeline/03c_impute.py`, SCHEMA Adde
      f"- **Newly scored, regular model ({int((elig_x & elig_reg & ~elig_ref).sum())} districts):** split children / new districts whose crop structure is the parent's (area share), and island districts with CHIRPS climate. Their shock is the analog formula (no 04b model row) with state-median beta where needed.",
      f"- **Consumption side ({int(CONS.sum())} districts: Delhi x11, Mumbai x2, Kolkata, Chennai, Hyderabad, Chandigarh, Srinagar, The Nilgiris, Mahe, Yanam, Lakshadweep, South Andaman, Nicobars):** exposure = mean exposure of the donor districts "
      "(same state if >= 3 scored, else the touching districts found by breadth-first search, topped up with the 5 nearest by centroid for islands), expected shock = donors' mean shock, sensitivity = low self-sufficiency of the donor pool x 0.5 + PDS dependency x 0.5 "
-     "(no crop-structure terms), capacity as usual (NFHS, Poshan, climate vulnerability, PDS). Actions that need local production (grain pre-position, seed bank, MGNREGA, fodder, PMFBY) are null; child / women-anaemia targets are computed. `risk.*.imputed = true`, `imputed_from = urban_consumption_side`.",
+     "(no crop-structure terms), capacity as usual (NFHS, Poshan, climate vulnerability, PDS). Actions that need local production (grain pre-position, seed bank, NREGA, fodder, PMFBY) are null; child / women-anaemia targets are computed. `risk.*.imputed = true`, `imputed_from = urban_consumption_side`.",
      f"- **Rabi without a 04b model row ({int(rabi_nb.sum())} districts: negligible-rabi and season-label-gap, rabi share of foodgrain area >= {RABI_MIN_SHARE:.1%}):** the rabi shock of every phase is the border-weighted median of the touching districts' model shocks (`expected_shock_source = neighbours`, `imputed_from = neighbours_exposure`); "
      "the heat-hazard term uses the district's own Feb-Mar temperature. Season-label-gap districts (Odisha, Kerala, DNH) also get their rabi foodgrain area / production from the NDVI estimate (`ee_rabi_ndvi`; map R2 is only ~0.24, see 03c report) instead of the under-reported APY rows. "
      f"The {int((elig_x & ~rabi_elig_x).sum())} districts below the {RABI_MIN_SHARE:.1%} rabi-share floor stay `no_data` for rabi (`negligible_rabi_foodgrain`).",
@@ -1613,6 +1765,26 @@ L += ["", "### Caveats (v5)", "",
       "- Rabi band of the 154 neighbour-shock districts inherits the neighbours' *model* shock; for districts with almost no rabi cropping (Arunachal, Mizoram, Nagaland, Chhattisgarh Bastar) it is a notional exposure of a minor activity - read together with `season_context.rabi.share_of_foodgrain_prod`. The NDVI rabi-share map has R2 ~ 0.24, so imputed rabi production for the 14 season-label-gap districts is indicative.",
       "- WorldPop population (calibrated to the census-based level by the state median ratio) fills the 22 post-2011 districts; split PARENTS still carry pre-split census populations and crop totals (unchanged known caveat), so a parent / child pair double counts a little in national totals.",
       "- `districts.json` grew from 14.9 to ~16.9 MB (the 06_export size guard `MAX_MB` is raised from 15 to 17): 188 more districts have a rabi risk block."]
+lines += L
+
+# ── v6 report section: season outlook (Addendum I) ───────────────────────────────────────────────────────────────────────────
+_so_n = sum(v is not None for v in SEASON_OUTLOOK.values())
+L = ["", "---", "", "## v6 — season outlook (`season_outlook`, SCHEMA Addendum I)", "",
+     f"- `season_outlook[season][phase]` for {_so_n} / {N} districts (every district with a climate record, observed or imputed), 5 phases x 2 seasons; `kpis.season_outlook_national` = cropped-area-weighted means (gross cropped area) of the same fields.",
+     f"- Kharif: `rain_anom_pct` = the scenario anomaly used in the exposure terms (main-season: JJAS, or OND for the {int(is_ond.sum())} OND-main districts - their rain_window is Oct\u2013Dec and TimesFM JJAS fields are null); "
+     "`p_deficit_gt10` = share of El Nino years with a > 10 % deficit (strong analog: mean of that and the strong-analog share, as in the exposure hazard; neutral: climatological share of all 2000-2025 years; "
+     "La Nina: share of La Nina years > +15 % = the flood share, as the contract says; current: probability-weighted TRUE deficit share of the three phases); `tmax_anom_c` = JJAS tmax anomaly of the phase's years (neutral 0); "
+     "`onset_delay_days` = phase-year mean onset day minus all-year mean (02_climate onset: first day after 1 Jun with 7-day rain >= 50 mm); TimesFM fields display-only.",
+     "- Rabi: `rain_anom_pct` = mean OND anomaly of the phase's crop years (the `rain_anomaly_pct` of the rabi scenario); `tmax_anom_c` = Feb\\u2013Mar tmax anomaly of the FOLLOWING year (crop year Y -> Feb\\u2013Mar Y+1) averaged over the phase's years (strong: 2002 / 2009 / 2015) - the same series as the rabi score's terminal-heat hazard (`risk.*.tmax_febmar_anomaly_c`); neutral 0; La Nina -0.3 C **assumption**, not data. "
+     f"NOTE: this differs from `climate.tmax_febmar_elnino_anomaly_c` (same calendar year, national El Nino mean {np.nanmean(_tf_el):+.2f} C vs {np.nanmean(tf_scn[RP['elnino']]):+.2f} C here); per coordinator decision the outlook matches the score.",
+     "- `plain` sentence: probability word from `enso_status.p_by_season` of the phase (>= 0.8 very likely, 0.5\u20130.8 likely, 0.1\u20130.5 possible; **< 0.1 is written 'in <phase> years (unlikely this season)'**, an addition so a 0 % phase is not called possible; the strong El Nino analog carries no probability word); `current` uses the dominant phase's probability and the probability-weighted numbers. "
+     "The head line follows the phrasing rule (El Nino kharif -> weak monsoon; La Nina -> heavy rain / flooding; neutral -> near-normal; El Nino rabi -> dry / warm winter) but only where the district's own record supports it (kharif El Nino: rain <= -5 % or deficit chance >= 50 %; La Nina: flood share >= 25 % or rain >= +5 %; rabi: dry <= -5 %, wet >= +5 %, warm >= +0.3 C, cool <= -0.3 C), otherwise a near-normal wording is used.", "",
+     "| season | phase | rain % | p deficit | tmax C | onset d | plain |", "|---|---|---|---|---|---|---|"]
+for _sid in (KID, RID):
+    for _ph in SO_PH:
+        _o = SO_NATIONAL[_sid][_ph]
+        L.append(f"| {_sid} | {_ph} | {_o.get('rain_anom_pct')} | {_o.get('p_deficit_gt10', '')} | {_o.get('tmax_anom_c')} | {_o.get('onset_delay_days', '')} | {_o.get('plain')} |")
+L += ["", "Labels: every user-facing 'MGNREGA' is now 'NREGA' (actions CSV header `nrega_persondays`, report text); JSON keys keep `mgnrega_persondays`.", ""]
 lines += L
 
 (ART / "reports").mkdir(exist_ok=True)

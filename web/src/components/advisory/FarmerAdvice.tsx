@@ -1,12 +1,15 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ApiError, getAdvisory, getAdvisoryAudio } from '../../lib/api'
 import { defaultProfile, profileKey } from '../../lib/extra'
 import { useStore } from '../../lib/store'
+import { useScenario } from '../../lib/useScenario'
 import type { District, FarmerProfile, Holding, Lang, Water } from '../../types'
 import { t } from '../drawer/i18n'
-import { Button, ErrorNote, Skeleton, cx } from '../drawer/ui'
+import { cropsForSeason } from '../drawer/outlook'
+import { Button, ErrorNote, GeminiButton, GeminiCaption, Skeleton, cx } from '../drawer/ui'
 import { Chip, Icon } from '../ui'
 import { BTN_BASE, BTN_S, BTN_V, CARD } from '../ui/m3'
+import { splitEconomics } from './economics'
 import Markdown from './Markdown'
 
 const cache = new Map<string, string>()
@@ -44,7 +47,12 @@ export default function FarmerAdvice({ d, scenarioKey, lang, onLanguageChange }:
   const [copied, setCopied] = useState(false)
   const key = `${d.lgd}|${scenarioKey}|${lang}|${profileKey(profile)}`
   const md = cache.get(key) ?? null
-  const crops = (d.crops?.top ?? []).map((c) => c.crop)
+  const { season } = useScenario()
+  const crops = useMemo(() => [...new Set(cropsForSeason(d, season).map((c) => c.crop))], [d, season])
+  // keep the selected crop valid when the season (and so the crop list) changes
+  useEffect(() => {
+    setProfile((p) => (p.crop === 'other' || crops.includes(p.crop) || !crops.length ? p : { ...p, crop: crops[0] }))
+  }, [crops])
   const set = <K extends keyof FarmerProfile>(k: K, v: FarmerProfile[K]) => { setProfile((p) => ({ ...p, [k]: v })); setErr(null) }
 
   const run = useCallback(async (force = false) => {
@@ -56,7 +64,8 @@ export default function FarmerAdvice({ d, scenarioKey, lang, onLanguageChange }:
     finally { setBusy(false); bump((n) => n + 1) }
   }, [key, d, lang, scenarioKey, mock, profile])
 
-  const plain = md ? md.replace(/[*_#>`]/g, '').trim() : ''
+  const adv = useMemo(() => (md ? splitEconomics(md) : null), [md])
+  const plain = adv ? adv.body.replace(/[*_#>`]/g, '').trim() : ''
   const shareText = `AnnaDrishti · ${d.district}\n\n${plain}`
   const copy = async () => { try { await navigator.clipboard.writeText(shareText); setCopied(true); setTimeout(() => setCopied(false), 1500) } catch { /* blocked */ } }
 
@@ -75,18 +84,22 @@ export default function FarmerAdvice({ d, scenarioKey, lang, onLanguageChange }:
         <Chips label={t(lang, 'form.crop')} value={profile.crop} onChange={(v) => set('crop', v)} options={[...crops.map((c) => ({ id: c, label: c })), { id: 'other', label: t(lang, 'crop.other') }]} />
         <YesNo label={t(lang, 'form.livestock')} value={profile.livestock} lang={lang} onChange={(v) => set('livestock', v)} />
         <YesNo label={t(lang, 'form.tenant')} value={profile.tenant} lang={lang} onChange={(v) => set('tenant', v)} />
-        <Button size="lg" className="w-full" disabled={busy} onClick={() => void run(!!md)} aria-busy={busy} iconLeft={<Icon name="auto_awesome" size={22} />}>
-          {busy ? t(lang, 'btn.getting') : md ? t(lang, 'btn.again') : t(lang, 'btn.get')}
-        </Button>
+        <div className="space-y-2">
+          <GeminiButton size="lg" className="w-full" disabled={busy} onClick={() => void run(!!md)} aria-busy={busy}>
+            {busy ? t(lang, 'btn.getting') : md ? t(lang, 'btn.again') : t(lang, 'btn.get')}
+          </GeminiButton>
+          <div className="text-center"><GeminiCaption text={t(lang, 'brand.gemini')} /></div>
+        </div>
         {err && <ErrorNote onRetry={() => void run(true)}>{err}</ErrorNote>}
       </section>
 
       {busy && <div className={cx(CARD, 'space-y-2 !rounded-m3-lg p-4')} aria-live="polite"><Skeleton className="h-5 w-2/3" /><Skeleton className="h-4 w-full" /><Skeleton className="h-4 w-11/12" /><Skeleton className="h-4 w-4/5" /></div>}
 
-      {md && !busy && (
-        <article className="rounded-m3-lg border border-primary/50 bg-surface-container-low p-4" lang={lang} aria-label={t(lang, 'advice.for')}>
-          <h3 className="mb-2 md-title-large text-on-primary-container">{t(lang, 'advice.for')}</h3>
-          <Markdown large lang={lang}>{md}</Markdown>
+      {adv && !busy && (
+        <article className="rounded-m3-lg border border-primary/50 bg-surface-container-low p-4" lang={lang} aria-label={`Spark · ${t(lang, 'advice.for')}`}>
+          <h3 className="mb-2 md-title-large text-on-primary-container">Spark · {t(lang, 'advice.for')}</h3>
+          <Markdown large lang={lang}>{adv.body}</Markdown>
+          {adv.econ && <p className="mt-3 md-body-small text-muted" data-testid="advice-econ">{t(lang, 'econ.label')}: {adv.econ}</p>}
           <div className="mt-4 flex flex-wrap gap-2 border-t border-outline-variant pt-4">
             <ListenButton d={d} lang={lang} scenarioKey={scenarioKey} profile={profile} />
             <a href={`https://wa.me/?text=${encodeURIComponent(shareText)}`} target="_blank" rel="noopener noreferrer"
@@ -96,6 +109,7 @@ export default function FarmerAdvice({ d, scenarioKey, lang, onLanguageChange }:
             <Button variant="outlined" onClick={copy} iconLeft={<Icon name={copied ? 'check' : 'content_copy'} size={20} />}>{copied ? t(lang, 'btn.copied') : t(lang, 'btn.copy')}</Button>
           </div>
           <AudioPlayer d={d} lang={lang} scenarioKey={scenarioKey} profile={profile} />
+          <div className="mt-3"><GeminiCaption text={t(lang, 'brand.gemini')} /></div>
         </article>
       )}
     </div>
@@ -133,9 +147,9 @@ function ListenButton({ d, lang, scenarioKey, profile }: { d: District; lang: La
   }
   return (
     <>
-      <Button variant="secondary" onClick={() => void go()} disabled={loading} aria-label={t(lang, 'btn.listen')} iconLeft={<Icon name="volume_up" size={20} />}>
+      <GeminiButton onClick={() => void go()} disabled={loading} aria-label={t(lang, 'btn.listen')}>
         {loading ? t(lang, 'btn.loading') : t(lang, 'btn.listen')}
-      </Button>
+      </GeminiButton>
       {err && <span role="alert" className="basis-full md-body-medium text-act-ink">{err}</span>}
     </>
   )

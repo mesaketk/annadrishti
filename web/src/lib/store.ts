@@ -46,6 +46,8 @@ interface State {
 
   chatOpen: boolean
   setChatOpen: (o: boolean) => void
+  trackerOpen: boolean
+  setTrackerOpen: (o: boolean) => void
 
   // ---- audience (persisted in localStorage)
   role: Role | null
@@ -92,6 +94,7 @@ export const useStore = create<State>((set) => ({
   select: (selected, fly = false) => set((s) => ({ selected, flyNonce: fly ? s.flyNonce + 1 : s.flyNonce })),
 
   chatOpen: false, setChatOpen: (chatOpen) => set({ chatOpen }),
+  trackerOpen: false, setTrackerOpen: (trackerOpen) => set({ trackerOpen }),
 
   role: initRole(), setRole: (role) => { write(LS.role, role); set({ role }) },
   language: initLang(), setLanguage: (language) => { write(LS.lang, language); set({ language }) },

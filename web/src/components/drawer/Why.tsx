@@ -1,22 +1,75 @@
 import { districtModelsOf } from '../../lib/models'
 import { bandOf, thresholdsOf } from '../../lib/scales'
 import { useStore } from '../../lib/store'
-import type { District, Lang, Risk } from '../../types'
+import type { District, Lang, PhaseId, Risk } from '../../types'
 import { driversOf, NB } from './copy'
 import type { DriverView } from './copy'
 import { driverLocal, t } from './i18n'
-import { Icon } from '../ui'
-import { Accordion, IconSentence, TrafficLight } from './ui'
+import { localWindow } from './i18n.extra'
+import { outlookOf, plainOutlook } from './outlook'
+import { Icon, type IconName } from '../ui'
+import { Accordion, Card, IconSentence, TrafficLight } from './ui'
 import { C } from './theme'
 
-/** Top-N drivers as icon sentences. `lang` switches to local-language templates where available (farmer view). */
-export function TopDrivers({ d, r, n = 3, lang }: { d: District; r: Risk | null; n?: number; lang?: Lang }) {
-  const list = driversOf(d, r).slice(0, n)
+/** Climate groups only: what the farmer Why tab may show (no nutrition, PDS, price or groundwater drivers). */
+const CLIMATE_GROUPS: DriverView['group'][] = ['rain', 'heat']
+
+export const climateDrivers = (d: District, r: Risk | null) => driversOf(d, r).filter((x) => CLIMATE_GROUPS.includes(x.group))
+
+/** Top-N drivers as icon sentences. `lang` switches to local-language templates where available (farmer view). `climateOnly` keeps rain and heat drivers. */
+export function TopDrivers({ d, r, n = 3, lang, climateOnly = false }: { d: District; r: Risk | null; n?: number; lang?: Lang; climateOnly?: boolean }) {
+  const list = (climateOnly ? climateDrivers(d, r) : driversOf(d, r)).slice(0, n)
   if (r?.band === 'no_data' || list.length === 0) return <p className="md-body text-muted">{lang ? t(lang, 'why.none') : 'No estimate available for this district yet.'}</p>
   return (
     <ul className="space-y-3.5">
       {list.map((x) => <IconSentence key={x.name} icon={x.icon}>{(lang && driverLocal(lang, x.key, x.params)) || x.sentence}</IconSentence>)}
     </ul>
+  )
+}
+
+/** Plain outlook sentence for the selected season and phase (farmer view). */
+export function OutlookSentence({ d, lang, season, phase }: { d: District; lang: Lang; season: string | null; phase: PhaseId }) {
+  const kpis = useStore((s) => s.kpis)
+  return (
+    <section className="flex items-start gap-3 rounded-m3-lg bg-secondary-container p-4 text-on-secondary-container" aria-label={t(lang, 'why.outlook')} data-testid="outlook-sentence">
+      <span aria-hidden className="mt-0.5 flex"><Icon name="rainy" size={24} /></span>
+      <div>
+        <div className="md-label-large opacity-80">{t(lang, 'why.outlook')}</div>
+        <p className="md-title-medium">{plainOutlook(lang, d, kpis, season, phase)}</p>
+      </div>
+    </section>
+  )
+}
+
+/** "Rain and heat this season": rain vs normal, chance of a serious deficit, heat, monsoon onset. Hidden until season_outlook exists. */
+export function RainHeatCard({ d, lang, season, phase }: { d: District; lang: Lang; season: string | null; phase: PhaseId }) {
+  const o = outlookOf(d, season, phase)
+  if (!o) return null
+  const rabi = !!season && /^rabi/i.test(season)
+  const win = (w: string | null | undefined, fb: string) => localWindow(lang, w || fb)
+  const rows: { icon: IconName; text: string }[] = []
+  if (o.rain_anom_pct != null) {
+    const v = o.rain_anom_pct, w = win(o.rain_window, rabi ? 'Oct–Dec' : 'Jun–Sep')
+    rows.push({ icon: 'rainy', text: t(lang, Math.abs(v) < 3 ? 'rh.rain.norm' : v < 0 ? 'rh.rain.less' : 'rh.rain.more', { n: Math.round(Math.abs(v)), win: w }) })
+  }
+  if (o.p_deficit_gt10 != null) {
+    const k = Math.round(o.p_deficit_gt10 * 10)
+    rows.push({ icon: 'warning', text: k >= 1 ? t(lang, 'rh.deficit', { k }) : t(lang, 'rh.deficit.low') })
+  }
+  if (o.tmax_anom_c != null) {
+    const v = o.tmax_anom_c, w = win(o.heat_window, rabi ? 'Feb–Mar' : 'Jun–Sep')
+    rows.push({ icon: 'thermostat', text: t(lang, Math.abs(v) < 0.2 ? 'rh.heat.norm' : v > 0 ? 'rh.heat.hot' : 'rh.heat.cool', { n: Math.abs(v).toFixed(1), win: w }) })
+  }
+  if (!rabi && o.onset_delay_days != null) {
+    rows.push({ icon: 'water_drop', text: o.onset_delay_days >= 2 ? t(lang, 'rh.onset.late', { n: Math.round(o.onset_delay_days) }) : t(lang, 'rh.onset.ok') })
+  }
+  if (!rows.length) return null
+  return (
+    <Card title={t(lang, 'rh.title')}>
+      <ul className="space-y-3.5" data-testid="rain-heat">
+        {rows.map((x) => <IconSentence key={x.icon + x.text} icon={x.icon}>{x.text}</IconSentence>)}
+      </ul>
+    </Card>
   )
 }
 

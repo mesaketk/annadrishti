@@ -31,6 +31,11 @@ def _coerce(v: str | None) -> Any:
         return v
 
 
+# CSV header labels (text rule: "NREGA", not the long form); JSON keys keep the legacy name
+CSV_HEADERS = {"mgnrega_persondays": "nrega_persondays"}
+_KEY_FROM_HEADER = {v: k for k, v in CSV_HEADERS.items()}
+
+
 def csv_path(scenario: str):
     """artifacts/actions_<season>_<phase>.csv for season keys (':' -> '_'); actions_<legacy>.csv for legacy keys."""
     return config.artifacts_dir() / f"actions_{seasons.slug(scenario)}.csv"
@@ -42,7 +47,7 @@ def _from_csv(scenario: str) -> list[dict] | None:
         return None
     try:
         with p.open(newline="", encoding="utf-8") as f:
-            return [{k: _coerce(v) for k, v in row.items()} for row in csv.DictReader(f)]
+            return [{_KEY_FROM_HEADER.get(k, k): _coerce(v) for k, v in row.items()} for row in csv.DictReader(f)]
     except Exception:
         return None
 
@@ -91,10 +96,10 @@ def to_csv(rows: list[dict]) -> str:
     extra = [k for r in rows for k in r if k not in cols]
     cols += list(dict.fromkeys(extra))
     buf = io.StringIO()
-    w = csv.DictWriter(buf, fieldnames=cols, extrasaction="ignore")
-    w.writeheader()
+    w = csv.writer(buf)
+    w.writerow([CSV_HEADERS.get(c, c) for c in cols])
     for r in rows:
-        w.writerow({k: ("" if r.get(k) is None else r.get(k)) for k in cols})
+        w.writerow(["" if r.get(k) is None else r.get(k) for k in cols])
     return buf.getvalue()
 
 

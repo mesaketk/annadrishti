@@ -3,7 +3,7 @@ import { getAdvisory } from '../../lib/api'
 import { DEPARTMENTS } from '../../lib/extra'
 import { useStore } from '../../lib/store'
 import type { Department, District } from '../../types'
-import { Button, Card, ErrorNote, Pill, Skeleton, cx } from '../drawer/ui'
+import { Button, Card, ErrorNote, GeminiButton, GeminiCaption, Skeleton, cx } from '../drawer/ui'
 import { Chip, Icon } from '../ui'
 import Markdown from './Markdown'
 
@@ -47,7 +47,7 @@ export default function DepartmentBriefing({ d, scenarioKey, department }: { d: 
   }
 
   return (
-    <Card title={<span className="flex flex-wrap items-center gap-2">Briefing for your department <Pill tone="accent">Written by Gemini</Pill></span>}>
+    <Card title="Sanket · Department briefing">
       {!department && (
         <div className="mb-3" role="radiogroup" aria-label="Department">
           <div className="flex flex-wrap gap-2">
@@ -66,7 +66,10 @@ export default function DepartmentBriefing({ d, scenarioKey, department }: { d: 
       {!md && !loading && !(err?.key === key) && (
         <div>
           <p className="mb-3 md-body text-muted">A one-page plan for {d.district}, written for the {label} department: what is happening, what to do first and by when.</p>
-          <Button onClick={() => void run()} className="w-full sm:w-auto" iconLeft={<Icon name="auto_awesome" size={20} />}>Write the {label} briefing</Button>
+          <div className="flex flex-wrap items-center gap-3">
+            <GeminiButton onClick={() => void run()} className="w-full sm:w-auto">Generate {label} briefing</GeminiButton>
+            <GeminiCaption />
+          </div>
         </div>
       )}
       {loading && (
@@ -82,7 +85,8 @@ export default function DepartmentBriefing({ d, scenarioKey, department }: { d: 
           <Markdown>{md}</Markdown>
           <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-outline-variant pt-3">
             <Button variant="secondary" onClick={copy} iconLeft={<Icon name={copied ? 'check' : 'content_copy'} size={18} />}>{copied ? 'Copied' : 'Copy text'}</Button>
-            <Button variant="ghost" onClick={() => void run(true)} className="ml-auto">Write it again</Button>
+            <GeminiCaption className="ml-auto" />
+            <Button variant="ghost" onClick={() => void run(true)}>Write it again</Button>
           </div>
         </div>
       )}

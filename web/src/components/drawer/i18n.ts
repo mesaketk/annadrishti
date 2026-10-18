@@ -1,6 +1,7 @@
 // Small UI string map for the farmer view. en/hi/mr/te are written; other languages fall back to English.
 // Translations are machine-drafted and have not been reviewed by native speakers.
 import type { Lang } from '../../types'
+import { EXTRA } from './i18n.extra'
 
 type Dict = Record<string, string>
 const en: Dict = {
@@ -87,11 +88,11 @@ const te: Dict = {
   'trends.rain.cap.n': 'గీత కింద పట్టీ అంటే సాధారణం కంటే తక్కువ వర్షం. ఎల్ నినో సంవత్సరాల్లో వర్షం సాధారణం కంటే సుమారు {n} % తక్కువ.',
   'trends.none': 'సంవత్సరాల వారీ చరిత్ర ఇంకా అందుబాటులో లేదు.', 'loading': 'లోడ్ అవుతోంది…',
 }
-const DICTS: Partial<Record<Lang, Dict>> = { en, hi, mr, te }
+const DICTS: Partial<Record<Lang, Dict>> = { en: { ...en, ...EXTRA.en }, hi: { ...hi, ...EXTRA.hi }, mr: { ...mr, ...EXTRA.mr }, te: { ...te, ...EXTRA.te } }
 export const SUPPORTED_UI: Lang[] = ['en', 'hi', 'mr', 'te']
 
 export function t(lang: Lang, key: string, params?: Record<string, string | number>): string {
-  let s = DICTS[lang]?.[key] ?? en[key] ?? key
+  let s = DICTS[lang]?.[key] ?? DICTS.en?.[key] ?? key
   if (params) for (const [k, v] of Object.entries(params)) s = s.replace(new RegExp(`\\{${k}\\}`, 'g'), String(v))
   return s.replace(/(\d) %/g, '$1\u00a0%')
 }

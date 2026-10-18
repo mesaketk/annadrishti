@@ -8,6 +8,7 @@ import RolePicker from './components/RolePicker'
 import ChatPanel from './components/ChatPanel'
 import Footer from './components/Footer'
 import MethodsModal from './components/MethodsModal'
+import TrackerSheet from './components/TrackerSheet'
 import FarmerRoute from './routes/FarmerRoute'
 import OfficerRoute from './routes/OfficerRoute'
 import PlannerRoute from './routes/PlannerRoute'
@@ -49,6 +50,7 @@ export default function App() {
       {route !== 'farmer' && <Footer onMethods={() => setMethods(true)} />}
       <RolePicker open={first || picker} onClose={() => setPicker(false)} dismissible={!first} />
       {methods && <MethodsModal onClose={() => setMethods(false)} />}
+      {(route === 'officer' || route === 'planner') && !loading && <TrackerSheet />}
     </div>
   )
 }

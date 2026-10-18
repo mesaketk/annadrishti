@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from 'react'
 import { useStore, type View } from '../lib/store'
 import { useRoute } from '../lib/route'
 import { useMedia } from '../lib/useMedia'
-import { PHASES, availablePhases, seasonsOf } from '../lib/scenario'
+import { PHASES, availablePhases, nationalOutlook, seasonsOf } from '../lib/scenario'
+import { plainOutlook } from './drawer'
 import { LANGS, PHASE_PLAIN } from '../lib/plain'
 import type { Lang, PhaseId } from '../types'
 import { Button, Icon, IconButton, Pill, Segmented, SelectField, Sheet } from './ui'
 import { ROLE_INFO, chooseRole } from './RolePicker'
 import HistoryBar from './HistoryBar'
+import { useTrackerCounts } from '../lib/tracker'
 
 function Logo() {
   return (
@@ -21,20 +23,25 @@ function Logo() {
 
 const STATUS: Record<string, string> = { sowing_now: 'sowing now', upcoming: 'coming up' }
 
-/** "El Niño likely (61 %)" for the selected season, from kpis.outlook. */
+/** Plain-language outlook sentence for the selected season/phase (district when one is selected, else the national sentence).
+ *  The exact ENSO probability ("El Niño likely (61 %)") is kept only as the tooltip (and in the Methods modal). */
 function useOutlookSentence() {
-  const { kpis, season } = useStore()
+  const { kpis, season, phase, language, selected, myLgd, byLgd } = useStore()
   const seasons = seasonsOf(kpis)
   const sObj = seasons.find((x) => x.id === season)
   const probs = season ? kpis?.outlook?.enso?.p_by_season?.[season] : undefined
-  let outlook: string | null = null
+  let enso: string | null = null
   if (probs) {
     const names = { elnino: 'El Niño', neutral: 'Normal conditions', lanina: 'La Niña' } as const
     const [k, p] = (Object.entries(probs) as [keyof typeof names, number][]).sort((a, b) => b[1] - a[1])[0] ?? []
-    if (k && p != null) outlook = `${names[k]} likely (${Math.round(p * 100)} %)`
-  } else if (kpis?.enso?.state) outlook = `${kpis.enso.state} now`
+    if (k && p != null) enso = `ENSO outlook: ${names[k]} likely (${Math.round(p * 100)} %)`
+  } else if (kpis?.enso?.state) enso = `ENSO now: ${kpis.enso.state}`
+  const lgd = selected ?? myLgd
+  const d = lgd != null ? byLgd.get(lgd) : null
+  const national = nationalOutlook(kpis, season, phase)?.plain
+  const outlook = d ? plainOutlook(language, d, kpis, season, phase) : national || plainOutlook(language, null, kpis, season, phase) || null
   const seasonText = sObj ? `${sObj.label}${sObj.status && STATUS[sObj.status] ? ` (${STATUS[sObj.status]})` : ''}` : null
-  return { seasonText, outlook }
+  return { seasonText, outlook, enso }
 }
 
 /** Season (segmented button) and "what if the weather is…" (segmented on wide screens, outlined select otherwise). */
@@ -64,6 +71,19 @@ export function Controls({ stacked = false }: { stacked?: boolean }) {
         </div>
       )}
     </div>
+  )
+}
+
+/** "Actions" trigger (officer and planner): opens the action tracker sheet; the badge counts tracked actions. */
+function TrackerTrigger() {
+  const setOpen = useStore((s) => s.setTrackerOpen)
+  const { total, done } = useTrackerCounts()
+  return (
+    <Button variant="ghost" size="sm" onClick={() => setOpen(true)} aria-haspopup="dialog" title={total ? `Action tracker: ${total} tracked, ${done} done` : 'Action tracker'} className="relative !px-3 sm:!px-4">
+      <Icon name="checklist" size={20} />
+      <span className="hidden sm:inline">Actions</span>
+      {total > 0 && <span aria-label={`${total} tracked actions`} className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1.5 md-label-small text-on-primary">{total}</span>}
+    </Button>
   )
 }
 
@@ -101,7 +121,7 @@ function RoleMenu() {
 export default function Header({ onMethods }: { onMethods: () => void }) {
   const route = useRoute()
   const { mock, mode, setMode, view, setView, language, setLanguage } = useStore()
-  const { seasonText, outlook } = useOutlookSentence()
+  const { seasonText, outlook, enso } = useOutlookSentence()
   const [sheet, setSheet] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const farmer = route === 'farmer'
@@ -154,6 +174,7 @@ export default function Header({ onMethods }: { onMethods: () => void }) {
               </select>
             </label>
           )}
+          {canHistory && <TrackerTrigger />}
           <RoleMenu />
           <Button variant="ghost" size="sm" onClick={onMethods} aria-haspopup="dialog" className="hidden md:inline-flex">Data &amp; methods</Button>
           <IconButton icon="info" label="Data and methods" onClick={onMethods} aria-haspopup="dialog" className="md:hidden" />
@@ -171,10 +192,10 @@ export default function Header({ onMethods }: { onMethods: () => void }) {
         <HistoryBar />
       ) : (
         <div className="flex items-center gap-x-4 gap-y-1 border-t border-outline-variant bg-surface-container-low px-3 py-2 sm:px-4">
-          <p className="min-w-0 flex-1 md-body-medium" data-testid="context-line">
+          <p className="min-w-0 flex-1 line-clamp-2 md-body-medium" data-testid="context-line" title={[seasonText, outlook].filter(Boolean).join(" · ")}>
             {seasonText && <><span className="text-muted">Season:</span> <b className="font-medium">{seasonText}</b></>}
             {seasonText && outlook && <span className="text-muted"> · </span>}
-            {outlook && <><span className="text-muted">Outlook:</span> <b className="font-medium">{outlook}</b></>}
+            {outlook && <><span className="text-muted">Outlook:</span> <b className="font-medium" title={enso ?? undefined}>{outlook}</b></>}
           </p>
           {!farmer && (
             <>

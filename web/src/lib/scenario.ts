@@ -1,5 +1,5 @@
 // Season x phase scenario selection (Addendum F). One place decides which `risk` key is effective.
-import type { District, Kpis, OutlookSeason, PhaseId, ScenarioKey, ScenarioKpis } from '../types'
+import type { District, Kpis, OutlookSeason, PhaseId, ScenarioKey, ScenarioKpis, SeasonOutlook } from '../types'
 
 export const PHASES: { id: PhaseId; label: string; short: string }[] = [
   { id: 'current', label: 'Current outlook (ENSO-weighted)', short: 'Current outlook' },
@@ -79,4 +79,14 @@ export function keyLabel(key: string, k?: Kpis | null): string {
 export function kpiBlock(k: Kpis | null | undefined, season: string | null, phase: PhaseId): Partial<ScenarioKpis> | null {
   const n = (v: Partial<ScenarioKpis> | undefined) => (v && typeof v.people_in_high_risk === 'number' ? v : null)
   return (season && n(k?.by_season_scenario?.[season]?.[phase])) || n(k?.by_scenario?.[legacyKey(phase)]) || null
+}
+
+/** Addendum I `season_outlook` for a district. Falls back to the legacy phase alias (neutral/elnino/...) when `current` is missing. */
+export function outlookOf(d: District, season: string | null | undefined, phase: PhaseId): SeasonOutlook | null {
+  const m = season ? d.season_outlook?.[season] : undefined
+  return m?.[phase] ?? null
+}
+/** National season outlook for the selected season and phase (kpis.season_outlook_national). */
+export function nationalOutlook(k: Kpis | null | undefined, season: string | null, phase: PhaseId): SeasonOutlook | null {
+  return (season ? k?.season_outlook_national?.[season]?.[phase] : null) ?? null
 }

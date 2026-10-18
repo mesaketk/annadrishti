@@ -29,9 +29,9 @@ Frontend dev: `cd web && pnpm dev` (port 5173; CORS is open for it).
 | GET | `/api/kpis` | `artifacts/kpis.json` |
 | GET | `/api/timeseries/{lgd}` | 404 if missing |
 | POST | `/api/advisory/{lgd}` | `{audience: official\|farmer, language: en\|hi\|mr\|te\|bn\|ta\|kn\|gu\|or, scenario: <season-scenario key>, profile?, department?}` → `{markdown, model, grounding:{lgd, district, fields_used, scenario, profile, department}, cached}`. See *Personalised advisories* below |
-| POST | `/api/chat` | `{messages:[{role,content}], scenario}` → `{reply, citations:[lgd], model}`; Gemini tools: `get_district`, `rank_districts`, `compare_scenarios`, `national_summary` (max 4 tool rounds) |
+| POST | `/api/chat` | `{messages:[{role,content}], scenario, lgd?, role?: farmer\|officer\|planner, language?}` → `{reply, citations:[lgd], model}`; Gemini tools: `get_district`, `rank_districts`, `compare_scenarios`, `national_summary`, `farmer_advice` (max 4 tool rounds). `lgd` (404 if unknown) puts `SELECTED DISTRICT: <name> (<lgd>)` in the system prompt and is the default district; `role: farmer` = ≤120 words, plain words, no scores unless asked; `language` = reply language. Farmer questions (what to sow, variety, insurance, schemes) are in scope: answered via `farmer_advice`; with no selected/named district the model asks "Which district are you in?" instead of refusing |
 | GET | `/api/actions` | `?scenario=<season-scenario key>&state=&band=low\|medium\|high&format=json\|csv`. Reads `artifacts/actions_<season>_<phase>.csv` (e.g. `actions_rabi_2026_27_elnino.csv`; legacy keys keep `actions_elnino.csv`); if absent, derives rows from `districts.json` `risk[key].actions` (alias-resolved); no data gives `rows: []`. JSON: `{scenario, n, actions_total, rows}` (ranked by score; `actions_total` from `kpis.actions_total[scenario]` when unfiltered, else summed). CSV: `Content-Disposition: attachment` |
-| POST | `/api/state_brief` | `{state, scenario}` → Gemini markdown state pre-positioning plan grounded on the state's action rows (top 10 by score, state totals, rabi 2026-27 / kharif 2027 timeline, per-department asks). Cached like advisories. 404 if the state has no rows |
+| POST | `/api/state_brief` | `{state (required), scenario}` → **422** `{error:"state is required: ..."}` if `state` is missing/blank; Gemini markdown state pre-positioning plan grounded on the state's action rows (top 10 by score, state totals, rabi 2026-27 / kharif 2027 timeline, per-department asks). Cached like advisories. 404 if the state has no rows. Totals use the label "NREGA person-days" |
 | POST | `/api/advisory/{lgd}/audio` | `{language, scenario, profile?}` (same `profile` as the advisory) → `audio/wav` narration of the cached farmer advisory for that profile (markdown stripped) via Gemini TTS (`GEMINI_TTS_MODEL`, default `gemini-2.5-flash-preview-tts`; voice `TTS_VOICE`, default `Kore`; 24 kHz 16-bit mono PCM wrapped with `wave`). Cached in `ARTIFACTS_DIR/_audio_cache/{lgd}_{lang}_{scenario}[_{profile-hash}].wav` (no `profile` keeps the legacy file name). `MOCK_LLM=1` returns 1 s of silence (never cached). 503 without credentials |
 | GET | `/*` | `web/dist` static files, falls back to `index.html` |
 
@@ -157,3 +157,24 @@ entry is the one Google added) at the cost of being wrong if another proxy sits 
 the backstop either way. Stale limiter entries are pruned every 60 s and each store is capped at 50k keys.
 
 Pre-warming: `X-Admin-Token` skips only the per-IP limits; pace calls (~2 s) to stay under `LLM_PER_MIN_CAP`.
+
+## Feedback round 2 (chat scope, season-aware advisory)
+- **`farmer_advice` chat tool**: `farmer_advice(lgd, season_scenario, holding?, water?, crop?, livestock?, tenant?, language?)`
+  returns `{lgd, district, state, scenario, season, language, profile, advisory_markdown, model}` from the same cached
+  builder as `POST /api/advisory/{lgd}` (audience `farmer`; same cache key, so a chat call and the advisory panel share
+  entries). Defaults are filled from the chat request (`lgd`, `scenario`, `language`). A cache miss costs one extra LLM
+  unit against the caller's rate limit/budget. `main.py` registers the builder with `tools.set_advisory_provider`
+  (avoids a circular import). Bad enum values are ignored with a `notes` entry.
+- **Season-aware farmer prompt** (reads Addendum I fields, falls back when absent): crop choices come from
+  `crops.by_season[<kharif|rabi>].top` (else `crops.top`); `crops.top` in the evidence JSON is that season list
+  (`crops.top_is_for_season`); default crop = the season's top crop. Economics = at most one figure-free sentence.
+  The "why" is climate only (nutrition / food-balance fields are dropped from the farmer evidence). Climate wording is
+  `season_outlook[season][phase].plain`, else "very likely / likely / possible" built from the ENSO phase probability
+  (`seasons.plain_outlook`); no "El Niño (100 %)" phrasing.
+- **Officer prompt**: `SEASON OUTLOOK` block (kharif: Jun-Sep rain, onset, heat; rabi: Oct-Dec rain, Feb-Mar heat).
+  For rabi the JJAS-only `climate` fields are removed from the evidence when an outlook exists; when it is absent the
+  prompt says the winter outlook is not available.
+- **Cache invalidation**: `personalize.PROMPT_VERSION` (`p2`) is part of every advisory/audio variant key and the state
+  brief key, so cached output from the old prompts is not reused.
+- **Text**: "MGNREGA" is now "NREGA" in prompts, menus, mocks and the `/api/actions?format=csv` header
+  (`nrega_persondays`); JSON keys keep `mgnrega_persondays` (the CSV reader accepts either header).

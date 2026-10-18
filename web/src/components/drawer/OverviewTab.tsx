@@ -1,8 +1,9 @@
 import { groundwaterOf } from '../../lib/extra'
 import { useStore } from '../../lib/store'
-import type { District, Risk } from '../../types'
+import type { District, PhaseId, Risk } from '../../types'
 import { bigNum, harvestWords, imputedNote, monthName, NB, ndviTone, ndviWords, rainTone, rainWords, seasonName } from './copy'
 import { Icon, type IconName } from '../ui'
+import SeasonOutlookCard from './SeasonOutlook'
 import { Card, EstimatedTag, Stat, cx } from './ui'
 
 const DOT = { good: 'bg-low-fill', ok: 'bg-outline-variant', bad: 'bg-act-fill' } as const
@@ -24,7 +25,7 @@ function Fact({ icon, children }: { icon: IconName; children: React.ReactNode })
   return <li className="flex items-start gap-3"><span aria-hidden className="mt-0.5 flex text-primary"><Icon name={icon} size={20} /></span><span>{children}</span></li>
 }
 
-export default function OverviewTab({ d, r, scenarioKey, seasonId, seasonLabel, outlook }: { d: District; r: Risk | null; scenarioKey: string; seasonId: string | null; seasonLabel: string | null; outlook: string }) {
+export default function OverviewTab({ d, r, scenarioKey, seasonId, seasonLabel, phase, outlook }: { d: District; r: Risk | null; scenarioKey: string; seasonId: string | null; seasonLabel: string | null; phase: PhaseId; outlook: string }) {
   const kpis = useStore((s) => s.kpis)
   const live = d.climate?.live
   const hw = harvestWords(r?.expected_yield_shock_pct)
@@ -36,20 +37,31 @@ export default function OverviewTab({ d, r, scenarioKey, seasonId, seasonLabel, 
   const top = (d.crops?.top ?? []).slice(0, 3)
   const ss = d.food_balance?.self_sufficiency
   const seasonShort = seasonName(seasonId, d.main_season)
+  // stunting = too short for age (NFHS-6, else NFHS-5); the count is children under 5 x stunting share
+  const nf = d.nutrition?.nfhs6?.stunting != null ? d.nutrition.nfhs6 : d.nutrition?.nfhs5
+  const stunting = nf?.stunting ?? null
+  const stuntRound = nf === d.nutrition?.nfhs6 ? 'NFHS-6' : 'NFHS-5'
+  const stuntedKids = stunting != null && d.children_u5_est != null ? d.children_u5_est * (stunting / 100) : null
+  const underweight = nf?.underweight ?? null
 
   return (
     <div className="space-y-3">
+      <SeasonOutlookCard d={d} seasonId={seasonId} seasonLabel={seasonLabel} phase={phase} />
+
       <div className="grid grid-cols-2 gap-3">
         <Stat icon="groups" label="People" value={d.population_2026 != null ? `${bigNum(d.population_2026)} people` : 'Not known'} sub="estimated for 2026" note={imputedNote(d, 'population_2026')} />
-        <Stat icon="child_care" label="Children under 5" value={d.children_u5_est != null ? `${bigNum(d.children_u5_est)} children` : 'Not known'} sub="who need nutrition support first" note={imputedNote(d, 'children_u5_est', 'population_2026')} />
+        <Stat icon="child_care" label={`Children under 5 stunted (${stuntRound})`} tooltip="Stunting: too short for age — chronic undernutrition"
+          value={stunting != null ? <>{stunting.toFixed(0)}{NB}%</> : 'Not known'}
+          sub={<>{stuntedKids != null ? <div>about {bigNum(stuntedKids)} children</div> : null}{underweight != null && <div>underweight {underweight.toFixed(0)}{NB}%</div>}</>}
+          note={imputedNote(d, 'nutrition.nfhs6.stunting', 'children_u5_est')} />
         <Stat icon="grass" label="Expected harvest" value={hw.text.charAt(0).toUpperCase() + hw.text.slice(1)} tone={hw.dir === 'down' && (r?.expected_yield_shock_pct ?? 0) <= -5 ? 'bad' : undefined}
           sub={r?.expected_yield_shock_pct != null ? `Foodgrain${seasonShort ? `, ${seasonShort}` : ''}, ${outlook}` : undefined} note={imputedRisk ?? imputedNote(d, `risk.${scenarioKey}`)} />
-        <Stat icon="inventory_2" label="Grain in store" value={pool ? `${Math.round(pool.months_of_offtake)} months of grain in central stock` : 'Not known'}
-          sub={<>{pool ? `Government stock for all India, ${monthName(pool.date.slice(0, 7), true)}. ` : ''}{d.food_balance?.pds_dependency != null ? `Ration shops supply about ${Math.round(d.food_balance.pds_dependency * 100)}${NB}% of this district's grain need.` : ''}</>}
+        <Stat icon="inventory_2" label="Central pool grain stock (FCI, national)" value={pool ? `${Math.round(pool.months_of_offtake)} months of grain` : 'Not known'}
+          sub={<><div>national figure, not district stock{pool ? `, ${monthName(pool.date.slice(0, 7), true)}` : ''}</div>{d.food_balance?.pds_dependency != null && <div>In this district, ration shops supply about {Math.round(d.food_balance.pds_dependency * 100)}{NB}% of the grain need.</div>}</>}
           note={imputedNote(d, 'food_balance.pds_dependency')} />
       </div>
 
-      <Card title="Right now">
+      <Card title="Right now (satellite)">
         {live ? (
           <>
             <ul className="divide-y divide-outline-variant">

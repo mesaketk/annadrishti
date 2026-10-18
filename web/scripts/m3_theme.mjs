@@ -2,7 +2,7 @@
 //   node scripts/m3_theme.mjs        ->  src/m3.css  (CSS variables, light + [data-theme=dark])
 //                                        src/lib/m3.ts (light hex mirror for maplibre / Recharts, which cannot read CSS vars)
 // Algorithm: @material/material-color-utilities (HCT, tonal spot scheme) from the seed below.
-// Semantic risk colours are M3 "custom colors" harmonised to the seed: low = green, watch = amber, act = M3 error.
+// Semantic risk colours are fixed colour-blind-safe custom colours: low = blue, watch = amber, act = vermilion (M3 error stays red for real errors).
 import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
@@ -38,32 +38,33 @@ const ROLES = {
   'surface-tint': M.surfaceTint, shadow: M.shadow, scrim: M.scrim,
 }
 
-// custom colours (harmonised toward the seed hue); source hex is the "natural" colour
+// Colour-blind-safe semantic risk colours (Okabe-Ito style, blue -> amber -> vermilion). Hexes are exact (not harmonised to the seed):
+// fill = map / lamp / chart mark, container = chip background. Text tones (derived from the same hue) are WCAG-checked below.
 const CUSTOM = [
-  { name: 'low', value: argbFromHex('#2E8B57'), blend: true }, // green: low risk
-  { name: 'watch', value: argbFromHex('#F0A500'), blend: true }, // amber: watch
+  { name: 'low', fill: '#2F6DB5', container: '#DCE8F7' }, // blue: low risk
+  { name: 'watch', fill: '#E8A317', container: '#FBECC8' }, // amber: watch
+  { name: 'act', fill: '#D55E00', container: '#F9DCCB' }, // vermilion: act now
 ]
-// Brighter tone used for map fills, lamps, chart marks (tone 40 is for text/filled chips; marks need to read as the hue)
-const FILL_TONE = { low: 50, watch: 72, act: 42 }
 
 function buildScheme(dark) {
   const s = new SchemeTonalSpot(Hct.fromInt(seed), dark, 0)
   const out = {}
   for (const [k, c] of Object.entries(ROLES)) out[k] = c.getArgb(s)
   for (const cc of CUSTOM) {
-    const g = customColor(seed, cc)
-    const grp = dark ? g.dark : g.light
-    out[cc.name] = grp.color
-    out[`on-${cc.name}`] = grp.onColor
-    out[`${cc.name}-container`] = grp.colorContainer
-    out[`on-${cc.name}-container`] = grp.onColorContainer
-    const hue = Hct.fromInt(Blend.harmonize(cc.value, seed))
-    out[`${cc.name}-fill`] = TonalPalette.fromHueAndChroma(hue.hue, Math.max(hue.chroma, 48)).tone(dark ? FILL_TONE[cc.name] + 8 : FILL_TONE[cc.name])
+    const f = Hct.fromInt(argbFromHex(cc.fill))
+    const pal = TonalPalette.fromHueAndChroma(f.hue, Math.max(f.chroma, 36))
+    if (dark) {
+      out[cc.name] = pal.tone(80); out[`on-${cc.name}`] = pal.tone(20)
+      out[`${cc.name}-container`] = pal.tone(30); out[`on-${cc.name}-container`] = pal.tone(90)
+      out[`${cc.name}-fill`] = f.tone >= 55 ? argbFromHex(cc.fill) : pal.tone(60)
+    } else {
+      out[cc.name] = pal.tone(cc.name === 'watch' ? 38 : 40); out[`on-${cc.name}`] = 0xffffffff
+      out[`${cc.name}-container`] = argbFromHex(cc.container); out[`on-${cc.name}-container`] = pal.tone(cc.name === 'watch' ? 15 : 12)
+      out[`${cc.name}-fill`] = argbFromHex(cc.fill)
+    }
   }
-  const errHue = Hct.fromInt(out.error)
-  out['act-fill'] = TonalPalette.fromHueAndChroma(errHue.hue, Math.max(errHue.chroma, 60)).tone(dark ? 60 : FILL_TONE.act)
-  // semantic aliases (act = M3 error; nodata = outline-variant)
-  out.act = out.error; out['on-act'] = out['on-error']; out['act-container'] = out['error-container']; out['on-act-container'] = out['on-error-container']
+  // light orange used for El Nino shading on charts (= act container)
+  out['elnino-shade'] = out['act-container']
   out.nodata = out['outline-variant']
   return out
 }
@@ -77,9 +78,10 @@ const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p);
 const PAIRS = [
   ['on-surface', 'surface'], ['on-surface-variant', 'surface'], ['on-surface-variant', 'surface-container'], ['on-surface-variant', 'surface-container-highest'],
   ['on-primary', 'primary'], ['on-primary-container', 'primary-container'], ['on-secondary-container', 'secondary-container'], ['on-tertiary-container', 'tertiary-container'],
-  ['on-low-container', 'low-container'], ['on-watch-container', 'watch-container'], ['on-error-container', 'error-container'],
-  ['on-low', 'low'], ['on-watch', 'watch'], ['on-error', 'error'],
-  ['on-low-container', 'surface-container-low'], ['on-watch-container', 'surface-container-low'], ['on-error-container', 'surface-container-low'],
+  ['on-low-container', 'low-container'], ['on-watch-container', 'watch-container'], ['on-act-container', 'act-container'], ['on-error-container', 'error-container'],
+  ['on-low', 'low'], ['on-watch', 'watch'], ['on-act', 'act'], ['on-error', 'error'],
+  ['on-low-container', 'surface-container-low'], ['on-watch-container', 'surface-container-low'], ['on-act-container', 'surface-container-low'],
+  ['low', 'surface'], ['watch', 'surface'], ['act', 'surface'],
   ['inverse-on-surface', 'inverse-surface'], ['primary', 'surface'], ['secondary', 'surface'],
 ]
 let bad = 0
@@ -91,13 +93,13 @@ for (const [name, sch] of [['light', light], ['dark', dark]]) {
 }
 console.log(`WCAG AA text pairs checked: ${PAIRS.length * 2}, failures: ${bad}`)
 // non-text marks against the card surface should reach 3:1
-for (const k of ['low-fill', 'watch-fill', 'act-fill']) console.log(`  ${k} ${hexFromArgb(light[k])} vs surface-container-low ${ratio(light[k], light['surface-container-low']).toFixed(2)}:1`)
+for (const k of ['low-fill', 'watch-fill', 'act-fill', 'elnino-shade']) console.log(`  ${k} ${hexFromArgb(light[k])} vs surface-container-low ${ratio(light[k], light['surface-container-low']).toFixed(2)}:1`)
 if (bad) process.exit(1)
 
 // ---------------------------------------------------------------- emit
 const rgb = (a) => `${(a >> 16) & 255} ${(a >> 8) & 255} ${a & 255}`
 // custom colours (low / watch / act / nodata and their fills) live in the M3 extended namespace
-const EXT = /^(on-)?(low|watch|act|nodata)(-|$)|-fill$/
+const EXT = /^(on-)?(low|watch|act|nodata)(-|$)|-fill$|^elnino-shade$/
 const block = (sch) => Object.entries(sch).map(([k, v]) => `  --md-${EXT.test(k) ? 'ext' : 'sys'}-color-${k}: ${hexFromArgb(v)};\n  --md-rgb-${k}: ${rgb(v)};`).join('\n')
 const css = `/* GENERATED by scripts/m3_theme.mjs from seed ${SEED}. Do not edit by hand. */
 /* Material 3 colour roles (--md-sys-color-*), plus --md-rgb-* channel triplets so Tailwind opacity modifiers work. */
@@ -140,4 +142,4 @@ export const M3 = ${JSON.stringify(hexOf(light), null, 2)} as const
 `
 writeFileSync(join(here, '../src/lib/m3.ts'), ts)
 console.log('wrote src/m3.css and src/lib/m3.ts')
-for (const k of ['primary', 'primary-container', 'secondary', 'tertiary', 'tertiary-container', 'error', 'error-container', 'low', 'low-container', 'low-fill', 'watch', 'watch-container', 'watch-fill', 'act-fill', 'surface', 'surface-container-low', 'surface-container', 'outline', 'outline-variant']) console.log(k.padEnd(26), hexFromArgb(light[k]))
+for (const k of ['primary', 'primary-container', 'secondary', 'tertiary', 'tertiary-container', 'error', 'error-container', 'low', 'low-container', 'low-fill', 'watch', 'watch-container', 'watch-fill', 'act', 'act-container', 'act-fill', 'surface', 'surface-container-low', 'surface-container', 'outline', 'outline-variant']) console.log(k.padEnd(26), hexFromArgb(light[k]))

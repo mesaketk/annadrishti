@@ -16,7 +16,7 @@ const Item = ({ children, ...p }: { children: string; color?: string; hatch?: bo
 )
 
 /** Plain-word legend for the active map layer (now or history). */
-export default function Legend({ scale, layer, compact }: { scale: Scale; layer: LayerId | HistoryLayerId; compact?: boolean }) {
+export default function Legend({ scale, layer, compact, window: win }: { scale: Scale; layer: LayerId | HistoryLayerId; compact?: boolean; window?: string }) {
   const mode = useStore((s) => s.mode)
   const [open, setOpen] = useState(!compact)
   const bands = layer === 'risk' || layer === 'h_tool'
@@ -52,6 +52,7 @@ export default function Legend({ scale, layer, compact }: { scale: Scale; layer:
             <>
               <div className="h-3 rounded-m3-xs" style={{ background: `linear-gradient(90deg, ${grad})` }} />
               <div className="mt-1.5 flex justify-between gap-2 md-body-small text-muted"><span>← {scale.lowLabel}</span><span>{scale.highLabel} →</span></div>
+              {layer === 'season_rain' && <div className="mt-1 md-body-small text-muted">Expected vs normal{win ? ` for ${win}` : ' for the coming season'}</div>}
               <div className="mt-2 flex items-center gap-2 md-body-small text-muted"><Swatch hatch />No estimate</div>
             </>
           )}

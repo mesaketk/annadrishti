@@ -7,7 +7,7 @@ import { FarmerAdvice, HelpList } from '../advisory'
 import { lightOf, seasonName } from './copy'
 import { t } from './i18n'
 import { FarmerTrends } from './TrendsTab'
-import { PastElNinoSentence, TopDrivers } from './Why'
+import { climateDrivers, OutlookSentence, PastElNinoSentence, RainHeatCard, TopDrivers } from './Why'
 import { Card, Skeleton, TabPanel, Tabs, TrafficLight } from './ui'
 import type { TabDef } from './ui'
 import { useTimeseries } from './useTimeseries'
@@ -66,7 +66,9 @@ export default function DistrictFarmerView({ lgd, language, onLanguageChange, ye
           <HelpList lang={lang} />
         </TabPanel>
         <TabPanel id="why" idPrefix={idp} active={tab === 'why'} className="space-y-4">
-          <Card title={t(lang, 'why.title')}><div><TopDrivers d={d} r={r} n={3} lang={lang} /></div></Card>
+          <OutlookSentence d={d} lang={lang} season={sc.season} phase={sc.phase} />
+          <RainHeatCard d={d} lang={lang} season={sc.season} phase={sc.phase} />
+          {climateDrivers(d, r).length > 0 && <Card title={t(lang, 'why.title')}><div><TopDrivers d={d} r={r} n={3} lang={lang} climateOnly /></div></Card>}
           <PastElNinoSentence d={d} lang={lang} />
         </TabPanel>
         <TabPanel id="trends" idPrefix={idp} active={tab === 'trends'}>

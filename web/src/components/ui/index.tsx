@@ -8,6 +8,7 @@ import { Icon, type IconName } from './Icon'
 import { BTN_BASE, BTN_S, BTN_V, CARD, CHIP_BASE, CHIP_OFF, CHIP_ON, cx, type BtnVariant } from './m3'
 
 export { Icon, type IconName }
+export { AiBadge, AI_NAME, type AiBadgeProps, type AiFeature } from './AiBadge'
 export { cx }
 
 // ------------------------------------------------------------------ Pill / TrafficLight

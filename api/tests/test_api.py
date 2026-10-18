@@ -348,7 +348,7 @@ def test_mock_output_differs_by_department(client):
     assert len({_title(m) for m in out.values()}) == 7
     assert len(set(out.values())) == 7
     assert "DSO + FPS inspectors" in out["food_civil_supplies"] and "CDPO + AWWs" in out["wcd_icds"]
-    assert "BDO + MGNREGA PO" in out["rural_development"] and "KVK + ATMA" in out["agriculture"]
+    assert "BDO + NREGA PO" in out["rural_development"] and "KVK + ATMA" in out["agriculture"]
     assert "CMO + ASHAs" in out["health"] and "Dy Director AH" in out["animal_husbandry"]
     assert "| Action | Department | By when |" in out["collector"] and "| Action |" not in out["health"]
     for m in out.values():
@@ -364,7 +364,7 @@ def test_mock_output_differs_by_profile(client):
     m2 = md(holding="medium_large", water="irrigated", crop="Paddy", livestock=True, tenant=True)
     assert _title(m1) != _title(m2)
     assert "marginal rainfed" in _title(m1) and "medium/large irrigated" in _title(m2)
-    assert "Zero-cost" in m1 and "water budget" in m2 and "MGNREGA" in m1 and "MGNREGA" not in m2
+    assert "Zero-cost" in m1 and "water budget" in m2 and "NREGA" in m1 and "NREGA" not in m2
     assert "Animals" in m2 and "Animals" not in m1
     assert "landowner" in m2 and "landowner" not in m1 and "PMFBY" in m1
     assert "SRI" in m1 or "short-duration" in m1.lower()
@@ -892,3 +892,235 @@ def test_limiter_prunes_stale_entries(client, monkeypatch):
     now[0] += 4000
     ratelimit.limiter.check_general("9.9.9.9")
     assert len(ratelimit.limiter._buckets) == 1 and not ratelimit.limiter._logs
+
+
+# ------------------------------------------------------------------ feedback round 2: chat scope, season-aware advisory
+def _addendum_i_artifacts(tmp_path):
+    """Season artifacts + crops.by_season and season_outlook on district 486 (docs/SCHEMA.md Addendum I)."""
+    _season_artifacts(tmp_path)
+    p = tmp_path / "artifacts" / "districts.json"
+    ds = json.loads(p.read_text())
+    ds[0]["crops"]["by_season"] = {
+        "kharif": {"top": [{"crop": "Cotton", "share": 0.37}, {"crop": "Soybean", "share": 0.2}],
+                   "source": "apy_season_labels"},
+        "rabi": {"top": [{"crop": "Wheat", "share": 0.4}, {"crop": "Gram", "share": 0.3}], "source": "crop_calendar"}}
+    ds[0]["season_outlook"] = {
+        "kharif_2027": {"elnino": {"rain_anom_pct": -12, "rain_window": "Jun–Sep", "onset_delay_days": 6,
+                                   "tmax_anom_c": 0.6, "heat_window": "Jun–Sep",
+                                   "plain": "Weak monsoon likely: about 12 % less rain than normal"}},
+        "rabi_2026_27": {"elnino": {"rain_anom_pct": -8, "rain_window": "Oct–Dec", "tmax_anom_c": 0.9,
+                                    "heat_window": "Feb–Mar",
+                                    "plain": "Dry, warm winter very likely: less Oct–Dec rain and hotter Feb–Mar"}}}
+    p.write_text(json.dumps(ds))
+    data._cache.clear()
+
+
+def _fake_gemini(monkeypatch, chat_script, advisory_text="## farmer advisory"):
+    """Real (non-mock) code path with a fake client. chat_script(n, contents, config) -> Resp for chat calls."""
+    from google.genai import types
+
+    from api import llm
+
+    monkeypatch.setenv("MOCK_LLM", "0")
+    monkeypatch.setenv("GEMINI_API_KEY", "fake")
+    log = {"chat": [], "advisory": []}
+
+    class Resp:
+        def __init__(self, fc=None, text=None):
+            self.function_calls = fc
+            self.text = text
+            self.candidates = [types.Candidate(content=types.Content(role="model", parts=[
+                types.Part(function_call=fc[0]) if fc else types.Part.from_text(text=text)]))]
+
+    class Models:
+        def generate_content(self, model, contents, config):
+            if config.tools:  # chat round
+                log["chat"].append((contents, config))
+                return chat_script(len(log["chat"]), contents, config, Resp, types)
+            log["advisory"].append((contents, config))  # advisory builder
+            return type("R", (), {"text": advisory_text})()
+
+    monkeypatch.setattr(llm, "get_client", lambda: type("C", (), {"models": Models()})())
+    return log
+
+
+def test_chat_lgd_and_role_shape_system_prompt(client, monkeypatch):
+    def script(n, contents, config, Resp, types):
+        return Resp(text="ok")
+
+    log = _fake_gemini(monkeypatch, script)
+    r = client.post("/api/chat", json={"messages": [{"role": "user", "content": "What should I sow this season?"}],
+                                       "scenario": "kharif_2027:elnino", "lgd": 486, "role": "farmer",
+                                       "language": "hi"})
+    assert r.status_code == 200, r.text
+    system = log["chat"][0][1].system_instruction
+    assert "SELECTED DISTRICT: Nandurbar (486)" in system and "by default" in system
+    assert "USER ROLE: farmer" in system and "120 words" in system and "REPLY LANGUAGE: Hindi" in system
+    assert "farmer_advice" in system and "Which district are you in?" in system
+    assert "FARMER QUESTIONS ARE IN SCOPE" in system and "never refuse" in system
+    names = [fd.name for fd in log["chat"][0][1].tools[0].function_declarations]
+    assert "farmer_advice" in names
+    # no lgd/role -> no SELECTED DISTRICT block; officer role selects the officer style
+    client.post("/api/chat", json={"messages": [{"role": "user", "content": "top?"}], "role": "officer"})
+    s2 = log["chat"][1][1].system_instruction
+    assert "SELECTED DISTRICT:" not in s2.split("OFFICER / PLANNER STYLE")[-1] and "USER ROLE: officer" in s2
+    # validation
+    base = {"messages": [{"role": "user", "content": "x"}]}
+    assert client.post("/api/chat", json={**base, "role": "king"}).status_code == 422
+    assert client.post("/api/chat", json={**base, "lgd": 9999999}).status_code == 404
+    assert client.post("/api/chat", json={**base, "language": "xx"}).status_code == 422
+
+
+def test_chat_farmer_advice_tool_call_path(client, monkeypatch):
+    def script(n, contents, config, Resp, types):
+        if n in (1, 3):  # model asks for the farmer advisory with only the selected-district defaults
+            return Resp(fc=[types.FunctionCall(name="farmer_advice", args={"holding": "small", "crop": "Cotton"})])
+        last = contents[-1]
+        assert last.role == "user" and last.parts[0].function_response.name == "farmer_advice"
+        res = last.parts[0].function_response.response["result"]
+        assert res["lgd"] == 486 and res["advisory_markdown"] == "## farmer advisory"
+        assert res["scenario"] == "kharif_2027:elnino" and res["profile"]["crop"] == "Cotton"
+        return Resp(text="Sow cotton with moong.")
+
+    log = _fake_gemini(monkeypatch, script)
+    body = {"messages": [{"role": "user", "content": "What should I sow this season?"}],
+            "scenario": "kharif_2027:elnino", "lgd": 486, "role": "farmer", "language": "en"}
+    r = client.post("/api/chat", json=body)
+    assert r.status_code == 200, r.text
+    assert r.json()["reply"] == "Sow cotton with moong." and 486 in r.json()["citations"]
+    assert len(log["advisory"]) == 1
+    adv_contents = log["advisory"][0][0]
+    assert "AUDIENCE: farmer" in adv_contents and "FARMER PROFILE" in adv_contents
+    # same profile again is served from the advisory cache (no second Gemini advisory call)
+    assert client.post("/api/chat", json=body).status_code == 200
+    assert len(log["advisory"]) == 1
+    # the advisory is also what POST /api/advisory returns for that profile (same cache entry)
+    r = client.post("/api/advisory/486", json={"audience": "farmer", "scenario": "kharif_2027:elnino",
+                                               "language": "en", "profile": {"holding": "small", "crop": "Cotton"}})
+    assert r.json()["cached"] is True
+
+
+def test_farmer_advice_tool_errors(client):
+    assert tools.run_tool("farmer_advice", {"lgd": "nowhere-land", "season_scenario": "elnino"})["error"]
+    assert "unknown district" in tools.run_tool("farmer_advice", {"lgd": 424242})["error"]
+    out = tools.run_tool("farmer_advice", {"lgd": "486", "season_scenario": "bogus", "holding": "huge",
+                                           "language": "xx"})
+    assert out["scenario"] == "elnino" and out["language"] == "en" and len(out["notes"]) == 2
+    assert out["advisory_markdown"] and out["district"] == "Nandurbar"
+    saved = tools._advisory_provider
+    try:
+        tools.set_advisory_provider(None)
+        assert "not available" in tools.run_tool("farmer_advice", {"lgd": 486})["error"]
+    finally:
+        tools.set_advisory_provider(saved)
+
+
+def test_chat_farmer_question_asks_district_instead_of_refusing(client):
+    q = {"messages": [{"role": "user", "content": "What should I sow this season?"}], "scenario": "kharif_2027:elnino"}
+    r = client.post("/api/chat", json=q)
+    assert r.status_code == 200 and r.json()["reply"] == "Which district are you in?" and r.json()["citations"] == []
+    assert "cannot" not in r.json()["reply"].lower()
+    r = client.post("/api/chat", json={**q, "lgd": 486, "role": "farmer"})
+    assert r.status_code == 200
+    assert 486 in r.json()["citations"] and "Which district" not in r.json()["reply"]
+    assert "Season: Kharif 2027" in r.json()["reply"]
+    # a district named in the question counts as a district
+    r = client.post("/api/chat", json={**q, "messages": [{"role": "user", "content": "What to sow in Nandurbar?"}]})
+    assert 486 in r.json()["citations"] and "Which district" not in r.json()["reply"]
+    # officer questions keep working without a district
+    r = client.post("/api/chat", json={"messages": [{"role": "user", "content": "Which crops need seed banks?"}],
+                                       "role": "officer"})
+    assert "Which district" not in r.json()["reply"]
+
+
+def test_farmer_prompt_is_season_aware(client, tmp_path):
+    from api import llm, seasons
+
+    _addendum_i_artifacts(tmp_path)
+    d = data.district_by_lgd(486)
+    kp = data.get_kpis()[0]
+    pk, fk = (llm.build_advisory_prompt(d, "farmer", "en", "kharif_2027:elnino")[0],
+              llm.build_advisory_prompt(d, "farmer", "en", "rabi_2026_27:elnino")[0])
+    kline = next(x for x in pk.splitlines() if x.startswith("SEASON CROPS"))
+    rline = next(x for x in fk.splitlines() if x.startswith("SEASON CROPS"))
+    assert "KHARIF only" in kline and "Cotton, Soybean" in kline and "Wheat" not in kline.split("MUST")[0]
+    assert "RABI only" in rline and "Wheat, Gram" in rline and "Cotton" not in rline.split("MUST")[0]
+    # default crop = the season's top crop; evidence crops.top is the season list
+    assert "Main crop: Cotton (district top-crop #1" in pk and "Main crop: Wheat (district top-crop #1" in fk
+    ev = json.loads(pk.split("DISTRICT EVIDENCE (JSON; null/absent = data not available):\n")[1].split("\n\n")[0])
+    assert [c["crop"] for c in ev["crops"]["top"]] == ["Cotton", "Soybean"] and ev["crops"]["top_is_for_season"] == "kharif"
+    # climate only: no nutrition / food-balance evidence for the farmer, no ENSO percentages
+    assert "nutrition" not in ev and "food_balance" not in ev
+    assert "Weak monsoon likely: about 12 % less rain" in pk and "El Niño (100" not in pk
+    assert "Dry, warm winter very likely" in fk
+    # economics: one sentence, no rupee figures
+    assert "AT MOST ONE simple sentence" in pk or "CROP ECONOMICS: not available" in pk
+    sysf = llm.advisory_system("farmer")
+    assert "NEVER suggest a rabi crop" in sysf and "NO nutrition, stunting" in sysf and "no rupee" in sysf
+    assert "PLAIN OUTLOOK" in sysf and "very likely / likely / possible" in sysf
+    # mock output uses the plain outlook, not "El Niño (100%)"
+    m = client.post("/api/advisory/486", json={"audience": "farmer", "scenario": "rabi_2026_27:elnino",
+                                               "profile": {"crop": "Gram"}}).json()["markdown"]
+    assert "Dry, warm winter very likely" in m and "El Niño" not in m and "Main crops this season: Wheat, Gram" in m
+    # fallback without season_outlook / by_season: probability wording (Addendum I) and the all-year crop list
+    legacy = json.loads(json.dumps(d))
+    legacy.pop("season_outlook"); legacy["crops"].pop("by_season")
+    assert seasons.plain_outlook(legacy, "rabi_2026_27:elnino", kp) == "A dry, warm winter is very likely"
+    assert seasons.plain_outlook(legacy, "kharif_2027:elnino", kp) == "A weak monsoon is likely"
+    assert seasons.plain_outlook(legacy, "kharif_2027:lanina", kp) == "Heavy rain and flooding is possible"
+    assert seasons.plain_outlook(legacy, "kharif_2027:neutral", kp) == "A near-normal season is possible"
+    pl = llm.build_advisory_prompt(legacy, "farmer", "en", "kharif_2027:elnino")[0]
+    assert "all-year list" in pl and "A weak monsoon is likely" in pl
+
+
+def test_officer_prompt_uses_season_outlook(client, tmp_path):
+    from api import llm
+
+    _addendum_i_artifacts(tmp_path)
+    d = data.district_by_lgd(486)
+    pr = llm.build_advisory_prompt(d, "official", "en", "rabi_2026_27:elnino", None, "agriculture")[0]
+    pk = llm.build_advisory_prompt(d, "official", "en", "kharif_2027:elnino", None, "agriculture")[0]
+    assert "SEASON OUTLOOK (Rabi 2026-27, rabi" in pr and '"rain_window":"Oct–Dec"' in pr and '"heat_window":"Feb–Mar"' in pr
+    assert "SEASON OUTLOOK (Kharif 2027, kharif" in pk and '"rain_window":"Jun–Sep"' in pk and "onset_delay_days" in pk
+    ev = json.loads(pr.split("DISTRICT EVIDENCE (JSON; null/absent = data not available):\n")[1].split("\n\n")[0])
+    assert "jjas_anomaly_pct" not in ev["climate"] and ev["season_outlook"]["kind"] == "rabi"   # no kharif numbers in rabi
+    evk = json.loads(pk.split("DISTRICT EVIDENCE (JSON; null/absent = data not available):\n")[1].split("\n\n")[0])
+    assert "jjas_anomaly_pct" in evk["climate"] and [c["crop"] for c in evk["crops"]["top"]][0] == "Cotton"
+    assert "CLIMATE FRAMING" in llm.advisory_system("official") and "Feb-Mar heat" in llm.advisory_system("official")
+    # absent outlook: explicit fallback, rabi never described with JJAS numbers
+    legacy = json.loads(json.dumps(d)); legacy.pop("season_outlook")
+    pa = llm.build_advisory_prompt(legacy, "official", "en", "rabi_2026_27:elnino", None, "agriculture")[0]
+    assert "not available for this district" in pa
+
+
+def test_state_brief_requires_state_422(client):
+    for body in ({}, {"state": ""}, {"state": "   "}, {"state": None}, {"scenario": "elnino"}):
+        r = client.post("/api/state_brief", json=body)
+        assert r.status_code == 422, body
+        assert "state is required" in r.json()["error"], body
+    assert client.post("/api/state_brief", json={"state": "Maharashtra"}).status_code == 200
+    assert client.post("/api/state_brief", json={"state": " Maharashtra "}).json()["cached"] is True
+
+
+def test_nrega_label_everywhere(client):
+    from api import llm, personalize
+
+    long_form = "MG" + "NREGA"
+    r = client.post("/api/state_brief", json={"state": "Maharashtra"}).json()["markdown"]
+    assert "NREGA person-days" in r and long_form not in r
+    assert "NREGA person-days" in llm.STATE_BRIEF_SYSTEM and long_form not in llm.STATE_BRIEF_SYSTEM
+    d = data.district_by_lgd(486)
+    for dept in personalize.DEPARTMENTS:
+        p, _ = llm.build_advisory_prompt(d, "official", "en", "elnino", None, dept)
+        assert long_form not in p, dept
+    for text in (llm.advisory_system("official"), llm.advisory_system("farmer"), llm.CHAT_SYSTEM,
+                 personalize.crop_substitution_table(), "\n".join(personalize.profile_emphasis(
+                     personalize.resolve_profile({"holding": "marginal"}, d)))):
+        assert long_form not in text
+    assert long_form not in client.post("/api/advisory/486", json={"audience": "official",
+                                                                   "department": "rural_development"}).json()["markdown"]
+    csv_text = client.get("/api/actions", params={"format": "csv"}).text
+    header = csv_text.splitlines()[0]
+    assert "nrega_persondays" in header and "mgnrega" not in header.lower()
+    # JSON keys keep the legacy name
+    assert "mgnrega_persondays" in client.get("/api/actions").json()["rows"][0]

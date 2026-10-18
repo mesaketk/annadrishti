@@ -78,7 +78,7 @@ export const DEPARTMENTS: { id: Department; label: string; short: string }[] = [
   { id: 'food_civil_supplies', label: 'Food & Civil Supplies (ration shops)', short: 'Food & Civil Supplies' },
   { id: 'agriculture', label: 'Agriculture (seed, crop insurance)', short: 'Agriculture' },
   { id: 'wcd_icds', label: 'Women & Child Development (Anganwadi)', short: 'Women & Child Dev.' },
-  { id: 'rural_development', label: 'Rural Development (MGNREGA works)', short: 'Rural Development' },
+  { id: 'rural_development', label: 'Rural Development (NREGA works)', short: 'Rural Development' },
   { id: 'health', label: 'Health', short: 'Health' },
   { id: 'animal_husbandry', label: 'Animal Husbandry (fodder)', short: 'Animal Husbandry' },
 ]

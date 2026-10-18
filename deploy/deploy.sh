@@ -94,7 +94,7 @@ if [ "${LOCAL_BUILD:-0}" = "1" ]; then
   gcloud auth configure-docker "$REGION-docker.pkg.dev" --quiet
   docker build --platform linux/amd64 -f deploy/Dockerfile -t "$IMAGE:$TAG" -t "$IMAGE:latest" .
   docker push "$IMAGE:$TAG" && docker push "$IMAGE:latest"
-  ENVVARS="GEMINI_MODEL=$GEMINI_MODEL,VERTEX_LOCATION=$REGION,XFF_POSITION=last"
+  ENVVARS="GEMINI_MODEL=$GEMINI_MODEL,VERTEX_LOCATION=${VERTEX_LOCATION:-global},XFF_POSITION=last"
   SECRET_LIST=""
   if [ "$USE_VERTEX" = "1" ]; then ENVVARS="$ENVVARS,USE_VERTEX=1,GOOGLE_CLOUD_PROJECT=$PROJECT"; else SECRET_LIST="GEMINI_API_KEY=GEMINI_API_KEY:latest"; fi
   [ "$HAVE_BYPASS_SECRET" = "1" ] && SECRET_LIST="${SECRET_LIST:+$SECRET_LIST,}RATE_LIMIT_BYPASS_TOKEN=RATE_LIMIT_BYPASS_TOKEN:latest"

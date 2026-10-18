@@ -8,6 +8,7 @@ import { M3 } from '../lib/m3'
 import { geoPromise, statesPromise, type DistrictFC as FC } from '../lib/geo'
 import { hitKind, useHistoryYear, type HistDistrict, type HistoryLayerId } from '../lib/history'
 import { bandWord, districtSentence, isImputed } from '../lib/plain'
+import { nationalOutlook, outlookOf } from '../lib/scenario'
 import type { District } from '../types'
 import { Spinner, TrafficLight } from './ui'
 import Legend from './Legend'
@@ -76,6 +77,9 @@ export default function MapView({ compact = false, onSelect }: { compact?: boole
   const { season, phase, key: keyOf } = useScenario()
   const hist = mode === 'history'
   const layer = hist ? historyLayer : nowLayer
+  // window of the upcoming-season rain layer ("Jun–Sep"), from the national block or the first district that carries it
+  const seasonWindow = useMemo(() => nationalOutlook(kpis, season, phase)?.rain_window ?? districts.map((d) => outlookOf(d, season, phase)?.rain_window).find(Boolean) ?? undefined,
+    [kpis, districts, season, phase])
   const H = useHistoryYear(year, hist)
   const hy = hist ? H.data : null // keep previous year on screen while the next one loads
   const thr = thresholdsOf(kpis)
@@ -103,7 +107,7 @@ export default function MapView({ compact = false, onSelect }: { compact?: boole
       const b = d.risk[k]?.band
       return !b || b === 'no_data' ? NODATA : { c: BAND_COLOR[b], noData: false, imputed: isImputed(d, k) }
     }
-    const v = layerValue(d, layer as Parameters<typeof layerValue>[1], k, nfhs)
+    const v = layerValue(d, layer as Parameters<typeof layerValue>[1], k, nfhs, { season, phase })
     return v == null ? NODATA : { c: colorFor(scale, v), noData: false, imputed: false }
   }
 
@@ -269,13 +273,13 @@ export default function MapView({ compact = false, onSelect }: { compact?: boole
         const outcome = k === 'hit' ? 'The tool would have warned, and the harvest fell.' : k === 'miss' ? 'Harvest fell, but the tool would not have warned.' : k === 'noloss' ? 'Harvest held up (less than 5 % below trend).' : 'No harvest data for this year.'
         return `${year}: rain ${nf(hh?.rain_anom_pct)} vs normal, harvest ${nf(hh?.yield_dev_pct)} vs trend. ${outcome}`
       })()
-    : layer === 'risk' ? districtSentence(hd, hk, kpis) : `${scale.label}: ${(() => { const v = layerValue(hd, layer as Parameters<typeof layerValue>[1], hk, nfhs); return v == null ? 'no estimate' : scale.format(v) })()}`
+    : layer === 'risk' ? districtSentence(hd, hk, kpis) : `${scale.label}: ${(() => { const v = layerValue(hd, layer as Parameters<typeof layerValue>[1], hk, nfhs, { season, phase }); return v == null ? 'no estimate' : scale.format(v) })()}`
   const tipBand = hist ? (hh?.tool_band ?? null) : hd?.risk[hk]?.band
 
   return (
     <div className="relative h-full w-full overflow-hidden bg-surface-container">
       <div ref={box} className="absolute inset-0" />
-      <Legend scale={scale} layer={layer} compact={compact} />
+      <Legend scale={scale} layer={layer} compact={compact} window={layer === 'season_rain' ? seasonWindow : undefined} />
       {hist && H.error && (
         <div className="absolute left-1/2 top-3 z-10 -translate-x-1/2 rounded-m3-xs bg-inverse-surface px-4 py-3 md-body-medium text-inverse-on-surface shadow-elev-2" role="status">History not available yet</div>
       )}

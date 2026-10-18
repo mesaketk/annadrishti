@@ -177,3 +177,20 @@ Every numeric field that was imputed is accompanied by a sibling in `data_qualit
 - `warned`: tool_band in (medium, high) and yield_dev_pct ≤ −5.
 - Files: `artifacts/history/index.json`, `artifacts/history/{year}.json` (≤ 150 KB each). 
 UI (History mode in the header, next to Season): year slider + play; layer picks: *What happened: monsoon* · *What happened: harvest* · *What the tool would have said* · *Hit / miss* (green = warned & loss, red = missed loss, grey = no loss); ENSO phase + headline for the year; click district → Trends tab with that year highlighted. Farmer view: "In past El Niño years here…" sentence from the same data.
+
+## Addendum I — feedback round 2 (season crops, season outlook, tracker)
+Per district:
+```jsonc
+"crops.by_season": {
+  "kharif": {"top": [{"crop":"Cotton","share":0.37,"yield_t_ha":0.2}, ...], "source": "apy_season_labels" | "crop_calendar"},
+  "rabi":   {"top": [{"crop":"Wheat", ...}], "source": ...}
+},
+"season_outlook": {                       // per season id, per phase (lanina/neutral/elnino/elnino_strong/current)
+  "kharif_2027": {"elnino": {"rain_anom_pct": -12, "rain_window": "Jun–Sep", "p_deficit_gt10": 0.71, "tmax_anom_c": 0.6, "heat_window": "Jun–Sep", "onset_delay_days": 6, "timesfm_rain_anom_pct": -5.5, "timesfm_p10": -38, "timesfm_p90": 27, "plain": "Weak monsoon likely: about 12 % less rain than normal, 7 in 10 chance of a serious deficit"}, "current": {...}, ...},
+  "rabi_2026_27": {"elnino": {"rain_anom_pct": -8, "rain_window": "Oct–Dec", "tmax_anom_c": 0.9, "heat_window": "Feb–Mar", "plain": "Dry, warm winter very likely: less Oct–Dec rain and hotter Feb–Mar"}, ...}
+}
+```
+`kpis.season_outlook_national[season][phase]` = cropped-area-weighted means of the same fields + `plain`.
+Plain phrasing rule (farmer-facing): probability ≥ 0.8 → "very likely", 0.5–0.8 → "likely", else "possible"; El Niño + kharif → "weak monsoon", El Niño + rabi → "dry, warm winter", La Niña + kharif → "heavy rain / flooding", neutral → "near-normal season".
+Text: every "MGNREGA" becomes "NREGA" in labels, prompts, CSV headers (keep JSON field names).
+Action tracker (web, localStorage for the prototype): `annadrishti.tracker[lgd]` = list of {id, action, dept, due, status: planned|in_progress|done, note, updated_at}; seeded from the district's action card; CSV export; summary counts on the planner.

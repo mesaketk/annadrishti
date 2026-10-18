@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useStore } from '../lib/store'
 import { useRoute } from '../lib/route'
@@ -6,13 +6,25 @@ import { chat } from '../lib/api'
 import { useScenario } from '../lib/useScenario'
 import { useMedia } from '../lib/useMedia'
 import type { ChatMsg } from '../types'
-import { Button, Chip, Fab, Icon, IconButton, LinearProgress, Sheet } from './ui'
+import { AiBadge, Button, Chip, Icon, IconButton, LinearProgress, Sheet } from './ui'
 
-/** Suggested questions per role (district name filled in when known). */
-function suggestions(role: string, name: string | null, state: string | null): string[] {
-  if (role === 'farmer') return [name ? `Is ${name} at risk this season?` : 'Which districts are at risk this season?', 'What should I sow this season?', 'Where can I get seed and crop insurance?']
-  if (role === 'officer') return [name ? `What are the top 5 actions for ${name}?` : 'Which districts need action first?', name ? `Which districts near ${name} are also at risk?` : 'Which districts have the most children at risk?', state ? `How many children under 5 are at risk in ${state}?` : 'How many children under 5 are at risk?']
-  return ['Which Maharashtra districts should pre-position pulses stock?', 'Top 5 districts where El Niño hits harvests hardest?', 'Compare Nandurbar in a normal year and a strong El Niño']
+/** Suggested questions per role. */
+const SUGGESTIONS: Record<'farmer' | 'officer' | 'planner', string[]> = {
+  farmer: ['What should I sow this season?', 'Should I buy crop insurance?', 'When should I sow?'],
+  officer: ['Who is most at risk in my district?', 'What should my department do first?'],
+  planner: ['Which districts should pre-position pulses first?'],
+}
+
+/** Spark: gradient extended FAB with a slow sheen (the sheen is switched off by prefers-reduced-motion). */
+function SparkFab({ onClick, collapsed, className }: { onClick: () => void; collapsed?: boolean; className?: string }) {
+  return (
+    <button
+      type="button" onClick={onClick} aria-label={collapsed ? 'Spark: ask a question' : undefined} title={collapsed ? 'Spark · Ask a question (powered by Gemini)' : 'Powered by Gemini'}
+      className={`md-state ai-gradient ai-sheen inline-flex h-14 items-center justify-center gap-3 rounded-m3-lg md-label-large shadow-elev-3 transition-shadow hover:shadow-elev-3 ${collapsed ? 'w-14' : 'pl-3 pr-5'} ${className ?? ''}`}
+    >
+      {collapsed ? <Icon name="auto_awesome" fill /> : <><AiBadge feature="spark" variant="glass" size="md" />Ask a question</>}
+    </button>
+  )
 }
 
 export default function ChatPanel() {
@@ -27,8 +39,14 @@ export default function ChatPanel() {
   const [err, setErr] = useState<string | null>(null)
   const end = useRef<HTMLDivElement>(null)
   useEffect(() => { end.current?.scrollIntoView({ block: 'end' }) }, [msgs, busy, chatOpen])
-  const my = myLgd != null ? byLgd.get(myLgd) : undefined
-  const sugg = useMemo(() => suggestions(route === 'root' ? 'planner' : route, my?.district ?? null, my?.state ?? null), [route, my])
+  const role = route === 'root' ? 'planner' : route
+  // the district the question is about: the selected one on the planner map, "my district" on the farmer and officer pages
+  const ctxLgd = role === 'planner' ? selected : myLgd ?? selected
+  const ctxDistrict = ctxLgd != null ? byLgd.get(ctxLgd) : undefined
+  const [ctxOff, setCtxOff] = useState<number | null>(null) // district the user dismissed as context
+  const about = ctxDistrict && ctxOff !== ctxDistrict.lgd ? ctxDistrict : undefined
+  const sugg = SUGGESTIONS[role]
+  const awaiting = msgs[msgs.length - 1]?.clarify === true
 
   const send = async (text: string) => {
     const t = text.trim()
@@ -36,8 +54,8 @@ export default function ChatPanel() {
     const next: ChatMsg[] = [...msgs, { role: 'user', content: t }]
     setMsgs(next); setInput(''); setBusy(true); setErr(null)
     try {
-      const r = await chat(next, gkey, districts, mock)
-      setMsgs([...next, { role: 'assistant', content: r.reply, citations: r.citations }])
+      const r = await chat(next, gkey, districts, mock, { lgd: about?.lgd ?? null, role })
+      setMsgs([...next, { role: 'assistant', content: r.reply || 'I could not find an answer to that. Try asking in a different way.', citations: r.citations, clarify: r.clarify, options: r.options }])
     } catch (e) {
       setErr(e instanceof Error ? e.message : 'Request failed')
     } finally { setBusy(false) }
@@ -45,6 +63,14 @@ export default function ChatPanel() {
 
   const body = (
     <>
+      {about && (
+          <div className="flex shrink-0 items-center gap-1 px-3 pt-1">
+            <span className="inline-flex h-8 items-center gap-1.5 rounded-m3-sm bg-secondary-container pl-2.5 pr-1 md-label-large text-on-secondary-container" title="Questions are answered about this district">
+              <Icon name="my_location" size={18} />About: {about.district}
+              <button type="button" aria-label={`Stop asking about ${about.district}`} title="Ask about all of India" onClick={() => setCtxOff(about.lgd)} className="md-state ml-0.5 grid h-6 w-6 place-items-center rounded-full"><Icon name="close" size={16} /></button>
+            </span>
+          </div>
+      )}
       <div className="min-h-0 flex-1 space-y-3 overflow-y-auto p-3">
         {msgs.length === 0 && (
           <div className="space-y-3">
@@ -59,7 +85,13 @@ export default function ChatPanel() {
         {msgs.map((m, i) => (
           <div key={i} className={m.role === 'user' ? 'flex justify-end' : ''}>
             <div className={`max-w-[92%] px-4 py-3 md-body-medium ${m.role === 'user' ? 'rounded-m3-lg rounded-br-m3-xs bg-primary text-on-primary' : 'rounded-m3-lg rounded-bl-m3-xs bg-surface-container-high text-on-surface'}`}>
+              {m.clarify && <div className="mb-1 flex items-center gap-1 md-label-medium text-muted"><Icon name="help" size={16} />One quick question</div>}
               {m.role === 'user' ? m.content : <div className="md"><ReactMarkdown>{m.content}</ReactMarkdown></div>}
+              {m.clarify && i === msgs.length - 1 && (
+                m.options?.length
+                  ? <div className="mt-3 flex flex-wrap gap-2">{m.options.map((o) => <Chip key={o} onClick={() => send(o)}>{o}</Chip>)}</div>
+                  : <div className="mt-2 md-body-small text-muted">Type your answer below.</div>
+              )}
               {m.citations && m.citations.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-2 border-t border-outline-variant pt-3">
                   {m.citations.map((l) => byLgd.get(l) && (
@@ -78,8 +110,8 @@ export default function ChatPanel() {
       </div>
       <form onSubmit={(e) => { e.preventDefault(); void send(input) }} className="flex items-center gap-2 p-3 pt-4">
         <label className="md-field min-w-0 flex-1" style={{ '--md-field-bg': 'rgb(var(--md-rgb-surface-container-high))' } as React.CSSProperties}>
-          <span className="md-field-label md-body-small">Your question</span>
-          <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type your question…" className="md-control md-body-large" />
+          <span className="md-field-label md-body-small">{awaiting ? 'Your answer' : 'Your question'}</span>
+          <input value={input} onChange={(e) => setInput(e.target.value)} placeholder={awaiting ? 'Type your answer…' : 'Type your question…'} className="md-control md-body-large" />
         </label>
         <Button variant="primary" type="submit" disabled={busy || !input.trim()} aria-label="Send" title="Send" className="w-12 shrink-0 !px-0"><Icon name="send" fill size={22} /></Button>
       </form>
@@ -91,9 +123,9 @@ export default function ChatPanel() {
     return (
       <>
         {!chatOpen && (
-          <Fab icon="forum" label="Ask a question" collapsed={route !== 'farmer'} onClick={() => setChatOpen(true)} className={`fixed right-4 z-30 ${route === 'farmer' ? 'bottom-24' : 'bottom-4'}`} />
+          <SparkFab collapsed={route !== 'farmer'} onClick={() => setChatOpen(true)} className={`fixed right-4 z-30 ${route === 'farmer' ? 'bottom-24' : 'bottom-4'}`} />
         )}
-        <Sheet open={chatOpen} onClose={() => setChatOpen(false)} side="bottom" title="Ask a question" widthClass="">
+        <Sheet open={chatOpen} onClose={() => setChatOpen(false)} side="bottom" title={<span className="inline-flex items-center gap-2"><AiBadge feature="spark" size="md" />Ask a question</span>} ariaLabel="Spark: ask a question" widthClass="">
           <div className="flex h-[70dvh] flex-col bg-surface-container-high">
             <div className="px-4 pb-1 md-body-small text-muted">Answers use the district data · {scLabel}</div>
             {body}
@@ -104,14 +136,14 @@ export default function ChatPanel() {
   }
   if (!chatOpen) {
     return (
-      <Fab icon="forum" label="Ask a question" onClick={() => setChatOpen(true)} className={`fixed bottom-12 ${pos} z-30`} />
+      <SparkFab onClick={() => setChatOpen(true)} className={`fixed bottom-12 ${pos} z-30`} />
     )
   }
   return (
     <div className={`fixed bottom-12 ${pos} z-30 flex h-[min(520px,66vh)] w-[380px] flex-col overflow-hidden rounded-m3-xl bg-surface-container-high shadow-elev-3`}>
       <div className="flex items-center justify-between px-4 pb-2 pt-3">
         <div>
-          <div className="md-title-large">Ask a question</div>
+          <div className="flex items-center gap-2 md-title-large"><AiBadge feature="spark" size="md" />Ask a question</div>
           <div className="md-body-small text-muted">Answers use the district data · {scLabel}</div>
         </div>
         <IconButton icon="close" label="Close" onClick={() => setChatOpen(false)} />

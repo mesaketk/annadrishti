@@ -53,20 +53,21 @@ _client_cache: dict[tuple, Any] = {}
 def get_client():
     from google import genai
 
+    # Vertex AI takes precedence when explicitly enabled (project billing, no API key needed).
+    if config.use_vertex():
+        project = config.env("GOOGLE_CLOUD_PROJECT")
+        if not project:
+            raise LLMUnavailable("USE_VERTEX=1 but GOOGLE_CLOUD_PROJECT is not set")
+        loc = config.env("VERTEX_LOCATION", "global")
+        ck = ("vertex", project, loc)
+        if ck not in _client_cache:
+            _client_cache[ck] = genai.Client(vertexai=True, project=project, location=loc)
+        return _client_cache[ck]
     key = config.env("GEMINI_API_KEY")
     if key:
         ck = ("key", key)
         if ck not in _client_cache:
             _client_cache[ck] = genai.Client(api_key=key)
-        return _client_cache[ck]
-    if config.use_vertex():
-        project = config.env("GOOGLE_CLOUD_PROJECT")
-        if not project:
-            raise LLMUnavailable("USE_VERTEX=1 but GOOGLE_CLOUD_PROJECT is not set")
-        loc = config.env("VERTEX_LOCATION", "asia-south1")
-        ck = ("vertex", project, loc)
-        if ck not in _client_cache:
-            _client_cache[ck] = genai.Client(vertexai=True, project=project, location=loc)
         return _client_cache[ck]
     raise LLMUnavailable("GEMINI_API_KEY not set")
 
@@ -108,7 +109,9 @@ district administration or a smallholder with a few acres.
 past El Niño years), `groundwater` (gw_stress_idx, gw_premonsoon_depth_m, gw_decline_10y_m_per_yr), \
 `nutrition.poshan_live` (live Poshan Tracker underweight/stunting/wasting with an as-of month) and \
 `crops.economics` (cost of cultivation vs value of output) may or may not exist. Use them where relevant to the \
-reader (see below) ONLY when the user turn says they are PRESENT; never mention one that is absent. Prefer \
+reader (see below) ONLY when the user turn says they are PRESENT; never mention one that is absent. A \
+`season_outlook` block (rain/heat/onset for THIS season) may also be present: it is the authority for the season's \
+climate; `crops.top` is already the list for this season's kind (kharif or rabi) when `crops.top_is_for_season` is set. Prefer \
 poshan_live over NFHS when you describe CURRENT child malnutrition, and always give its as-of month.
 6. SEASON FRAMING. Name the season and its status (sowing now / upcoming) up front and anchor timing on its sowing \
 window. Follow the framing for the ENSO phase: LA NIÑA = excess rain / flood exposure (drainage, flood-tolerant seed, \
@@ -116,9 +119,14 @@ post-flood re-sowing), NEUTRAL = climatology, so focus on structural vulnerabili
 deficit / heat. Quote the ENSO phase probabilities for the season when given. KHARIF = monsoon-sown crops; RABI = \
 winter crops (wheat, gram, mustard, rabi rice) driven by residual soil moisture, terminal heat and groundwater.
 7. Output Markdown only, no preamble, no closing disclaimer paragraph beyond the required uncertainty note. Write in \
-the REQUESTED LANGUAGE and script (keep scheme and unit acronyms such as PMFBY, MGNREGA, PDS, KVK, CDPO, ASHA as is)."""
+the REQUESTED LANGUAGE and script (keep scheme and unit acronyms such as PMFBY, NREGA, PDS, KVK, CDPO, ASHA as is)."""
 
 ADVISORY_OFFICIAL = """AUDIENCE = official  (the DEPARTMENT FOCUS block in the user turn names the reader's role)
+CLIMATE FRAMING: take the season's climate ONLY from the SEASON OUTLOOK block (and `season_outlook` in the evidence). \
+KHARIF: monsoon rain anomaly (Jun-Sep), onset delay, heat. RABI: Oct-Dec rain and Feb-Mar heat. Never describe kharif \
+with rabi numbers or rabi with kharif numbers. `climate.jjas_*` and the El Niño/La Niña mean anomaly fields are \
+monsoon-season (kharif) history: do not quote them for a rabi briefing. If the SEASON OUTLOOK is absent: kharif may use \
+`climate`; for rabi say the winter rain/heat outlook is not available.
 Write for the named department head and field units. The department decides the CONTENT of every section and the \
 FIVE ACTIONS; the structure stays fixed. Start with one title line `### <Department role> briefing: <District>` and \
 then exactly these sections (## headings):
@@ -128,7 +136,7 @@ contribution) and how the phase's rainfall/heat anomaly and yield sensitivity be
 (for neutral: what makes the district structurally vulnerable), THEN follow the department's \
 SECTION FOCUS and lens (e.g. food/civil supplies: self-sufficiency, PDS dependency and the grain gap; agriculture: \
 crop mix, rainfed share, yield sensitivity; WCD/Health: malnutrition and anaemia; rural development: income shock and \
-MGNREGA demand; animal husbandry: fodder). Note hindcast evidence (e.g. 2015) if present. Where relevant use the \
+NREGA demand; animal husbandry: fodder). Note hindcast evidence (e.g. 2015) if present. Where relevant use the \
 optional blocks: price-spike risk (markets) for food & civil supplies and the Collector; groundwater stress \
 (groundwater) for agriculture, rural development and the Collector; Poshan Tracker live underweight for WCD/ICDS, \
 health and the Collector.
@@ -137,7 +145,7 @@ health and the Collector.
 ## 3. Five pre-positioning actions
  Exactly five numbered actions. EACH must be chosen from the department's ACTION MENU in the user turn (adapted to \
 this district's numbers) and written as: **action** — responsible unit (use the named unit from the menu, e.g. \
-"DSO + FPS inspectors", "CDPO + AWWs", "BDO + MGNREGA PO", "KVK + ATMA", "CMO + ASHAs", "Dy Director AH") — LEAD TIME \
+"DSO + FPS inspectors", "CDPO + AWWs", "BDO + NREGA PO", "KVK + ATMA", "CMO + ASHAs", "Dy Director AH") — LEAD TIME \
 (start/finish, anchored on the lead dates in risk.<scenario>.actions.lead if present, else on the season's sowing \
 window, else relative like "within 2 weeks") — the district evidence that justifies it. Pick the five best supported by THIS district's data; do not \
 recommend actions the evidence gives no basis for. Follow any DEPARTMENT RULES (the Collector also gets the \
@@ -156,30 +164,39 @@ MAXIMUM 220 words total. Speak to the farmer as "you"; never recite the profile 
 FORMAT: a title line `### <title>` that NAMES THE FARMER TYPE in the requested language (Hindi examples: \
 "छोटे वर्षा-आधारित किसान के लिए", "मध्यम/बड़े सिंचित किसान के लिए"; English: "For small rainfed farmers"), then 5-7 \
 short bullets.
+HARD RULES
+- CROPS: every crop you recommend or offer as a choice must come from the SEASON CROPS line of the farmer profile \
+(the district's kharif list for kharif, rabi list for rabi) or from the crop playbook of the right season. NEVER \
+suggest a rabi crop (wheat, gram, mustard...) for kharif or a kharif crop (cotton, soybean, paddy...) for rabi.
+- WHY = CLIMATE ONLY: the reason for your advice is the season's weather (rain outlook, heat, monsoon onset) and \
+nothing else. NO nutrition, stunting, anaemia, PDS, self-sufficiency or other statistics.
+- OUTLOOK WORDING: use the PLAIN OUTLOOK sentence from the user turn for the climate bullet (translated into the \
+requested language, same meaning). NEVER write phrases like "El Niño (100 %)", ENSO probabilities or percentages \
+of event chance; only "very likely / likely / possible" wording as in that sentence.
+- MONEY: at most ONE simple sentence, no rupee figures, no cost table, no percentages (e.g. "Last year soybean earned \
+more per acre than cotton here"), only if CROP ECONOMICS is present in the profile; otherwise say nothing about money.
 CONTENT, in this order (skip a bullet only if the profile makes it irrelevant):
-1. The main crop move: use the CROP PLAYBOOK for the farmer's main crop (reduce / replace / change variety / \
-intercrop / sowing time). Base it on crops actually in the district evidence. Use the SEASON CONTEXT: if the season \
-is rabi and sowing is open, talk about THIS winter's sowing (wheat by 15 November, gram/mustard early, protective \
-irrigation, rabi rice water budget); if kharif and upcoming, talk about next kharif's planning and seed arrangement \
-now; in a La Niña phase lead with drainage, flood-tolerant seed and re-sowing, not drought measures. Substitution table \
-for reference when the playbook is missing or the crop is "other":
+1. The season and the climate in one bullet: name the season (e.g. "Kharif 2027") and give the PLAIN OUTLOOK sentence.
+2. The main crop move: use the CROP PLAYBOOK for the farmer's main crop (reduce / replace / change variety / \
+intercrop / sowing time), choosing substitutes from SEASON CROPS. Use the SEASON CONTEXT: if the season is rabi and \
+sowing is open, talk about THIS winter's sowing (wheat by 15 November, gram/mustard early, protective irrigation, \
+rabi rice water budget); if kharif and upcoming, talk about next kharif's planning and seed arrangement now; in a \
+La Niña phase lead with drainage, flood-tolerant seed and re-sowing, not drought measures. Substitution table for \
+reference when the playbook is missing or the crop is "other" (use only the rows of this season's kind):
 {crop_table}
-2. If CROP ECONOMICS is present: ONE line comparing margins (value minus cost) of the main crop vs your suggested \
-substitute, with the unit (Rs/ha); otherwise say nothing about money.
 3. Sowing window and water: do not sow on the first shower; sow after adequate soil moisture; keep seed for re-sowing; \
 mulching, bunds, farm ponds; protective irrigation at critical stages only.
 4. PROFILE-DERIVED EMPHASIS: follow every item in the block. Marginal/small + rainfed: zero- or low-cost practices, \
-PDS and MGNREGA linkage, intercropping. Medium/large + irrigated: protective-irrigation scheduling, water budgeting, \
+PDS and NREGA linkage, intercropping. Medium/large + irrigated: protective-irrigation scheduling, water budgeting, \
 diversification of part of the area. Livestock: fodder security and dual-purpose jowar/bajra. Tenant: say that PMFBY \
 needs a land record or the landowner's consent and name the alternatives (WBCIS, group insurance or credit through an \
 FPO/JLG). Owner: enrol in PMFBY before the notified cut-off (never state a date).
 5. If `groundwater` is PRESENT and stressed (high gw_stress_idx or falling water table) and the farmer has any \
-irrigation: one clause on rationing water. If `markets` is PRESENT with a price spike in El Niño years and the farmer \
-may have grain to sell or store: one clause on not selling in distress at harvest. Both only if the word limit allows.
+irrigation: one clause on rationing water. If `markets` is PRESENT with a price spike in past El Niño years and the \
+farmer may have grain to sell or store: one clause on not selling in distress at harvest. Both only if the word limit \
+allows.
 6. Help: the district contingency plan from ICAR-CRIDA through the Krishi Vigyan Kendra / agriculture office.
-Close with one short honest line that this is an early warning from past years of this ENSO phase, not a certain \
-forecast. Cite at most 2-3 numbers in simple words (e.g. "in past El Niño years, rain here was about 16% below \
-normal"). Name the season in the first bullet. Never invent \
+Close with one short honest line that this is an early warning from past years, not a certain forecast. Never invent \
 facts not in the evidence; if a needed field is null, say the information is not available."""
 
 ADVISORY_SYSTEM = f"{ADVISORY_COMMON}\n\n{ADVISORY_OFFICIAL}\n\n" + ADVISORY_FARMER.replace(
@@ -192,20 +209,61 @@ def advisory_system(audience: str) -> str:
         return f"{ADVISORY_COMMON}\n\n" + ADVISORY_FARMER.replace("{crop_table}", personalize.crop_substitution_table())
     return f"{ADVISORY_COMMON}\n\n{ADVISORY_OFFICIAL}"
 
-CHAT_SYSTEM = """You are AnnaDrishti's "Ask the map" analyst: a concise agri-food-security analyst for Indian \
-districts, season by season (Rabi 2026-27 and Kharif 2027, each under La Niña, neutral, El Niño or the ENSO-weighted \
-"current" outlook). Scenario ids are "<season>:<phase>" (e.g. kharif_2027:lanina) or legacy neutral|elnino|elnino_strong. \
-La Niña = excess-rain/flood framing; neutral = structural vulnerability; El Niño = deficit/heat. You have tools over the district dataset: get_district, rank_districts, \
-compare_scenarios, national_summary. ALWAYS call tools to get facts — never answer district-specific questions \
-from memory. If the user asks about a place not in the data, say so.
+CHAT_SYSTEM = """You are AnnaDrishti's "Ask the map" assistant for Indian districts, season by season (Rabi 2026-27 \
+and Kharif 2027, each under La Niña, neutral, El Niño or the ENSO-weighted "current" outlook). Scenario ids are \
+"<season>:<phase>" (e.g. kharif_2027:lanina) or legacy neutral|elnino|elnino_strong. La Niña = excess-rain/flood \
+framing; neutral = structural vulnerability; El Niño = deficit/heat. You serve FARMERS, district/state OFFICERS and \
+PLANNERS. Tools over the dataset: get_district, rank_districts, compare_scenarios, national_summary, farmer_advice. \
+ALWAYS call tools to get facts: never answer district-specific questions from memory. If the user asks about a place \
+not in the data, say so.
 
-STYLE: concise (usually under 180 words), Markdown, lead with the answer. ALWAYS name districts (with state) and \
-quote the numbers you used (risk score, band, yield shock %, self-sufficiency, stunting %, etc.) with the scenario. \
-STATE UNCERTAINTY: scenarios are analog-based (past years of the same ENSO phase), not forecasts; food balance is availability, \
-not access; risk scores are relative rankings. End with 1-3 concrete suggested actions where relevant (PDS top-up, \
-fodder, MGNREGA, short-duration seed banks, pulses/millet promotion, PMFBY enrolment, anganwadi nutrition). \
-If a value is null or a tool returns an error, say data is not available — never invent figures. Default to the \
-scenario/season selected by the user unless they ask otherwise; always name the season in your answer."""
+FARMER QUESTIONS ARE IN SCOPE. What to sow this season, which crop or variety, sowing time, water, seed, crop \
+insurance (PMFBY), schemes (NREGA, PDS linkage), fodder, what to do if rain fails: never refuse these. Call \
+farmer_advice for the district and season (add get_district only if you need more district data) and answer from its \
+advisory_markdown plus the district data: plain words, concrete steps, crops only from the season's own list (kharif \
+crops for kharif, rabi crops for rabi). If the farmer states holding size, irrigation, crop, livestock or tenancy, \
+pass them to farmer_advice. If a REPLY LANGUAGE is given, answer in that language and script.
+DISTRICT: when a SELECTED DISTRICT is given, use it by default whenever the user names no other district. If a \
+farmer-type question arrives and there is NO selected or named district, do not refuse and do not guess: ask ONE \
+short clarifying question ("Which district are you in?") and nothing else.
+Decline only what is genuinely outside the dataset (non-agriculture topics, places not in the data) and say what you \
+can help with instead.
+
+OFFICER / PLANNER STYLE: concise (usually under 180 words), Markdown, lead with the answer. ALWAYS name districts \
+(with state) and quote the numbers you used (risk score, band, yield shock %, self-sufficiency, stunting %, etc.) with \
+the scenario. End with 1-3 concrete suggested actions where relevant (PDS top-up, fodder, NREGA, short-duration seed \
+banks, pulses/millet promotion, PMFBY enrolment, anganwadi nutrition).
+GROUNDING AND UNCERTAINTY (all users): scenarios are analog-based (past years of the same ENSO phase), not forecasts; \
+food balance is availability, not access; risk scores are relative rankings. If a value is null or a tool returns an \
+error, say data is not available: never invent figures. Default to the scenario/season selected by the user unless \
+they ask otherwise; always name the season in your answer."""
+
+ROLE_TEXT = {
+    "farmer": "USER ROLE: farmer. Answer in AT MOST 120 words, in plain everyday words, a few short bullets, no tables "
+              "and no risk scores or jargon unless the farmer asks. Climate reasons only (rain, heat, onset), no "
+              "nutrition or PDS statistics. Include one short honest line that this is an early warning, not a "
+              "forecast.",
+    "officer": "USER ROLE: officer. Use the officer/planner style: districts named with numbers, concrete actions.",
+    "planner": "USER ROLE: planner. Use the officer/planner style: districts named with numbers, concrete actions.",
+}
+
+
+def chat_system(scenario: str, lgd: int | None = None, role: str | None = None,
+                language: str | None = None) -> str:
+    """Full chat system prompt: base + selected scenario/season + SELECTED DISTRICT + role + language."""
+    kpis, _ = data.get_kpis()
+    parts = [CHAT_SYSTEM, f"Selected scenario: {scenario}\n{season_block_for(scenario)[0]}\n"
+                          f"ENSO STATUS: {_enso_block(kpis)}"]
+    d = data.district_by_lgd(lgd) if lgd is not None else None
+    if d is not None:
+        parts.append(f"SELECTED DISTRICT: {d.get('district')} ({d.get('lgd')}), {d.get('state')}. Use it by default "
+                     f"for 'my district', 'here' and any question that names no district; pass lgd={d.get('lgd')} to "
+                     f"farmer_advice. Climate for the selected season: {seasons.plain_outlook(d, scenario, kpis)}.")
+    if role in ROLE_TEXT:
+        parts.append(ROLE_TEXT[role])
+    if language and language != "en" and language in LANGUAGES:
+        parts.append(f"REPLY LANGUAGE: {LANGUAGES[language]}. Write the whole answer in it.")
+    return "\n\n".join(parts)
 
 
 def _enso_block(kpis: dict) -> str:
@@ -213,6 +271,26 @@ def _enso_block(kpis: dict) -> str:
     cp = kpis.get("central_pool") or {}
     return json.dumps({"enso": enso, "central_pool": cp or None, "as_of": kpis.get("as_of")},
                       ensure_ascii=False)
+
+
+FARMER_DROP = ("nutrition", "food_balance", "children_u5_est", "population_2026")  # not part of a farmer's "why"
+
+
+def outlook_block(d: dict, scenario: str, audience: str) -> str:
+    """SEASON OUTLOOK prompt block (Addendum I): the district's rain/heat/onset entry for the season, plus for
+    farmers the one-sentence plain wording (entry.plain, else built from the phase probability)."""
+    kpis, _ = data.get_kpis()
+    sctx = seasons.season_context(scenario, kpis)
+    entry = seasons.district_outlook(d, scenario, kpis)
+    head = f"SEASON OUTLOOK ({sctx['label']}, {sctx['kind']}; this season's climate, use ONLY this for rain/heat framing):"
+    if audience == "farmer":
+        return (f"{head}\nPLAIN OUTLOOK SENTENCE (use this for the climate bullet, translated; do not write ENSO "
+                f"percentages): {seasons.plain_outlook(d, scenario, kpis)}")
+    if entry:
+        body = {k: v for k, v in entry.items() if k != "plain"}
+        return f"{head}\n{json.dumps(body, ensure_ascii=False, separators=(',', ':'))}\nPlain: {entry.get('plain') or '-'}"
+    return (f"{head}\nnot available for this district: for kharif use `climate`; for rabi say the winter rain/heat "
+            f"outlook is not available.")
 
 
 def build_advisory_prompt(d: dict, audience: str, language: str, scenario: str, profile: dict | None = None,
@@ -223,7 +301,11 @@ def build_advisory_prompt(d: dict, audience: str, language: str, scenario: str, 
     sctx = seasons.season_context(scenario, kpis, rkey)
     kind, phase = sctx["kind"], sctx["phase"]
     if audience == "farmer":
-        focus = personalize.profile_block(personalize.resolve_profile(profile, d), d, ctx, kind, phase)
+        for k in FARMER_DROP:
+            ctx.pop(k, None)
+        fields = []
+        tools._flatten("", ctx, fields)
+        focus = personalize.profile_block(personalize.resolve_profile(profile, d, kind), d, ctx, kind, phase)
         task = "Write the farmer advisory for THIS farmer now"
     else:
         focus = personalize.department_block(department or personalize.DEFAULT_DEPARTMENT, ctx, rkey or scenario,
@@ -232,7 +314,7 @@ def build_advisory_prompt(d: dict, audience: str, language: str, scenario: str, 
     prompt = (
         f"AUDIENCE: {audience}\nREQUESTED LANGUAGE: {LANGUAGES[language]}\n"
         f"SCENARIO: {scenario} — {scenario_text(scenario)}\n"
-        f"{sblock}\n"
+        f"{sblock}\n{outlook_block(d, scenario, audience)}\n"
         f"Focus the risk narrative on risk.{rkey or scenario}; mention the other phases only for contrast.\n\n"
         f"{focus}\n\n"
         f"ENSO STATUS (national):\n{_enso_block(kpis)}\n\n"
@@ -263,16 +345,15 @@ def generate_advisory(d: dict, audience: str, language: str, scenario: str, prof
     return text, fields, model
 
 
-def run_chat(messages: list[dict], scenario: str) -> tuple[str, list[int]]:
+def run_chat(messages: list[dict], scenario: str, lgd: int | None = None, role: str | None = None,
+             language: str | None = None) -> tuple[str, list[int]]:
     if config.mock_llm():
-        return mock_chat(messages, scenario)
+        return mock_chat(messages, scenario, lgd, role, language)
     from google.genai import types
 
     client = get_client()
     model = config.gemini_model()
-    kpis, _ = data.get_kpis()
-    system = (f"{CHAT_SYSTEM}\n\nSelected scenario: {scenario}\n{season_block_for(scenario)[0]}\n"
-              f"ENSO STATUS: {_enso_block(kpis)}")
+    system = chat_system(scenario, lgd, role, language)
     contents = [types.Content(role="user" if m["role"] == "user" else "model",
                               parts=[types.Part.from_text(text=m["content"])]) for m in messages]
     tool_cfg = [types.Tool(function_declarations=[types.FunctionDeclaration(**s) for s in tools.TOOL_SPECS])]
@@ -297,6 +378,12 @@ def run_chat(messages: list[dict], scenario: str) -> tuple[str, list[int]]:
             args = dict(c.args or {})
             if c.name in ("rank_districts", "get_district"):
                 args.setdefault("scenario", scenario)
+            elif c.name == "farmer_advice":
+                args.setdefault("season_scenario", scenario)
+                if lgd is not None:
+                    args.setdefault("lgd", lgd)
+                if language:
+                    args.setdefault("language", language)
             result = tools.run_tool(c.name, args)
             tools.collect_lgds(result, lgds)
             parts.append(types.Part.from_function_response(name=c.name, response={"result": result}))
@@ -322,9 +409,14 @@ _HI_CROP = {
     "wheat": "गेहूँ: गर्मी सहने वाली किस्म चुनें और 15 नवंबर से पहले समय पर बुवाई करें।",
     "gram": "चना: अक्टूबर में जल्दी बुवाई करें, नमी बचाएँ (मल्चिंग), बीज उपचार करें।",
 }
+_HI_EVENT = {("elnino", "kharif"): "कमज़ोर मानसून", ("elnino_strong", "kharif"): "बहुत कमज़ोर मानसून",
+             ("elnino", "rabi"): "सूखी, गर्म सर्दी", ("elnino_strong", "rabi"): "बहुत सूखी, गर्म सर्दी",
+             ("lanina", "kharif"): "भारी बारिश और बाढ़", ("lanina", "rabi"): "सामान्य से अधिक नमी वाली सर्दी",
+             ("neutral", "kharif"): "सामान्य मौसम", ("neutral", "rabi"): "सामान्य मौसम"}
+_HI_LIKELY = {"very likely": "की संभावना बहुत अधिक है", "likely": "की संभावना अधिक है", "possible": "संभव है"}
 _EN_FLAGS = {
     "zero_cost": "Zero-cost steps first: mulch with crop residue, make field bunds, intercrop a pulse with the cereal. "
-                 "Keep your ration card and MGNREGA job card ready (ask the Gram Panchayat).",
+                 "Keep your ration card and NREGA job card ready (ask the Gram Panchayat).",
     "irrigated_big": "Make a water budget for the season, irrigate only at critical stages, and put part of the area "
                      "under pulses or millets instead of the thirsty crop.",
     "mixed": "Use your limited water at the critical stage of the main crop; mulch and bund the dry part.",
@@ -349,21 +441,17 @@ def mock_advisory(d: dict, audience: str, language: str, scenario: str, profile:
     nf = tools._nfhs(d, "stunting")
     tag = "*[MOCK_LLM — canned response, not generated by Gemini]*\n\n"
     if audience == "farmer":
-        p = personalize.resolve_profile(profile, d)
+        p = personalize.resolve_profile(profile, d, kind)
         pb = personalize.crop_playbook(p["crop"], kind, phase)
-        pkey = "lanina_mean_anomaly_pct" if phase == "lanina" else "elnino_mean_anomaly_pct"
-        anomaly = ctx["climate"].get(pkey)
-        phase_en = {"lanina": "La Niña", "neutral": "neutral", "current": "ENSO-weighted"}.get(phase, "El Niño")
+        plain = seasons.plain_outlook(d, scenario, kpis)
         sow = sctx.get("sowing") or "data not available"
         season_en = f"{season_label} ({sctx.get('status') or 'status n/a'}; sowing {sow})"
         if language == "hi":
             title = f"### {_HI_HOLDING[p['holding']]} {_HI_WATER[p['water']]} किसान के लिए"
+            lk = _HI_LIKELY[seasons.likelihood_word(seasons.phase_probability(scenario, kpis))]
+            rain_hi = f"- मौसम का अनुमान: {_HI_EVENT.get((phase, kind or 'kharif'), 'सामान्य मौसम')} {lk}।"
             if phase == "lanina":
-                rain_hi = f"- पिछले ला नीना वर्षों में यहाँ बारिश सामान्य से लगभग {_fmt(abs(anomaly or 0), '%')} अधिक रही; जल-निकासी और बाढ़-सहनशील बीज पर ध्यान दें।"
-            elif phase == "neutral":
-                rain_hi = "- सामान्य वर्ष की जलवायु मानी गई है; जोखिम मुख्यतः ढाँचागत कमज़ोरियों से है।"
-            else:
-                rain_hi = f"- पिछले अल नीनो वर्षों में यहाँ बारिश सामान्य से लगभग {_fmt(abs(anomaly or 0), '%')} कम रही।"
+                rain_hi += " जल-निकासी और बाढ़-सहनशील बीज पर ध्यान दें।"
             b = [f"- मौसम: {season_en}।", rain_hi,
                  "- " + _HI_CROP.get(pb["key"] if pb else "", f"मुख्य फसल {p['crop']}: कम पानी वाली फसल और कम अवधि की किस्में चुनें।"),
                  "- पहली बारिश पर बुवाई न करें; मिट्टी में नमी आने पर बोएँ, बीज बचाकर रखें।"]
@@ -384,13 +472,7 @@ def mock_advisory(d: dict, audience: str, language: str, scenario: str, profile:
         title = f"### For {personalize.farmer_type_label(p).replace('farmer', 'farmers')}"
         crop_line = (f"Your {pb['label']}: {pb['advice']}" if pb else
                      f"Your crop ({p['crop']}): prefer short-duration, drought-tolerant choices (bajra, jowar, ragi, moong, horse gram).")
-        if phase == "neutral":
-            rain_en = f"Neutral-year climatology assumed; risk here is structural. Main crops now: {top}."
-        elif phase == "current":
-            rain_en = f"Outlook is an ENSO-probability-weighted mix of phases. Main crops now: {top}."
-        else:
-            rain_en = (f"In past {phase_en} years rain here was about {_fmt(abs(anomaly) if isinstance(anomaly, (int, float)) else anomaly, '%')} "
-                       f"{'above' if phase == 'lanina' else 'below'} normal. Main crops now: {top}.")
+        rain_en = f"{plain}. Main crops this season: {top}."
         b = [f"- Season: {season_en}.", f"- {rain_en}",
              f"- {crop_line}",
              "- Do not sow on the first shower; wait for soil moisture and keep seed for re-sowing."]
@@ -404,7 +486,7 @@ def mock_advisory(d: dict, audience: str, language: str, scenario: str, profile:
             b.append("- " + _EN_FLAGS["livestock"])
         b.append("- " + _EN_FLAGS["tenant" if p["tenant"] else "owner"])
         b.append("- Contingency plan: ICAR-CRIDA district contingency plan (ask your KVK).")
-        b.append(f"_Early warning for {season_label} based on past {phase_en} years, not a certain forecast._")
+        b.append(f"_Early warning for {season_label} based on past years, not a certain forecast._")
         return tag + note + title + "\n" + "\n".join(b)
     # ---- official, by department
     dept = department or personalize.DEFAULT_DEPARTMENT
@@ -437,24 +519,47 @@ _METRIC_WORDS = [("stunting", "stunting"), ("anaemi", "child_anaemia"), ("anemi"
                  ("rainfed", "rainfed_share"), ("pulse", "risk_score"), ("risk", "risk_score")]
 
 
-def mock_chat(messages: list[dict], scenario: str) -> tuple[str, list[int]]:
+_FARMER_RX = re.compile(r"\b(sow\w*|plant\w*|crops?|seeds?|variet\w+|farm\w*|kisan|insur\w+|pmfby|schemes?|irrigat\w*|"
+                        r"fertili[sz]\w+|harvest\w*|acres?|hectares?|bigha|my (field|land|crop)s?)\b")
+CLARIFY_DISTRICT = "Which district are you in?"
+
+
+def is_farmer_question(text: str) -> bool:
+    return bool(_FARMER_RX.search(text.lower()))
+
+
+def mock_chat(messages: list[dict], scenario: str, lgd: int | None = None, role: str | None = None,
+              language: str | None = None) -> tuple[str, list[int]]:
     q = (messages[-1]["content"] if messages else "").lower()
     districts, _ = data.get_districts()
     lgds: list[int] = []
+    named = next((d for d in districts if str(d.get("district", "")).strip()
+                  and re.search(rf"\b{re.escape(str(d['district']).lower())}\b", q)), None)
+    # farmer-style question (what to sow, insurance, schemes...): answer from farmer_advice, never refuse
+    if role != "officer" and role != "planner" and is_farmer_question(q) and \
+            (role == "farmer" or not any(w in q for w in ("rank", "highest", "lowest", "which districts", "compare"))):
+        target = named["lgd"] if named else lgd
+        if target is None:
+            return CLARIFY_DISTRICT, []
+        res = tools.run_tool("farmer_advice", {"lgd": target, "season_scenario": scenario,
+                                               "language": language or "en"})
+        tools.collect_lgds(res, lgds)
+        if res.get("advisory_markdown"):
+            return "*[MOCK_LLM]* " + res["advisory_markdown"].split("\n\n", 1)[-1], lgds
+        return f"*[MOCK_LLM]* Farmer advice is not available right now ({res.get('error')}).", lgds
     # a specific district mentioned?
-    for d in districts:
-        nm = str(d.get("district", "")).lower()
-        if nm and re.search(rf"\b{re.escape(nm)}\b", q):
-            cmp = tools.compare_scenarios(d["lgd"])
-            tools.collect_lgds(cmp, lgds)
-            sc = cmp.get("scenarios", {})
-            lines = [f"- {s}: score {v.get('score')} ({v.get('band')}), yield shock {v.get('expected_yield_shock_pct')}%"
-                     for s, v in sc.items()]
-            if cmp.get("by_season"):
-                lines.append("Seasons: " + ", ".join(b["label"] for b in cmp["by_season"].values()))
-            return (f"*[MOCK_LLM]* **{d['district']}, {d['state']}** across scenarios:\n" + "\n".join(lines)
-                    + "\n\nAnalog-based estimate, not a forecast. Suggested: PDS top-up, short-duration seed bank, PMFBY enrolment.",
-                    lgds)
+    if named:
+        d = named
+        cmp = tools.compare_scenarios(d["lgd"])
+        tools.collect_lgds(cmp, lgds)
+        sc = cmp.get("scenarios", {})
+        lines = [f"- {s}: score {v.get('score')} ({v.get('band')}), yield shock {v.get('expected_yield_shock_pct')}%"
+                 for s, v in sc.items()]
+        if cmp.get("by_season"):
+            lines.append("Seasons: " + ", ".join(b["label"] for b in cmp["by_season"].values()))
+        return (f"*[MOCK_LLM]* **{d['district']}, {d['state']}** across scenarios:\n" + "\n".join(lines)
+                + "\n\nAnalog-based estimate, not a forecast. Suggested: PDS top-up, short-duration seed bank, PMFBY enrolment.",
+                lgds)
     state = next((s for s in {d.get("state") for d in districts if d.get("state")} if s.lower() in q), None)
     metric = next((m for w, m in _METRIC_WORDS if w in q), "risk_score")
     asc = any(w in q for w in ("lowest", "least", "best"))
@@ -476,18 +581,18 @@ flood/excess-rain framing, neutral = structural vulnerability, El Niño = defici
 state's districts (computed deterministically from the risk model) plus state totals and the ENSO status.
 
 RULES: write large quantities readably (e.g. '1.86 lakh tonnes', '24.1 lakh children', '25.7 crore person-days'), never raw floats like 186026.0; use ONLY numbers present in the rows/totals; cite them (district name, score, tonnes, children, hectares, \
-person-days) inline; never invent stock levels, prices, budgets or scheme coverage. null = "data not available". \
+person-days) inline; the row/total key `mgnrega_persondays` is the NREGA person-day target: always write "NREGA" and label it "NREGA person-days"; never invent stock levels, prices, budgets or scheme coverage. null = "data not available". \
 The scenario is ANALOG-BASED (past years of that ENSO phase), not a forecast; quantities are planning targets, not \
 entitlements; food balance measures availability, not access. Use probability language and say what would change \
 the plan. Output Markdown only, concise (about 450-650 words), with these sections:
 ## Situation (3-4 sentences: ENSO status with CPC probability, scenario, state totals, how many districts are high band)
 ## Priority districts (a Markdown table of the top 10 rows by score: district, score/band, grain_preposition_t, \
-pulses_preposition_t, anganwadi_children, seed_bank_ha, mgnrega_persondays; dash for null) followed by 2-3 sentences \
+pulses_preposition_t, anganwadi_children, seed_bank_ha, NREGA person-days; dash for null) followed by 2-3 sentences \
 on what stands out
 ## Timeline (anchor on the selected season's sowing window and the lead times in the rows; Rabi: sow by 15 Nov, \
 Kharif: pre-position by mid-May; say which actions fall in which window)
 ## Who does what (bullets per department with quantified asks: Food & Civil Supplies, WCD/ICDS, Agriculture, \
-Rural Development/MGNREGA, Health)
+Rural Development/NREGA, Health)
 ## Confidence and caveats (2-3 sentences)"""
 
 
@@ -544,12 +649,12 @@ def mock_state_brief(state: str, scenario: str, rows: list[dict], totals: dict, 
     return ("*[MOCK_LLM — canned response, not generated by Gemini]*\n\n"
             f"## Situation\n{state}, {seasons.season_context(scenario, data.get_kpis()[0])['label']}, *{scenario}* scenario: {n_high} of {len(rows)} districts are high band. "
             f"Total grain pre-positioning target {v(totals.get('grain_preposition_t'))} t.\n\n"
-            "## Priority districts\n| District | Score | Grain (t) | Pulses (t) | Anganwadi children | Seed bank (ha) | MGNREGA person-days |\n"
+            "## Priority districts\n| District | Score | Grain (t) | Pulses (t) | Anganwadi children | Seed bank (ha) | NREGA person-days |\n"
             f"|---|---|---|---|---|---|---|\n{table}\n\n"
             "## Timeline\n- Rabi 2026-27: sow by 15 Nov 2026 (heat-tolerant wheat seed, protective irrigation, PMFBY, wheat lifting).\n"
-            "- Kharif 2027: by 15 May 2027 (grain and pulses stock, MGNREGA works, drainage works where flood-prone).\n\n"
+            "- Kharif 2027: by 15 May 2027 (grain and pulses stock, NREGA works, drainage works where flood-prone).\n\n"
             "## Who does what\n- **Food & Civil Supplies**: pre-position grain.\n- **WCD/ICDS**: anganwadi supplementary nutrition.\n"
-            "- **Agriculture**: short-duration seed banks, PMFBY.\n- **Rural Development**: MGNREGA work-demand surge.\n"
+            "- **Agriculture**: short-duration seed banks, PMFBY.\n- **Rural Development**: NREGA work-demand surge.\n"
             "- **Health**: anaemia screening and IFA supplementation.\n\n"
             "## Confidence and caveats\nAnalog-based planning targets, not a forecast.")
 
