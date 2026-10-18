@@ -16,6 +16,10 @@ export const EXTRA: Record<'en' | 'hi' | 'mr' | 'te', Dict> = {
     'rh.heat.hot': 'About {n} °C hotter than normal ({win})', 'rh.heat.cool': 'About {n} °C cooler than normal ({win})', 'rh.heat.norm': 'Temperatures close to normal ({win})',
     'rh.onset.late': 'Monsoon may arrive about {n} days late', 'rh.onset.ok': 'Monsoon expected on time',
     'why.outlook': 'Season outlook', 'econ.label': 'Rough costs and returns', 'brand.gemini': 'Powered by Gemini',
+    'fc.observed': 'Observed', 'fc.expected': 'Expected', 'fc.range': 'range {a}–{b} %', 'fc.projected': 'Projected', 'fc.tfm': 'Model range',
+    'fc.yield.below': '{when}: harvest about {n} % below a normal year', 'fc.yield.above': '{when}: harvest about {n} % above a normal year', 'fc.yield.flat': '{when}: harvest close to a normal year',
+    'fc.rain.below': '{when}: rain expected about {n} % below normal', 'fc.rain.above': '{when}: rain expected about {n} % above normal', 'fc.rain.flat': '{when}: rain expected close to normal',
+    'fc.rain.title.ond': 'Winter-season rain each year',
   },
   hi: {
     'outlook.neutral': 'मौसम लगभग सामान्य रहने की उम्मीद है',
@@ -29,6 +33,10 @@ export const EXTRA: Record<'en' | 'hi' | 'mr' | 'te', Dict> = {
     'rh.heat.hot': 'सामान्य से लगभग {n} °C ज़्यादा गर्मी ({win})', 'rh.heat.cool': 'सामान्य से लगभग {n} °C ठंडा ({win})', 'rh.heat.norm': 'तापमान लगभग सामान्य ({win})',
     'rh.onset.late': 'मानसून लगभग {n} दिन देर से आ सकता है', 'rh.onset.ok': 'मानसून समय पर आने की उम्मीद है',
     'why.outlook': 'इस मौसम का अनुमान', 'econ.label': 'मोटा लागत और आमदनी अनुमान', 'brand.gemini': 'Gemini द्वारा संचालित',
+    'fc.observed': 'देखा गया', 'fc.expected': 'अनुमानित', 'fc.range': 'सीमा {a}–{b} %', 'fc.projected': 'पूर्वानुमान', 'fc.tfm': 'मॉडल की सीमा',
+    'fc.yield.below': '{when}: पैदावार सामान्य वर्ष से लगभग {n} % कम', 'fc.yield.above': '{when}: पैदावार सामान्य वर्ष से लगभग {n} % ज़्यादा', 'fc.yield.flat': '{when}: पैदावार सामान्य वर्ष के करीब',
+    'fc.rain.below': '{when}: बारिश सामान्य से लगभग {n} % कम रहने की उम्मीद', 'fc.rain.above': '{when}: बारिश सामान्य से लगभग {n} % ज़्यादा रहने की उम्मीद', 'fc.rain.flat': '{when}: बारिश सामान्य के करीब रहने की उम्मीद',
+    'fc.rain.title.ond': 'हर साल सर्दी के मौसम की बारिश',
   },
   mr: {
     'outlook.neutral': 'हंगाम साधारण सामान्य राहण्याची अपेक्षा आहे',
@@ -42,6 +50,10 @@ export const EXTRA: Record<'en' | 'hi' | 'mr' | 'te', Dict> = {
     'rh.heat.hot': 'सामान्यपेक्षा सुमारे {n} °C जास्त उष्णता ({win})', 'rh.heat.cool': 'सामान्यपेक्षा सुमारे {n} °C थंड ({win})', 'rh.heat.norm': 'तापमान जवळपास सामान्य ({win})',
     'rh.onset.late': 'मान्सून सुमारे {n} दिवस उशिरा येऊ शकतो', 'rh.onset.ok': 'मान्सून वेळेवर येण्याची अपेक्षा आहे',
     'why.outlook': 'या हंगामाचा अंदाज', 'econ.label': 'ढोबळ खर्च आणि उत्पन्न', 'brand.gemini': 'Gemini द्वारे संचालित',
+    'fc.observed': 'नोंदलेले', 'fc.expected': 'अपेक्षित', 'fc.range': 'श्रेणी {a}–{b} %', 'fc.projected': 'अंदाजित', 'fc.tfm': 'मॉडेलची श्रेणी',
+    'fc.yield.below': '{when}: उत्पादन सामान्य वर्षापेक्षा सुमारे {n} % कमी', 'fc.yield.above': '{when}: उत्पादन सामान्य वर्षापेक्षा सुमारे {n} % जास्त', 'fc.yield.flat': '{when}: उत्पादन सामान्य वर्षाच्या जवळपास',
+    'fc.rain.below': '{when}: पाऊस सामान्यपेक्षा सुमारे {n} % कमी राहण्याची अपेक्षा', 'fc.rain.above': '{when}: पाऊस सामान्यपेक्षा सुमारे {n} % जास्त राहण्याची अपेक्षा', 'fc.rain.flat': '{when}: पाऊस सामान्यच्या जवळपास राहण्याची अपेक्षा',
+    'fc.rain.title.ond': 'दरवर्षी हिवाळ्यातील पाऊस',
   },
   te: {
     'outlook.neutral': 'సీజన్ దాదాపు సాధారణంగా ఉండే అవకాశం ఉంది',
@@ -55,6 +67,10 @@ export const EXTRA: Record<'en' | 'hi' | 'mr' | 'te', Dict> = {
     'rh.heat.hot': 'సాధారణం కంటే సుమారు {n} °C ఎక్కువ వేడి ({win})', 'rh.heat.cool': 'సాధారణం కంటే సుమారు {n} °C చల్లగా ({win})', 'rh.heat.norm': 'ఉష్ణోగ్రతలు దాదాపు సాధారణం ({win})',
     'rh.onset.late': 'రుతుపవనాలు సుమారు {n} రోజులు ఆలస్యంగా రావచ్చు', 'rh.onset.ok': 'రుతుపవనాలు సమయానికి వస్తాయని అంచనా',
     'why.outlook': 'ఈ సీజన్ అంచనా', 'econ.label': 'సుమారు ఖర్చు, ఆదాయం', 'brand.gemini': 'Gemini ఆధారితం',
+    'fc.observed': 'గమనించినది', 'fc.expected': 'అంచనా', 'fc.range': 'పరిధి {a}–{b} %', 'fc.projected': 'అంచనా వేసినది', 'fc.tfm': 'మోడల్ పరిధి',
+    'fc.yield.below': '{when}: దిగుబడి సాధారణ సంవత్సరం కంటే సుమారు {n} % తక్కువ', 'fc.yield.above': '{when}: దిగుబడి సాధారణ సంవత్సరం కంటే సుమారు {n} % ఎక్కువ', 'fc.yield.flat': '{when}: దిగుబడి సాధారణ సంవత్సరానికి దగ్గరగా',
+    'fc.rain.below': '{when}: వర్షం సాధారణం కంటే సుమారు {n} % తక్కువ ఉండొచ్చు', 'fc.rain.above': '{when}: వర్షం సాధారణం కంటే సుమారు {n} % ఎక్కువ ఉండొచ్చు', 'fc.rain.flat': '{when}: వర్షం సాధారణానికి దగ్గరగా ఉండొచ్చు',
+    'fc.rain.title.ond': 'ప్రతి సంవత్సరం శీతాకాల వర్షం',
   },
 }
 

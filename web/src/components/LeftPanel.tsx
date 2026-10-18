@@ -1,17 +1,17 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useStore } from '../lib/store'
 import { useScenario } from '../lib/useScenario'
 import { LAYERS, LAYER_GROUPS, type LayerId } from '../lib/scales'
 import { HISTORY_LAYERS } from '../lib/history'
 import { gwStress, marketSpike } from '../lib/extra'
 import { outlookOf } from '../lib/scenario'
-import { Icon, TrafficLight, Segmented, SelectField } from './ui'
+import { Icon, Segmented, SelectField } from './ui'
+import DistrictCombobox from './DistrictCombobox'
 
 /** Map layers (grouped, plain names), district search and state filter. */
 export default function LeftPanel({ className = '', onPick, hideSearch }: { className?: string; onPick?: () => void; hideSearch?: boolean }) {
   const { districts, layer, setLayer, nfhs, setNfhs, stateFilter, setStateFilter, select, mode, historyLayer, setHistoryLayer } = useStore()
-  const { key: keyOf, season, phase } = useScenario()
-  const [q, setQ] = useState('')
+  const { season, phase } = useScenario()
   const hist = mode === 'history'
   const hasLive = useMemo(() => districts.some((d) => d.climate?.live), [districts])
   const hasData = useMemo(() => ({
@@ -22,14 +22,6 @@ export default function LeftPanel({ className = '', onPick, hideSearch }: { clas
   const layers = LAYERS.filter((l) => !l.needs || hasData[l.needs])
   useEffect(() => { if (!layers.some((l) => l.id === layer)) setLayer('risk') }, [layers.length, hasData.season_outlook]) // eslint-disable-line react-hooks/exhaustive-deps
   const states = useMemo(() => [...new Set(districts.map((d) => d.state))].sort(), [districts])
-  const results = useMemo(() => {
-    const s = q.trim().toLowerCase()
-    if (s.length < 2) return []
-    return districts
-      .filter((d) => d.district.toLowerCase().includes(s) || d.state.toLowerCase().includes(s))
-      .sort((a, b) => (b.risk[keyOf(b)]?.score ?? 0) - (a.risk[keyOf(a)]?.score ?? 0))
-      .slice(0, 8)
-  }, [q, districts, keyOf])
 
   // M3 navigation-drawer item: 48 px pill, secondary-container active indicator
   const radio = (on: boolean, disabled = false) =>
@@ -39,26 +31,11 @@ export default function LeftPanel({ className = '', onPick, hideSearch }: { clas
     <aside className={`flex flex-col gap-5 overflow-y-auto border-r border-outline-variant bg-surface-container-low p-3 ${className}`} aria-label="Map controls">
       <div>
         {!hideSearch && <>
-        <label className="md-field mt-2" style={{ '--md-field-bg': 'rgb(var(--md-rgb-surface-container-low))' } as React.CSSProperties}>
-          <span className="md-field-label md-body-small">Find a district</span>
-          <input
-            id="q" value={q} onChange={(e) => setQ(e.target.value)} placeholder="District or state…" autoComplete="off"
-            className="md-control md-body-large"
-          />
-          {results.length > 0 && (
-            <ul className="absolute z-30 mt-1 max-h-72 w-full overflow-auto rounded-m3-xs bg-surface-container py-2 shadow-elev-2">
-              {results.map((d) => (
-                <li key={d.lgd}>
-                  <button className="md-state flex min-h-[56px] w-full items-center justify-between gap-2 px-4 py-1.5 text-left md-body-medium"
-                    onClick={() => { select(d.lgd, true); useStore.getState().setView('map'); setQ(''); onPick?.() }}>
-                    <span><b className="font-medium">{d.district}</b><br /><span className="md-body-small text-muted">{d.state}</span></span>
-                    <TrafficLight band={d.risk[keyOf(d)]?.band} variant="dot" />
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </label>
+        <DistrictCombobox
+          className="mt-2" value={null} label="Find a district" placeholder="District or state…" ariaLabel="Find a district" rank="risk" minChars={2} clearOnPick
+          fieldBg="rgb(var(--md-rgb-surface-container-low))"
+          onPick={(lgd) => { select(lgd, true); useStore.getState().setView('map'); onPick?.() }}
+        />
         </>}
         <SelectField label="Show one state" id="st" value={stateFilter} onChange={setStateFilter} className={hideSearch ? 'mt-2' : 'mt-5'} fieldBg="surface-container-low">
           <option value="">All of India</option>

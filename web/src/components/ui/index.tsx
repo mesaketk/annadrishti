@@ -326,7 +326,7 @@ export function Sheet({ open, onClose, title, side = 'right', children, widthCla
   useEffect(() => {
     if (!open) return
     const prev = document.activeElement as HTMLElement | null
-    ref.current?.focus()
+    if (!ref.current?.contains(document.activeElement)) ref.current?.focus() // children may autoFocus a field
     const h = (e: globalThis.KeyboardEvent) => { if (e.key === 'Escape' && dismissible) onClose() }
     window.addEventListener('keydown', h)
     return () => { window.removeEventListener('keydown', h); prev?.focus?.() }
